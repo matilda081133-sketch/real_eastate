@@ -12,5 +12,6 @@ videos/*.mp4
 !videos/tulum_site_1_compressed.mp4
 !videos/tulum_site_2_compressed.mp4
 !videos/tulum_site_3_compressed.mp4
+!videos/tulum_atmosphere_hq.mp4
 videos/*.MOV
 videos/*.mov
