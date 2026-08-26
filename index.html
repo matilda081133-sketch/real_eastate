@@ -2794,13 +2794,13 @@
         heroBtn1: "Download Guide (PDF)",
         heroBtn2: "Schedule a Consultation",
 
-        statPill1Val: "Private School • 300m",
-        statPill1Sub: "Prestigious Colegio Inglés college just 3-min walk via safe gated green walkways",
-        statPill2Val: "World-Class Hub",
-        statPill2Sub: "TQO Airport, Tren Maya rail, luxury malls, Michelin dining & global crypto community",
+        statPill1Val: "Developed Infrastructure",
+        statPill1Sub: "TQO Airport, Tren Maya rail (800m), shopping malls, kindergartens, parks & private clinics",
+        statPill2Val: "Private School",
+        statPill2Sub: "300m • Prestigious Colegio Inglés college just 3-min walk via safe gated green walkways",
         statPill3Val: "100% Freehold Title",
         statPill3Sub: "Direct personal land & property title deed with full inheritance rights",
-        statPill4Val: "15 Minutes to Beach",
+        statPill4Val: "15 Min to Beach",
         statPill4Sub: "Pristine Caribbean white sand beaches, Jaguar Park biosphere & luxury beach clubs",
 
         bento: [
@@ -2937,14 +2937,14 @@
         heroBtn1: "Скачать гайд «5 причин переехать в Мексику»",
         heroBtn2: "Получить консультацию",
 
-        statPill1Val: "Частная школа • 300 м",
-        statPill1Sub: "Международный колледж Colegio Inglés в 3 мин пешком по безопасным парковым аллеям",
-        statPill2Val: "Развитая инфраструктура",
-        statPill2Sub: "Аэропорт TQO, поезд Tren Maya, ТЦ, Michelin-рестораны, детские сады, парки и частные клиники",
+        statPill1Val: "Развитая инфраструктура",
+        statPill1Sub: "Аэропорт TQO, скоростной поезд Tren Maya (800 м), торговые центры, детские сады и частные клиники",
+        statPill2Val: "Частная школа",
+        statPill2Sub: "300 м • Международный колледж Colegio Inglés в 3 мин пешком по безопасным парковым аллеям",
         statPill3Val: "100% Фрихолд",
-        statPill3Sub: "Безусловная личная частная собственность на недвижимость и землю с правом наследования",
+        statPill3Sub: "Безусловная личная частная собственность на землю и таунхаус с полным правом дарения и наследования",
         statPill4Val: "15 мин до пляжа",
-        statPill4Sub: "Белоснежные карибские пляжи, биосферный заповедник Jaguar Park и пляжные клубы",
+        statPill4Sub: "Белоснежные карибские пляжи, биосферный заповедник Jaguar Park и премиальные пляжные клубы",
 
         bento: [
           { tag: 'Юридический статус', title: '100% Фрихолд<br>на физическое лицо', desc: 'Каждый таунхаус передается в безусловную личную частную собственность (Фрихолд) на физлицо с 100% владением землей и строением, правом перепродажи, сдачи и дарения.' },
@@ -3107,16 +3107,16 @@
       }
 
       // 3. Stat Pills
-      const statPills = document.querySelectorAll('.hero-stat-pill');
-      if (statPills.length >= 4) {
-        statPills[0].querySelector('.stat-top-val').innerText = t.statPill1Val;
-        statPills[0].querySelector('.stat-sub-text').innerText = t.statPill1Sub;
-        statPills[1].querySelector('.stat-top-val').innerText = t.statPill2Val;
-        statPills[1].querySelector('.stat-sub-text').innerText = t.statPill2Sub;
-        statPills[2].querySelector('.stat-top-val').innerText = t.statPill3Val;
-        statPills[2].querySelector('.stat-sub-text').innerText = t.statPill3Sub;
-        statPills[3].querySelector('.stat-top-val').innerText = t.statPill4Val;
-        statPills[3].querySelector('.stat-sub-text').innerText = t.statPill4Sub;
+      const wraps = document.querySelectorAll('.stat-pill-wrap');
+      if (wraps.length >= 4) {
+        wraps[0].querySelector('.stat-top-val').innerText = t.statPill1Val;
+        wraps[0].querySelector('.stat-sub-text').innerText = t.statPill1Sub;
+        wraps[1].querySelector('.stat-top-val').innerText = t.statPill2Val;
+        wraps[1].querySelector('.stat-sub-text').innerText = t.statPill2Sub;
+        wraps[2].querySelector('.stat-top-val').innerText = t.statPill3Val;
+        wraps[2].querySelector('.stat-sub-text').innerText = t.statPill3Sub;
+        wraps[3].querySelector('.stat-top-val').innerText = t.statPill4Val;
+        wraps[3].querySelector('.stat-sub-text').innerText = t.statPill4Sub;
       }
 
       // 4. Section Heads
