@@ -1706,6 +1706,34 @@
         display: none;
       }
     }
+      /* PERMANENT LUXURY MAP TOOLTIPS */
+    .leaflet-tooltip-custom {
+      background: rgba(17, 20, 19, 0.88) !important;
+      color: #FAF9F7 !important;
+      border: 1px solid rgba(212, 175, 55, 0.4) !important;
+      border-radius: 6px !important;
+      font-family: var(--font-sans) !important;
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      padding: 3px 8px !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
+      white-space: nowrap !important;
+    }
+    .leaflet-tooltip-primary {
+      background: #D4AF37 !important;
+      color: #0E1210 !important;
+      border: 1px solid #FAF9F7 !important;
+      border-radius: 6px !important;
+      font-family: var(--font-sans) !important;
+      font-size: 12px !important;
+      font-weight: 800 !important;
+      padding: 4px 10px !important;
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.5) !important;
+      white-space: nowrap !important;
+    }
+    .leaflet-tooltip-top:before {
+      border-top-color: rgba(17, 20, 19, 0.88) !important;
+    }
   </style>
 </head>
 <body>
@@ -2854,6 +2882,7 @@
           { coords: [20.166436, -87.659087], label: "✈️ Аэропорт TQO (15 мин)", isPrimary: false }
         ];
 
+        const markerGroup = [];
         pinsData.forEach(p => {
           const pinClass = p.isPrimary ? 'custom-leaflet-pin primary-pin' : 'custom-leaflet-pin';
           const pulseHtml = p.isPrimary ? '<div class="mini-pin-pulse"></div>' : '';
@@ -2864,7 +2893,13 @@
             iconAnchor: [10, 10]
           });
           const marker = L.marker(p.coords, { icon: icon }).addTo(map);
-          marker.bindTooltip(p.label, { permanent: p.isPrimary, direction: 'top', offset: [0, -10] });
+          marker.bindTooltip(p.label, { 
+            permanent: true, 
+            direction: 'top', 
+            offset: [0, -8],
+            className: p.isPrimary ? 'leaflet-tooltip-primary' : 'leaflet-tooltip-custom'
+          });
+          markerGroup.push(marker);
         });
       }
     });
