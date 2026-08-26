@@ -2891,16 +2891,16 @@
       // INITIALIZE INTERACTIVE LEAFLET MAP WITH GEOGRAPHICALLY PINNED MARKERS
       if (typeof L !== 'undefined') {
         const pinsData = [
-          { coords: [20.235855, -87.461299], label: "📍 Tulum Gardens", isPrimary: true, dir: 'top', offset: [0, -10] },
-          { coords: [20.239844, -87.465303], label: "🏫 Colegio Inglés", isPrimary: false, dir: 'left', offset: [-10, 0] },
-          { coords: [20.245000, -87.468000], label: "🚆 Tren Maya Station", isPrimary: false, dir: 'top', offset: [0, -10] },
-          { coords: [20.230592, -87.457223], label: "💧 Cenote Calavera", isPrimary: false, dir: 'left', offset: [-10, 0] },
-          { coords: [20.223417, -87.457053], label: "🛒 Soriana & ТЦ", isPrimary: false, dir: 'bottom', offset: [0, 10] },
-          { coords: [20.211860, -87.435411], label: "🏞️ Jaguar Park", isPrimary: false, dir: 'left', offset: [-10, 0] },
-          { coords: [20.216142, -87.428887], label: "🏛️ Руины майя Tulum", isPrimary: false, dir: 'top', offset: [0, -10] },
-          { coords: [20.209787, -87.429976], label: "🏖️ Playa Santa Fe", isPrimary: false, dir: 'right', offset: [10, 0] },
-          { coords: [20.203859, -87.430655], label: "🏖️ Playa Paraíso", isPrimary: false, dir: 'right', offset: [10, 0] },
-          { coords: [20.166436, -87.659087], label: "✈️ Аэропорт TQO (15 мин)", isPrimary: false, dir: 'top', offset: [0, -10] }
+          { coords: [20.235855346599823, -87.46129904576173], label: "📍 Tulum Gardens", isPrimary: true },
+          { coords: [20.239844021033065, -87.46530303395095], label: "🏫 Colegio Inglés", isPrimary: false },
+          { coords: [20.245000000000000, -87.46800000000000], label: "🚆 Tren Maya Station", isPrimary: false },
+          { coords: [20.230591539726948, -87.45722293340401], label: "💧 Cenote Calavera", isPrimary: false },
+          { coords: [20.223416881595217, -87.45705263611099], label: "🛒 Soriana & ТЦ", isPrimary: false },
+          { coords: [20.211859777519160, -87.43541097467136], label: "🏞️ Jaguar Park", isPrimary: false },
+          { coords: [20.216142435310370, -87.42888744869036], label: "🏛️ Руины майя Tulum", isPrimary: false },
+          { coords: [20.209786577829405, -87.42997647257600], label: "🏖️ Playa Santa Fe", isPrimary: false },
+          { coords: [20.203859086924630, -87.43065532121350], label: "🏖️ Playa Paraíso", isPrimary: false },
+          { coords: [20.166436272428385, -87.65908685740240], label: "✈️ Аэропорт TQO (15 мин)", isPrimary: false }
         ];
 
         const map = L.map('leaflet-map-canvas', {
@@ -2916,19 +2916,21 @@
 
         const markers = [];
         pinsData.forEach(p => {
-          const pinClass = p.isPrimary ? 'custom-leaflet-pin primary-pin' : 'custom-leaflet-pin';
-          const pulseHtml = p.isPrimary ? '<div class="mini-pin-pulse"></div>' : '';
+          const pinSvg = p.isPrimary ? 
+            `<div style="position:relative;width:24px;height:24px;"><div class="mini-pin-pulse"></div><div style="width:18px;height:18px;background:#D4AF37;border:3px solid #111413;border-radius:50%;position:absolute;top:3px;left:3px;box-shadow:0 0 12px rgba(212,175,55,1);"></div></div>` :
+            `<div style="width:14px;height:14px;background:#D4AF37;border:2px solid #FFFFFF;border-radius:50%;box-shadow:0 0 8px rgba(0,0,0,0.4);"></div>`;
+
           const icon = L.divIcon({
-            className: pinClass,
-            html: `${pulseHtml}<div class="mini-pin-dot"></div>`,
-            iconSize: [20, 20],
-            iconAnchor: [10, 10]
+            html: pinSvg,
+            className: '',
+            iconSize: p.isPrimary ? [24, 24] : [14, 14],
+            iconAnchor: p.isPrimary ? [12, 12] : [7, 7]
           });
           const marker = L.marker(p.coords, { icon: icon }).addTo(map);
           marker.bindTooltip(p.label, { 
             permanent: true, 
-            direction: p.dir || 'top', 
-            offset: p.offset || [0, -8],
+            direction: 'top', 
+            offset: [0, -10],
             className: p.isPrimary ? 'leaflet-tooltip-primary' : 'leaflet-tooltip-custom'
           });
           if (p.coords[1] > -87.60) {
