@@ -239,20 +239,22 @@
     }
     .lang-btn {
       background: transparent;
-      border: none;
+      border: 1px solid rgba(212,175,55,0.5);
       font-family: var(--font-sans);
       font-size: 11px;
       font-weight: 700;
-      color: #8C887F;
+      color: rgba(255,255,255,0.7);
       cursor: pointer;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 14px;
       transition: all 0.25s ease;
+      letter-spacing: 0.08em;
     }
     .lang-btn.active {
-      color: #FFFFFF;
-      background: #111413;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      color: #111413;
+      background: #D4AF37;
+      border-color: #D4AF37;
+      box-shadow: 0 2px 8px rgba(212,175,55,0.15);
     }
     .header-phone {
       font-family: var(--font-sans);
@@ -1581,7 +1583,7 @@
           <span>+52 (984) 123-4567</span>
         </a>
         <button class="btn btn-accent" id="header-catalog-btn" onclick="openModal('Скачать презентацию проекта')">
-          Скачать каталог
+          Скачать брошюру
         </button>
       </div>
     </div>
@@ -2929,7 +2931,7 @@
         navMedia: "Медиатека",
         navCatalog: "Таунхаусы",
         navFaq: "FAQ",
-        headerCatalogBtn: "Скачать каталог",
+        headerCatalogBtn: "Скачать брошюру",
 
         heroBadge: "8 ЭКСКЛЮЗИВНЫХ ЮНИТОВ ОТ СОБСТВЕННИКА",
         heroH1: "Обеспечьте семье <span>пассивный доход 9% годовых</span> и второй дом на Карибах в Тулуме",
@@ -3064,7 +3066,7 @@
         formName: "Ваше имя",
         formPhone: "Телефон / WhatsApp",
         formEmail: "Электронная почта",
-        formBtn: "Скачать каталог (PDF)"
+        formBtn: "Скачать брошюру (PDF)"
       }
     };
 
