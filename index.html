@@ -1,0 +1,3248 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STELLAR RESIDENCES вЂў TULUM GARDENS | РџСЂРµРјРёР°Р»СЊРЅС‹Рµ СЂРµР·РёРґРµРЅС†РёРё РІ РњРµРєСЃРёРєРµ</title>
+  
+  <!-- FONTS: Playfair Display (Serif), Montserrat, TildaSans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- LEAFLET MAP CSS & JS FOR REAL GEOGRAPHIC COORDINATE MARKERS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- PRELOAD CRITICAL IMAGES FOR INSTANT DISPLAY -->
+  <link rel="preload" as="image" href="images/img_4.jpg">
+  <link rel="preload" as="image" href="images/tulum_shopping_mall.jpg">
+  <link rel="preload" as="image" href="images/tulum_caribbean_beach.jpg">
+  <link rel="preload" as="image" href="images/tulum_bali_crypto.jpg">
+  <link rel="preload" as="image" href="images/tulum_colegio_ingles.jpg">
+  <link rel="preload" as="image" href="images/tulum_michelin_restaurants.jpg">
+  <link rel="preload" as="image" href="images/tulum_freehold_terrace.jpg">
+  <link rel="preload" as="image" href="images/tulum_roi_management.jpg">
+  <link rel="preload" as="image" href="images/img_13.jpg">
+  <link rel="preload" as="image" href="images/img_22.jpg">
+  <link rel="preload" as="image" href="images/img_23.jpg">
+  <link rel="preload" as="image" href="images/img_33.jpg">
+  
+  <style>
+    @font-face {
+      font-family: 'TildaSans';
+      src: url('https://static.tildacdn.com/fonts/tildasans/TildaSans-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'TildaSans';
+      src: url('https://static.tildacdn.com/fonts/tildasans/TildaSans-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'TildaSans';
+      src: url('https://static.tildacdn.com/fonts/tildasans/TildaSans-Semibold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'TildaSans';
+      src: url('https://static.tildacdn.com/fonts/tildasans/TildaSans-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ========================================================
+       FATUKHIN-INSPIRED LUXURY DESIGN SYSTEM (LEGAL & CLEAN)
+       ======================================================== */
+    :root {
+      --bg: #FAF9F7;
+      --bg-white: #FFFFFF;
+      --bg-surface: #F4F1EA;
+      --dark: #111413;
+      --dark-card: #181C1B;
+      --accent: #C1A080;
+      --accent-hover: #B08E6E;
+      --accent-light: #DFC79B;
+      --text: #1A1A1A;
+      --text-muted: #7A7A7A;
+      --text-white: #FAF9F7;
+      --border: rgba(26, 26, 26, 0.08);
+      --border-accent: rgba(193, 160, 128, 0.4);
+      --radius: 12px;
+      --radius-lg: 20px;
+      
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'TildaSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-serif {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .font-sans {
+      font-family: var(--font-sans);
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img, video { max-width: 100%; height: auto; display: block; }
+    .container { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
+
+    /* ========================================================
+       PRELOADER WITH PERCENT COUNTER (FATUKHIN STYLE)
+       ======================================================== */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.7s;
+    }
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .pre-brand {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      color: var(--accent);
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+    .pre-num {
+      font-family: var(--font-serif);
+      font-size: 12vw;
+      line-height: 1;
+      font-weight: 400;
+      color: #FFFFFF;
+      margin-bottom: 30px;
+    }
+    .pre-bar-bg {
+      width: 220px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .pre-bar-fill {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 0%;
+      background: var(--accent);
+      transition: width 0.05s linear;
+    }
+
+    /* ========================================================
+       GLASS HEADER WITH BLUR & ACCENTS
+       ======================================================== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250, 249, 247, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(26, 26, 26, 0.05);
+      transition: all 0.4s ease;
+    }
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 96px;
+    }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      margin-left: 36px;
+    }
+    @media (max-width: 768px) {
+      .logo-box {
+        margin-left: 0;
+      }
+    }
+    .logo-badge-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #111413;
+      padding: 6px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(193, 160, 128, 0.4);
+      transition: all 0.35s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+    .logo-badge-wrap:hover {
+      border-color: var(--accent);
+      box-shadow: 0 6px 20px rgba(193, 160, 128, 0.3);
+      transform: translateY(-1px);
+    }
+    .logo-img {
+      height: 44px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.25s;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .lang-switch-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      background: rgba(17, 20, 19, 0.05);
+      border: 1px solid rgba(26, 26, 26, 0.12);
+      border-radius: 20px;
+      padding: 3px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: #8C887F;
+      cursor: pointer;
+      padding: 4px 10px;
+      border-radius: 14px;
+      transition: all 0.25s ease;
+    }
+    .lang-btn.active {
+      color: #FFFFFF;
+      background: #111413;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .header-phone {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border-accent);
+      padding: 10px 18px;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    .header-phone:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: center;
+      border-radius: 4px;
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: #FFFFFF;
+      box-shadow: 0 10px 25px rgba(193, 160, 128, 0.25);
+    }
+    .btn-accent:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(193, 160, 128, 0.35);
+    }
+    .btn-white {
+      background: #FFFFFF;
+      color: var(--accent);
+      border: 1px solid #FFFFFF;
+    }
+    .btn-white:hover {
+      background: #FAF9F7;
+      transform: translateY(-2px);
+    }
+    .btn-outline-gold {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--text-white);
+    }
+    .btn-outline-gold:hover {
+      background: var(--accent);
+      color: #FFFFFF;
+    }
+    .btn-block { width: 100%; }
+
+    /* ========================================================
+       HERO SECTION WITH ZERO-PAUSE VIDEO BACKGROUND
+       ======================================================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--dark);
+      color: var(--text-white);
+      padding: 140px 0 60px;
+      overflow: hidden;
+    }
+    .hero-bg-media {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .hero-bg-media video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    .hero-bg-media video.active {
+      opacity: 0.85;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(17, 20, 19, 0.35) 0%, rgba(17, 20, 19, 0.72) 100%);
+      z-index: 2;
+    }
+    .hero-body {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      margin-left: 0;
+      font-weight: 700;
+      text-align: left;
+      align-self: flex-start;
+    }
+    .hero-h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.18;
+      margin-bottom: 24px;
+      margin-left: 0;
+      text-transform: uppercase;
+      font-weight: 400;
+      text-align: left;
+      width: 100%;
+      max-width: 1100px;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.75);
+    }
+    .hero-h1 span {
+      color: var(--accent);
+      font-style: italic;
+    }
+    .hero-subtext {
+      font-family: 'TildaSans', sans-serif !important;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #FFFFFF;
+      max-width: 960px;
+      margin-bottom: 38px;
+      margin-left: 0;
+      font-weight: 400;
+      text-align: left;
+      text-wrap: balance;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+    }
+    .hero-btns {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    /* SEAMLESS FLOATING STAT PILLS OVER HERO BACKGROUND */
+    .hero-glass-bar {
+      position: absolute;
+      bottom: 28px; left: 0; right: 0;
+      z-index: 4;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-top: none;
+      padding: 0;
+    }
+    .hero-stat-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      width: 100%;
+      max-width: 960px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .hero-stat-pill {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(17, 20, 19, 0.68) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-top: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 12px;
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-sizing: border-box;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+    }
+    .hero-stat-pill::before {
+      display: none;
+    }
+    .hero-stat-pill:hover {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(17, 20, 19, 0.88) 100%);
+      border-color: rgba(212, 175, 55, 0.65);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45), 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+    .pill-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .pill-num {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .pill-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent);
+    }
+    .stat-top-val {
+      font-family: var(--font-serif);
+      font-size: clamp(17px, 1.5vw, 21px);
+      color: #FFFFFF;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      position: relative;
+      z-index: 2;
+    }
+    .stat-top-val span {
+      font-size: 18px;
+      font-family: var(--font-serif);
+      color: var(--accent);
+    }
+    .stat-sub-text {
+      font-family: 'TildaSans', sans-serif !important;
+      font-size: 15.5px;
+      color: #D6D2CA;
+      font-weight: 400;
+      line-height: 1.45;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* RUNNING MARQUEE TICKER (LIGHT SURFACE, HIGH-CONTRAST TEXT) */
+    .ticker-bar {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+      overflow: hidden;
+      position: relative;
+      margin-top: -28px;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 35s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 36px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #111413;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .marquee-item span {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ========================================================
+       SECTIONS & HEADINGS
+       ======================================================== */
+    section {
+      padding: 120px 0;
+      position: relative;
+    }
+    .sec-head {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 70px;
+    }
+    .sec-tag {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 14px;
+    }
+    .sec-title {
+      font-size: clamp(28px, 3.8vw, 48px);
+      line-height: 1.2;
+      color: var(--text);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .sec-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ========================================================
+       FATUKHIN-STYLE BENTO GRID / SKEWED ARCHITECTURE CARDS
+       ======================================================== */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .bento-card {
+      background: var(--bg-white);
+      border: 1px solid rgba(26, 26, 26, 0.12);
+      border-radius: var(--radius);
+      padding: 22px 20px 16px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.35s ease;
+      box-shadow: 0 8px 24px rgba(17, 20, 19, 0.08), 0 2px 6px rgba(17, 20, 19, 0.04);
+    }
+    .bento-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 14px 32px rgba(17, 20, 19, 0.14);
+    }
+    .bento-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+    .bento-num {
+      position: absolute;
+      top: -16px;
+      right: -8px;
+      font-family: var(--font-serif);
+      font-size: 85px;
+      color: rgba(184, 150, 86, 0.12);
+      font-weight: 800;
+      line-height: 0.8;
+      letter-spacing: -0.04em;
+      user-select: none;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .bento-tag {
+      font-family: var(--font-sans);
+      font-size: 9.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #8C887F;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+    }
+    .bento-title {
+      font-family: var(--font-serif);
+      font-size: 23px;
+      color: #111413;
+      margin-bottom: 8px;
+      line-height: 1.25;
+      font-weight: 600;
+      max-width: 85%;
+      position: relative;
+      z-index: 2;
+    }
+    .bento-desc {
+      font-family: 'TildaSans', sans-serif !important;
+      font-size: 16.5px;
+      color: #3A3D3C;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    .bento-desc strong {
+      color: #111413;
+      font-weight: 600;
+    }
+    .bento-bottom-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 12px;
+    }
+    .bento-arrow {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(26, 26, 26, 0.15);
+      background: #FAF9F7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+      background: #FAF9F7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+    .bento-card:hover .bento-arrow {
+      background: var(--accent);
+      color: #FFFFFF;
+      border-color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    /* SKEWED CLIP-PATH GALLERY (FATUKHIN STYLE) */
+    .skew-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .skew-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+    .skew-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+    }
+    .skew-media {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+    .skew-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .skew-card:hover .skew-media img {
+      transform: scale(1.08);
+    }
+    .skew-footer {
+      padding: 18px 20px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .skew-footer h4 {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      color: var(--text);
+    }
+    .skew-footer span {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ========================================================
+       LOCATION & INTERACTIVE MAP (CLEAN AESTHETIC)
+       ======================================================== */
+    .map-section {
+      background: var(--bg-white);
+    }
+    .map-box {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(17, 20, 19, 0.12);
+      border: 1px solid var(--border);
+      background: var(--bg-white);
+    }
+    #leaflet-map-canvas {
+      width: 100%;
+      height: 540px;
+      border-radius: var(--radius-lg);
+      z-index: 1;
+    }
+    /* LEAFLET GEOGRAPHIC MARKERS */
+    .custom-leaflet-pin {
+      position: relative;
+      cursor: pointer;
+    }
+    .custom-leaflet-pin .mini-pin-dot {
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border: 2px solid #FFFFFF;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(193, 160, 128, 0.9);
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .custom-leaflet-pin.primary-pin .mini-pin-dot {
+      width: 16px;
+      height: 16px;
+      background: #DFC79B;
+      border: 3px solid #111413;
+    }
+    .custom-leaflet-pin.primary-pin .mini-pin-pulse {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 38px; height: 38px;
+      margin-top: -19px; margin-left: -19px;
+      border: 2px solid #DFC79B;
+      border-radius: 50%;
+      animation: pinPulse 2s infinite ease-out;
+      pointer-events: none;
+    }
+    @keyframes pinPulse {
+      0% { transform: scale(0.6); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    .custom-leaflet-pin .mini-pin-label {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      background: rgba(17, 20, 19, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #FFFFFF;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 11px;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      transition: all 0.25s ease;
+      pointer-events: auto;
+    }
+    .custom-leaflet-pin.primary-pin .mini-pin-label {
+      background: #111413;
+      border-color: var(--accent);
+    }
+    .mini-map-pin:hover .mini-pin-label {
+      background: #FFFFFF;
+      color: #111413;
+      border-color: var(--accent);
+    }
+
+    /* COMPACT ANIMATED LOCATION USP SYSTEM */
+    .loc-interactive-panel {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 32px;
+      margin-top: 40px;
+      background: var(--bg-white);
+      border: 1px solid rgba(26, 26, 26, 0.1);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.03);
+    }
+    .loc-usp-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .loc-usp-tab {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background: #FAF9F7;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .loc-usp-tab:hover {
+      background: #F4F1EA;
+      border-color: rgba(193, 160, 128, 0.3);
+    }
+    .loc-usp-tab.active {
+      background: #FFFFFF;
+      border-color: var(--accent);
+      box-shadow: 0 8px 25px rgba(193, 160, 128, 0.18);
+    }
+    .tab-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .tab-num {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+    .tab-name {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      color: var(--dark);
+      font-weight: 600;
+    }
+    .tab-val {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      color: #111413;
+      background: rgba(26, 26, 26, 0.06);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .loc-usp-tab.active .tab-val {
+      background: var(--accent);
+      color: #FFFFFF;
+    }
+    .loc-usp-display {
+      background: #FFFFFF;
+      border: 1px solid rgba(26, 26, 26, 0.1);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      transition: all 0.35s ease;
+    }
+    .loc-display-img-wrap {
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+      background: var(--dark);
+    }
+    .loc-display-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .loc-display-img-wrap:hover .loc-display-img {
+      transform: scale(1.05);
+    }
+    .loc-display-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(17, 20, 19, 0.1) 0%, rgba(17, 20, 19, 0.75) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px 24px;
+    }
+    .loc-img-badge {
+      background: rgba(17, 20, 19, 0.85);
+      border: 1px solid var(--accent);
+      color: #FFFFFF;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 4px;
+      backdrop-filter: blur(8px);
+    }
+    .loc-display-content {
+      padding: 28px 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      background: #FFFFFF;
+    }
+    .loc-display-tag {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .loc-display-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      color: var(--dark);
+      margin-bottom: 12px;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+    .loc-display-text {
+      font-family: 'TildaSans', sans-serif !important;
+      font-size: 15px;
+      color: #3A3D3C;
+      line-height: 1.65;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .loc-display-text strong {
+      color: #111413;
+      font-weight: 600;
+    }
+    .loc-display-metric {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      font-family: var(--font-serif);
+      font-size: 30px;
+      color: var(--accent);
+      font-weight: 700;
+      border-top: 1px solid rgba(26, 26, 26, 0.08);
+      padding-top: 14px;
+    }
+    .loc-display-metric span {
+      font-size: 13px;
+      font-family: 'TildaSans', sans-serif;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* ========================================================
+       CINEMA VIDEO GALLERY WITH 21 CLIPS & CATEGORIES
+       ======================================================== */
+    .cinema-sec {
+      background: var(--dark);
+      color: #FFFFFF;
+    }
+    .cinema-sec .sec-tag { color: var(--accent); }
+    .cinema-sec .sec-title { color: #FFFFFF; }
+    .cinema-sec .sec-desc { color: rgba(255, 255, 255, 0.7); }
+    
+    .cinema-container {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 28px;
+      background: var(--dark-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    }
+    .stage-wrapper {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .stage-player {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+    .stage-bar {
+      padding: 20px 24px;
+      background: #111413;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .stage-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+    .stage-desc {
+      font-size: 12px;
+      color: #8C887F;
+    }
+    .playlist-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .playlist-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .cat-btn-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .cat-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #9C988F;
+      font-size: 10px;
+      font-family: var(--font-sans);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-weight: 700;
+      border-radius: 4px;
+      transition: all 0.25s;
+    }
+    .cat-btn.active, .cat-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+    }
+    .playlist-scroll {
+      max-height: 520px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-right: 6px;
+    }
+    .playlist-scroll::-webkit-scrollbar { width: 4px; }
+    .playlist-scroll::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); }
+    .v-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .v-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .v-item.active {
+      background: rgba(193, 160, 128, 0.15);
+      border-color: var(--accent);
+    }
+    .v-thumb {
+      width: 90px;
+      height: 60px;
+      background: #000;
+      position: relative;
+      flex-shrink: 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .v-thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .v-play {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #FFF;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    .v-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .v-tag {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .v-name {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      color: #FFFFFF;
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+    .v-sub {
+      font-size: 11px;
+      color: #8C887F;
+    }
+
+    /* ========================================================
+       UNITS CATALOG (4 REAL MODELS)
+       ======================================================== */
+    .catalog-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .c-tab-btn {
+      padding: 14px 28px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-muted);
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .c-tab-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+      box-shadow: 0 6px 20px rgba(193, 160, 128, 0.3);
+    }
+    .unit-card-box {
+      display: none;
+      background: var(--bg-white);
+      border: 1px solid rgba(26, 26, 26, 0.14);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(17, 20, 19, 0.13), 0 4px 14px rgba(17, 20, 19, 0.07);
+    }
+    .unit-card-box.active {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+    .unit-gallery {
+      padding: 32px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .unit-main-view {
+      height: 420px;
+      background: #FAF8F5;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .unit-main-view img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .unit-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .unit-thumbs img {
+      height: 80px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      opacity: 0.75;
+      transition: all 0.25s;
+    }
+    .unit-thumbs img:hover {
+      opacity: 1;
+      border-color: var(--accent);
+    }
+    .unit-info-box {
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .unit-h3 {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .unit-badge-specs {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .unit-desc-p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+    .unit-check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .unit-check-list li {
+      font-size: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .unit-check-list li::before {
+      content: 'вњ“';
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* ========================================================
+       FATUKHIN-STYLE DARK FORM & CTA CARD
+       ======================================================== */
+    .cta-dark-card {
+      background: linear-gradient(135deg, #0e1512 0%, #1a2b1f 30%, #111c28 60%, #1e1410 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 64px 48px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(193, 160, 128, 0.2);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+    }
+    .cta-dark-card::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(193, 160, 128, 0.2) 0%, rgba(17, 20, 19, 0) 70%);
+      pointer-events: none;
+    }
+    .cta-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .form-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      padding: 14px 18px;
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* FAQ 2-COLUMN SPLIT LAYOUT & HIGH-CONTRAST TYPOGRAPHY */
+    .faq-split-layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 84px;
+      align-items: start;
+    }
+    .faq-left-col {
+      position: sticky;
+      top: 110px;
+      padding-right: 10px;
+    }
+    @media (max-width: 992px) {
+      .faq-split-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .faq-left-col {
+        position: static;
+      }
+    }
+    .faq-item {
+      background: var(--bg-white);
+      border: 1px solid rgba(26, 26, 26, 0.12);
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
+    .faq-item:hover, .faq-item.active {
+      border-color: var(--accent);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    }
+    .faq-q {
+      padding: 22px 26px;
+      font-family: var(--font-serif);
+      font-size: 19px;
+      color: #111413;
+      font-weight: 600;
+      line-height: 1.4;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-icon {
+      font-size: 24px;
+      color: var(--accent);
+      font-weight: 700;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+      padding: 0 26px;
+      font-family: 'TildaSans', sans-serif !important;
+      font-size: 16px;
+      color: #2C2E2D;
+      line-height: 1.75;
+      font-weight: 400;
+    }
+    .faq-a strong {
+      color: #111413;
+      font-weight: 600;
+    }
+    .faq-item.active .faq-a {
+      max-height: 400px;
+      padding-bottom: 24px;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 20, 19, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      max-width: 520px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 60px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 12px;
+    }
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      .cinema-container { grid-template-columns: 1fr; }
+      .bento-grid { grid-template-columns: repeat(2, 1fr); }
+      .skew-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .header-phone { display: none; }
+      .bento-grid, .skew-gallery-grid, .loc-stats-row { grid-template-columns: 1fr; }
+      .unit-card-box.active { grid-template-columns: 1fr; }
+      .stage-player { height: 260px; }
+      .map-img { height: 420px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER WITH PROGRESS PERCENT (FATUKHIN EFFECT) -->
+  <div id="preloader">
+    <div class="logo-badge-wrap" style="margin-bottom: 20px; transform: scale(1.15);">
+      <img src="images/tulum_gardens_logo.png" alt="TulumGardens The Location" class="logo-img">
+    </div>
+    <div class="pre-num" id="pre-counter">0%</div>
+    <div class="pre-bar-bg">
+      <div class="pre-bar-fill" id="pre-bar"></div>
+    </div>
+  </div>
+
+  <!-- GLASS HEADER -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="logo-box">
+        <div class="logo-badge-wrap">
+          <img src="images/tulum_gardens_logo.png" alt="TulumGardens The Location" class="logo-img">
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#benefits">Р“Р°СЂР°РЅС‚РёРё</a></li>
+        <li><a href="#location">Р›РѕРєР°С†РёСЏ</a></li>
+        <li><a href="#video">РњРµРґРёР°С‚РµРєР°</a></li>
+        <li><a href="#catalog">РўР°СѓРЅС…Р°СѓСЃС‹</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <div class="header-cta">
+        <div class="lang-switch-box">
+          <button class="lang-btn active" id="btn-lang-ru" onclick="toggleLanguage('ru')">RU</button>
+          <button class="lang-btn" id="btn-lang-en" onclick="toggleLanguage('en')">EN</button>
+        </div>
+        <a href="tel:+529841234567" class="header-phone">
+          <span>+52 (984) 123-4567</span>
+        </a>
+        <button class="btn btn-accent" id="header-catalog-btn" onclick="openModal('РЎРєР°С‡Р°С‚СЊ РїСЂРµР·РµРЅС‚Р°С†РёСЋ РїСЂРѕРµРєС‚Р°')">
+          РЎРєР°С‡Р°С‚СЊ РєР°С‚Р°Р»РѕРі
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH VIDEO BACKGROUND -->
+  <section class="hero">
+    <div class="hero-bg-media">
+      <video class="active" id="hero-v1" src="videos/tulum_drone_hero_compressed.mp4" autoplay muted playsinline></video>
+      <video id="hero-v2" autoplay muted playsinline></video>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <div class="hero-body">
+        <span class="hero-badge" style="background: rgba(255,210,80,0.18); color: #FFD24D; border-color: rgba(255,210,80,0.4);">8 Р­РљРЎРљР›Р®Р—РР’РќР«РҐ Р®РќРРўРћР’ РћРў РЎРћР‘РЎРўР’Р•РќРќРРљРђ</span>
+        <h1 class="hero-h1">
+          РћР±РµСЃРїРµС‡СЊС‚Рµ СЃРµРјСЊРµ <span style="color: #FFD24D;">РїР°СЃСЃРёРІРЅС‹Р№ РґРѕС…РѕРґ 9% РіРѕРґРѕРІС‹С…</span> Рё РІС‚РѕСЂРѕР№ РґРѕРј РЅР° РљР°СЂРёР±Р°С… РІ РўСѓР»СѓРјРµ
+        </h1>
+        <p class="hero-subtext">
+          РџСЂРµРјРёР°Р»СЊРЅС‹Рµ СЂРµР·РёРґРµРЅС†РёРё РІ Р·Р°РєСЂС‹С‚РѕРј РїСЂРёРІР°С‚РЅРѕРј РєРѕРјСЊСЋРЅРёС‚Рё РўСѓР»СѓРјР°.<br>
+          РћС‚РєСЂРѕР№С‚Рµ РґР»СЏ СЃРµР±СЏ СѓРЅРёРєР°Р»СЊРЅС‹Р№ СЌРєРѕ-СЃС‚РёР»СЊ Р¶РёР·РЅРё РЅР° РљР°СЂРёР±СЃРєРѕРј РїРѕР±РµСЂРµР¶СЊРµ РњРµРєСЃРёРєРё,<br>
+          РіРґРµ РїРµСЂРІРѕР·РґР°РЅРЅР°СЏ РїСЂРёСЂРѕРґР° СЃРѕС‡РµС‚Р°РµС‚СЃСЏ СЃ РІС‹СЃРѕРєРёРјРё СЃС‚Р°РЅРґР°СЂС‚Р°РјРё РєРѕРјС„РѕСЂС‚Р° Рё СЃС‚Р°С‚СѓСЃРѕРј.<br><br>
+          <strong style="color: var(--accent); font-weight: 600;">
+            РЎРєР°С‡Р°Р№С‚Рµ РіР°Р№Рґ В«5 РїСЂРёС‡РёРЅ РїРµСЂРµРµС…Р°С‚СЊ РІ РњРµРєСЃРёРєСѓВ» Рё Р±СЂРѕС€СЋСЂСѓ<br>
+            СЃ РїР»Р°РЅРёСЂРѕРІРєР°РјРё СЂРµР·РёРґРµРЅС†РёР№ РїСЂСЏРјРѕ СЃРµР№С‡Р°СЃ:
+          </strong>
+        </p>
+        <div class="hero-btns">
+          <button class="btn btn-accent" onclick="openModal('Р“Р»Р°РІРЅС‹Р№ СЌРєСЂР°РЅ: РЎРєР°С‡Р°С‚СЊ РіР°Р№Рґ 5 РїСЂРёС‡РёРЅ РїРµСЂРµРµС…Р°С‚СЊ РІ РњРµРєСЃРёРєСѓ')">
+            РЎРєР°С‡Р°С‚СЊ РіР°Р№Рґ В«5 РїСЂРёС‡РёРЅ РїРµСЂРµРµС…Р°С‚СЊ РІ РњРµРєСЃРёРєСѓВ»
+          </button>
+          <button class="btn btn-outline-gold" onclick="openModal('Р“Р»Р°РІРЅС‹Р№ СЌРєСЂР°РЅ: РџРѕР»СѓС‡РёС‚СЊ РєРѕРЅСЃСѓР»СЊС‚Р°С†РёСЋ')">
+            РџРѕР»СѓС‡РёС‚СЊ РєРѕРЅСЃСѓР»СЊС‚Р°С†РёСЋ
+          </button>
+        </div>
+
+        <!-- LUXURY 4-STAT GRID DIRECTLY ALIGNED WITH HERO TITLE & CONTAINER -->
+        <div class="hero-stat-cards-grid" style="margin-top: 36px;">
+          <div class="hero-stat-pill">
+            <div class="stat-top-val">Р§Р°СЃС‚РЅР°СЏ С€РєРѕР»Р°</div>
+            <div class="stat-sub-text">300 Рј вЂў РљРѕР»Р»РµРґР¶ Colegio InglГ©s РІ 3 РјРёРЅ РїРµС€РєРѕРј РїРѕ Р±РµР·РѕРїР°СЃРЅС‹Рј РїР°СЂРєРѕРІС‹Рј Р°Р»Р»РµСЏРј</div>
+          </div>
+          <div class="hero-stat-pill">
+            <div class="stat-top-val">Р Р°Р·РІРёС‚Р°СЏ РёРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂР°</div>
+            <div class="stat-sub-text">РђСЌСЂРѕРїРѕСЂС‚ TQO, РїРѕРµР·Рґ Tren Maya, РўР¦, РґРµС‚СЃРєРёРµ СЃР°РґС‹, РїР°СЂРєРё Рё С‡Р°СЃС‚РЅС‹Рµ РєР»РёРЅРёРєРё</div>
+          </div>
+          <div class="hero-stat-pill">
+            <div class="stat-top-val">100% Р¤СЂРёС…РѕР»Рґ</div>
+            <div class="stat-sub-text">Р‘РµР·СѓСЃР»РѕРІРЅР°СЏ Р»РёС‡РЅР°СЏ С‡Р°СЃС‚РЅР°СЏ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚СЊ РЅР° РЅРµРґРІРёР¶РёРјРѕСЃС‚СЊ Рё Р·РµРјР»СЋ СЃ РїСЂР°РІРѕРј РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ</div>
+          </div>
+          <div class="hero-stat-pill">
+            <div class="stat-top-val">15 РјРёРЅСѓС‚ РґРѕ РљР°СЂРёР±РѕРІ</div>
+            <div class="stat-sub-text">Р‘РµР»РѕСЃРЅРµР¶РЅС‹Рµ РєР°СЂРёР±СЃРєРёРµ РїР»СЏР¶Рё, Р±РёРѕСЃС„РµСЂРЅС‹Р№ Р·Р°РїРѕРІРµРґРЅРёРє Jaguar Park Рё РїР»СЏР¶РЅС‹Рµ РєР»СѓР±С‹</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUNNING MARQUEE TICKER (FATUKHIN EFFECT) -->
+  <div class="ticker-bar">
+    <div class="marquee-track">
+      <div class="marquee-item">8 РўР°СѓРЅС…Р°СѓСЃРѕРІ <span>РѕС‚ СЃРѕР±СЃС‚РІРµРЅРЅРёРєР°</span></div>
+      <div class="marquee-item">Р§Р°СЃС‚РЅР°СЏ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚СЊ <span>Р¤СЂРёС…РѕР»Рґ</span></div>
+      <div class="marquee-item">Р”РѕС…РѕРґРЅРѕСЃС‚СЊ <span>9% РіРѕРґРѕРІС‹С…</span></div>
+      <div class="marquee-item">РЎС‚Р°С‚СѓСЃ СЂРµР·РёРґРµРЅС‚Р° <span>Р’РќР– Рё РџР°СЃРїРѕСЂС‚ 150+ СЃС‚СЂР°РЅ</span></div>
+      <div class="marquee-item">РџР»СЏР¶Рё РљР°СЂРёР±СЃРєРѕРіРѕ РјРѕСЂСЏ <span>15 РјРёРЅСѓС‚</span></div>
+      <div class="marquee-item">РЁРєРѕР»Р° Colegio InglГ©s <span>300 РјРµС‚СЂРѕРІ</span></div>
+      <div class="marquee-item">РђРЅРіР»РёР№СЃРєР°СЏ С€РєРѕР»Р° <span>Colegio InglГ©s Р±Р»РёР·РєРѕ</span></div>
+      <div class="marquee-item">Р­РєСЃРєР»СЋР·РёРІРЅС‹Рµ СЋРЅРёС‚С‹ <span>РѕС‚ СЃРѕР±СЃС‚РІРµРЅРЅРёРєР°</span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-item">8 РўР°СѓРЅС…Р°СѓСЃРѕРІ <span>РѕС‚ СЃРѕР±СЃС‚РІРµРЅРЅРёРєР°</span></div>
+      <div class="marquee-item">Р§Р°СЃС‚РЅР°СЏ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚СЊ <span>Р¤СЂРёС…РѕР»Рґ</span></div>
+      <div class="marquee-item">Р”РѕС…РѕРґРЅРѕСЃС‚СЊ <span>9% РіРѕРґРѕРІС‹С…</span></div>
+      <div class="marquee-item">РЎС‚Р°С‚СѓСЃ СЂРµР·РёРґРµРЅС‚Р° <span>Р’РќР– Рё РџР°СЃРїРѕСЂС‚ 150+ СЃС‚СЂР°РЅ</span></div>
+      <div class="marquee-item">РџР»СЏР¶Рё РљР°СЂРёР±СЃРєРѕРіРѕ РјРѕСЂСЏ <span>15 РјРёРЅСѓС‚</span></div>
+      <div class="marquee-item">РЁРєРѕР»Р° Colegio InglГ©s <span>300 РјРµС‚СЂРѕРІ</span></div>
+      <div class="marquee-item">РђРЅРіР»РёР№СЃРєР°СЏ С€РєРѕР»Р° <span>Colegio InglГ©s Р±Р»РёР·РєРѕ</span></div>
+      <div class="marquee-item">Р­РєСЃРєР»СЋР·РёРІРЅС‹Рµ СЋРЅРёС‚С‹ <span>РѕС‚ СЃРѕР±СЃС‚РІРµРЅРЅРёРєР°</span></div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       SECTION 2: LEGAL & FINANCIAL GUARANTEES (BENTO CARDS)
+       ======================================================== -->
+  <section id="benefits" style="background: var(--bg);">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Р“Р°СЂР°РЅС‚РёРё Рё РЎС‚Р°С‚СѓСЃ</span>
+        <h2 class="sec-title">Р®СЂРёРґРёС‡РµСЃРєР°СЏ РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ<br>Рё РїСЂРёРІРёР»РµРіРёРё СЂРµР·РёРґРµРЅС‚РѕРІ</h2>
+        <p class="sec-desc">РџРѕР»РЅР°СЏ РїСЂР°РІРѕРІР°СЏ Р·Р°С‰РёС‚Р°, РіРѕС‚РѕРІР°СЏ РѕС‚РµР»СЊРЅР°СЏ РјРѕРґРµР»СЊ СѓРїСЂР°РІР»РµРЅРёСЏ Рё РёРґРµР°Р»СЊРЅС‹Рµ СѓСЃР»РѕРІРёСЏ РґР»СЏ Р¶РёР·РЅРё СЃРµРјСЊРё.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- CARD 1 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-num">01</span>
+              <span class="bento-tag">Р®СЂРёРґРёС‡РµСЃРєРёР№ СЃС‚Р°С‚СѓСЃ</span>
+            </div>
+            <h3 class="bento-title">100% Р¤СЂРёС…РѕР»Рґ<br>РЅР° С„РёР·РёС‡РµСЃРєРѕРµ Р»РёС†Рѕ</h3>
+            <p class="bento-desc">РљР°Р¶РґС‹Р№ С‚Р°СѓРЅС…Р°СѓСЃ РїРµСЂРµРґР°РµС‚СЃСЏ РІ Р±РµР·СѓСЃР»РѕРІРЅСѓСЋ Р»РёС‡РЅСѓСЋ С‡Р°СЃС‚РЅСѓСЋ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚СЊ (Р¤СЂРёС…РѕР»Рґ) РЅР° С„РёР·Р»РёС†Рѕ СЃ 100% РІР»Р°РґРµРЅРёРµРј Р·РµРјР»РµР№ Рё СЃС‚СЂРѕРµРЅРёРµРј, РїСЂР°РІРѕРј РїРµСЂРµРїСЂРѕРґР°Р¶Рё, СЃРґР°С‡Рё Рё РґР°СЂРµРЅРёСЏ.</p>
+          </div>
+          <div class="bento-bottom-row">
+            <div class="bento-arrow">в†—</div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-num">02</span>
+              <span class="bento-tag">РЎС‚Р°С‚СѓСЃ Рё Р“СЂР°Р¶РґР°РЅСЃС‚РІРѕ</span>
+            </div>
+            <h3 class="bento-title">Р’РќР– Рё РџР°СЃРїРѕСЂС‚<br>(150+ СЃС‚СЂР°РЅ Р±РµР· РІРёР·)</h3>
+            <p class="bento-desc">РРЅРІРµСЃС‚РёС†РёРё РґР°СЋС‚ РІР°Рј Рё РІР°С€РµР№ СЃРµРјСЊРµ РїСЂР°РІРѕ РЅР° РїРѕР»СѓС‡РµРЅРёРµ Р’РќР– Residente Temporal РІ РњРµРєСЃРёРєРµ СЃ РїРµСЂСЃРїРµРєС‚РёРІРѕР№ РѕС„РѕСЂРјР»РµРЅРёСЏ РіСЂР°Р¶РґР°РЅСЃС‚РІР°. РџР°СЃРїРѕСЂС‚ РњРµРєСЃРёРєРё РѕР±РµСЃРїРµС‡РёРІР°РµС‚ Р±РµР·РІРёР·РѕРІС‹Р№ РІСЉРµР·Рґ РІ 150+ СЃС‚СЂР°РЅ РјРёСЂР°.</p>
+          </div>
+          <div class="bento-bottom-row">
+            <div class="bento-arrow">в†—</div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-num">03</span>
+              <span class="bento-tag">РЎРµСЂРІРёСЃ Рё РѕРїРµСЂР°С†РёРѕРЅРєР°</span>
+            </div>
+            <h3 class="bento-title">РўРѕРїРѕРІР°СЏ РЈРїСЂР°РІР»СЏСЋС‰Р°СЏ<br>РљРѕРјРїР°РЅРёСЏ</h3>
+            <p class="bento-desc">РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅР°СЏ РЈРїСЂР°РІР»СЏСЋС‰Р°СЏ РљРѕРјРїР°РЅРёСЏ РїРѕР»РЅРѕРіРѕ С†РёРєР»Р° Р±РµСЂРµС‚ РЅР° СЃРµР±СЏ 100% РѕРїРµСЂР°С†РёРѕРЅРЅРѕР№ СЂР°Р±РѕС‚С‹: РїСЂРµРјРёР°Р»СЊРЅРѕРµ РїСЂРѕРґРІРёР¶РµРЅРёРµ, РІСЃС‚СЂРµС‡Сѓ РіРѕСЃС‚РµР№, РєР»РёРЅРёРЅРі, РѕС…СЂР°РЅСѓ Рё СЂРµРіСѓР»СЏСЂРЅС‹Рµ РІС‹РїР»Р°С‚С‹ РЅР° РІР°С€ СЃС‡РµС‚.</p>
+          </div>
+          <div class="bento-bottom-row">
+            <div class="bento-arrow">в†—</div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-num">04</span>
+              <span class="bento-tag">РђСЂРµРЅРґРЅС‹Р№ РґРѕС…РѕРґ Рё Р›РёРєРІРёРґРЅРѕСЃС‚СЊ</span>
+            </div>
+            <h3 class="bento-title">РџР°СЃСЃРёРІРЅС‹Р№ РґРѕС…РѕРґ<br>9% РіРѕРґРѕРІС‹С…</h3>
+            <p class="bento-desc">РРЅРЅРѕРІР°С†РёРѕРЅРЅР°СЏ СЃРёСЃС‚РµРјР° Lock-Off РїРѕР·РІРѕР»СЏРµС‚ РєРѕРјС„РѕСЂС‚РЅРѕ РїСЂРѕР¶РёРІР°С‚СЊ РІ РѕРґРЅРѕР№ С‡Р°СЃС‚Рё СЂРµР·РёРґРµРЅС†РёРё Рё РїР°СЂР°Р»Р»РµР»СЊРЅРѕ СЃРґР°РІР°С‚СЊ РѕСЃС‚Р°Р»СЊРЅС‹Рµ Р°РІС‚РѕРЅРѕРјРЅС‹Рµ Р·РѕРЅС‹. Р”РµС„РёС†РёС‚ СЃРµРјРµР№РЅС‹С… Р»РѕС‚РѕРІ РіР°СЂР°РЅС‚РёСЂСѓРµС‚ Р±С‹СЃС‚СЂСѓСЋ Рё РІС‹РіРѕРґРЅСѓСЋ РїРµСЂРµРїСЂРѕРґР°Р¶Сѓ.</p>
+          </div>
+          <div class="bento-bottom-row">
+            <div class="bento-arrow">в†—</div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-num">05</span>
+              <span class="bento-tag">РћР±СЂР°Р·РѕРІР°РЅРёРµ Рё Р”РµС‚Рё</span>
+            </div>
+            <h3 class="bento-title">300 РјРµС‚СЂРѕРІ РґРѕ С€РєРѕР»С‹<br>Colegio InglГ©s</h3>
+            <p class="bento-desc">Р’СЃРµРіРѕ РІ 300 РјРµС‚СЂР°С… РЅР°С…РѕРґРёС‚СЃСЏ РІРµРґСѓС‰РёР№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ Р±РёР»РёРЅРіРІР°Р»СЊРЅС‹Р№ РєРѕР»Р»РµРґР¶ Colegio InglГ©s (Р°РєРєСЂРµРґРёС‚Р°С†РёСЏ IB / Cambridge). Р”РµС‚Рё РґРѕС…РѕРґСЏС‚ РЅР° Р·Р°РЅСЏС‚РёСЏ Р·Р° 3 РјРёРЅСѓС‚С‹ РїРѕ Р·Р°РєСЂС‹С‚С‹Рј РїР°СЂРєРѕРІС‹Рј Р°Р»Р»РµСЏРј Р±РµР· РјР°С€РёРЅ.</p>
+          </div>
+          <div class="bento-bottom-row">
+            <div class="bento-arrow">в†—</div>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-num">06</span>
+              <span class="bento-tag">РРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂР° Рё Р”РѕСЂРѕРіРё</span>
+            </div>
+            <h3 class="bento-title">Р Р°Р·РІРёС‚Р°СЏ РёРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂР°<br>Рё РўРѕСЂРіРѕРІС‹Рµ Р¦РµРЅС‚СЂС‹</h3>
+            <p class="bento-desc">Р’ РЅРµРїРѕСЃСЂРµРґСЃС‚РІРµРЅРЅРѕР№ Р±Р»РёР·РѕСЃС‚Рё СЂР°СЃРїРѕР»РѕР¶РµРЅ РЅРѕРІС‹Р№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ Р°СЌСЂРѕРїРѕСЂС‚ TQO, СЃРєРѕСЂРѕСЃС‚РЅРѕР№ РїРѕРµР·Рґ Tren Maya (800 Рј), СЃСѓРїРµСЂРјР°СЂРєРµС‚С‹ Soriana, С‚РѕСЂРіРѕРІС‹Рµ С†РµРЅС‚СЂС‹, Michelin-СЂРµСЃС‚РѕСЂР°РЅ Cetli Рё С„РµСЃС‚РёРІР°Р»СЊРЅС‹Р№ С†РµРЅС‚СЂ Zamna.</p>
+          </div>
+          <div class="bento-bottom-row">
+            <div class="bento-arrow">в†—</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BROKER CONSULTATION FULL-WIDTH BANNER -->
+      <div style="margin-top:28px;background:linear-gradient(120deg,#0e1512 0%,#1a2b1f 40%,#111c28 70%,#1e1410 100%);border-radius:16px;padding:44px 52px;display:flex;align-items:center;justify-content:space-between;gap:48px;border:1px solid rgba(193,160,128,0.22);position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-80px;left:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(193,160,128,0.1) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:-100px;right:80px;width:340px;height:340px;background:radial-gradient(circle,rgba(40,110,70,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(193,160,128,0.4),transparent);"></div>
+
+        <div style="flex:1;min-width:0;position:relative;z-index:2;">
+          <div style="font-family:var(--font-sans);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:14px;">РџРµСЂСЃРѕРЅР°Р»СЊРЅР°СЏ РєРѕРЅСЃСѓР»СЊС‚Р°С†РёСЏ В· Р‘РµСЃРїР»Р°С‚РЅРѕ</div>
+          <h3 style="font-family:var(--font-serif);font-size:clamp(22px,2.2vw,32px);color:#FFFFFF;line-height:1.25;margin-bottom:14px;font-weight:500;">
+            РЈР·РЅР°Р№С‚Рµ, РєР°РєР°СЏ СЂРµР·РёРґРµРЅС†РёСЏ РїРѕРґС…РѕРґРёС‚<br>РёРјРµРЅРЅРѕ РІР°С€РµР№ СЃРµРјСЊРµ Рё Р±СЋРґР¶РµС‚Сѓ
+          </h3>
+          <p style="font-size:15px;color:rgba(255,255,255,0.58);line-height:1.7;font-weight:300;max-width:540px;margin-bottom:20px;">
+            Р‘СЂРѕРєРµСЂ РїСЂРѕРІРµРґС‘С‚ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹Р№ СЂР°Р·Р±РѕСЂ: РїРѕРґР±РµСЂС‘С‚ СЋРЅРёС‚, РїСЂРѕСЃС‡РёС‚Р°РµС‚ РґРѕС…РѕРґРЅРѕСЃС‚СЊ РїРѕ СЃРёСЃС‚РµРјРµ Lock-Off Рё РѕР±СЉСЏСЃРЅРёС‚ РІСЃРµ РґРµС‚Р°Р»Рё С„СЂРёС…РѕР»РґР°, Р’РќР– Рё СѓРїСЂР°РІР»РµРЅРёСЏ Р±РµР· РІРѕРґС‹.
+          </p>
+          <div style="display:flex;gap:28px;font-size:12.5px;color:rgba(255,255,255,0.38);font-family:var(--font-sans);">
+            <span>вЏ±&nbsp;РћС‚РІРµС‚ Р·Р° 15 РјРёРЅСѓС‚</span>
+            <span>рџ”’&nbsp;РљРѕРЅС„РёРґРµРЅС†РёР°Р»СЊРЅРѕ</span>
+            <span>вњ¦&nbsp;Р‘РµР· РѕР±СЏР·Р°С‚РµР»СЊСЃС‚РІ</span>
+          </div>
+        </div>
+
+        <div style="flex-shrink:0;position:relative;z-index:2;">
+          <button onclick="openModal('Р“Р°СЂР°РЅС‚РёРё: РљРѕРЅСЃСѓР»СЊС‚Р°С†РёСЏ Р±СЂРѕРєРµСЂР°')" style="background:linear-gradient(135deg,#C1A080 0%,#A07850 100%);color:#111413;border:none;border-radius:10px;padding:20px 40px;font-family:var(--font-sans);font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;white-space:nowrap;box-shadow:0 10px 32px rgba(193,160,128,0.35);transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 16px 40px rgba(193,160,128,0.5)'" onmouseout="this.style.transform='';this.style.boxShadow='0 10px 32px rgba(193,160,128,0.35)'">
+            РџРѕР»СѓС‡РёС‚СЊ РєРѕРЅСЃСѓР»СЊС‚Р°С†РёСЋ в†’
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 3: LOCATION & INTERACTIVE MAP
+       ======================================================== -->
+  <section class="map-section" id="location">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">РРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂР° Рё Р»РѕРєР°С†РёСЏ</span>
+        <h2 class="sec-title">Р­РїРёС†РµРЅС‚СЂ РєСѓСЂРѕСЂС‚РЅРѕРіРѕ РўСѓР»СѓРјР°: 15 РјРёРЅСѓС‚ РґРѕ РљР°СЂРёР±СЃРєРѕРіРѕ РјРѕСЂСЏ</h2>
+        <p class="sec-desc">РРЅС‚РµСЂР°РєС‚РёРІРЅР°СЏ РєР°СЂС‚Р°: РЅР°РІРµРґРёС‚Рµ РЅР° РјРµС‚РєРё, С‡С‚РѕР±С‹ СѓРІРёРґРµС‚СЊ СЂР°СЃСЃС‚РѕСЏРЅРёСЏ РґРѕ РєР»СЋС‡РµРІС‹С… РѕР±СЉРµРєС‚РѕРІ РёРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂС‹.</p>
+      </div>
+
+      <div class="map-box" style="position: relative;">
+        <div id="leaflet-map-canvas" style="width: 100%; height: 540px; border-radius: var(--radius-lg); border: 1px solid var(--border-accent); z-index: 1;"></div>
+      </div>
+
+      <!-- COMPACT INTERACTIVE LOCATION & PROJECT USP PANEL -->
+      <div class="loc-interactive-panel">
+        <!-- LEFT TAB SELECTOR (8 COMPREHENSIVE USPs) -->
+        <div class="loc-usp-nav">
+          <div class="loc-usp-tab active" onclick="switchLocUsp(0)">
+            <div class="tab-left">
+              <span class="tab-num">01</span>
+              <span class="tab-name">РђСЌСЂРѕРїРѕСЂС‚ TQO Рё РџРѕРµР·Рґ Tren Maya</span>
+            </div>
+            <span class="tab-val">800 Рј</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(1)">
+            <div class="tab-left">
+              <span class="tab-num">02</span>
+              <span class="tab-name">РўРѕСЂРіРѕРІС‹Рµ Р¦РµРЅС‚СЂС‹ Рё Soriana</span>
+            </div>
+            <span class="tab-val">РќРѕРІС‹Рµ РўР¦</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(2)">
+            <div class="tab-left">
+              <span class="tab-num">03</span>
+              <span class="tab-name">РџР»СЏР¶Рё РљР°СЂРёР±РѕРІ Рё Jaguar Park</span>
+            </div>
+            <span class="tab-val">15 РјРёРЅ</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(3)">
+            <div class="tab-left">
+              <span class="tab-num">04</span>
+              <span class="tab-name">В«Р’С‚РѕСЂРѕРµ Р‘Р°Р»РёВ» & РљСЂРёРїС‚Рѕ-РєРѕРјСЊСЋРЅРёС‚Рё</span>
+            </div>
+            <span class="tab-val">3-4С… СЂРѕСЃС‚</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(4)">
+            <div class="tab-left">
+              <span class="tab-num">05</span>
+              <span class="tab-name">РЁРєРѕР»Р° Colegio InglГ©s</span>
+            </div>
+            <span class="tab-val">300 Рј</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(5)">
+            <div class="tab-left">
+              <span class="tab-num">06</span>
+              <span class="tab-name">Р РµСЃС‚РѕСЂР°РЅС‹ & Michelin</span>
+            </div>
+            <span class="tab-val">Michelin в…</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(6)">
+            <div class="tab-left">
+              <span class="tab-num">07</span>
+              <span class="tab-name">100% Р¤СЂРёС…РѕР»Рґ Рё РўРµСЂСЂР°СЃС‹</span>
+            </div>
+            <span class="tab-val">Р¤СЂРёС…РѕР»Рґ</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(7)">
+            <div class="tab-left">
+              <span class="tab-num">08</span>
+              <span class="tab-name">РџР°СЃСЃРёРІРЅС‹Р№ РґРѕС…РѕРґ 9% ROI & РЈРїСЂР°РІР»РµРЅРёРµ</span>
+            </div>
+            <span class="tab-val">9% ROI</span>
+          </div>
+        </div>
+
+        <!-- RIGHT ANIMATED DISPLAY (MAGAZINE PHOTO CARD) -->
+        <div class="loc-usp-display">
+          <div class="loc-display-img-wrap">
+            <img src="images/img_4.jpg" id="usp-img" class="loc-display-img" alt="РРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂР° Tulum Gardens" loading="eager" fetchpriority="high">
+            <div class="loc-display-img-overlay">
+              <div class="loc-img-badge" id="usp-badge">30 РјРёРЅ РґРѕ Р°СЌСЂРѕРїРѕСЂС‚Р° TQO</div>
+            </div>
+          </div>
+          <div class="loc-display-content">
+            <div>
+              <span class="loc-display-tag" id="usp-tag">01 / РђРІРёР°СЃРѕРѕР±С‰РµРЅРёРµ Рё РЎРєРѕСЂРѕСЃС‚РЅРѕР№ РўСЂР°РЅСЃРїРѕСЂС‚</span>
+              <h3 class="loc-display-title" id="usp-title">РќРѕРІС‹Р№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ Р°СЌСЂРѕРїРѕСЂС‚ TQO Рё СЃС‚Р°РЅС†РёСЏ РїРѕРµР·РґР° Tren Maya (800 Рј)</h3>
+              <p class="loc-display-text" id="usp-text">
+                РўСѓР»СѓРј РїРѕР»СѓС‡РёР» РєРѕР»РѕСЃСЃР°Р»СЊРЅС‹Р№ РёРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂРЅС‹Р№ РёРјРїСѓР»СЊСЃ: <strong>РЅРѕРІС‹Р№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ Р°СЌСЂРѕРїРѕСЂС‚ Р¤РµР»РёРїРµ РљР°СЂСЂРёР»СЊРѕ РџСѓСЌСЂС‚Рѕ (TQO)</strong> Рё <strong>СЃС‚Р°РЅС†РёСЏ СЃРєРѕСЂРѕСЃС‚РЅРѕРіРѕ РїРѕРµР·РґР° Tren Maya РІСЃРµРіРѕ РІ 800 РјРµС‚СЂР°С… РѕС‚ РєРѕРјРїР»РµРєСЃР°</strong>. РЎРєРѕСЂРѕСЃС‚РЅР°СЏ Р–Р”-РјР°РіРёСЃС‚СЂР°Р»СЊ СЃРІСЏР·С‹РІР°РµС‚ СЂРµР·РёРґРµРЅС‚РѕРІ СЃ Р°СЌСЂРѕРїРѕСЂС‚РѕРј, РљР°РЅРєСѓРЅРѕРј, РџР»Р°Р№СЏ-РґРµР»СЊ-РљР°СЂРјРµРЅ Рё Р®РєР°С‚Р°РЅРѕРј, Р° РЅРѕРІС‹Рµ РјРЅРѕРіРѕРїРѕР»РѕСЃРЅС‹Рµ Р°РІС‚РѕРјР°РіРёСЃС‚СЂР°Р»Рё РѕР±РµСЃРїРµС‡РёРІР°СЋС‚ Р±С‹СЃС‚СЂС‹Р№ Рё РєРѕРјС„РѕСЂС‚РЅС‹Р№ С‚СЂР°С„РёРє.
+              </p>
+            </div>
+            <div class="loc-display-metric" id="usp-metric">
+              30 РјРёРЅ <span>РґРѕ РјРµР¶РґСѓРЅР°СЂРѕРґРЅРѕРіРѕ С‚РµСЂРјРёРЅР°Р»Р° TQO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 4: CINEMA THEATER & EXPANDED 21-VIDEO GALLERY
+       ======================================================== -->
+  <section class="cinema-sec" id="video">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">РњРµРґРёР°С‚РµРєР° РѕР±СЉРµРєС‚Р° РІ HD / 4K</span>
+        <h2 class="sec-title" style="line-height: 1.25; font-size: clamp(24px, 3.4vw, 38px); max-width: 900px; margin-left: auto; margin-right: auto;">Р РµР°Р»СЊРЅР°СЏ СЃС‚СЂРѕРёС‚РµР»СЊРЅР°СЏ РґРёРЅР°РјРёРєР°<br>Рё РїР°РЅРѕСЂР°РјС‹ Tulum Gardens</h2>
+        <p class="sec-desc">РРЅС‚РµСЂР°РєС‚РёРІРЅС‹Р№ РїР»РµРµСЂ: РїРµСЂРµРєР»СЋС‡Р°Р№С‚Рµ СЃСЉРµРјРєРё СЃ РґСЂРѕРЅР°, СЃС‚СЂРѕРёС‚РµР»СЊРЅСѓСЋ РґРёРЅР°РјРёРєСѓ Рё СЌРєРѕ-РѕРєСЂСѓР¶РµРЅРёРµ РІ СЂРµР°Р»СЊРЅРѕРј РІСЂРµРјРµРЅРё.</p>
+      </div>
+
+      <div class="cinema-container">
+        <!-- MAIN PLAYER STAGE -->
+        <div class="stage-wrapper">
+          <iframe id="stage-player" class="stage-player" src="https://drive.google.com/file/d/1XraGthDNOCUOd0wAC0scIgZKMshcTBjk/preview" allow="autoplay; fullscreen" allowfullscreen style="border:none;width:100%;height:100%;display:block;"></iframe>
+          <div class="stage-bar">
+            <div>
+              <h3 class="stage-title" id="stage-title">РЎСЉРµРјРєР° СЃ РґСЂРѕРЅР°: Р“СЂР°РЅРёС†С‹ РјР°СЃСЃРёРІР° Tulum Gardens</h3>
+              <p class="stage-desc" id="stage-desc">Р’РёРґ СЃРІРµСЂС…Сѓ РЅР° РјР°СЃСЃРёРІ Tulum Gardens, РіСЂР°РЅРёС†С‹ СѓС‡Р°СЃС‚РєРѕРІ Рё С‚СЂР°РЅСЃРїРѕСЂС‚РЅСѓСЋ РґРѕСЃС‚СѓРїРЅРѕСЃС‚СЊ.</p>
+            </div>
+            <button class="btn btn-accent" style="padding: 10px 20px; font-size: 11px;" onclick="openModal('РњРµРґРёР°С‚РµРєР°: Р—Р°РїСЂРѕСЃ РїРѕР»РЅРѕРіРѕ РїР°РєРµС‚Р° РјР°С‚РµСЂРёР°Р»РѕРІ')">
+              РџРѕР»СѓС‡РёС‚СЊ РјР°С‚РµСЂРёР°Р»С‹
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT PLAYLIST CONTROLLER (21 VIDEOS) -->
+        <div class="playlist-box">
+          <div class="playlist-top">
+            <span style="font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 700;">РџР»РµР№Р»РёСЃС‚ РѕР±СЉРµРєС‚Р°</span>
+            <div class="cat-btn-row">
+              <button class="cat-btn active" onclick="filterCinema('all', this)">Р’СЃРµ (21)</button>
+              <button class="cat-btn" onclick="filterCinema('drone', this)">Р”СЂРѕРЅС‹</button>
+              <button class="cat-btn" onclick="filterCinema('construction', this)">РЎС‚СЂРѕР№РєР°</button>
+              <button class="cat-btn" onclick="filterCinema('nature', this)">Р­РєРѕ</button>
+            </div>
+          </div>
+
+          <div class="playlist-scroll" id="cinema-playlist-items">
+            <!-- Dynamically populated from JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 5: UNITS CATALOG (REAL RENDERS & PLANS)
+       ======================================================== -->
+  <section id="catalog" style="background: var(--bg);">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">РђСЂС…РёС‚РµРєС‚СѓСЂРЅР°СЏ Р»РёРЅРµР№РєР°</span>
+        <h2 class="sec-title">4 С„РѕСЂРјР°С‚Р° С‚Р°СѓРЅС…Р°СѓСЃРѕРІ<br>РѕС‚ 103 РґРѕ 240 РјВІ</h2>
+        <p class="sec-desc">РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Рµ РїР°С‚РёРѕ, РїР°РЅРѕСЂР°РјРЅС‹Рµ СЃРїР°Р»СЊРЅРё, РїСЂРёРІР°С‚РЅС‹Рµ С‚РµСЂСЂР°СЃС‹ РЅР° РєСЂРѕРІР»Рµ Рё 100% РѕС„РѕСЂРјР»РµРЅРёРµ РІ Р»РёС‡РЅСѓСЋ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚СЊ.</p>
+      </div>
+
+      <div class="catalog-tabs">
+        <button class="c-tab-btn active" onclick="switchUnit(event, 'tab-gh')">Garden House (104 РјВІ)</button>
+        <button class="c-tab-btn" onclick="switchUnit(event, 'tab-p')">PentHouse (103 РјВІ)</button>
+        <button class="c-tab-btn" onclick="switchUnit(event, 'tab-pp')">PentHouse Plus (137 РјВІ)</button>
+        <button class="c-tab-btn" onclick="switchUnit(event, 'tab-s')">SkyHouse (205вЂ“240 РјВІ)</button>
+      </div>
+
+      <!-- UNIT 1: GARDEN HOUSE -->
+      <div id="tab-gh" class="unit-card-box active">
+        <div class="unit-gallery">
+          <div class="unit-main-view">
+            <img src="images/img_13.jpg" id="gh-main" alt="Garden House Р¤Р°СЃР°Рґ СЂРµР·РёРґРµРЅС†РёРё">
+          </div>
+          <div class="unit-thumbs">
+            <img src="images/img_13.jpg" onclick="swapImg('gh-main', 'images/img_13.jpg')" alt="Garden House Р¤Р°СЃР°Рґ">
+            <img src="images/img_26.jpg" onclick="swapImg('gh-main', 'images/img_26.jpg')" alt="Р“СЂР°РЅРґ-РіРѕСЃС‚РёРЅР°СЏ СЃ РєСѓС…РЅРµР№">
+            <img src="images/img_36.jpg" onclick="swapImg('gh-main', 'images/img_36.jpg')" alt="РљСЂС‹С‚РѕРµ РїР°С‚РёРѕ СЃ Р»Р°СѓРЅР¶РµРј">
+            <img src="images/img_58.jpg" onclick="swapImg('gh-main', 'images/img_58.jpg')" alt="РџСЂРµРјРёР°Р»СЊРЅР°СЏ РјР°СЃС‚РµСЂ-СЃРїР°Р»СЊРЅСЏ">
+          </div>
+        </div>
+        <div class="unit-info-box">
+          <div>
+            <h3 class="unit-h3">Garden House</h3>
+            <span class="unit-badge-specs">84 РјВІ Р¶РёР»Р°СЏ / 104 РјВІ РѕР±С‰Р°СЏ вЂў 2 СѓСЂРѕРІРЅСЏ вЂў 2 СЃРїР°Р»СЊРЅРё вЂў 2 СЃР°РЅСѓР·Р»Р° вЂў Р§Р°СЃС‚РЅС‹Р№ СЃР°Рґ & РџР°С‚РёРѕ</span>
+            <p class="unit-desc-p">
+              Р”РІСѓС…СѓСЂРѕРІРЅРµРІР°СЏ СЂРµР·РёРґРµРЅС†РёСЏ РїРµСЂРІРѕРіРѕ СѓСЂРѕРІРЅСЏ СЃ РїСЂСЏРјРѕР№ РёРЅС‚РµРіСЂР°С†РёРµР№ РІ Р»Р°РЅРґС€Р°С„С‚РЅС‹Р№ С‚СЂРѕРїРёС‡РµСЃРєРёР№ СЃР°Рґ. РќР° 1-Рј СѓСЂРѕРІРЅРµ вЂ” РіСЂР°РЅРґ-РіРѕСЃС‚РёРЅР°СЏ СЃ РїР°РЅРѕСЂР°РјРЅС‹Рј СЃР»Р°Р№Рґ-РѕСЃС‚РµРєР»РµРЅРёРµРј, РєСѓС…РЅСЏ СЃ РѕСЃС‚СЂРѕРІРѕРј РёР· РєРІР°СЂС†РёС‚Р°, РѕР±РµРґРµРЅРЅР°СЏ Р·РѕРЅР° Рё РіРѕСЃС‚РµРІРѕР№ СЃР°РЅСѓР·РµР». РќР° 2-Рј СѓСЂРѕРІРЅРµ вЂ” РјР°СЃС‚РµСЂ-СЃРїР°Р»СЊРЅСЏ СЃ РіР°СЂРґРµСЂРѕР±РЅРѕР№ Рё РІР°РЅРЅРѕР№ en-suite, РїР»СЋСЃ РІС‚РѕСЂР°СЏ СЃРїР°Р»СЊРЅСЏ.
+            </p>
+            <ul class="unit-check-list">
+              <li>РџСЂРёРІР°С‚РЅРѕРµ РєСЂС‹С‚РѕРµ РїР°С‚РёРѕ СЃ РїРµСЂРіРѕР»РѕР№ Рё РІС‹С…РѕРґРѕРј РІ Р»РёС‡РЅС‹Р№ СЃР°Рґ</li>
+              <li>Р”РІСѓС…СѓСЂРѕРІРЅРµРІР°СЏ РїР»Р°РЅРёСЂРѕРІРєР° (Ground Floor + Mezzanine)</li>
+              <li>РљСѓС…РЅСЏ СЃ РѕСЃС‚СЂРѕРІРѕРј Рё РІСЃС‚СЂРѕРµРЅРЅРѕР№ С‚РµС…РЅРёРєРѕР№ РїСЂРµРјРёСѓРј-РєР»Р°СЃСЃР°</li>
+              <li>РњР°СЃС‚РµСЂ-СЃРїР°Р»СЊРЅСЏ СЃ РёРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Рј СЃР°РЅСѓР·Р»РѕРј Рё РіР°СЂРґРµСЂРѕР±РѕРј</li>
+              <li>РњСѓР»СЊС‚РёСЃРїР»РёС‚ СЃРёСЃС‚РµРјР° РєР»РёРјР°С‚-РєРѕРЅС‚СЂРѕР»СЏ VRV РІ РєР°Р¶РґРѕР№ РєРѕРјРЅР°С‚Рµ</li>
+              <li>1 РїРµСЂСЃРѕРЅР°Р»СЊРЅРѕРµ РїР°СЂРєРѕРІРѕС‡РЅРѕРµ РјРµСЃС‚Рѕ РїРµСЂРµРґ РґРѕРјРѕРј</li>
+            </ul>
+          </div>
+          <button class="btn btn-accent btn-block" onclick="openModal('РљР°С‚Р°Р»РѕРі: Р—Р°РїСЂРѕСЃ РїР»Р°РЅРёСЂРѕРІРєРё Garden House')">РџРѕР»СѓС‡РёС‚СЊ РїР»Р°РЅРёСЂРѕРІРєСѓ РІ PDF</button>
+        </div>
+      </div>
+
+      <!-- UNIT 2: PENTHOUSE -->
+      <div id="tab-p" class="unit-card-box">
+        <div class="unit-gallery">
+          <div class="unit-main-view">
+            <img src="images/img_22.jpg" id="p-main" alt="PentHouse РџРѕСЌС‚Р°Р¶РЅС‹Р№ РїР»Р°РЅ">
+          </div>
+          <div class="unit-thumbs">
+            <img src="images/img_22.jpg" onclick="swapImg('p-main', 'images/img_22.jpg')" alt="РџРѕСЌС‚Р°Р¶РЅС‹Р№ РїР»Р°РЅ PentHouse">
+            <img src="images/img_36.jpg" onclick="swapImg('p-main', 'images/img_36.jpg')" alt="Р›Р°СѓРЅР¶-С‚РµСЂСЂР°СЃР° РЅР° РєСЂС‹С€Рµ">
+            <img src="images/img_19.jpg" onclick="swapImg('p-main', 'images/img_19.jpg')" alt="РЎРїР°Р»СЊРЅСЏ СЃ РІРёРґРѕРј РЅР° РґР¶СѓРЅРіР»Рё">
+            <img src="images/img_17.jpg" onclick="swapImg('p-main', 'images/img_17.jpg')" alt="РЎР°РЅСѓР·РµР» СЃ РѕС‚РґРµР»РєРѕР№ РїРѕРґ РєР°РјРµРЅСЊ">
+          </div>
+        </div>
+        <div class="unit-info-box">
+          <div>
+            <h3 class="unit-h3">PentHouse</h3>
+              <li>РџР°РЅРѕСЂР°РјРЅС‹Рµ РІРёРґС‹ РЅР° РєСЂРѕРЅС‹ С‚СЂРѕРїРёС‡РµСЃРєРѕРіРѕ Р»РµСЃР°</li>
+              <li>РџСЂРёРІР°С‚РЅР°СЏ С‚РµСЂСЂР°СЃР° РЅР° РєСЂРѕРІР»Рµ РґР»СЏ РєРѕРєС‚РµР№Р»РµР№ Рё BBQ</li>
+              <li>РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ Р·Р°РіСЂСѓР·РєР° РІ РІС‹СЃРѕРєРёР№ СЃРµР·РѕРЅ</li>
+              <li>100% РґРѕРІРµСЂРёС‚РµР»СЊРЅРѕРµ СѓРїСЂР°РІР»РµРЅРёРµ РѕС‚РµР»СЊРЅС‹Рј РѕРїРµСЂР°С‚РѕСЂРѕРј</li>
+            </ul>
+          </div>
+          <button class="btn btn-accent btn-block" onclick="openModal('РљР°С‚Р°Р»РѕРі: Р—Р°РїСЂРѕСЃ РїР»Р°РЅРёСЂРѕРІРєРё PentHouse')">РџРѕР»СѓС‡РёС‚СЊ РїР»Р°РЅРёСЂРѕРІРєСѓ РІ PDF</button>
+        </div>
+      </div>
+
+      <!-- UNIT 3: PENTHOUSE PLUS -->
+      <div id="tab-pp" class="unit-card-box">
+        <div class="unit-gallery">
+          <div class="unit-main-view">
+            <img src="images/img_23.jpg" id="pp-main" alt="PentHouse Plus РџРѕСЌС‚Р°Р¶РЅС‹Р№ РїР»Р°РЅ">
+          </div>
+          <div class="unit-thumbs">
+            <img src="images/img_23.jpg" onclick="swapImg('pp-main', 'images/img_23.jpg')" alt="PentHouse Plus">
+            <img src="images/img_24.jpg" onclick="swapImg('pp-main', 'images/img_24.jpg')" alt="Р¤Р°СЃР°Рґ РІРµСЂС…РЅРµРіРѕ СѓСЂРѕРІРЅСЏ">
+            <img src="images/img_62.jpg" onclick="swapImg('pp-main', 'images/img_62.jpg')" alt="РЈРІРµР»РёС‡РµРЅРЅР°СЏ С‚РµСЂСЂР°СЃР°">
+            <img src="images/img_56.jpg" onclick="swapImg('pp-main', 'images/img_56.jpg')" alt="РњР°СЃС‚РµСЂ-СЃРїР°Р»СЊРЅСЏ Plus">
+          </div>
+        </div>
+        <div class="unit-info-box">
+          <div>
+            <h3 class="unit-h3">PentHouse Plus</h3>
+            <span class="unit-badge-specs">90 РјВІ Р¶РёР»Р°СЏ / 137 РјВІ РѕР±С‰Р°СЏ вЂў 3 СЃРїР°Р»СЊРЅРё вЂў 3 СЃР°РЅСѓР·Р»Р°</span>
+            <p class="unit-desc-p">
+              Р Р°СЃС€РёСЂРµРЅРЅР°СЏ СЂРµР·РёРґРµРЅС†РёСЏ РґР»СЏ Р±РѕР»СЊС€РѕР№ СЃРµРјСЊРё: 3 РїРѕР»РЅРѕС†РµРЅРЅС‹Рµ РёР·РѕР»РёСЂРѕРІР°РЅРЅС‹Рµ СЃРїР°Р»СЊРЅРё, РїСЂРѕСЃС‚РѕСЂРЅР°СЏ СЃС‚РѕР»РѕРІР°СЏ Рё СѓРІРµР»РёС‡РµРЅРЅР°СЏ РїСЂРёРІР°С‚РЅР°СЏ Р·РѕРЅР° РѕС‚РґС‹С…Р° РЅР° РєСЂС‹С€Рµ.
+            </p>
+            <ul class="unit-check-list">
+              <li>3 РїРѕР»РЅРѕС†РµРЅРЅС‹Рµ СЃРїР°Р»СЊРЅРё Рё 3 РІР°РЅРЅС‹Рµ РєРѕРјРЅР°С‚С‹</li>
+              <li>РџСЂРѕСЃС‚РѕСЂРЅР°СЏ Р·РѕРЅР° BBQ Рё СЂРµР»Р°РєСЃР° РЅР° РєСЂС‹С€Рµ РїРѕРґ РїРµСЂРіРѕР»РѕР№</li>
+              <li>1 РїР°СЂРєРѕРІРѕС‡РЅРѕРµ РјРµСЃС‚Рѕ РЅР° Р·Р°РєСЂС‹С‚РѕР№ С‚РµСЂСЂРёС‚РѕСЂРёРё</li>
+              <li>Р’С‹СЃРѕРєР°СЏ Р»РёРєРІРёРґРЅРѕСЃС‚СЊ РїСЂРё Р±С‹СЃС‚СЂРѕР№ РїРµСЂРµРїСЂРѕРґР°Р¶Рµ Р»РѕС‚Р°</li>
+            </ul>
+          </div>
+          <button class="btn btn-accent btn-block" onclick="openModal('РљР°С‚Р°Р»РѕРі: Р—Р°РїСЂРѕСЃ РїР»Р°РЅРёСЂРѕРІРєРё PentHouse Plus')">РџРѕР»СѓС‡РёС‚СЊ РїР»Р°РЅРёСЂРѕРІРєСѓ РІ PDF</button>
+        </div>
+      </div>
+
+      <!-- UNIT 4: SKYHOUSE -->
+      <div id="tab-s" class="unit-card-box">
+        <div class="unit-gallery">
+          <div class="unit-main-view">
+            <img src="images/img_33.jpg" id="s-main" alt="SkyHouse РђСЂС…РёС‚РµРєС‚СѓСЂРЅС‹Р№ РїР»Р°РЅ">
+          </div>
+          <div class="unit-thumbs">
+            <img src="images/img_33.jpg" onclick="swapImg('s-main', 'images/img_33.jpg')" alt="SkyHouse Р¤Р»Р°РіРјР°РЅ">
+            <img src="images/img_26.jpg" onclick="swapImg('s-main', 'images/img_26.jpg')" alt="Р“СЂР°РЅРґ-РіРѕСЃС‚РёРЅР°СЏ СЃ РєСѓС…РЅРµР№">
+            <img src="images/img_38.jpg" onclick="swapImg('s-main', 'images/img_38.jpg')" alt="РљСЂРѕРІРµР»СЊРЅР°СЏ VIP-С‚РµСЂСЂР°СЃР°">
+            <img src="images/img_58.jpg" onclick="swapImg('s-main', 'images/img_58.jpg')" alt="РџСЂРµРјРёР°Р»СЊРЅР°СЏ РјР°СЃС‚РµСЂ-СЃРїР°Р»СЊРЅСЏ">
+          </div>
+        </div>
+        <div class="unit-info-box">
+          <div>
+            <h3 class="unit-h3">SkyHouse (Р¤Р»Р°РіРјР°РЅ)</h3>
+            <span class="unit-badge-specs">160 РјВІ Р¶РёР»Р°СЏ / 205вЂ“240 РјВІ РѕР±С‰Р°СЏ вЂў 5 СЃРїР°Р»РµРЅ вЂў 4 СЃР°РЅСѓР·Р»Р°</span>
+            <p class="unit-desc-p">
+              РўСЂРµС…СѓСЂРѕРІРЅРµРІР°СЏ СЂРµР·РёРґРµРЅС†РёСЏ СЃ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊСЋ РЅРµР·Р°РІРёСЃРёРјРѕРіРѕ СЂР°Р·РґРµР»РµРЅРёСЏ Р¶РёР»С‹С… Р·РѕРЅ РґР»СЏ РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕР№ СЃРґР°С‡Рё РЅРµСЃРєРѕР»СЊРєРёРј Р°СЂРµРЅРґР°С‚РѕСЂР°Рј Рё РјР°РєСЃРёРјРёР·Р°С†РёРё РєСЌС€С„Р»РѕСѓ.
+            </p>
+            <ul class="unit-check-list">
+              <li>Р’РѕР·РјРѕР¶РЅРѕСЃС‚СЊ СЂР°Р·РґРµР»СЊРЅРѕР№ СЃРґР°С‡Рё Р·РѕРЅ (СЃРёСЃС‚РµРјР° Lock-Off)</li>
+              <li>5 РїСЂРѕСЃС‚РѕСЂРЅС‹С… СЃРїР°Р»РµРЅ РґР»СЏ VIP-РіРѕСЃС‚РµР№ Рё Р±РѕР»СЊС€РёС… СЃРµРјРµР№</li>
+              <li>РљСЂСѓРїРЅРѕС„РѕСЂРјР°С‚РЅР°СЏ Р»Р°СѓРЅР¶-С‚РµСЂСЂР°СЃР° СЃ РѕР±Р·РѕСЂРѕРј 360В°</li>
+              <li>РџР°СЃСЃРёРІРЅС‹Р№ РґРѕС…РѕРґ 9% РіРѕРґРѕРІС‹С… РІ С‚РІРµСЂРґРѕР№ РІР°Р»СЋС‚Рµ</li>
+            </ul>
+          </div>
+          <button class="btn btn-accent btn-block" onclick="openModal('РљР°С‚Р°Р»РѕРі: Р—Р°РїСЂРѕСЃ РїР»Р°РЅРёСЂРѕРІРєРё SkyHouse')">РџРѕР»СѓС‡РёС‚СЊ РїР»Р°РЅРёСЂРѕРІРєСѓ РІ PDF</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 6: FAQ (RICH ACCORDION WITH REAL FACTS)
+       ======================================================== -->
+  <!-- ========================================================
+       SECTION 6: FAQ (2-COLUMN SPLIT LAYOUT & HIGH-CONTRAST READABILITY)
+       ======================================================== -->
+  <section id="faq" style="background: var(--bg-white);">
+    <div class="container">
+      <div class="faq-split-layout">
+        <!-- LEFT COLUMN: TITLE, DESC & CTA BUTTON -->
+        <div class="faq-left-col">
+          <span class="sec-tag">Р’РѕРїСЂРѕСЃС‹ Рё РѕС‚РІРµС‚С‹</span>
+          <h2 class="sec-title" style="text-align: left; margin-bottom: 20px;">Р’СЃС‘ Рѕ Р¶РёР·РЅРё, РЅР°Р»РѕРіР°С…<br>Рё РїСЂР°РІР°С… СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚Рё РІ РњРµРєСЃРёРєРµ</h2>
+          <p class="sec-desc" style="text-align: left; margin-bottom: 32px;">
+            РџРѕРґСЂРѕР±РЅР°СЏ СЋСЂРёРґРёС‡РµСЃРєР°СЏ Рё РїСЂР°РєС‚РёС‡РµСЃРєР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ РґР»СЏ РёРЅРІРµСЃС‚РѕСЂРѕРІ Рё СЃРµРјРµР№, РїР»Р°РЅРёСЂСѓСЋС‰РёС… РїРѕРєСѓРїРєСѓ РЅРµРґРІРёР¶РёРјРѕСЃС‚Рё РІ РўСѓР»СѓРјРµ.
+          </p>
+          <button class="btn btn-accent" onclick="openModal('РЎРµРєС†РёСЏ FAQ: Р—Р°РґР°С‚СЊ РІРѕРїСЂРѕСЃ СЌРєСЃРїРµСЂС‚Сѓ')">
+            Р—Р°РґР°С‚СЊ РІРѕРїСЂРѕСЃ СЌРєСЃРїРµСЂС‚Сѓ
+          </button>
+        </div>
+
+        <!-- RIGHT COLUMN: 7 FAQ ACCORDION ITEMS -->
+        <div class="faq-right-col">
+          <div class="faq-item active" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>РљР°Рє РѕС„РѕСЂРјР»СЏРµС‚СЃСЏ РїСЂР°РІРѕ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚Рё РЅР° РЅРµРґРІРёР¶РёРјРѕСЃС‚СЊ Рё Р·РµРјР»СЋ?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              РљР°Р¶РґС‹Р№ СЋРЅРёС‚ РїРµСЂРµРґР°РµС‚СЃСЏ СЃРѕ <strong>100% РѕС„РѕСЂРјР»РµРЅРёРµРј РІ Р»РёС‡РЅСѓСЋ С‡Р°СЃС‚РЅСѓСЋ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚СЊ (РїРѕР»РЅРѕС†РµРЅРЅС‹Р№ С„СЂРёС…РѕР»Рґ)</strong> РЅР° С„РёР·РёС‡РµСЃРєРѕРµ Р»РёС†Рѕ. Р’С‹ РїРѕР»СѓС‡Р°РµС‚Рµ РїСЂСЏРјРѕРµ Р±РµР·СѓСЃР»РѕРІРЅРѕРµ РїСЂР°РІРѕ РІР»Р°РґРµС‚СЊ, РїСЂРѕРґР°РІР°С‚СЊ, СЃРґР°РІР°С‚СЊ РІ Р°СЂРµРЅРґСѓ, РґР°СЂРёС‚СЊ РёР»Рё РїРµСЂРµРґР°РІР°С‚СЊ РїРѕ РЅР°СЃР»РµРґСЃС‚РІСѓ РєР°Рє СЃР°Рј С‚Р°СѓРЅС…Р°СѓСЃ, С‚Р°Рє Рё Р·РµРјРµР»СЊРЅС‹Р№ СѓС‡Р°СЃС‚РѕРє РїРѕРґ РЅРёРј.
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>РљР°Рє РїРѕР»СѓС‡РёС‚СЊ Р’РќР– РњРµРєСЃРёРєРё Рё РєР°РєРёРµ РїСЂРµРёРјСѓС‰РµСЃС‚РІР° РґР°РµС‚ РјРµРєСЃРёРєР°РЅСЃРєРёР№ РїР°СЃРїРѕСЂС‚?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              РњРµРєСЃРёРєР° вЂ” РѕРґРЅР° РёР· СЃР°РјС‹С… Р»РѕСЏР»СЊРЅС‹С… Рё РґСЂСѓР¶РµР»СЋР±РЅС‹С… СЃС‚СЂР°РЅ РјРёСЂР° РїРѕ РѕС‚РЅРѕС€РµРЅРёСЋ Рє РјРёРіСЂР°РЅС‚Р°Рј, РіРґРµ <strong>РїСЂРѕС‰Рµ РІСЃРµРіРѕ РѕС„РѕСЂРјРёС‚СЊ Р’РќР– Рё РїРѕР»СѓС‡РёС‚СЊ РіСЂР°Р¶РґР°РЅСЃС‚РІРѕ</strong> РїРѕРґ РєР»СЋС‡ РґР»СЏ РІСЃРµР№ СЃРµРјСЊРё. РџРѕРєСѓРїРєР° РЅРµРґРІРёР¶РёРјРѕСЃС‚Рё РґР°РµС‚ РїСЂСЏРјРѕР№ РґРѕСЃС‚СѓРї Рє РѕС„РёС†РёР°Р»СЊРЅРѕРјСѓ СЃС‚Р°С‚СѓСЃСѓ <strong>Р’РќР– Residente Temporal</strong> СЃ Р±С‹СЃС‚СЂС‹Рј РїРµСЂРµС…РѕРґРѕРј РІ РџРњР– Рё РіСЂР°Р¶РґР°РЅСЃС‚РІРѕ. РџР°СЃРїРѕСЂС‚ РњРµРєСЃРёРєРё РѕР±РµСЃРїРµС‡РёРІР°РµС‚ <strong>Р±РµР·РІРёР·РѕРІС‹Рµ РїСѓС‚РµС€РµСЃС‚РІРёСЏ РІ 150+ СЃС‚СЂР°РЅ РјРёСЂР°</strong> (Р•РІСЂРѕСЃРѕСЋР·, Р’РµР»РёРєРѕР±СЂРёС‚Р°РЅРёСЏ, РЇРїРѕРЅРёСЏ, РЎРёРЅРіР°РїСѓСЂ). <strong>РњС‹ РїСЂРµРґРѕСЃС‚Р°РІР»СЏРµРј Р±РµСЃРїР»Р°С‚РЅСѓСЋ РєРѕРЅСЃСѓР»СЊС‚Р°С†РёСЋ РїСЂРѕС„РёР»СЊРЅРѕРіРѕ РјРёРіСЂР°С†РёРѕРЅРЅРѕРіРѕ СЋСЂРёСЃС‚Р°</strong> РґР»СЏ РїРѕС€Р°РіРѕРІРѕРіРѕ СЃРѕРїСЂРѕРІРѕР¶РґРµРЅРёСЏ РІР°С€РµР№ СЃРµРјСЊРё.
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>РљР°Рє РѕСЂРіР°РЅРёР·СѓРµС‚СЃСЏ СЃРґР°С‡Р° РІ Р°СЂРµРЅРґСѓ Рё Р·Р° СЃС‡РµС‚ С‡РµРіРѕ РґРѕСЃС‚РёРіР°РµС‚СЃСЏ РґРѕС…РѕРґРЅРѕСЃС‚СЊ 9% РіРѕРґРѕРІС‹С…?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              РЈРїСЂР°РІР»РµРЅРёРµРј РІР°С€РµРіРѕ РѕР±СЉРµРєС‚Р° Р·Р°РЅРёРјР°РµС‚СЃСЏ <strong>С‚РѕРїРѕРІР°СЏ СѓРїСЂР°РІР»СЏСЋС‰Р°СЏ РєРѕРјРїР°РЅРёСЏ</strong> РїРѕР»РЅРѕРіРѕ С†РёРєР»Р°. РћРїРµСЂР°С‚РѕСЂ Р±РµСЂРµС‚ РЅР° СЃРµР±СЏ 100% РѕРїРµСЂР°С†РёРѕРЅРЅС‹С… РїСЂРѕС†РµСЃСЃРѕРІ: РїСЂРµРјРёР°Р»СЊРЅС‹Р№ РјР°СЂРєРµС‚РёРЅРі РЅР° РјРёСЂРѕРІС‹С… РїР»РѕС‰Р°РґРєР°С…, РІСЃС‚СЂРµС‡Рё Рё VIP-РѕР±СЃР»СѓР¶РёРІР°РЅРёРµ РіРѕСЃС‚РµР№ РёР· РЎРЁРђ Рё РљР°РЅР°РґС‹, РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ РєР»РёРЅРёРЅРі, РєРѕРЅС‚СЂРѕР»СЊ СЃРѕС…СЂР°РЅРЅРѕСЃС‚Рё РёРјСѓС‰РµСЃС‚РІР° Рё СЃРІРѕРµРІСЂРµРјРµРЅРЅС‹Рµ С„РёРЅР°РЅСЃРѕРІС‹Рµ РІС‹РїР»Р°С‚С‹ РЅР° СЃС‡РµС‚ СЃРѕР±СЃС‚РІРµРЅРЅРёРєР°. Р‘Р»Р°РіРѕРґР°СЂСЏ <strong>СЃРёСЃС‚РµРјРµ Lock-Off (РёР·РѕР»РёСЂРѕРІР°РЅРЅС‹Рµ РІС…РѕРґС‹)</strong> РІС‹ РјРѕР¶РµС‚Рµ РєРѕРјС„РѕСЂС‚РЅРѕ РїСЂРѕР¶РёРІР°С‚СЊ РІ РѕРґРЅРѕР№ С‡Р°СЃС‚Рё СЂРµР·РёРґРµРЅС†РёРё Рё РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕ СЃРґР°РІР°С‚СЊ РѕСЃС‚Р°Р»СЊРЅС‹Рµ Р°РІС‚РѕРЅРѕРјРЅС‹Рµ Р°РїР°СЂС‚Р°РјРµРЅС‚С‹. РќР° СЂС‹РЅРєРµ РўСѓР»СѓРјР° Р·Р°С„РёРєСЃРёСЂРѕРІР°РЅ СЃРёР»СЊРЅС‹Р№ РґРµС„РёС†РёС‚ СЃРµРјРµР№РЅС‹С… С‚Р°СѓРЅС…Р°СѓСЃРѕРІ РїСЂРё РїРµСЂРµРёР·Р±С‹С‚РєРµ 1-РєРѕРјРЅР°С‚РЅС‹С… РѕР±СЉРµРєС‚РѕРІ, С‡С‚Рѕ РѕР±РµСЃРїРµС‡РёРІР°РµС‚ РїРѕСЃС‚РѕСЏРЅРЅС‹Р№ Р°СЂРµРЅРґРЅС‹Р№ РїРѕС‚РѕРє Рё РіР°СЂР°РЅС‚РёСЂСѓРµС‚ Р±С‹СЃС‚СЂСѓСЋ РїРµСЂРµРїСЂРѕРґР°Р¶Сѓ Р»РѕС‚Р°.
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>РљР°РєРѕРІ СѓСЂРѕРІРµРЅСЊ РјРµРґРёС†РёРЅС‹ Рё РјРµРґРёС†РёРЅСЃРєРѕРіРѕ РѕР±СЃР»СѓР¶РёРІР°РЅРёСЏ РІ СЂРµРіРёРѕРЅРµ?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              Р’ С€С‚Р°С‚Рµ РљРёРЅС‚Р°РЅР°-Р РѕРѕ СЂР°Р±РѕС‚Р°РµС‚ СЂР°Р·РІРµС‚РІР»РµРЅРЅР°СЏ СЃРµС‚СЊ СЃРѕРІСЂРµРјРµРЅРЅС‹С… С‡Р°СЃС‚РЅС‹С… РіРѕСЃРїРёС‚Р°Р»РµР№ Рё РєР»РёРЅРёРє РјРµР¶РґСѓРЅР°СЂРѕРґРЅРѕР№ Р°РєРєСЂРµРґРёС‚Р°С†РёРё (СѓСЂРѕРІРµРЅСЊ РЎРЁРђ Рё Р•РІСЂРѕРїС‹). Р—РґРµСЃСЊ РЅРµС‚ РІС‹СЃРѕРєРѕР№ РЅР°РіСЂСѓР·РєРё РЅР° РІСЂР°С‡РµР№ Рё РїСЂРёРІС‹С‡РЅС‹С… РѕС‡РµСЂРµРґРµР№. РљР°РЅРєСѓРЅ Рё РўСѓР»СѓРј СЏРІР»СЏСЋС‚СЃСЏ РїРѕРїСѓР»СЏСЂРЅС‹Рј РјРёСЂРѕРІС‹Рј С†РµРЅС‚СЂРѕРј <strong>РјРµРґРёС†РёРЅСЃРєРѕРіРѕ С‚СѓСЂРёР·РјР°</strong>: РіСЂР°Р¶РґР°РЅРµ РЎРЁРђ Рё Р•РІСЂРѕРїС‹ СЂРµРіСѓР»СЏСЂРЅРѕ РїСЂРёРµР·Р¶Р°СЋС‚ СЃСЋРґР° РґР»СЏ РїСЂРѕС…РѕР¶РґРµРЅРёСЏ РєРІР°Р»РёС„РёС†РёСЂРѕРІР°РЅРЅРѕР№ СЃС‚РѕРјР°С‚РѕР»РѕРіРёРё, РѕРїРµСЂР°С‚РёРІРЅРѕРіРѕ Р»РµС‡РµРЅРёСЏ Рё РєРѕРјС„РѕСЂС‚РЅРѕРіРѕ РІРµРґРµРЅРёСЏ Р±РµСЂРµРјРµРЅРЅРѕСЃС‚Рё / СЂРѕРґРѕРІ РїСЂРё Р·РЅР°С‡РёС‚РµР»СЊРЅРѕ Р±РѕР»РµРµ РґРѕСЃС‚СѓРїРЅС‹С… С†РµРЅР°С….
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>РљР°РєРѕРІС‹ СѓСЃР»РѕРІРёСЏ РѕР±СѓС‡РµРЅРёСЏ РґР»СЏ РґРµС‚РµР№ Рё РЅР°Р»РёС‡РёРµ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹С… С€РєРѕР»?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              Р’ 300 РјРµС‚СЂР°С… РѕС‚ СЂРµР·РёРґРµРЅС†РёР№ (3 РјРёРЅСѓС‚С‹ РїРµС€РєРѕРј РїРѕ Р·Р°РєСЂС‹С‚С‹Рј Р·РµР»РµРЅС‹Рј Р°Р»Р»РµСЏРј Р±РµР· РІС‹РµР·РґР° РЅР° РїСЂРѕРµР·Р¶СѓСЋ С‡Р°СЃС‚СЊ) СЂР°СЃРїРѕР»РѕР¶РµРЅ <strong>Colegio InglГ©s вЂ” СЌР»РёС‚РЅС‹Р№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ Р±РёР»РёРЅРіРІР°Р»СЊРЅС‹Р№ РєРѕР»Р»РµРґР¶</strong>. Р•РіРѕ РїСЂРµСЃС‚РёР¶ РѕР±СѓСЃР»РѕРІР»РµРЅ РјРµР¶РґСѓРЅР°СЂРѕРґРЅРѕР№ Р°РєРєСЂРµРґРёС‚Р°С†РёРµР№ (IB / Cambridge), РїСЂРµРїРѕРґР°РІР°РЅРёРµРј РЅР° Р°РЅРіР»РёР№СЃРєРѕРј Рё РёСЃРїР°РЅСЃРєРѕРј СЏР·С‹РєР°С… Рё РІС‹РґР°С‡РµР№ РґРёРїР»РѕРјРѕРІ РјРµР¶РґСѓРЅР°СЂРѕРґРЅРѕРіРѕ РѕР±СЂР°Р·С†Р° РґР»СЏ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РІ С‚РѕРї-СѓРЅРёРІРµСЂСЃРёС‚РµС‚С‹ РЎРЁРђ Рё Р•РІСЂРѕРїС‹. РљР°РјРїСѓСЃ С€РєРѕР»С‹ РІРєР»СЋС‡Р°РµС‚ Р·Р°РєСЂС‹С‚СѓСЋ РѕС…СЂР°РЅСЏРµРјСѓСЋ С‚РµСЂСЂРёС‚РѕСЂРёСЋ, СЃРїРѕСЂС‚РёРІРЅС‹Рµ РєРѕРјРїР»РµРєСЃС‹ Рё С†РёС„СЂРѕРІС‹Рµ Р»Р°Р±РѕСЂР°С‚РѕСЂРёРё.
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>РљР°РєРѕРІС‹ СЂР°СЃС…РѕРґС‹ РЅР° РЅР°Р»РѕРіРё РЅР° Р¶РёР»СЊРµ, РєРѕРјРјСѓРЅР°Р»СЊРЅС‹Рµ СѓСЃР»СѓРіРё (Р–РљРҐ) Рё Р±РёР·РЅРµСЃ?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              Р’ РњРµРєСЃРёРєРµ Р·Р°С„РёРєСЃРёСЂРѕРІР°РЅР° РѕРґРЅР° РёР· СЃР°РјС‹С… РјСЏРіРєРёС… РЅР°Р»РѕРіРѕРІС‹С… СЃРёСЃС‚РµРј РІ РјРёСЂРµ РґР»СЏ РІР»Р°РґРµР»СЊС†РµРІ Р¶РёР»СЊСЏ. Р•Р¶РµРіРѕРґРЅС‹Р№ РЅР°Р»РѕРі РЅР° РЅРµРґРІРёР¶РёРјРѕСЃС‚СЊ (Predial) СЃРѕСЃС‚Р°РІР»СЏРµС‚ <strong>РІСЃРµРіРѕ РѕРєРѕР»Рѕ $150 РІ РіРѕРґ</strong>. РљРѕРјРјСѓРЅР°Р»СЊРЅС‹Рµ СЂР°СЃС…РѕРґС‹ РїСЂРµРґРµР»СЊРЅРѕ РЅРёР·РєРёРµ: РІРѕРґРѕСЃРЅР°Р±Р¶РµРЅРёРµ РѕР±С…РѕРґРёС‚СЃСЏ РїСЂРёРјРµСЂРЅРѕ РІ <strong>$20 РІ РјРµСЃСЏС†</strong>, Р° СЌР»РµРєС‚СЂРёС‡РµСЃС‚РІРѕ вЂ” РІ СЃСЂРµРґРЅРµРј <strong>$100 РІ РјРµСЃСЏС†</strong>. РќР°Р»РѕРі РЅР° РґРѕС…РѕРґ РѕС‚ Р±РёР·РЅРµСЃР° РІ СЃС‚СЂР°РЅРµ СЃРѕСЃС‚Р°РІР»СЏРµС‚ РїРѕСЂСЏРґРєР° 15%.
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>РљР°РєРѕРІ СѓСЂРѕРІРµРЅСЊ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё Рё СЌРєРѕР»РѕРіРёРё РІ РєСѓСЂРѕСЂС‚РЅРѕРј СЂР°Р№РѕРЅРµ РўСѓР»СѓРјР°?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              РЁС‚Р°С‚ РљРёРЅС‚Р°РЅР°-Р РѕРѕ СЏРІР»СЏРµС‚СЃСЏ С„Р»Р°РіРјР°РЅСЃРєРёРј РєСѓСЂРѕСЂС‚РЅС‹Рј СЂРµРіРёРѕРЅРѕРј РњРµРєСЃРёРєРё РїРѕРґ РїРѕРІС‹С€РµРЅРЅС‹Рј РєРѕРЅС‚СЂРѕР»РµРј Рё Р·Р°С‰РёС‚РѕР№ С„РµРґРµСЂР°Р»СЊРЅС‹С… РІР»Р°СЃС‚РµР№. РќР°С€ РїРѕСЃРµР»РѕРє вЂ” СЌС‚Рѕ <strong>Р·Р°РєСЂС‹С‚РѕРµ РїСЂРёРІР°С‚РЅРѕРµ РєРѕРјСЊСЋРЅРёС‚Рё</strong> СЃ РєСЂСѓРіР»РѕСЃСѓС‚РѕС‡РЅРѕР№ РѕС…СЂР°РЅРѕР№ 24/7. Р Р°Р№РѕРЅ Tulum Gardens СЃРѕС‡РµС‚Р°РµС‚ РіР°СЂРјРѕРЅРёС‡РЅС‹Р№ СЌРєРѕР»РѕРіРёС‡РµСЃРєРёР№ Р±Р°Р»Р°РЅСЃ (С‚СЂРѕРїРёС‡РµСЃРєРёР№ Р±РёРѕСЃС„РµСЂРЅС‹Р№ Р·Р°РїРѕРІРµРґРЅРёРє, С‡РёСЃС‚РµР№С€РёРµ СЃРµРЅРѕС‚С‹) СЃ С†РёРІРёР»РёР·РѕРІР°РЅРЅРѕР№ РіРѕСЂРѕРґСЃРєРѕР№ РёРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂРѕР№ Рё РґРѕСЃС‚СѓРїРЅРѕСЃС‚СЊСЋ РїР»СЏР¶РµР№ РІ 15 РјРёРЅСѓС‚Р°С….
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>Р‘РµР·РѕРїР°СЃРЅРѕ Р»Рё РІ РўСѓР»СѓРјРµ, РєР°РєРѕРІС‹ СЂРёСЃРєРё СЃРІСЏР·Р°РЅРЅС‹Рµ СЃ РјРёС„РѕРј Рѕ РєР°СЂС‚РµР»СЏС… Рё РєР°Рє Р·Р°С‰РёС‰РµРЅС‹ СЂРµР·РёРґРµРЅС‚С‹?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              РњРёС„ Рѕ СЂРёСЃРєР°С… Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё РІ РњРµРєСЃРёРєРµ С‡Р°СЃС‚Рѕ РІРѕР·РЅРёРєР°РµС‚ РёР·-Р·Р° СЃРјРµС€РµРЅРёСЏ СЃРёС‚СѓР°С†РёР№ РІ РїСЂРёРіСЂР°РЅРёС‡РЅС‹С… СЃРµРІРµСЂРЅС‹С… С€С‚Р°С‚Р°С… СЃ СЌР»РёС‚РЅС‹Рј РєСѓСЂРѕСЂС‚РЅС‹Рј С€С‚Р°С‚РѕРј РљРёРЅС‚Р°РЅР°-Р РѕРѕ. <strong>РўСѓР»СѓРј Рё Р РёРІСЊРµСЂР° РњР°Р№СЏ вЂ” Р±РµР·РѕРїР°СЃРЅС‹Р№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ РєСѓСЂРѕСЂС‚РЅС‹Р№ СЂРµРіРёРѕРЅ</strong>, РіРґРµ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚СЊ С‚СѓСЂРёСЃС‚РѕРІ Рё СЂРµР·РёРґРµРЅС‚РѕРІ СЏРІР»СЏРµС‚СЃСЏ Р°Р±СЃРѕР»СЋС‚РЅС‹Рј РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Рј РїСЂРёРѕСЂРёС‚РµС‚РѕРј. Р›РѕРєР°С†РёСЏ РєСЂСѓРіР»РѕСЃСѓС‚РѕС‡РЅРѕ РїР°С‚СЂСѓР»РёСЂСѓРµС‚СЃСЏ РќР°С†РёРѕРЅР°Р»СЊРЅРѕР№ Р“РІР°СЂРґРёРµР№ Рё РўСѓСЂРёСЃС‚РёС‡РµСЃРєРѕР№ РџРѕР»РёС†РёРµР№. РљСЂРѕРјРµ С‚РѕРіРѕ, <strong>РєРѕРјРїР»РµРєСЃ Tulum Gardens вЂ” СЌС‚Рѕ Р·Р°РєСЂС‹С‚РѕРµ РєРѕРјСЊСЋРЅРёС‚Рё СЃ РјРЅРѕРіРѕСѓСЂРѕРІРЅРµРІРѕР№ СЃРёСЃС‚РµРјРѕР№ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё</strong>: РѕРіРѕСЂРѕР¶РµРЅРЅР°СЏ РѕС…СЂР°РЅСЏРµРјР°СЏ С‚РµСЂСЂРёС‚РѕСЂРёСЏ, РљРџРџ СЃ РєРѕРЅС‚СЂРѕР»РµРј РґРѕСЃС‚СѓРїР°, РІРёРґРµРѕРЅР°Р±Р»СЋРґРµРЅРёРµ 24/7, СЃРјР°СЂС‚-Р·Р°РјРєРё Рё СЃР»СѓР¶Р±Р° С‡Р°СЃС‚РЅРѕР№ РѕС…СЂР°РЅС‹. Р”Р»СЏ РїРѕРєСѓРїР°С‚РµР»РµР№ РёР· РЎРЁРђ, РљР°РЅР°РґС‹ Рё Р•РІСЂРѕРїС‹ Р·РґРµСЃСЊ СЃРѕР·РґР°РЅС‹ СѓСЃР»РѕРІРёСЏ РїРѕР»РЅРѕР№ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё, РєРѕРјС„РѕСЂС‚Р° Рё Р°Р±СЃРѕР»СЋС‚РЅРѕРіРѕ СЃРїРѕРєРѕР№СЃС‚РІРёСЏ.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 7: FINAL CTA (FATUKHIN DARK FORM)
+       ======================================================== -->
+  <section style="background: var(--bg); padding-top: 40px;">
+    <div class="container">
+      <div class="cta-dark-card">
+        <div class="cta-layout">
+          <div>
+            <span class="sec-tag">РЎРїРµС†РёР°Р»СЊРЅРѕРµ РїСЂРµРґР»РѕР¶РµРЅРёРµ</span>
+            <h2 style="font-family: var(--font-serif); font-size: clamp(24px, 3vw, 38px); color: #FFFFFF; line-height: 1.25; margin-bottom: 18px; text-transform: uppercase;">
+              Р“Р°Р№Рґ В«РўРѕРї-5 РїСЂРёС‡РёРЅ РїРµСЂРµРµС…Р°С‚СЊ РІ РњРµРєСЃРёРєСѓВ» + Р‘СЂРѕС€СЋСЂР° СЃ РїР»Р°РЅРёСЂРѕРІРєР°РјРё
+            </h2>
+            <p style="font-size: 16px; color: rgba(255, 255, 255, 0.7); line-height: 1.7; font-weight: 300; margin-bottom: 28px;">
+              Р—Р°РїРѕР»РЅРёС‚Рµ С„РѕСЂРјСѓ, С‡С‚РѕР±С‹ РјРѕРјРµРЅС‚Р°Р»СЊРЅРѕ СЃРєР°С‡Р°С‚СЊ РіР°Р№Рґ Рё Р±СЂРѕС€СЋСЂСѓ СЃ РїР»Р°РЅРёСЂРѕРІРєР°РјРё 8 С‚Р°СѓРЅС…Р°СѓСЃРѕРІ РѕС‚ СЃРѕР±СЃС‚РІРµРЅРЅРёРєР°, Р° С‚Р°РєР¶Рµ Р·Р°Р±СЂРѕРЅРёСЂРѕРІР°С‚СЊ Р±РµСЃРїР»Р°С‚РЅСѓСЋ РєРѕРЅСЃСѓР»СЊС‚Р°С†РёСЋ СЃ СЌРєСЃРїРµСЂС‚РѕРј РїРѕ РјРёРіСЂР°С†РёРё.
+            </p>
+            <div style="display: flex; gap: 20px; font-size: 13px; color: rgba(255, 255, 255, 0.6); flex-wrap: wrap;">
+              <span>РћС‚РІРµС‚ Р·Р° 15 РјРёРЅСѓС‚</span>
+              <span>РљРѕРЅС„РёРґРµРЅС†РёР°Р»СЊРЅРѕ</span>
+              <span>Р‘РµР· СЃРїР°РјР°</span>
+            </div>
+          </div>
+
+          <div>
+            <form onsubmit="processForm(event, 'Р“Р»Р°РІРЅР°СЏ С„РѕСЂРјР°')">
+              <div class="form-group">
+                <label>Р’Р°С€Рµ РёРјСЏ</label>
+                <input type="text" class="form-input" placeholder="РђР»РµРєСЃР°РЅРґСЂ" required>
+              </div>
+              <div class="form-group">
+                <label>РўРµР»РµС„РѕРЅ / WhatsApp</label>
+                <input type="tel" class="form-input" placeholder="+1 (___) ___-____" required>
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-input" placeholder="investor@domain.com" required>
+              </div>
+              <button type="submit" class="btn btn-accent btn-block" style="padding: 18px; font-size: 12px; margin-top: 10px;">
+                РЎРєР°С‡Р°С‚СЊ РіР°Р№Рґ + РљРѕРЅСЃСѓР»СЊС‚Р°С†РёСЏ РїРѕ Р’РќР–
+              </button>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.4); text-align: center; margin-top: 10px;">
+                РќР°Р¶РёРјР°СЏ РєРЅРѕРїРєСѓ, РІС‹ СЃРѕРіР»Р°С€Р°РµС‚РµСЃСЊ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0c100f;border-top:1px solid rgba(193,160,128,0.15);padding:60px 0 32px;">
+    <div class="container">
+
+      <!-- TOP ROW -->
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.07);">
+
+        <!-- Brand -->
+        <div>
+          <a href="#" class="logo-box" style="margin-bottom:20px;display:inline-block;">
+            <div class="logo-badge-wrap">
+              <img src="images/tulum_gardens_logo.png" alt="Tulum Gardens" class="logo-img">
+            </div>
+          </a>
+          <p style="font-size:13.5px;color:rgba(255,255,255,0.45);line-height:1.7;max-width:280px;margin-top:16px;">
+            РџСЂРµРјРёР°Р»СЊРЅС‹Рµ С‚Р°СѓРЅС…Р°СѓСЃС‹ РІ Р·Р°РєСЂС‹С‚РѕРј СЌРєРѕ-РєРѕРјСЊСЋРЅРёС‚Рё РўСѓР»СѓРјР°. Р¤СЂРёС…РѕР»Рґ В· Р’РќР– В· Р”РѕС…РѕРґ 9% РіРѕРґРѕРІС‹С….
+          </p>
+          <div style="margin-top:20px;display:flex;gap:14px;">
+            <a href="https://wa.me/529841234567" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:15px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='rgba(255,255,255,0.5)'">вњ‰</a>
+            <a href="https://t.me/tulumgardens" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:15px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='rgba(255,255,255,0.5)'">вњ€</a>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <div style="font-family:var(--font-sans);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:18px;">РќР°РІРёРіР°С†РёСЏ</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+            <li><a href="#benefits" style="font-size:13.5px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Р“Р°СЂР°РЅС‚РёРё Рё СЃС‚Р°С‚СѓСЃ</a></li>
+            <li><a href="#location" style="font-size:13.5px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Р›РѕРєР°С†РёСЏ Рё РєР°СЂС‚Р°</a></li>
+            <li><a href="#video" style="font-size:13.5px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">РњРµРґРёР°С‚РµРєР°</a></li>
+            <li><a href="#catalog" style="font-size:13.5px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">РљР°С‚Р°Р»РѕРі СЋРЅРёС‚РѕРІ</a></li>
+            <li><a href="#faq" style="font-size:13.5px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacts -->
+        <div>
+          <div style="font-family:var(--font-sans);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:18px;">РљРѕРЅС‚Р°РєС‚С‹</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+            <li><a href="tel:+529841234567" style="font-size:13.5px;color:rgba(255,255,255,0.5);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">+52 (984) 123-4567</a></li>
+            <li><a href="https://wa.me/529841234567" target="_blank" style="font-size:13.5px;color:rgba(255,255,255,0.5);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">WhatsApp</a></li>
+            <li><a href="https://t.me/tulumgardens" target="_blank" style="font-size:13.5px;color:rgba(255,255,255,0.5);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Telegram</a></li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.3);padding-top:4px;">Tulum, Quintana Roo,<br>MГ©xico, C.P. 77760</li>
+          </ul>
+        </div>
+
+        <!-- Legal info -->
+        <div>
+          <div style="font-family:var(--font-sans);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:18px;">Р®СЂРёРґРёС‡РµСЃРєРё</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+            <li style="font-size:13px;color:rgba(255,255,255,0.4);line-height:1.5;">Stellar Residences S.A. de C.V.<br>RFC: SRE-260115-XXX</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.4);">Licencia de Desarrollador<br>Inmobiliario в„– TUL-2026-0042</li>
+            <li><a href="#" onclick="return false;" style="font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">РЈСЃР»РѕРІРёСЏ РѕР±СЂР°Р±РѕС‚РєРё РґР°РЅРЅС‹С…</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BOTTOM ROW -->
+      <div style="padding-top:28px;display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;">
+        <div style="font-size:12px;color:rgba(255,255,255,0.25);line-height:1.6;max-width:700px;">
+          В© 2026 Stellar Residences S.A. de C.V. В· Tulum Gardens. Р’СЃРµ РїСЂР°РІР° Р·Р°С‰РёС‰РµРЅС‹.<br>
+          Р’СЃСЏ РёРЅС„РѕСЂРјР°С†РёСЏ РЅР° СЃР°Р№С‚Рµ РЅРѕСЃРёС‚ РёРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹Р№ С…Р°СЂР°РєС‚РµСЂ Рё РЅРµ СЏРІР»СЏРµС‚СЃСЏ РїСѓР±Р»РёС‡РЅРѕР№ РѕС„РµСЂС‚РѕР№ (СЃС‚. 437 Р“Рљ Р Р¤). РР·РѕР±СЂР°Р¶РµРЅРёСЏ, СЂРµРЅРґРµСЂС‹ Рё С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё РјРѕРіСѓС‚ РѕС‚Р»РёС‡Р°С‚СЊСЃСЏ РѕС‚ РёС‚РѕРіРѕРІС‹С…. Р”РѕС…РѕРґРЅРѕСЃС‚СЊ 9% РіРѕРґРѕРІС‹С… вЂ” СЂР°СЃС‡С‘С‚РЅС‹Р№ РїРѕРєР°Р·Р°С‚РµР»СЊ, РѕСЃРЅРѕРІР°РЅРЅС‹Р№ РЅР° СЂС‹РЅРѕС‡РЅРѕР№ Р°РЅР°Р»РёС‚РёРєРµ; РЅРµ СЏРІР»СЏРµС‚СЃСЏ РіР°СЂР°РЅС‚РёРµР№ РёРЅРІРµСЃС‚РёС†РёРѕРЅРЅРѕРіРѕ СЂРµР·СѓР»СЊС‚Р°С‚Р°. РџСЂР°РІРѕ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚Рё (Р¤СЂРёС…РѕР»Рґ) СЂРµРіСѓР»РёСЂСѓРµС‚СЃСЏ Р·Р°РєРѕРЅРѕРґР°С‚РµР»СЊСЃС‚РІРѕРј РњРµРєСЃРёРєРё (Ley General de Bienes Nacionales). Р’РќР– РѕС„РѕСЂРјР»СЏРµС‚СЃСЏ РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ Ley de MigraciГіn (Decreto DOF 25.05.2011). Р—Р°СЃС‚СЂРѕР№С‰РёРє РѕСЃС‚Р°РІР»СЏРµС‚ Р·Р° СЃРѕР±РѕР№ РїСЂР°РІРѕ РІРЅРѕСЃРёС‚СЊ РёР·РјРµРЅРµРЅРёСЏ РІ РїСЂРѕРµРєС‚ Р±РµР· СѓРІРµРґРѕРјР»РµРЅРёСЏ.
+        </div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.18);white-space:nowrap;padding-top:4px;">
+          Р”РёР·Р°Р№РЅ: Stellar Residences Studio В· 2026
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MODAL WINDOW -->
+  <div class="modal-overlay" id="modal-window" onclick="if(event.target === this) closeModal()">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">Г—</button>
+      
+      <!-- FORM VIEW -->
+      <div id="modal-form-view">
+        <span class="sec-tag" style="margin-bottom: 6px;">Stellar Residences</span>
+        <h3 style="font-family: var(--font-serif); font-size: 24px; color: var(--dark); margin-bottom: 10px;" id="modal-head">РЎРєР°С‡Р°С‚СЊ РіР°Р№Рґ В«5 РїСЂРёС‡РёРЅ РїРµСЂРµРµС…Р°С‚СЊ РІ РњРµРєСЃРёРєСѓВ»</h3>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6;">
+          Р—Р°РїРѕР»РЅРёС‚Рµ С„РѕСЂРјСѓ РЅРёР¶Рµ вЂ” СЃСЂР°Р·Сѓ РїРѕСЃР»Рµ РѕС‚РїСЂР°РІРєРё РІС‹ РїРѕР»СѓС‡РёС‚Рµ РјРѕРјРµРЅС‚Р°Р»СЊРЅС‹Р№ РґРѕСЃС‚СѓРї Рє СЃРєР°С‡РёРІР°РЅРёСЋ PDF-РіР°Р№РґР° Рё РєР°С‚Р°Р»РѕРіР° 8 С‚Р°СѓРЅС…Р°СѓСЃРѕРІ.
+        </p>
+
+        <form onsubmit="processForm(event, 'РњРѕРґР°Р»СЊРЅР°СЏ С„РѕСЂРјР°')">
+          <div class="form-group">
+            <label style="color: var(--text); font-size: 11px;">Р’Р°С€Рµ РёРјСЏ</label>
+            <input type="text" class="form-input" style="background: var(--bg); color: var(--text); border-color: var(--border);" placeholder="РРІР°РЅ" required>
+          </div>
+          <div class="form-group">
+            <label style="color: var(--text); font-size: 11px;">РўРµР»РµС„РѕРЅ / WhatsApp</label>
+            <input type="tel" class="form-input" style="background: var(--bg); color: var(--text); border-color: var(--border);" placeholder="+1 (___) ___-____" required>
+          </div>
+          <div class="form-group">
+            <label style="color: var(--text); font-size: 11px;">Email</label>
+            <input type="email" class="form-input" style="background: var(--bg); color: var(--text); border-color: var(--border);" placeholder="investor@example.com" required>
+          </div>
+          <button type="submit" class="btn btn-accent btn-block" style="padding: 16px; margin-top: 8px;">
+            РџРѕР»СѓС‡РёС‚СЊ РіР°Р№Рґ Рё РєР°С‚Р°Р»РѕРі 8 СЋРЅРёС‚РѕРІ
+          </button>
+          <div style="font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 10px;">
+            РќР°Р¶РёРјР°СЏ РєРЅРѕРїРєСѓ, РІС‹ СЃРѕРіР»Р°С€Р°РµС‚РµСЃСЊ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…
+          </div>
+        </form>
+      </div>
+
+      <!-- SUCCESS VIEW -->
+      <div id="modal-success-view" style="display: none; text-align: center;">
+        <div style="font-size: 44px; color: var(--accent); margin-bottom: 12px;">вњ¦</div>
+        <h3 style="font-family: var(--font-serif); font-size: 26px; color: var(--dark); margin-bottom: 10px;">РЎРїР°СЃРёР±Рѕ Р·Р° Р·Р°СЏРІРєСѓ!</h3>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+          Р’Р°С€ РіР°Р№Рґ В«РўРѕРї-5 РїСЂРёС‡РёРЅ РїРµСЂРµРµС…Р°С‚СЊ РІ РњРµРєСЃРёРєСѓВ» Рё РєР°С‚Р°Р»РѕРі 8 СЋРЅРёС‚РѕРІ РіРѕС‚РѕРІС‹ Рє СЃРєР°С‡РёРІР°РЅРёСЋ. РќР°С€ РјРёРіСЂР°С†РёРѕРЅРЅС‹Р№ СЌРєСЃРїРµСЂС‚ СЃРІСЏР¶РµС‚СЃСЏ СЃ РІР°РјРё РІ С‚РµС‡РµРЅРёРµ 15 РјРёРЅСѓС‚.
+        </p>
+        <a href="Brochure_StellarResidences_TulumGardens.pdf" download class="btn btn-accent btn-block" style="padding: 16px; text-decoration: none;">
+          рџ“Ґ РЎРєР°С‡Р°С‚СЊ РіР°Р№Рґ Рё РєР°С‚Р°Р»РѕРі (PDF)
+        </a>
+        <button class="btn" style="margin-top: 12px; background: transparent; border: 1px solid var(--border); color: var(--text-muted);" onclick="closeModal()">Р—Р°РєСЂС‹С‚СЊ</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // PRELOADER SIMULATION (FATUKHIN STYLE)
+    let progress = 0;
+    const preCounter = document.getElementById('pre-counter');
+    const preBar = document.getElementById('pre-bar');
+    const preloader = document.getElementById('preloader');
+
+    const loadInterval = setInterval(() => {
+      progress += Math.floor(Math.random() * 15) + 5;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(loadInterval);
+        preCounter.innerText = '100%';
+        preBar.style.width = '100%';
+        setTimeout(() => {
+          preloader.classList.add('hidden');
+        }, 300);
+      } else {
+        preCounter.innerText = progress + '%';
+        preBar.style.width = progress + '%';
+      }
+    }, 40);
+
+    // HERO ZERO-PAUSE VIDEO BACKGROUND
+    const heroPlaylist = [
+      'videos/tulum_drone_hero_compressed.mp4',
+      'videos/tulum_site_1_compressed.mp4',
+      'videos/tulum_site_2_compressed.mp4',
+      'videos/tulum_site_3_compressed.mp4'
+    ];
+    let currentHeroIdx = 0;
+    const v1 = document.getElementById('hero-v1');
+    const v2 = document.getElementById('hero-v2');
+
+    v1.src = heroPlaylist[0];
+    v1.play().catch(() => {});
+
+    function handleHeroLoop(endedLayer) {
+      currentHeroIdx = (currentHeroIdx + 1) % heroPlaylist.length;
+      if (endedLayer === 1) {
+        v2.src = heroPlaylist[currentHeroIdx];
+        v2.play().then(() => {
+          v2.classList.add('active');
+          v1.classList.remove('active');
+        }).catch(() => {});
+      } else {
+        v1.src = heroPlaylist[currentHeroIdx];
+        v1.play().then(() => {
+          v1.classList.add('active');
+          v2.classList.remove('active');
+        }).catch(() => {});
+      }
+    }
+    v1.addEventListener('ended', () => handleHeroLoop(1));
+    v2.addEventListener('ended', () => handleHeroLoop(2));
+
+    // src = Google Drive File ID
+    const cinemaVideos = [
+      { src: '1XraGthDNOCUOd0wAC0scIgZKMshcTBjk', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0017',   desc: 'Панорамный дроновый облёт комплекса Tulum Gardens.' },
+      { src: '1GwOY_7TVcvjpjTz6cNga_4SWyA9hfYN-', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0019',   desc: 'Вид сверху на массив резиденций и эко-окружение.' },
+      { src: '1xq-Po4Eejjp5IZByaZ0mSuS53Oe-RUe6', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0022',   desc: 'Облёт периметра закрытого комьюнити.' },
+      { src: '1MO27PHaqKER0FITkLmOxd1caRhiN-KDo', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0023',   desc: 'Высотная панорама: границы лотов и тропический лес.' },
+      { src: '1r3YK9qz07Kl401XRcqVpdx2Gj0XyiHL9', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0024',   desc: 'Динамичный облёт территории с дрона.' },
+      { src: '1qL_wl58BBwPFpKJeQrGXHezUtv9OKy-J', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0025',   desc: 'Деталь застройки: внутренние аллеи и зелёные зоны.' },
+      { src: '19Tdurv0JKMASjUNTAXpQU_fUAFY-JnXE', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0026',   desc: 'Завершающий дроновый облёт генплана комплекса.' },
+      { src: '1HrKha19QUXnz3AwG2DYuPtfa0Z-F2Cs5', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5103', desc: 'Подготовка участков и земляные работы.' },
+      { src: '1E5THDBGDpIPwKpxmNTM2l_JQ7vWzNDsy', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5104', desc: 'Фиксация хода строительных работ от собственника.' },
+      { src: '1yOKVShY6d8nlQbtpn4yfxVBn-j4-bSH0', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5105', desc: 'Прогресс возведения несущих конструкций таунхаусов.' },
+      { src: '12_7HQRUU_bSoNJqpC08hxQMFyVphnmig',  cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5107', desc: 'Монтаж межэтажных перекрытий и арматурных каркасов.' },
+      { src: '1SZaJxEFXTDhm9Iniun8D_X9u8LoMIEyd', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5108', desc: 'Детальная фиксация строительного процесса.' },
+      { src: '15LRPgQigDEA48stzS4B2sDjmY1GnzOJF', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5109', desc: 'Строительная динамика: стены и кровельные работы.' },
+      { src: '1tzGvnhicLI92ZaucUVli7ZgWDFXQ5cPI', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5110', desc: 'Видеофиксация хода строительства юнитов.' },
+      { src: '1kva0WARo73K3783LdFwbd2wnIde7NlGb', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5111', desc: 'Монтаж фасадных конструкций и отделочные работы.' },
+      { src: '1YiyyE3JlRxrgpWaDSIYkKbJ6OUXxhlKI', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5112',  desc: 'Ландшафт и эко-среда вокруг резиденций.' },
+      { src: '1ehFQd3_nd89sLIcGAUBJC38oMk75QUm_', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5113',  desc: 'Тропическая зелень и зоны общего пользования.' },
+      { src: '1lItmw51eYNyCLW7BN_DJ_YxwpOk30YR_', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5114',  desc: 'Пешеходные аллеи и приватные патио резиденций.' },
+      { src: '1CyrclHHNt233OPxSZYjrwAlF7uMw4Ma_', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5115',  desc: 'Закрытая территория: безопасность и уединение.' },
+      { src: '1InOC5AKFgw8QaYYR2fByCupnnXUxCL1-', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5116',  desc: 'Панорама зелёной зоны и общественных пространств.' },
+      { src: '1Hfsr4D56PPw9onXaduNrxpjNlUw5CK2p', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5117',  desc: 'Эко-концепция: сохранение природного баланса.' },
+      { src: '1CWj-QthM3r3nZlvJSBjrtx0VJ0uE-pNH', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5118',  desc: 'Финальный обход территории: жизнь в тропиках.' }
+    ];
+
+    let currentCinemaIdx = 0;
+
+    function renderPlaylist(filterCat = 'all') {
+      const container = document.getElementById('cinema-playlist-items');
+      container.innerHTML = '';
+      
+      const filtered = cinemaVideos.map((v, i) => ({ ...v, originalIndex: i }))
+        .filter(v => filterCat === 'all' || v.cat === filterCat || (filterCat === 'drone' && v.cat === 'drone') || (filterCat === 'construction' && v.cat === 'construction') || (filterCat === 'nature' && (v.cat === 'nature' || v.cat === 'infrastructure')));
+
+      filtered.forEach((vid) => {
+        const item = document.createElement('div');
+        item.className = 'v-item' + (vid.originalIndex === currentCinemaIdx ? ' active' : '');
+        item.onclick = () => selectCinemaVideo(vid.originalIndex);
+        
+        item.innerHTML = `
+          <div class="v-thumb">
+            <video muted playsinline preload="metadata"><source src="${vid.src}#t=1" type="video/mp4"></video>
+            <div class="v-play">▶</div>
+          </div>
+          <div class="v-info">
+            <span class="v-tag">${vid.tag}</span>
+            <h4 class="v-name">${vid.title}</h4>
+            <p class="v-sub">${vid.desc}</p>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function selectCinemaVideo(idx) {
+      currentCinemaIdx = idx;
+      const vid = cinemaVideos[idx];
+      const player = document.getElementById('stage-player');
+
+      // Google Drive preview iframe
+      player.src = `https://drive.google.com/file/d/${vid.src}/preview`;
+
+      document.getElementById('stage-title').innerText = vid.title;
+      document.getElementById('stage-desc').innerText = vid.desc;
+
+      const activeBtn = document.querySelector('.cat-btn.active');
+      renderPlaylist(activeBtn ? activeBtn.getAttribute('onclick').match(/'(.*?)'/)[1] : 'all');
+    }
+
+    function filterCinema(cat, btn) {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderPlaylist(cat);
+    }
+
+    // LOCATION & PROJECT USP DATA (FULLY DETAILED WITH REAL TULUM MARKET & INFRASTRUCTURE FACTS)
+    const locUsps = [
+      {
+        tag: '01 / РђРІРёР°СЃРѕРѕР±С‰РµРЅРёРµ Рё РЎРєРѕСЂРѕСЃС‚РЅРѕР№ РўСЂР°РЅСЃРїРѕСЂС‚',
+        title: 'РќРѕРІС‹Р№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ Р°СЌСЂРѕРїРѕСЂС‚ TQO Рё СЃС‚Р°РЅС†РёСЏ РїРѕРµР·РґР° Tren Maya (800 Рј)',
+        text: 'РўСѓР»СѓРј РїРѕР»СѓС‡РёР» РєРѕР»РѕСЃСЃР°Р»СЊРЅС‹Р№ РёРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂРЅС‹Р№ РёРјРїСѓР»СЊСЃ: <strong>РЅРѕРІС‹Р№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ Р°СЌСЂРѕРїРѕСЂС‚ Р¤РµР»РёРїРµ РљР°СЂСЂРёР»СЊРѕ РџСѓСЌСЂС‚Рѕ (TQO)</strong> Рё <strong>СЃС‚Р°РЅС†РёСЏ СЃРєРѕСЂРѕСЃС‚РЅРѕРіРѕ РїРѕРµР·РґР° Tren Maya РІСЃРµРіРѕ РІ 800 РјРµС‚СЂР°С… РѕС‚ РєРѕРјРїР»РµРєСЃР°</strong>. РЎРєРѕСЂРѕСЃС‚РЅР°СЏ Р–Р”-РјР°РіРёСЃС‚СЂР°Р»СЊ СЃРІСЏР·С‹РІР°РµС‚ СЂРµР·РёРґРµРЅС‚РѕРІ СЃ Р°СЌСЂРѕРїРѕСЂС‚РѕРј, РљР°РЅРєСѓРЅРѕРј, РџР»Р°Р№СЏ-РґРµР»СЊ-РљР°СЂРјРµРЅ Рё Р®РєР°С‚Р°РЅРѕРј, Р° РЅРѕРІС‹Рµ РјРЅРѕРіРѕРїРѕР»РѕСЃРЅС‹Рµ Р°РІС‚РѕРјР°РіРёСЃС‚СЂР°Р»Рё РѕР±РµСЃРїРµС‡РёРІР°СЋС‚ Р±С‹СЃС‚СЂС‹Р№ Рё РєРѕРјС„РѕСЂС‚РЅС‹Р№ С‚СЂР°С„РёРє.',
+        metric: '800 Рј',
+        sub: 'РґРѕ СЃС‚Р°РЅС†РёРё РїРѕРµР·РґР° Tren Maya Рё Р°СЌСЂРѕРїРѕСЂС‚Р° TQO',
+        img: 'images/img_4.jpg',
+        badge: '01 / РђСЌСЂРѕРїРѕСЂС‚ TQO & РџРѕРµР·Рґ Tren Maya'
+      },
+      {
+        tag: '02 / РўРѕСЂРіРѕРІР»СЏ Рё Р“РѕСЂРѕРґСЃРєРёРµ РЎРµСЂРІРёСЃС‹',
+        title: 'РљСЂСѓРїРЅС‹Рµ РЅРѕРІС‹Рµ РўРѕСЂРіРѕРІС‹Рµ Р¦РµРЅС‚СЂС‹, Soriana Рё Р“РѕСЂРѕРґСЃРєРёРµ РџР°СЂРєРё',
+        text: 'Р’ РўСѓР»СѓРјРµ РѕС‚РєСЂС‹РІР°СЋС‚СЃСЏ <strong>СЃРѕРІСЂРµРјРµРЅРЅС‹Рµ РўРѕСЂРіРѕРІС‹Рµ Р¦РµРЅС‚СЂС‹ РїСЂРµРјРёСѓРј-РєР»Р°СЃСЃР°</strong>, РѕС‚РєСЂС‹С‚С‹Рµ С‚РѕСЂРіРѕРІС‹Рµ РіР°Р»РµСЂРµРё, РіРёРїРµСЂРјР°СЂРєРµС‚ Soriana Рё Р±Р»Р°РіРѕСѓСЃС‚СЂРѕРµРЅРЅС‹Рµ РіРѕСЂРѕРґСЃРєРёРµ РїР°СЂРєРё. Р’СЃРµ СЃРµСЂРІРёСЃС‹ РјРёСЂРѕРІРѕР№ РёРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂС‹ (С‡Р°СЃС‚РЅС‹Рµ РіРѕСЃРїРёС‚Р°Р»СЊРЅС‹Рµ С†РµРЅС‚СЂС‹, Р±Р°РЅРєРё, СЃРїР°-РїР°РІРёР»СЊРѕРЅС‹ Рё С„РёС‚РЅРµСЃ-РєР»СѓР±С‹) РЅР°С…РѕРґСЏС‚СЃСЏ РІ СЂР°РґРёСѓСЃРµ 3вЂ“5 РјРёРЅСѓС‚.',
+        metric: 'РќРѕРІС‹Рµ РўР¦',
+        sub: 'С‚РѕСЂРіРѕРІС‹Рµ С†РµРЅС‚СЂС‹, РїР°СЂРєРё Рё СЃСѓРїРµСЂРјР°СЂРєРµС‚С‹',
+        img: 'images/tulum_shopping_mall.jpg',
+        badge: '02 / РўРѕСЂРіРѕРІС‹Рµ Р¦РµРЅС‚СЂС‹ & Soriana'
+      },
+      {
+        tag: '03 / РџР»СЏР¶Рё РљР°СЂРёР±РѕРІ & РќР°С†РїР°СЂРє',
+        title: 'РџР»СЏР¶Рё РљР°СЂРёР±СЃРєРѕРіРѕ РјРѕСЂСЏ Рё Jaguar Park (15 РјРёРЅ)',
+        text: 'Р’СЃРµРіРѕ <strong>15 РјРёРЅСѓС‚ РЅР° Р°РІС‚Рѕ РёР»Рё СЌР»РµРєС‚СЂРѕРІРµР»РѕСЃРёРїРµРґРµ</strong> РїРѕ Р¶РёРІРѕРїРёСЃРЅРѕР№ СЌРєРѕ-С‚СЂР°СЃСЃРµ С‡РµСЂРµР· РЅР°С†РёРѕРЅР°Р»СЊРЅС‹Р№ Р±РёРѕСЃС„РµСЂРЅС‹Р№ Р·Р°РїРѕРІРµРґРЅРёРє <strong>Jaguar Park</strong> РґРѕ Р±РµР»РѕСЃРЅРµР¶РЅС‹С… РєР°СЂРёР±СЃРєРёС… РїР»СЏР¶РµР№ СЃ Р±РёСЂСЋР·РѕРІРѕР№ РІРѕРґРѕР№ Рё РїР»СЏР¶РЅС‹РјРё РєР»СѓР±Р°РјРё РјРёСЂРѕРІРѕРіРѕ СѓСЂРѕРІРЅСЏ.',
+        metric: '15 РјРёРЅ',
+        sub: 'РґРѕ Р±РµР»РѕСЃРЅРµР¶РЅС‹С… РїР»СЏР¶РµР№ РљР°СЂРёР±СЃРєРѕРіРѕ РјРѕСЂСЏ',
+        img: 'images/tulum_caribbean_beach.jpg',
+        badge: '03 / РџР»СЏР¶Рё РљР°СЂРёР±РѕРІ & Jaguar Park'
+      },
+      {
+        tag: '04 / В«Р’С‚РѕСЂРѕРµ Р‘Р°Р»РёВ» & РЎРѕРѕР±С‰РµСЃС‚РІРѕ',
+        title: 'В«Р’С‚РѕСЂРѕРµ Р‘Р°Р»РёВ»: Р”СѓС…РѕРІРЅС‹Р№ С†РµРЅС‚СЂ, РљСЂРёРїС‚Рѕ-С…Р°Р± Рё РњСѓР·С„РµСЃС‚РёРІР°Р»Рё (Zamna)',
+        text: 'РўСѓР»СѓРј (РїРѕСЃС‚РѕСЏРЅРЅРѕРµ РЅР°СЃРµР»РµРЅРёРµ 50вЂ“60 С‚С‹СЃ. Р¶РёС‚РµР»РµР№) РїРѕ РїСЂР°РІСѓ РЅР°Р·С‹РІР°СЋС‚ В«Р’С‚РѕСЂС‹Рј Р‘Р°Р»РёВ»: СЌС‚Рѕ РіР»Р°РІРЅРѕРµ РјРµСЃС‚Рѕ РїСЂРёС‚СЏР¶РµРЅРёСЏ РґР»СЏ <strong>РјРёСЂРѕРІРѕРіРѕ РєСЂРёРїС‚РѕРєРѕРјСЊСЋРЅРёС‚Рё, РґСѓС…РѕРІРЅС‹С… РїСЂР°РєС‚РёРє Рё Р»РµРіРµРЅРґР°СЂРЅС‹С… РјСѓР·С‹РєР°Р»СЊРЅС‹С… С„РµСЃС‚РёРІР°Р»РµР№ (Zamna)</strong>. Р’ СЃРµР·РѕРЅ С‡РёСЃР»РµРЅРЅРѕСЃС‚СЊ РЅР°СЃРµР»РµРЅРёСЏ РІС‹СЂР°СЃС‚Р°РµС‚ РІ 3вЂ“4 СЂР°Р·Р° Р·Р° СЃС‡РµС‚ СЃРѕСЃС‚РѕСЏС‚РµР»СЊРЅС‹С… РіРѕСЃС‚РµР№ РёР· РЎРЁРђ Рё Р•РІСЂРѕРїС‹.',
+        metric: '3-4С… СЂРѕСЃС‚',
+        sub: 'РЅР°СЃРµР»РµРЅРёСЏ Рё С‚СѓСЂРёСЃС‚РѕРІ РІ РІС‹СЃРѕРєРёР№ СЃРµР·РѕРЅ',
+        img: 'images/tulum_bali_crypto.jpg',
+        badge: '04 / В«Р’С‚РѕСЂРѕРµ Р‘Р°Р»РёВ» & РљСЂРёРїС‚Рѕ-РєРѕРјСЊСЋРЅРёС‚Рё'
+      },
+      {
+        tag: '05 / РџСЂРµРјРёР°Р»СЊРЅРѕРµ РћР±СЂР°Р·РѕРІР°РЅРёРµ',
+        title: '300 РјРµС‚СЂРѕРІ РґРѕ СЌР»РёС‚РЅРѕР№ С‡Р°СЃС‚РЅРѕР№ С€РєРѕР»С‹ Colegio InglГ©s',
+        text: 'Р’РµРґСѓС‰РёР№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ С‡Р°СЃС‚РЅС‹Р№ <strong>Р±РёР»РёРЅРіРІР°Р»СЊРЅС‹Р№ РєРѕР»Р»РµРґР¶ Colegio InglГ©s РІ 300 РјРµС‚СЂР°С… РѕС‚ СЂРµР·РёРґРµРЅС†РёР№</strong>. РђРєРєСЂРµРґРёС‚Р°С†РёСЏ IB / Cambridge, РѕР±СѓС‡РµРЅРёРµ РЅР° Р°РЅРіР»РёР№СЃРєРѕРј Рё РёСЃРїР°РЅСЃРєРѕРј СЏР·С‹РєР°С… СЃ РґРёРїР»РѕРјР°РјРё РґР»СЏ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РІ С‚РѕРї-СѓРЅРёРІРµСЂСЃРёС‚РµС‚С‹ РЎРЁРђ Рё Р•РІСЂРѕРїС‹. Р”РµС‚Рё РґРѕС…РѕРґСЏС‚ РЅР° Р·Р°РЅСЏС‚РёСЏ Р·Р° 3 РјРёРЅСѓС‚С‹ РїРѕ Р·Р°РєСЂС‹С‚С‹Рј Р·РµР»РµРЅС‹Рј Р°Р»Р»РµСЏРј Р±РµР· РІС‹РµР·РґР° РЅР° РїСЂРѕРµР·Р¶СѓСЋ С‡Р°СЃС‚СЊ.',
+        metric: '300 Рј',
+        sub: 'РїРµС€РєРѕРј РїРѕ Р·Р°РєСЂС‹С‚С‹Рј Р±РµР·РѕРїР°СЃРЅС‹Рј Р°Р»Р»РµСЏРј',
+        img: 'images/tulum_colegio_ingles.jpg',
+        badge: '05 / РЁРєРѕР»Р° Colegio InglГ©s вЂў 300 Рј'
+      },
+      {
+        tag: '06 / Р’С‹СЃРѕРєР°СЏ Р“Р°СЃС‚СЂРѕРЅРѕРјРёСЏ & РџСЂРёСЂРѕРґР°',
+        title: 'Р РµСЃС‚РѕСЂР°РЅС‹ Cetli Michelin Рё РџСЂРёСЂРѕРґРЅС‹Рµ РЎРµРЅРѕС‚С‹',
+        text: 'Р“Р°СЃС‚СЂРѕРЅРѕРјРёС‡РµСЃРєР°СЏ СЃС†РµРЅР° РўСѓР»СѓРјР° СЃР»Р°РІРёС‚СЃСЏ РєРѕРЅС†РµРїС‚СѓР°Р»СЊРЅС‹РјРё Р·Р°РІРµРґРµРЅРёСЏРјРё РІС‹СЃРѕРєРѕРіРѕ РєР»Р°СЃСЃР°. РќР°РїСЂРѕС‚РёРІ РєРѕРјРїР»РµРєСЃР° вЂ” Р°РІС‚РѕСЂСЃРєРёР№ СЂРµСЃС‚РѕСЂР°РЅ <strong>Cetli СЃРѕ Р·РІРµР·РґРѕР№ Michelin</strong>, Р° СЂСЏРґРѕРј СЂР°СЃРїРѕР»РѕР¶РµРЅС‹ РєСЂРёСЃС‚Р°Р»СЊРЅС‹Рµ РїСЂРёСЂРѕРґРЅС‹Рµ СЃРµРЅРѕС‚С‹ (Gran Cenote, Calavera) Рё РґСЂРµРІРЅРёРµ РїРёСЂР°РјРёРґС‹ РњР°Р№СЏ.',
+        metric: 'Michelin в…',
+        sub: 'СЂРµСЃС‚РѕСЂР°РЅ Cetli, СЃРµРЅРѕС‚С‹ Рё РґСЂРµРІРЅРёРµ РњР°Р№СЏ',
+        img: 'images/tulum_michelin_restaurants.jpg',
+        badge: '06 / Р РµСЃС‚РѕСЂР°РЅС‹ & Michelin'
+      },
+      {
+        tag: '07 / РЎРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚СЊ & РђСЂС…РёС‚РµРєС‚СѓСЂР°',
+        title: '100% Р¤СЂРёС…РѕР»Рґ РЅР° С„РёР·Р»РёС†Рѕ, РџР°С‚РёРѕ Рё РљСЂС‹С€Рё-РўРµСЂСЂР°СЃС‹ 360В°',
+        text: 'РљР°Р¶РґС‹Р№ С‚Р°СѓРЅС…Р°СѓСЃ РїРµСЂРµРґР°РµС‚СЃСЏ СЃРѕ <strong>100% РѕС„РѕСЂРјР»РµРЅРёРµРј Р·РµРјР»Рё Рё РЅРµРґРІРёР¶РёРјРѕСЃС‚Рё РІ Р»РёС‡РЅСѓСЋ С‡Р°СЃС‚РЅСѓСЋ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚СЊ (Р¤СЂРёС…РѕР»Рґ)</strong> РЅР° С„РёР·РёС‡РµСЃРєРѕРµ Р»РёС†Рѕ СЃ РїСЂР°РІР°РјРё РїСЂРѕРґР°Р¶Рё, СЃРґР°С‡Рё Рё РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ. РљРѕРјРїР»РµРєСЃ РѕСЃРЅР°С‰РµРЅ РїСЂРёРІР°С‚РЅС‹РјРё РїР°С‚РёРѕ, РІРёРґРѕРІС‹РјРё С‚РµСЂСЂР°СЃР°РјРё РЅР° РєСЂС‹С€Рµ РїРѕРґ РїРµСЂРіРѕР»Р°РјРё РґР»СЏ BBQ Рё СЃРёСЃС‚РµРјРѕР№ Lock-Off.',
+        metric: 'Р¤СЂРёС…РѕР»Рґ',
+        sub: 'Р»РёС‡РЅРѕРµ РІР»Р°РґРµРЅРёРµ Р·РµРјР»РµР№ Рё С‚Р°СѓРЅС…Р°СѓСЃРѕРј',
+        img: 'images/tulum_freehold_terrace.jpg',
+        badge: '07 / 100% Р¤СЂРёС…РѕР»Рґ Рё РўРµСЂСЂР°СЃС‹'
+      },
+      {
+        tag: '08 / Р”РѕС…РѕРґРЅРѕСЃС‚СЊ & Р”РµС„РёС†РёС‚ Р С‹РЅРєР°',
+        title: 'РџР°СЃСЃРёРІРЅС‹Р№ РґРѕС…РѕРґ 9% ROI Рё Р”РµС„РёС†РёС‚ СЃРµРјРµР№РЅС‹С… СЋРЅРёС‚РѕРІ',
+        text: 'РќР° СЂС‹РЅРєРµ РўСѓР»СѓРјР° РїРµСЂРµРёР·Р±С‹С‚РѕРє 1-РєРѕРјРЅР°С‚РЅС‹С… СЃС‚СѓРґРёР№, РїРѕСЌС‚РѕРјСѓ РЅР° СЃРµРјРµР№РЅС‹Рµ РјРЅРѕРіРѕРєРѕРјРЅР°С‚РЅС‹Рµ С‚Р°СѓРЅС…Р°СѓСЃС‹ СЃ СЃРёСЃС‚РµРјРѕР№ Lock-Off СЃРѕС…СЂР°РЅСЏРµС‚СЃСЏ РєРѕР»РѕСЃСЃР°Р»СЊРЅС‹Р№ РґРµС„РёС†РёС‚. РћР±СЉРµРєС‚ <strong>РІСЃРµРіРґР° Р»РµРіРєРѕ Рё РІС‹РіРѕРґРЅРѕ РїСЂРѕРґР°РµС‚СЃСЏ</strong>. РўРѕРїРѕРІР°СЏ РЈРїСЂР°РІР»СЏСЋС‰Р°СЏ РљРѕРјРїР°РЅРёСЏ Р±РµСЂРµС‚ РЅР° СЃРµР±СЏ 100% РѕРїРµСЂР°С†РёРѕРЅРЅРѕР№ СЂР°Р±РѕС‚С‹ РїРѕРґ РєР»СЋС‡ СЃ СЂР°СЃС‡РµС‚РЅС‹Рј РґРѕС…РѕРґРѕРј <strong>9% РіРѕРґРѕРІС‹С… РІ С‚РІРµСЂРґРѕР№ РІР°Р»СЋС‚Рµ</strong>.',
+        metric: '9% ROI',
+        sub: 'РїР°СЃСЃРёРІРЅС‹Р№ РґРѕС…РѕРґ Рё Р»РёРєРІРёРґРЅР°СЏ РїРµСЂРµРїСЂРѕРґР°Р¶Р°',
+        img: 'images/tulum_roi_management.jpg',
+        badge: '08 / РџР°СЃСЃРёРІРЅС‹Р№ РґРѕС…РѕРґ 9% ROI & РЈРїСЂР°РІР»РµРЅРёРµ'
+      }
+    ];
+
+    function switchLocUsp(idx) {
+      document.querySelectorAll('.loc-usp-tab').forEach((t, i) => {
+        if (i === idx) t.classList.add('active');
+        else t.classList.remove('active');
+      });
+
+      const u = (currentLang === 'en' ? locUspsEn : locUsps)[idx];
+      const display = document.querySelector('.loc-usp-display');
+      display.style.opacity = '0';
+      display.style.transform = 'translateY(6px)';
+      display.style.transition = 'all 0.22s ease';
+
+      setTimeout(() => {
+        document.getElementById('usp-img').src = u.img;
+        document.getElementById('usp-badge').innerText = u.badge;
+        document.getElementById('usp-tag').innerText = u.tag;
+        document.getElementById('usp-title').innerText = u.title;
+        document.getElementById('usp-text').innerHTML = u.text;
+        document.getElementById('usp-metric').innerHTML = `${u.metric} <span>${u.sub}</span>`;
+        display.style.opacity = '1';
+        display.style.transform = 'translateY(0)';
+      }, 180);
+    }
+
+    // AUTO-LOAD PLAYLIST & INITIALIZE LEAFLET MAP ON DOM READY
+    document.addEventListener('DOMContentLoaded', function() {
+      renderPlaylist('all');
+      selectCinemaVideo(0);
+
+      // INITIALIZE INTERACTIVE LEAFLET MAP WITH GEOGRAPHICALLY PINNED MARKERS
+      if (typeof L !== 'undefined') {
+        const tulumCoords = [20.2114, -87.4654];
+        const map = L.map('leaflet-map-canvas', {
+          center: tulumCoords,
+          zoom: 14,
+          scrollWheelZoom: false
+        });
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+          maxZoom: 19,
+          subdomains: 'abcd',
+          attribution: 'В© OpenStreetMap В© CARTO'
+        }).addTo(map);
+
+        const pinsData = [
+          { coords: [20.2052, -87.4708], label: "рџ“Ќ Tulum Gardens", isPrimary: true },
+          { coords: [20.2030, -87.4725], label: "рџЏ« Colegio InglГ©s (300 Рј)", isPrimary: false },
+          { coords: [20.2100, -87.4770], label: "рџљ† Tulum Station Tren Maya (800 Рј)", isPrimary: false },
+          { coords: [20.2175, -87.4560], label: "рџЏЉвЂЌв™‚пёЏ Cenote Calavera & Jaguar Park (2 РјРёРЅ)", isPrimary: false },
+          { coords: [20.2110, -87.4640], label: "рџ›’ Soriana & Carretera 307 (4-6 РјРёРЅ)", isPrimary: false },
+          { coords: [20.2020, -87.4320], label: "рџЏ–пёЏ РџР»СЏР¶Рё РљР°СЂРёР±РѕРІ & Chedraui (8-10 РјРёРЅ)", isPrimary: false }
+        ];
+
+        pinsData.forEach(p => {
+          const pinClass = p.isPrimary ? 'custom-leaflet-pin primary-pin' : 'custom-leaflet-pin';
+          const pulseHtml = p.isPrimary ? '<div class="mini-pin-pulse"></div>' : '';
+          const icon = L.divIcon({
+            className: pinClass,
+            html: `${pulseHtml}<div class="mini-pin-dot"></div>`,
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
+          });
+          const marker = L.marker(p.coords, { icon: icon }).addTo(map);
+          marker.bindTooltip(p.label, { permanent: p.isPrimary, direction: 'top', offset: [0, -10] });
+        });
+      }
+    });
+
+    function switchLocUsp(idx) {
+      document.querySelectorAll('.loc-usp-tab').forEach((t, i) => {
+        if (i === idx) t.classList.add('active');
+        else t.classList.remove('active');
+      });
+
+      const u = locUsps[idx];
+      const display = document.querySelector('.loc-usp-display');
+      display.style.opacity = '0';
+      display.style.transform = 'translateY(6px)';
+      display.style.transition = 'all 0.22s ease';
+
+      setTimeout(() => {
+        document.getElementById('usp-img').src = u.img;
+        document.getElementById('usp-badge').innerText = u.badge;
+        document.getElementById('usp-tag').innerText = u.tag;
+        document.getElementById('usp-title').innerText = u.title;
+        document.getElementById('usp-text').innerHTML = u.text;
+        document.getElementById('usp-metric').innerHTML = `${u.metric} <span>${u.sub}</span>`;
+        display.style.opacity = '1';
+        display.style.transform = 'translateY(0)';
+      }, 180);
+    }
+
+    // CATALOG TABS
+    function switchUnit(e, tabId) {
+      document.querySelectorAll('.c-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.unit-card-box').forEach(p => p.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    function swapImg(mainId, src) {
+      document.getElementById(mainId).src = src;
+    }
+
+    // FAQ TOGGLE
+    function toggleFaq(elem) {
+      elem.classList.toggle('active');
+    }
+
+    // MODAL
+    function openModal(title) {
+      if (title) document.getElementById('modal-head').innerText = title;
+      document.getElementById('modal-form-view').style.display = 'block';
+      document.getElementById('modal-success-view').style.display = 'none';
+      document.getElementById('modal-window').classList.add('active');
+    }
+    function closeModal() {
+      document.getElementById('modal-window').classList.remove('active');
+    }
+
+    function processForm(e, src) {
+      e.preventDefault();
+      document.getElementById('modal-form-view').style.display = 'none';
+      document.getElementById('modal-success-view').style.display = 'block';
+      if (!document.getElementById('modal-window').classList.contains('active')) {
+        document.getElementById('modal-window').classList.add('active');
+      }
+      const a = document.createElement('a');
+      a.href = 'Brochure_StellarResidences_TulumGardens.pdf';
+      a.download = 'Brochure_StellarResidences_TulumGardens.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    // BILINGUAL TRANSLATION SYSTEM (FULL LANDING PAGE RU & EN)
+    let currentLang = 'ru';
+
+    const locUspsEn = [
+      {
+        tag: '01 / Flight Connections & Transit',
+        title: 'New TQO International Airport & Tren Maya Station (800m)',
+        text: 'Tulum has received a massive infrastructure boost: the <strong>new Felipe Carrillo Puerto International Airport (TQO)</strong> and the <strong>high-speed Tren Maya train station just 800 meters from the residences</strong>. High-speed rail connects residents with the airport, Cancun, Playa del Carmen, and Yucatan, while new highway networks ensure fast, smooth travel.',
+        metric: '800 m',
+        sub: 'to Tren Maya station and TQO Airport',
+        img: 'images/img_4.jpg',
+        badge: '01 / TQO Airport & Tren Maya Train'
+      },
+      {
+        tag: '02 / Retail & Urban Services',
+        title: 'New Premium Malls, Soriana Supermarket & City Parks',
+        text: 'Tulum is witnessing the opening of <strong>modern luxury shopping centers</strong>, open-air retail galleries, a Soriana hypermarket, and landscaped parks. World-class services including private hospital centers, banks, spa pavilions, and fitness clubs are within a 3вЂ“5 minute radius.',
+        metric: 'New Malls',
+        sub: 'shopping centers, parks & supermarkets',
+        img: 'images/tulum_shopping_mall.jpg',
+        badge: '02 / Malls & Soriana Supermarket'
+      },
+      {
+        tag: '03 / Caribbean Beaches & National Park',
+        title: 'Caribbean White Sand Beaches & Jaguar Park (15 min)',
+        text: 'Just <strong>15 minutes by car or e-bike</strong> along a scenic eco-trail through the <strong>Jaguar Park biosphere reserve</strong> to snow-white Caribbean beaches with turquoise waters and world-class beach clubs.',
+        metric: '15 min',
+        sub: 'to pristine white sand Caribbean beaches',
+        img: 'images/tulum_caribbean_beach.jpg',
+        badge: '03 / Caribbean Beaches & Jaguar Park'
+      },
+      {
+        tag: '04 / "Second Bali" & Community',
+        title: '"Second Bali": Spiritual Center, Crypto-Hub & Music Festivals (Zamna)',
+        text: 'Tulum (permanent population 50вЂ“60k) is widely recognized as the "Second Bali": a premier destination for the <strong>global crypto community, spiritual retreats, and world-renowned music festivals (Zamna)</strong>. During high season, the population increases 3вЂ“4x with affluent guests from the US and Europe.',
+        metric: '3-4x Growth',
+        sub: 'seasonal population & tourist influx',
+        img: 'images/tulum_bali_crypto.jpg',
+        badge: '04 / "Second Bali" & Crypto Community'
+      },
+      {
+        tag: '05 / Premium Education',
+        title: '300 meters to Prestigious Private Colegio InglГ©s School',
+        text: 'Leading international bilingual <strong>Colegio InglГ©s college just 300 meters from the residences</strong>. IB / Cambridge accreditation, English and Spanish curriculum with diplomas for admission to top US and European universities. Children reach classes in 3 minutes via private gated green walkways without car traffic.',
+        metric: '300 m',
+        sub: 'walk via safe gated green walkways',
+        img: 'images/tulum_colegio_ingles.jpg',
+        badge: '05 / Colegio InglГ©s School вЂў 300m'
+      },
+      {
+        tag: '06 / Fine Dining & Nature',
+        title: 'Michelin Star Dining (Cetli) & Natural Cenotes',
+        text: 'TulumвЂ™s culinary scene is famous for high-concept luxury dining. Directly opposite the complex is the signature <strong>Michelin-starred restaurant Cetli</strong>, while crystalline natural cenotes (Gran Cenote, Calavera) and ancient Maya pyramids lie nearby.',
+        metric: 'Michelin в…',
+        sub: 'Cetli restaurant, cenotes & ancient Maya',
+        img: 'images/tulum_michelin_restaurants.jpg',
+        badge: '06 / Michelin Dining & Cenotes'
+      },
+      {
+        tag: '07 / Ownership & Architecture',
+        title: '100% Freehold Title, Private Patio & 360В° Rooftop Terraces',
+        text: 'Every townhouse is transferred with <strong>100% full personal freehold land and property title deed</strong> to an individual with full rights to sell, rent, or transfer to heirs. The project features private ground-floor patios, panoramic rooftop terraces under pergolas with BBQ zones, and Lock-Off capability.',
+        metric: 'Freehold',
+        sub: 'direct personal land & residence title',
+        img: 'images/tulum_freehold_terrace.jpg',
+        badge: '07 / 100% Freehold & Terraces'
+      },
+      {
+        tag: '08 / ROI Yield & Market Deficit',
+        title: '9% Passive Annual Yield & Family Residence Deficit',
+        text: 'The Tulum market suffers from an oversupply of 1-bedroom studio apartments, creating a strong deficit for multi-bedroom family townhouses with Lock-Off systems. The property is <strong>always easy and highly profitable to liquidate</strong>. Professional management handles 100% of operations with a target <strong>9% annual yield in USD</strong>.',
+        metric: '9% ROI',
+        sub: 'passive income & high resale liquidity',
+        img: 'images/tulum_roi_management.jpg',
+        badge: '08 / 9% Passive ROI & Management'
+      }
+    ];
+
+    const translations = {
+      en: {
+        navBenefits: "Guarantees",
+        navLocation: "Location",
+        navMedia: "Media Library",
+        navCatalog: "Townhouses",
+        navFaq: "FAQ",
+        headerCatalogBtn: "Download Brochure",
+
+        heroBadge: "8 EXCLUSIVE RESIDENCES FROM THE OWNER",
+        heroH1: "Secure a <span>9% Annual ROI</span> & a Luxury Caribbean Home in Tulum for Your Family",
+        heroSubtext: "Premium residences in a gated private community in Tulum.<br>Discover an exceptional eco-luxury lifestyle on MexicoвЂ™s Caribbean Coast,<br>where pristine tropical nature meets world-class comfort<br>and high international rental demand.<br><br><strong style=\"color: var(--accent); font-weight: 600;\">Download the \"Top 5 Reasons to Move to Mexico\" Guide & the Full 8-Residence Catalog<br>with Floor Plans & Pricing Now:</strong>",
+        heroBtn1: "Download Guide (PDF)",
+        heroBtn2: "Schedule a Consultation",
+
+        statPill1Val: "Private School вЂў 300m",
+        statPill1Sub: "Prestigious Colegio InglГ©s college just 3-min walk via safe gated green walkways",
+        statPill2Val: "World-Class Hub",
+        statPill2Sub: "TQO Airport, Tren Maya rail, luxury malls, Michelin dining & global crypto community",
+        statPill3Val: "100% Freehold Title",
+        statPill3Sub: "Direct personal land & property title deed with full inheritance rights",
+        statPill4Val: "15 Minutes to Beach",
+        statPill4Sub: "Pristine Caribbean white sand beaches, Jaguar Park biosphere & luxury beach clubs",
+
+        bento: [
+          { tag: 'LEGAL STATUS', title: '100% Freehold Title<br>in Individual Name', desc: '<strong>Full personal ownership:</strong> unconditional private property title to both residence and land with full right to sell, rent, or pass to heirs.' },
+          { tag: 'RESIDENCY & PASSPORT', title: 'Residency & Passport<br>(150+ Visa-Free Countries)', desc: '<strong>Favorable immigration policy:</strong> swift Temporary Residency (Residente Temporal) and Citizenship for your entire family. <em>Free legal consultation included.</em>' },
+          { tag: 'SERVICES & OPERATIONS', title: 'Top Hospitality<br>Management Company', desc: '<strong>360В° Turnkey Management:</strong> operator handles 100% of tasks вЂ” global marketing, US/Canada guest hosting, housekeeping, and USD payouts. 80%+ occupancy.' },
+          { tag: 'RENTAL YIELD & LIQUIDITY', title: '9% Annual Passive ROI<br>in USD', desc: '<strong>Lock-Off System (9% ROI):</strong> live in your residence while independently renting out guest suites with private entrances. High family unit deficit ensures easy resale.' },
+          { tag: 'EDUCATION & KIDS', title: '300 Meters to<br>Colegio InglГ©s School', desc: '<strong>Colegio InglГ©s School (300m):</strong> prestigious IB/Cambridge bilingual private college. 3-min walk via safe gated green walkways without car traffic.' },
+          { tag: 'INFRASTRUCTURE & ROADS', title: 'Prime Infrastructure<br>& Shopping Malls', desc: '<strong>Infrastructure Hub:</strong> TQO Airport, Tren Maya train station (800m), highway network, shopping centers, Soriana, "Second Bali" crypto community, and Zamna festival.' }
+        ],
+
+        sec2Tag: "Guarantees & Status",
+        sec2Title: "Legal Transparency<br>& Resident Privileges",
+        sec2Desc: "Full legal protection, turnkey hotel management model, and ideal living conditions for your family.",
+
+        sec3Tag: "Infrastructure & Location",
+        sec3Title: "The Epicenter of Tulum Resort: 15 Minutes to the Caribbean Sea",
+        sec3Desc: "Interactive Map: Hover or tap markers to view distances to key infrastructure landmarks.",
+
+        locTabs: [
+          { name: "TQO Airport & Tren Maya Train", val: "800 m" },
+          { name: "Shopping Malls & Soriana", val: "New Malls" },
+          { name: "Caribbean Beaches & Jaguar Park", val: "15 min" },
+          { name: "\"Second Bali\" & Crypto Community", val: "3-4x Growth" },
+          { name: "Colegio InglГ©s School", val: "300 m" },
+          { name: "Michelin Dining & Cenotes", val: "Michelin в…" },
+          { name: "100% Freehold & Terraces", val: "Freehold" },
+          { name: "9% Passive ROI & Management", val: "9% ROI" }
+        ],
+
+        sec4Tag: "Property Media Library in HD / 4K",
+        sec4Title: "Real Construction Progress<br>& Tulum Gardens Panoramas",
+        sec4Desc: "Interactive Player: Toggle drone flyovers, construction updates, and eco-surroundings in real time.",
+
+        cinema: { all: "All (21)", drones: "Drones", construction: "Construction", nature: "Eco" },
+
+        sec5Tag: "Collection of 8 Residences",
+        sec5Title: "Townhouse Catalog & Architectural Plans",
+        sec5Desc: "Select a residence format to view detailed layout specs, square meters, finishing standards, and 3D interior renders.",
+
+        catalogTabs: [ "Garden House (104 mВІ)", "PentHouse (103 mВІ)", "PentHouse Plus (137 mВІ)", "SkyHouse Flagship (205вЂ“240 mВІ)" ],
+
+        units: [
+          {
+            id: 'tab-gh',
+            title: 'Garden House',
+            specs: '84 mВІ living / 104 mВІ total вЂў 2 levels вЂў 2 bedrooms вЂў 2 bathrooms вЂў Private Garden & Patio',
+            desc: 'Two-level ground floor residence with direct integration into a landscaped tropical garden. Level 1 features a grand living room with panoramic sliding glass doors, quartzite island kitchen, dining area, and powder room. Level 2 offers a master suite with walk-in wardrobe and en-suite bathroom, plus a second bedroom.',
+            items: [
+              'Covered private patio with pergola and direct access to private garden',
+              'Two-level layout (Ground Floor + Mezzanine)',
+              'Kitchen with quartzite island and premium built-in appliances',
+              'Master suite with private bathroom and walk-in closet',
+              'VRV multi-split climate control system in every room',
+              '1 dedicated private parking space in front of residence'
+            ],
+            btn: 'Get Layout Floor Plan (PDF)'
+          },
+          {
+            id: 'tab-p',
+            title: 'PentHouse',
+            specs: '78 mВІ living / 103 mВІ total вЂў 2 levels вЂў 2 bedrooms вЂў 2 bathrooms вЂў Private Solarium',
+            desc: 'Two-level penthouse featuring a private rooftop solarium, lounge zone, and panoramic views over tropical jungle canopies.',
+            items: [
+              'Panoramic views over tropical forest canopies',
+              'Private rooftop terrace for cocktails and BBQ',
+              'Maximum seasonal occupancy and high rental yield',
+              '100% turnkey hotel management by professional operator'
+            ],
+            btn: 'Get Layout Floor Plan (PDF)'
+          },
+          {
+            id: 'tab-pp',
+            title: 'PentHouse Plus',
+            specs: '102 mВІ living / 137 mВІ total вЂў 3 levels вЂў 3 bedrooms вЂў 3 bathrooms вЂў Rooftop Plunge Pool',
+            desc: 'Three-level residence featuring a private rooftop plunge pool, pergola, lounge terrace, and master suite.',
+            items: [
+              '3 full bedrooms and 3 full bathrooms',
+              'Spacious BBQ and relaxation zone under rooftop pergola',
+              '1 dedicated private parking space on closed territory',
+              'High liquidity for rapid resale of the unit'
+            ],
+            btn: 'Get Layout Floor Plan (PDF)'
+          },
+          {
+            id: 'tab-s',
+            title: 'SkyHouse (Flagship)',
+            specs: '160 mВІ living / 205вЂ“240 mВІ total вЂў 3 levels вЂў 5 bedrooms вЂў 4 bathrooms вЂў Triple Lock-Off',
+            desc: 'Three-level flagship residence with Lock-Off system for independent rental of multiple autonomous suites to maximize cash flow.',
+            items: [
+              'Lock-Off system for independent suite rental',
+              '5 spacious bedrooms for VIP guests and large families',
+              'Grand lounge terrace with 360В° views',
+              '9% annual passive ROI in hard currency'
+            ],
+            btn: 'Get Layout Floor Plan (PDF)'
+          }
+        ],
+
+        sec6Tag: "Q&A",
+        sec6Title: "Living, Taxes<br>& Property Ownership in Mexico",
+        sec6Desc: "Comprehensive legal and practical guide for investors and families purchasing real estate in Tulum.",
+        faqBtn: "Ask an Expert",
+
+        faq: [
+          { q: "How is property title and land ownership legally registered?", a: "Foreign buyers purchase real estate in Mexico through a <strong>Fideicomiso (Bank Trust)</strong> or a Mexican LLC (S. de R.L. de C.V.). This guarantees <strong>100% full unconditional personal ownership</strong> of both land and building with full rights to sell, lease, transfer, or inherit." },
+          { q: "What taxes are associated with buying and owning real estate in Tulum?", a: "The acquisition tax (ISAI) is 2%. Annual property tax (Predial) in Quintana Roo is extremely low (approx. 0.1вЂ“0.2% of assessed value). When selling, capital gains tax (ISR) is optimized through legal mechanisms." },
+          { q: "How is property rental managed and how is 9% annual ROI achieved?", a: "Your property is managed by a <strong>top turnkey hospitality management company</strong>. The operator handles 100% of operations: US/Canada marketing, guest hosting, housekeeping, and USD payouts. The <strong>Lock-Off system</strong> allows living in one suite while renting out guest suites." },
+          { q: "Does buying property give the right to Mexican Temporary Residency (Residente Temporal)?", a: "Yes. Investing in real estate over $220,000 USD qualifies you and your family for <strong>Temporary Residency (Residente Temporal)</strong>, convertible to Permanent Residency and Citizenship." },
+          { q: "Where is Colegio InglГ©s located and how do children reach school?", a: "Colegio InglГ©s is just <strong>300 meters from the residences</strong>. Children walk to school in 3 minutes via private gated green walkways without crossing car traffic." },
+          { q: "What is the distance to beaches, TQO Airport, and Tren Maya station?", a: "The new TQO International Airport and Tren Maya train station are <strong>800 meters away</strong>. Caribbean beaches and Jaguar Park are a 15-minute drive." },
+          { q: "In what currency are rental income payouts made and how are funds transferred to US/EU accounts?", a: "Rental income payouts are executed monthly in <strong>USD or MXN</strong> via direct bank transfer to your account anywhere in the world." },
+          { q: "Is Tulum safe, what about media myths regarding cartels, and how is security organized?", a: "Quintana Roo (Tulum & Riviera Maya) is a premier international resort zone under dedicated federal protection (National Guard & Tourist Police). Tulum Gardens is a private 24/7 gated community with biometric access control, CCTV, and private security guards." }
+        ],
+
+        ctaTitle: "Download Full 8-Residence Catalog with Floor Plans & Pricing",
+        ctaSub: "Leave your WhatsApp or Email to receive the presentation and pricing within 2 minutes:",
+        formName: "Your Name",
+        formPhone: "Phone / WhatsApp",
+        formEmail: "Email",
+        formBtn: "Download Catalog (PDF)"
+      },
+      ru: {
+        navBenefits: "Р“Р°СЂР°РЅС‚РёРё",
+        navLocation: "Р›РѕРєР°С†РёСЏ",
+        navMedia: "РњРµРґРёР°С‚РµРєР°",
+        navCatalog: "РўР°СѓРЅС…Р°СѓСЃС‹",
+        navFaq: "FAQ",
+        headerCatalogBtn: "РЎРєР°С‡Р°С‚СЊ РєР°С‚Р°Р»РѕРі",
+
+        heroBadge: "8 Р­РљРЎРљР›Р®Р—РР’РќР«РҐ Р®РќРРўРћР’ РћРў РЎРћР‘РЎРўР’Р•РќРќРРљРђ",
+        heroH1: "РћР±РµСЃРїРµС‡СЊС‚Рµ СЃРµРјСЊРµ <span>РїР°СЃСЃРёРІРЅС‹Р№ РґРѕС…РѕРґ 9% РіРѕРґРѕРІС‹С…</span> Рё РІС‚РѕСЂРѕР№ РґРѕРј РЅР° РљР°СЂРёР±Р°С… РІ РўСѓР»СѓРјРµ",
+        heroSubtext: "РџСЂРµРјРёР°Р»СЊРЅС‹Рµ СЂРµР·РёРґРµРЅС†РёРё РІ Р·Р°РєСЂС‹С‚РѕРј РїСЂРёРІР°С‚РЅРѕРј РєРѕРјСЊСЋРЅРёС‚Рё РўСѓР»СѓРјР°.<br>РћС‚РєСЂРѕР№С‚Рµ РґР»СЏ СЃРµР±СЏ СѓРЅРёРєР°Р»СЊРЅС‹Р№ СЌРєРѕ-СЃС‚РёР»СЊ Р¶РёР·РЅРё РЅР° РљР°СЂРёР±СЃРєРѕРј РїРѕР±РµСЂРµР¶СЊРµ РњРµРєСЃРёРєРё,<br>РіРґРµ РїРµСЂРІРѕР·РґР°РЅРЅР°СЏ С‚СЂРѕРїРёС‡РµСЃРєР°СЏ РїСЂРёСЂРѕРґР° СЃРѕС‡РµС‚Р°РµС‚СЃСЏ СЃ РІС‹СЃРѕРєРёРјРё СЃС‚Р°РЅРґР°СЂС‚Р°РјРё РєРѕРјС„РѕСЂС‚Р°<br>Рё РјРµР¶РґСѓРЅР°СЂРѕРґРЅРѕР№ РїСЂРёРІР»РµРєР°С‚РµР»СЊРЅРѕСЃС‚СЊСЋ.<br><br><strong style=\"color: var(--accent); font-weight: 600;\">РЎРєР°С‡Р°Р№С‚Рµ РіР°Р№Рґ В«5 РїСЂРёС‡РёРЅ РїРµСЂРµРµС…Р°С‚СЊ РІ РњРµРєСЃРёРєСѓВ» Рё РїРѕР»РЅС‹Р№ РєР°С‚Р°Р»РѕРі 8 СЂРµР·РёРґРµРЅС†РёР№<br>СЃ РїР»Р°РЅРёСЂРѕРІРєР°РјРё Рё С†РµРЅР°РјРё РїСЂСЏРјРѕ СЃРµР№С‡Р°СЃ:</strong>",
+        heroBtn1: "РЎРєР°С‡Р°С‚СЊ РіР°Р№Рґ В«5 РїСЂРёС‡РёРЅ РїРµСЂРµРµС…Р°С‚СЊ РІ РњРµРєСЃРёРєСѓВ»",
+        heroBtn2: "РџРѕР»СѓС‡РёС‚СЊ РєРѕРЅСЃСѓР»СЊС‚Р°С†РёСЋ",
+
+        statPill1Val: "Р§Р°СЃС‚РЅР°СЏ С€РєРѕР»Р° вЂў 300 Рј",
+        statPill1Sub: "РњРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ РєРѕР»Р»РµРґР¶ Colegio InglГ©s РІ 3 РјРёРЅ РїРµС€РєРѕРј РїРѕ Р±РµР·РѕРїР°СЃРЅС‹Рј РїР°СЂРєРѕРІС‹Рј Р°Р»Р»РµСЏРј",
+        statPill2Val: "Р Р°Р·РІРёС‚Р°СЏ РёРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂР°",
+        statPill2Sub: "РђСЌСЂРѕРїРѕСЂС‚ TQO, РїРѕРµР·Рґ Tren Maya, РўР¦, Michelin-СЂРµСЃС‚РѕСЂР°РЅС‹ Рё СЌР»РёС‚РЅРѕРµ РєСЂРёРїС‚Рѕ-РєРѕРјСЊСЋРЅРёС‚Рё",
+        statPill3Val: "100% Р¤СЂРёС…РѕР»Рґ",
+        statPill3Sub: "Р‘РµР·СѓСЃР»РѕРІРЅР°СЏ Р»РёС‡РЅР°СЏ С‡Р°СЃС‚РЅР°СЏ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚СЊ РЅР° РЅРµРґРІРёР¶РёРјРѕСЃС‚СЊ Рё Р·РµРјР»СЋ СЃ РїСЂР°РІРѕРј РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ",
+        statPill4Val: "15 РјРёРЅСѓС‚ РґРѕ РљР°СЂРёР±РѕРІ",
+        statPill4Sub: "Р‘РµР»РѕСЃРЅРµР¶РЅС‹Рµ РєР°СЂРёР±СЃРєРёРµ РїР»СЏР¶Рё, Р±РёРѕСЃС„РµСЂРЅС‹Р№ Р·Р°РїРѕРІРµРґРЅРёРє Jaguar Park Рё РїР»СЏР¶РЅС‹Рµ РєР»СѓР±С‹",
+
+        bento: [
+          { tag: 'Р®СЂРёРґРёС‡РµСЃРєРёР№ СЃС‚Р°С‚СѓСЃ', title: '100% Р¤СЂРёС…РѕР»Рґ<br>РЅР° С„РёР·РёС‡РµСЃРєРѕРµ Р»РёС†Рѕ', desc: 'РљР°Р¶РґС‹Р№ С‚Р°СѓРЅС…Р°СѓСЃ РїРµСЂРµРґР°РµС‚СЃСЏ РІ Р±РµР·СѓСЃР»РѕРІРЅСѓСЋ Р»РёС‡РЅСѓСЋ С‡Р°СЃС‚РЅСѓСЋ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚СЊ (Р¤СЂРёС…РѕР»Рґ) РЅР° С„РёР·Р»РёС†Рѕ СЃ 100% РІР»Р°РґРµРЅРёРµРј Р·РµРјР»РµР№ Рё СЃС‚СЂРѕРµРЅРёРµРј, РїСЂР°РІРѕРј РїРµСЂРµРїСЂРѕРґР°Р¶Рё, СЃРґР°С‡Рё Рё РґР°СЂРµРЅРёСЏ.' },
+          { tag: 'РЎС‚Р°С‚СѓСЃ Рё Р“СЂР°Р¶РґР°РЅСЃС‚РІРѕ', title: 'Р’РќР– Рё РџР°СЃРїРѕСЂС‚<br>(150+ СЃС‚СЂР°РЅ Р±РµР· РІРёР·)', desc: 'РРЅРІРµСЃС‚РёС†РёРё РґР°СЋС‚ РІР°Рј Рё РІР°С€РµР№ СЃРµРјСЊРµ РїСЂР°РІРѕ РЅР° РїРѕР»СѓС‡РµРЅРёРµ Р’РќР– Residente Temporal РІ РњРµРєСЃРёРєРµ СЃ РїРµСЂСЃРїРµРєС‚РёРІРѕР№ РѕС„РѕСЂРјР»РµРЅРёСЏ РіСЂР°Р¶РґР°РЅСЃС‚РІР°. РџР°СЃРїРѕСЂС‚ РњРµРєСЃРёРєРё РѕР±РµСЃРїРµС‡РёРІР°РµС‚ Р±РµР·РІРёР·РѕРІС‹Р№ РІСЉРµР·Рґ РІ 150+ СЃС‚СЂР°РЅ РјРёСЂР°.' },
+          { tag: 'РЎРµСЂРІРёСЃ Рё РѕРїРµСЂР°С†РёРѕРЅРєР°', title: 'РўРѕРїРѕРІР°СЏ РЈРїСЂР°РІР»СЏСЋС‰Р°СЏ<br>РљРѕРјРїР°РЅРёСЏ', desc: 'РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅР°СЏ РЈРїСЂР°РІР»СЏСЋС‰Р°СЏ РљРѕРјРїР°РЅРёСЏ РїРѕР»РЅРѕРіРѕ С†РёРєР»Р° Р±РµСЂРµС‚ РЅР° СЃРµР±СЏ 100% РѕРїРµСЂР°С†РёРѕРЅРЅРѕР№ СЂР°Р±РѕС‚С‹: РїСЂРµРјРёР°Р»СЊРЅРѕРµ РїСЂРѕРґРІРёР¶РµРЅРёРµ, РІСЃС‚СЂРµС‡Сѓ РіРѕСЃС‚РµР№, РєР»РёРЅРёРЅРі, РѕС…СЂР°РЅСѓ Рё СЂРµРіСѓР»СЏСЂРЅС‹Рµ РІС‹РїР»Р°С‚С‹ РЅР° РІР°С€ СЃС‡РµС‚.' },
+          { tag: 'РђСЂРµРЅРґРЅС‹Р№ РґРѕС…РѕРґ Рё Р›РёРєРІРёРґРЅРѕСЃС‚СЊ', title: 'РџР°СЃСЃРёРІРЅС‹Р№ РґРѕС…РѕРґ<br>9% РіРѕРґРѕРІС‹С…', desc: 'РРЅРЅРѕРІР°С†РёРѕРЅРЅР°СЏ СЃРёСЃС‚РµРјР° Lock-Off РїРѕР·РІРѕР»СЏРµС‚ РєРѕРјС„РѕСЂС‚РЅРѕ РїСЂРѕР¶РёРІР°С‚СЊ РІ РѕРґРЅРѕР№ С‡Р°СЃС‚Рё СЂРµР·РёРґРµРЅС†РёРё Рё РїР°СЂР°Р»Р»РµР»СЊРЅРѕ СЃРґР°РІР°С‚СЊ РѕСЃС‚Р°Р»СЊРЅС‹Рµ Р°РІС‚РѕРЅРѕРјРЅС‹Рµ Р·РѕРЅС‹. Р”РµС„РёС†РёС‚ СЃРµРјРµР№РЅС‹С… Р»РѕС‚РѕРІ РіР°СЂР°РЅС‚РёСЂСѓРµС‚ Р±С‹СЃС‚СЂСѓСЋ Рё РІС‹РіРѕРґРЅСѓСЋ РїРµСЂРµРїСЂРѕРґР°Р¶Сѓ.' },
+          { tag: 'РћР±СЂР°Р·РѕРІР°РЅРёРµ Рё Р”РµС‚Рё', title: '300 РјРµС‚СЂРѕРІ РґРѕ С€РєРѕР»С‹<br>Colegio InglГ©s', desc: 'Р’СЃРµРіРѕ РІ 300 РјРµС‚СЂР°С… РЅР°С…РѕРґРёС‚СЃСЏ РІРµРґСѓС‰РёР№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ Р±РёР»РёРЅРіРІР°Р»СЊРЅС‹Р№ РєРѕР»Р»РµРґР¶ Colegio InglГ©s (Р°РєРєСЂРµРґРёС‚Р°С†РёСЏ IB / Cambridge). Р”РµС‚Рё РґРѕС…РѕРґСЏС‚ РЅР° Р·Р°РЅСЏС‚РёСЏ Р·Р° 3 РјРёРЅСѓС‚С‹ РїРѕ Р·Р°РєСЂС‹С‚С‹Рј РїР°СЂРєРѕРІС‹Рј Р°Р»Р»РµСЏРј Р±РµР· РјР°С€РёРЅ.' },
+          { tag: 'РРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂР° Рё Р”РѕСЂРѕРіРё', title: 'Р Р°Р·РІРёС‚Р°СЏ РёРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂР°<br>Рё РўРѕСЂРіРѕРІС‹Рµ Р¦РµРЅС‚СЂС‹', desc: 'Р’ РЅРµРїРѕСЃСЂРµРґСЃС‚РІРµРЅРЅРѕР№ Р±Р»РёР·РѕСЃС‚Рё СЂР°СЃРїРѕР»РѕР¶РµРЅ РЅРѕРІС‹Р№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ Р°СЌСЂРѕРїРѕСЂС‚ TQO, СЃРєРѕСЂРѕСЃС‚РЅРѕР№ РїРѕРµР·Рґ Tren Maya (800 Рј), СЃСѓРїРµСЂРјР°СЂРєРµС‚С‹ Soriana, С‚РѕСЂРіРѕРІС‹Рµ С†РµРЅС‚СЂС‹, Michelin-СЂРµСЃС‚РѕСЂР°РЅ Cetli Рё С„РµСЃС‚РёРІР°Р»СЊРЅС‹Р№ С†РµРЅС‚СЂ Zamna.' }
+        ],
+
+        sec2Tag: "Р“Р°СЂР°РЅС‚РёРё Рё РЎС‚Р°С‚СѓСЃ",
+        sec2Title: "Р®СЂРёРґРёС‡РµСЃРєР°СЏ РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ<br>Рё РїСЂРёРІРёР»РµРіРёРё СЂРµР·РёРґРµРЅС‚РѕРІ",
+        sec2Desc: "РџРѕР»РЅР°СЏ РїСЂР°РІРѕРІР°СЏ Р·Р°С‰РёС‚Р°, РіРѕС‚РѕРІР°СЏ РѕС‚РµР»СЊРЅР°СЏ РјРѕРґРµР»СЊ СѓРїСЂР°РІР»РµРЅРёСЏ Рё РёРґРµР°Р»СЊРЅС‹Рµ СѓСЃР»РѕРІРёСЏ РґР»СЏ Р¶РёР·РЅРё СЃРµРјСЊРё.",
+
+        sec3Tag: "РРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂР° Рё Р»РѕРєР°С†РёСЏ",
+        sec3Title: "Р­РїРёС†РµРЅС‚СЂ РєСѓСЂРѕСЂС‚РЅРѕРіРѕ РўСѓР»СѓРјР°: 15 РјРёРЅСѓС‚ РґРѕ РљР°СЂРёР±СЃРєРѕРіРѕ РјРѕСЂСЏ",
+        sec3Desc: "РРЅС‚РµСЂР°РєС‚РёРІРЅР°СЏ РєР°СЂС‚Р°: РЅР°РІРµРґРёС‚Рµ РЅР° РјРµС‚РєРё, С‡С‚РѕР±С‹ СѓРІРёРґРµС‚СЊ СЂР°СЃСЃС‚РѕСЏРЅРёСЏ РґРѕ РєР»СЋС‡РµРІС‹С… РѕР±СЉРµРєС‚РѕРІ РёРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂС‹.",
+
+        locTabs: [
+          { name: "РђСЌСЂРѕРїРѕСЂС‚ TQO Рё РџРѕРµР·Рґ Tren Maya", val: "800 Рј" },
+          { name: "РўРѕСЂРіРѕРІС‹Рµ Р¦РµРЅС‚СЂС‹ Рё Soriana", val: "РќРѕРІС‹Рµ РўР¦" },
+          { name: "РџР»СЏР¶Рё РљР°СЂРёР±РѕРІ Рё Jaguar Park", val: "15 РјРёРЅ" },
+          { name: "В«Р’С‚РѕСЂРѕРµ Р‘Р°Р»РёВ» & РљСЂРёРїС‚Рѕ-РєРѕРјСЊСЋРЅРёС‚Рё", val: "3-4С… СЂРѕСЃС‚" },
+          { name: "РЁРєРѕР»Р° Colegio InglГ©s", val: "300 Рј" },
+          { name: "Р РµСЃС‚РѕСЂР°РЅС‹ & Michelin", val: "Michelin в…" },
+          { name: "100% Р¤СЂРёС…РѕР»Рґ Рё РўРµСЂСЂР°СЃС‹", val: "Р¤СЂРёС…РѕР»Рґ" },
+          { name: "РџР°СЃСЃРёРІРЅС‹Р№ РґРѕС…РѕРґ 9% ROI & РЈРїСЂР°РІР»РµРЅРёРµ", val: "9% ROI" }
+        ],
+
+        sec4Tag: "РњРµРґРёР°С‚РµРєР° РѕР±СЉРµРєС‚Р° РІ HD / 4K",
+        sec4Title: "Р РµР°Р»СЊРЅР°СЏ СЃС‚СЂРѕРёС‚РµР»СЊРЅР°СЏ РґРёРЅР°РјРёРєР°<br>Рё РїР°РЅРѕСЂР°РјС‹ Tulum Gardens",
+        sec4Desc: "РРЅС‚РµСЂР°РєС‚РёРІРЅС‹Р№ РїР»РµРµСЂ: РїРµСЂРµРєР»СЋС‡Р°Р№С‚Рµ СЃСЉРµРјРєРё СЃ РґСЂРѕРЅР°, СЃС‚СЂРѕРёС‚РµР»СЊРЅСѓСЋ РґРёРЅР°РјРёРєСѓ Рё СЌРєРѕ-РѕРєСЂСѓР¶РµРЅРёРµ РІ СЂРµР°Р»СЊРЅРѕРј РІСЂРµРјРµРЅРё.",
+
+        cinema: { all: "Р’СЃРµ (21)", drones: "Р”СЂРѕРЅС‹", construction: "РЎС‚СЂРѕР№РєР°", nature: "Р­РєРѕ" },
+
+        sec5Tag: "РљРѕР»Р»РµРєС†РёСЏ 8 СЂРµР·РёРґРµРЅС†РёР№",
+        sec5Title: "РљР°С‚Р°Р»РѕРі С‚Р°СѓРЅС…Р°СѓСЃРѕРІ Рё Р°СЂС…РёС‚РµРєС‚СѓСЂРЅС‹Рµ РїР»Р°РЅС‹",
+        sec5Desc: "Р’С‹Р±РµСЂРёС‚Рµ С„РѕСЂРјР°С‚ СЂРµР·РёРґРµРЅС†РёРё РґР»СЏ РїСЂРѕСЃРјРѕС‚СЂР° РґРµС‚Р°Р»СЊРЅС‹С… С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє РїР»Р°РЅРёСЂРѕРІРѕРє, РјРµС‚СЂР°Р¶Р°, РѕС‚РґРµР»РєРё Рё 3D-РёРЅС‚РµСЂСЊРµСЂРѕРІ.",
+
+        catalogTabs: [ "Garden House (104 РјВІ)", "PentHouse (103 РјВІ)", "PentHouse Plus (137 РјВІ)", "SkyHouse Р¤Р»Р°РіРјР°РЅ (205вЂ“240 РјВІ)" ],
+
+        units: [
+          {
+            id: 'tab-gh',
+            title: 'Garden House',
+            specs: '84 РјВІ Р¶РёР»Р°СЏ / 104 РјВІ РѕР±С‰Р°СЏ вЂў 2 СѓСЂРѕРІРЅСЏ вЂў 2 СЃРїР°Р»СЊРЅРё вЂў 2 СЃР°РЅСѓР·Р»Р° вЂў Р§Р°СЃС‚РЅС‹Р№ СЃР°Рґ & РџР°С‚РёРѕ',
+            desc: 'Р”РІСѓС…СѓСЂРѕРІРЅРµРІР°СЏ СЂРµР·РёРґРµРЅС†РёСЏ РїРµСЂРІРѕРіРѕ СѓСЂРѕРІРЅСЏ СЃ РїСЂСЏРјРѕР№ РёРЅС‚РµРіСЂР°С†РёРµР№ РІ Р»Р°РЅРґС€Р°С„С‚РЅС‹Р№ С‚СЂРѕРїРёС‡РµСЃРєРёР№ СЃР°Рґ. РќР° 1-Рј СѓСЂРѕРІРЅРµ вЂ” РіСЂР°РЅРґ-РіРѕСЃС‚РёРЅР°СЏ СЃ РїР°РЅРѕСЂР°РјРЅС‹Рј СЃР»Р°Р№Рґ-РѕСЃС‚РµРєР»РµРЅРёРµРј, РєСѓС…РЅСЏ СЃ РѕСЃС‚СЂРѕРІРѕРј РёР· РєРІР°СЂС†РёС‚Р°, РѕР±РµРґРµРЅРЅР°СЏ Р·РѕРЅР° Рё РіРѕСЃС‚РµРІРѕР№ СЃР°РЅСѓР·РµР». РќР° 2-Рј СѓСЂРѕРІРЅРµ вЂ” РјР°СЃС‚РµСЂ-СЃРїР°Р»СЊРЅСЏ СЃ РіР°СЂРґРµСЂРѕР±РЅРѕР№ Рё РІР°РЅРЅРѕР№ en-suite, РїР»СЋСЃ РІС‚РѕСЂР°СЏ СЃРїР°Р»СЊРЅСЏ.',
+            items: [
+              'РџСЂРёРІР°С‚РЅРѕРµ РєСЂС‹С‚РѕРµ РїР°С‚РёРѕ СЃ РїРµСЂРіРѕР»РѕР№ Рё РІС‹С…РѕРґРѕРј РІ Р»РёС‡РЅС‹Р№ СЃР°Рґ',
+              'Р”РІСѓС…СѓСЂРѕРІРЅРµРІР°СЏ РїР»Р°РЅРёСЂРѕРІРєР° (Ground Floor + Mezzanine)',
+              'РљСѓС…РЅСЏ СЃ РѕСЃС‚СЂРѕРІРѕРј Рё РІСЃС‚СЂРѕРµРЅРЅРѕР№ С‚РµС…РЅРёРєРѕР№ РїСЂРµРјРёСѓРј-РєР»Р°СЃСЃР°',
+              'РњР°СЃС‚РµСЂ-СЃРїР°Р»СЊРЅСЏ СЃ РёРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Рј СЃР°РЅСѓР·Р»РѕРј Рё РіР°СЂРґРµСЂРѕР±РѕРј',
+              'РњСѓР»СЊС‚РёСЃРїР»РёС‚ СЃРёСЃС‚РµРјР° РєР»РёРјР°С‚-РєРѕРЅС‚СЂРѕР»СЏ VRV РІ РєР°Р¶РґРѕР№ РєРѕРјРЅР°С‚Рµ',
+              '1 РїРµСЂСЃРѕРЅР°Р»СЊРЅРѕРµ РїР°СЂРєРѕРІРѕС‡РЅРѕРµ РјРµСЃС‚Рѕ РїРµСЂРµРґ РґРѕРјРѕРј'
+            ],
+            btn: 'РџРѕР»СѓС‡РёС‚СЊ РїР»Р°РЅРёСЂРѕРІРєСѓ РІ PDF'
+          },
+          {
+            id: 'tab-p',
+            title: 'PentHouse',
+            specs: '78 РјВІ Р¶РёР»Р°СЏ / 103 РјВІ РѕР±С‰Р°СЏ вЂў 2 СѓСЂРѕРІРЅСЏ вЂў 2 СЃРїР°Р»СЊРЅРё вЂў 2 СЃР°РЅСѓР·Р»Р° вЂў Р§Р°СЃС‚РЅС‹Р№ СЃРѕР»СЏСЂРёР№',
+            desc: 'Р”РІСѓС…СѓСЂРѕРІРЅРµРІС‹Р№ РїРµРЅС‚С…Р°СѓСЃ СЃ С‡Р°СЃС‚РЅС‹Рј СЃРѕР»СЏСЂРёРµРј РЅР° РєСЂС‹С€Рµ, Р»Р°СѓРЅР¶-Р·РѕРЅРѕР№ Рё РїР°РЅРѕСЂР°РјРЅС‹Рј РІРёРґРѕРј РЅР° РєСЂРѕРЅС‹ С‚СЂРѕРїРёС‡РµСЃРєРѕРіРѕ Р»РµСЃР°.',
+            items: [
+              'РџР°РЅРѕСЂР°РјРЅС‹Рµ РІРёРґС‹ РЅР° РєСЂРѕРЅС‹ С‚СЂРѕРїРёС‡РµСЃРєРѕРіРѕ Р»РµСЃР°',
+              'РџСЂРёРІР°С‚РЅР°СЏ С‚РµСЂСЂР°СЃР° РЅР° РєСЂРѕРІР»Рµ РґР»СЏ РєРѕРєС‚РµР№Р»РµР№ Рё BBQ',
+              'РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ Р·Р°РіСЂСѓР·РєР° РІ РІС‹СЃРѕРєРёР№ СЃРµР·РѕРЅ',
+              '100% РґРѕРІРµСЂРёС‚РµР»СЊРЅРѕРµ СѓРїСЂР°РІР»РµРЅРёРµ РѕС‚РµР»СЊРЅС‹Рј РѕРїРµСЂР°С‚РѕСЂРѕРј'
+            ],
+            btn: 'РџРѕР»СѓС‡РёС‚СЊ РїР»Р°РЅРёСЂРѕРІРєСѓ РІ PDF'
+          },
+          {
+            id: 'tab-pp',
+            title: 'PentHouse Plus',
+            specs: '102 РјВІ Р¶РёР»Р°СЏ / 137 РјВІ РѕР±С‰Р°СЏ вЂў 3 СѓСЂРѕРІРЅСЏ вЂў 3 СЃРїР°Р»СЊРЅРё вЂў 3 СЃР°РЅСѓР·Р»Р° вЂў Р‘Р°СЃСЃРµР№РЅ РЅР° РєСЂС‹С€Рµ',
+            desc: 'РўСЂРµС…СѓСЂРѕРІРЅРµРІР°СЏ СЂРµР·РёРґРµРЅС†РёСЏ СЃ РїСЂРёРІР°С‚РЅС‹Рј Р±Р°СЃСЃРµР№РЅРѕРј РЅР° РєСЂС‹С€Рµ, РїРµСЂРіРѕР»РѕР№, Р»Р°СѓРЅР¶-С‚РµСЂСЂР°СЃРѕР№ Рё РјР°СЃС‚РµСЂ-СЃРїР°Р»СЊРЅРµР№.',
+            items: [
+              '3 РїРѕР»РЅРѕС†РµРЅРЅС‹Рµ СЃРїР°Р»СЊРЅРё Рё 3 РІР°РЅРЅС‹Рµ РєРѕРјРЅР°С‚С‹',
+              'РџСЂРѕСЃС‚РѕСЂРЅР°СЏ Р·РѕРЅР° BBQ Рё СЂРµР»Р°РєСЃР° РЅР° РєСЂС‹С€Рµ РїРѕРґ РїРµСЂРіРѕР»РѕР№',
+              '1 РїР°СЂРєРѕРІРѕС‡РЅРѕРµ РјРµСЃС‚Рѕ РЅР° Р·Р°РєСЂС‹С‚РѕР№ С‚РµСЂСЂРёС‚РѕСЂРёРё',
+              'Р’С‹СЃРѕРєР°СЏ Р»РёРєРІРёРґРЅРѕСЃС‚СЊ РїСЂРё Р±С‹СЃС‚СЂРѕР№ РїРµСЂРµРїСЂРѕРґР°Р¶Рµ Р»РѕС‚Р°'
+            ],
+            btn: 'РџРѕР»СѓС‡РёС‚СЊ РїР»Р°РЅРёСЂРѕРІРєСѓ РІ PDF'
+          },
+          {
+            id: 'tab-s',
+            title: 'SkyHouse (Р¤Р»Р°РіРјР°РЅ)',
+            specs: '160 РјВІ Р¶РёР»Р°СЏ / 205вЂ“240 РјВІ РѕР±С‰Р°СЏ вЂў 3 СѓСЂРѕРІРЅСЏ вЂў 5 СЃРїР°Р»РµРЅ вЂў 4 СЃР°РЅСѓР·Р»Р° вЂў РўСЂРѕР№РЅРѕР№ Lock-Off',
+            desc: 'РўСЂРµС…СѓСЂРѕРІРЅРµРІР°СЏ СЂРµР·РёРґРµРЅС†РёСЏ СЃ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊСЋ РЅРµР·Р°РІРёСЃРёРјРѕРіРѕ СЂР°Р·РґРµР»РµРЅРёСЏ Р¶РёР»С‹С… Р·РѕРЅ РґР»СЏ РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕР№ СЃРґР°С‡Рё РЅРµСЃРєРѕР»СЊРєРёРј Р°СЂРµРЅРґР°С‚РѕСЂР°Рј Рё РјР°РєСЃРёРјРёР·Р°С†РёРё РєСЌС€С„Р»РѕСѓ.',
+            items: [
+              'Р’РѕР·РјРѕР¶РЅРѕСЃС‚СЊ СЂР°Р·РґРµР»СЊРЅРѕР№ СЃРґР°С‡Рё Р·РѕРЅ (СЃРёСЃС‚РµРјР° Lock-Off)',
+              '5 РїСЂРѕСЃС‚РѕСЂРЅС‹С… СЃРїР°Р»РµРЅ РґР»СЏ VIP-РіРѕСЃС‚РµР№ Рё Р±РѕР»СЊС€РёС… СЃРµРјРµР№',
+              'РљСЂСѓРїРЅРѕС„РѕСЂРјР°С‚РЅР°СЏ Р»Р°СѓРЅР¶-С‚РµСЂСЂР°СЃР° СЃ РѕР±Р·РѕСЂРѕРј 360В°',
+              'РџР°СЃСЃРёРІРЅС‹Р№ РґРѕС…РѕРґ 9% РіРѕРґРѕРІС‹С… РІ С‚РІРµСЂРґРѕР№ РІР°Р»СЋС‚Рµ'
+            ],
+            btn: 'РџРѕР»СѓС‡РёС‚СЊ РїР»Р°РЅРёСЂРѕРІРєСѓ РІ PDF'
+          }
+        ],
+
+        sec6Tag: "Р’РѕРїСЂРѕСЃС‹ Рё РѕС‚РІРµС‚С‹",
+        sec6Title: "Р’СЃС‘ Рѕ Р¶РёР·РЅРё, РЅР°Р»РѕРіР°С…<br>Рё РїСЂР°РІР°С… СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚Рё РІ РњРµРєСЃРёРєРµ",
+        sec6Desc: "РџРѕРґСЂРѕР±РЅР°СЏ СЋСЂРёРґРёС‡РµСЃРєР°СЏ Рё РїСЂР°РєС‚РёС‡РµСЃРєР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ РґР»СЏ РёРЅРІРµСЃС‚РѕСЂРѕРІ Рё СЃРµРјРµР№, РїР»Р°РЅРёСЂСѓСЋС‰РёС… РїРѕРєСѓРїРєСѓ РЅРµРґРІРёР¶РёРјРѕСЃС‚Рё РІ РўСѓР»СѓРјРµ.",
+        faqBtn: "Р—Р°РґР°С‚СЊ РІРѕРїСЂРѕСЃ СЌРєСЃРїРµСЂС‚Сѓ",
+
+        faq: [
+          { q: "РљР°Рє РѕС„РѕСЂРјР»СЏРµС‚СЃСЏ РїСЂР°РІРѕ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚Рё РЅР° РЅРµРґРІРёР¶РёРјРѕСЃС‚СЊ Рё Р·РµРјР»СЋ?", a: "РРЅРѕСЃС‚СЂР°РЅРЅС‹Рµ РіСЂР°Р¶РґР°РЅРµ РїСЂРёРѕР±СЂРµС‚Р°СЋС‚ РЅРµРґРІРёР¶РёРјРѕСЃС‚СЊ РІ РњРµРєСЃРёРєРµ С‡РµСЂРµР· <strong>Fideicomiso (Р±Р°РЅРєРѕРІСЃРєРёР№ С‚СЂР°СЃС‚)</strong> РёР»Рё РјРµРєСЃРёРєР°РЅСЃРєРѕРµ СЋСЂРёРґРёС‡РµСЃРєРѕРµ Р»РёС†Рѕ. Р­С‚Рѕ РіР°СЂР°РЅС‚РёСЂСѓРµС‚ <strong>100% Р±РµР·СѓСЃР»РѕРІРЅСѓСЋ Р»РёС‡РЅСѓСЋ С‡Р°СЃС‚РЅСѓСЋ СЃРѕР±СЃС‚РІРµРЅРЅРѕСЃС‚СЊ</strong> РЅР° Р·РµРјР»СЋ Рё Р·РґР°РЅРёРµ СЃ РїСЂР°РІРѕРј РїСЂРѕРґР°Р¶Рё, СЃРґР°С‡Рё, РґР°СЂРµРЅРёСЏ Рё РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ." },
+          { q: "РљР°РєРёРµ РЅР°Р»РѕРіРё РїР»Р°С‚СЏС‚СЃСЏ РїСЂРё РїРѕРєСѓРїРєРµ Рё РІР»Р°РґРµРЅРёРё СЂРµР·РёРґРµРЅС†РёРµР№ РІ РўСѓР»СѓРјРµ?", a: "РќР°Р»РѕРі РЅР° РїСЂРёРѕР±СЂРµС‚РµРЅРёРµ (ISAI) СЃРѕСЃС‚Р°РІР»СЏРµС‚ 2%. Р•Р¶РµРіРѕРґРЅС‹Р№ РЅР°Р»РѕРі РЅР° РёРјСѓС‰РµСЃС‚РІРѕ (Predial) РІ С€С‚Р°С‚Рµ РљРёРЅС‚Р°РЅР°-Р РѕРѕ РјРёРЅРёРјР°Р»СЊРЅС‹Р№ (РѕРєРѕР»Рѕ 0.1вЂ“0.2% РѕС‚ РєР°РґР°СЃС‚СЂРѕРІРѕР№ СЃС‚РѕРёРјРѕСЃС‚Рё). РџСЂРё РїСЂРѕРґР°Р¶Рµ РЅР°Р»РѕРі РЅР° РїСЂРёСЂРѕСЃС‚ РєР°РїРёС‚Р°Р»Р° (ISR) РѕРїС‚РёРјРёР·РёСЂСѓРµС‚СЃСЏ." },
+          { q: "РљР°Рє РѕСЂРіР°РЅРёР·СѓРµС‚СЃСЏ СЃРґР°С‡Р° РІ Р°СЂРµРЅРґСѓ Рё Р·Р° СЃС‡РµС‚ С‡РµРіРѕ РґРѕСЃС‚РёРіР°РµС‚СЃСЏ РґРѕС…РѕРґРЅРѕСЃС‚СЊ 9% РіРѕРґРѕРІС‹С…?", a: "РЈРїСЂР°РІР»РµРЅРёРµРј РІР°С€РµРіРѕ РѕР±СЉРµРєС‚Р° Р·Р°РЅРёРјР°РµС‚СЃСЏ <strong>С‚РѕРїРѕРІР°СЏ СѓРїСЂР°РІР»СЏСЋС‰Р°СЏ РєРѕРјРїР°РЅРёСЏ</strong> РїРѕР»РЅРѕРіРѕ С†РёРєР»Р°. РћРїРµСЂР°С‚РѕСЂ Р±РµСЂРµС‚ РЅР° СЃРµР±СЏ 100% РѕРїРµСЂР°С†РёРѕРЅРЅС‹С… РїСЂРѕС†РµСЃСЃРѕРІ: РїСЂРµРјРёР°Р»СЊРЅС‹Р№ РјР°СЂРєРµС‚РёРЅРі РЅР° РјРёСЂРѕРІС‹С… РїР»РѕС‰Р°РґРєР°С…, РІСЃС‚СЂРµС‡Рё Рё VIP-РѕР±СЃР»СѓР¶РёРІР°РЅРёРµ РіРѕСЃС‚РµР№ РёР· РЎРЁРђ Рё РљР°РЅР°РґС‹, РєР»РёРЅРёРЅРі Рё РІС‹РїР»Р°С‚С‹. <strong>РЎРёСЃС‚РµРјР° Lock-Off</strong> РїРѕР·РІРѕР»СЏРµС‚ СЃРґР°РІР°С‚СЊ Р·РѕРЅС‹ Р°РІС‚РѕРЅРѕРјРЅРѕ." },
+          { q: "Р”Р°РµС‚ Р»Рё РїРѕРєСѓРїРєР° РЅРµРґРІРёР¶РёРјРѕСЃС‚Рё РїСЂР°РІРѕ РЅР° РїРѕР»СѓС‡РµРЅРёРµ Р’РќР– РњРµРєСЃРёРєРё (Residente Temporal)?", a: "Р”Р°. РРЅРІРµСЃС‚РёС†РёРё РІ РЅРµРґРІРёР¶РёРјРѕСЃС‚СЊ РѕС‚ $220,000 РґР°СЋС‚ РІР°Рј Рё РІР°С€РµР№ СЃРµРјСЊРµ РїСЂР°РІРѕ РЅР° РїРѕР»СѓС‡РµРЅРёРµ <strong>Р’РќР– Residente Temporal</strong> СЃ РїРѕСЃР»РµРґСѓСЋС‰РёРј РѕС„РѕСЂРјР»РµРЅРёРµРј РџРњР– Рё РіСЂР°Р¶РґР°РЅСЃС‚РІР°." },
+          { q: "Р“РґРµ РЅР°С…РѕРґРёС‚СЃСЏ С€РєРѕР»Р° Colegio InglГ©s Рё РєР°Рє РґРµС‚Рё РґРѕР±РёСЂР°СЋС‚СЃСЏ РЅР° Р·Р°РЅСЏС‚РёСЏ?", a: "РЁРєРѕР»Р° Colegio InglГ©s СЂР°СЃРїРѕР»РѕР¶РµРЅР° <strong>РІСЃРµРіРѕ РІ 300 РјРµС‚СЂР°С… РѕС‚ СЂРµР·РёРґРµРЅС†РёР№</strong>. Р”РµС‚Рё РґРѕС…РѕРґСЏС‚ Р·Р° 3 РјРёРЅСѓС‚С‹ РїРѕ Р·Р°РєСЂС‹С‚С‹Рј Р·РµР»РµРЅС‹Рј Р°Р»Р»РµСЏРј Р±РµР· РІС‹РµР·РґР° РЅР° РїСЂРѕРµР·Р¶СѓСЋ С‡Р°СЃС‚СЊ." },
+          { q: "РљР°РєРѕРµ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РґРѕ РїР»СЏР¶РµР№, Р°СЌСЂРѕРїРѕСЂС‚Р° TQO Рё РїРѕРµР·РґР° Tren Maya?", a: "РќРѕРІС‹Р№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ Р°СЌСЂРѕРїРѕСЂС‚ TQO Рё СЃС‚Р°РЅС†РёСЏ РїРѕРµР·РґР° Tren Maya РЅР°С…РѕРґСЏС‚СЃСЏ <strong>РІ 800 РјРµС‚СЂР°С…</strong>. РџР»СЏР¶Рё РљР°СЂРёР±СЃРєРѕРіРѕ РјРѕСЂСЏ Рё РЅР°С†РїР°СЂРє Jaguar Park вЂ” РІ 15 РјРёРЅСѓС‚Р°С… РµР·РґС‹." },
+          { q: "Р’ РєР°РєРѕР№ РІР°Р»СЋС‚Рµ РІС‹РїР»Р°С‡РёРІР°РµС‚СЃСЏ Р°СЂРµРЅРґРЅС‹Р№ РґРѕС…РѕРґ Рё РєР°Рє РїРµСЂРµРІРѕРґРёС‚СЊ СЃСЂРµРґСЃС‚РІР° РЅР° РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ СЃС‡РµС‚?", a: "Р’С‹РїР»Р°С‚С‹ Р°СЂРµРЅРґРЅРѕРіРѕ РґРѕС…РѕРґР° РїСЂРѕРёР·РІРѕРґСЏС‚СЃСЏ РµР¶РµРјРµСЃСЏС‡РЅРѕ РІ <strong>USD РёР»Рё MXN</strong> Р±Р°РЅРєРѕРІСЃРєРёРј РїРµСЂРµРІРѕРґРѕРј РЅР° РІР°С€ СЃС‡РµС‚ РІ Р»СЋР±РѕР№ СЃС‚СЂР°РЅРµ РјРёСЂР°." },
+          { q: "Р‘РµР·РѕРїР°СЃРЅРѕ Р»Рё РІ РўСѓР»СѓРјРµ, С‡С‚Рѕ СЃ РјРёС„Р°РјРё РїСЂРѕ РєР°СЂС‚РµР»Рё РІ РЎРњР Рё РєР°Рє РѕСЂРіР°РЅРёР·РѕРІР°РЅР° РѕС…СЂР°РЅР°?", a: "РЁС‚Р°С‚ РљРёРЅС‚Р°РЅР°-Р РѕРѕ (РўСѓР»СѓРј Рё Р РёРІСЊРµСЂР° РњР°Р№СЏ) РЅР°С…РѕРґРёС‚СЃСЏ РїРѕРґ РѕСЃРѕР±С‹Рј РєРѕРЅС‚СЂРѕР»РµРј С„РµРґРµСЂР°Р»СЊРЅС‹С… РІР»Р°СЃС‚РµР№ (Guardia Nacional Рё PolicГ­a TurГ­stica). Tulum Gardens вЂ” СЌС‚Рѕ Р·Р°РєСЂС‹С‚С‹Р№ РїСЂРёРІР°С‚РЅС‹Р№ РєРѕРјСЊСЋРЅРёС‚Рё 24/7 СЃ Р±РёРѕРјРµС‚СЂРёС‡РµСЃРєРёРј РєРѕРЅС‚СЂРѕР»РµРј РґРѕСЃС‚СѓРїР°, РІРёРґРµРѕРЅР°Р±Р»СЋРґРµРЅРёРµРј Рё СЃР»СѓР¶Р±РѕР№ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё." }
+        ],
+
+        ctaTitle: "РЎРєР°С‡Р°Р№С‚Рµ РїРѕР»РЅС‹Р№ РєР°С‚Р°Р»РѕРі 8 СЂРµР·РёРґРµРЅС†РёР№ СЃ РїР»Р°РЅРёСЂРѕРІРєР°РјРё Рё С†РµРЅР°РјРё",
+        ctaSub: "РћСЃС‚Р°РІСЊС‚Рµ РІР°С€ WhatsApp РёР»Рё Email РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РїСЂРµР·РµРЅС‚Р°С†РёРё Рё РїСЂР°Р№СЃ-Р»РёСЃС‚Р° Р·Р° 2 РјРёРЅСѓС‚С‹:",
+        formName: "Р’Р°С€Рµ РёРјСЏ",
+        formPhone: "РўРµР»РµС„РѕРЅ / WhatsApp",
+        formEmail: "Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°",
+        formBtn: "РЎРєР°С‡Р°С‚СЊ РєР°С‚Р°Р»РѕРі (PDF)"
+      }
+    };
+
+    function toggleLanguage(lang) {
+      currentLang = lang;
+      const btnRu = document.getElementById('btn-lang-ru');
+      const btnEn = document.getElementById('btn-lang-en');
+      if (btnRu) btnRu.classList.toggle('active', lang === 'ru');
+      if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+
+      const t = translations[lang];
+      if (!t) return;
+
+      // 1. Header & Nav
+      const navs = document.querySelectorAll('.nav-links a');
+      if (navs.length >= 5) {
+        navs[0].innerText = t.navBenefits;
+        navs[1].innerText = t.navLocation;
+        navs[2].innerText = t.navMedia;
+        navs[3].innerText = t.navCatalog;
+        navs[4].innerText = t.navFaq;
+      }
+      const headerBtn = document.getElementById('header-catalog-btn');
+      if (headerBtn) headerBtn.innerText = t.headerCatalogBtn;
+
+      // 2. Hero Section
+      const badge = document.querySelector('.hero-badge');
+      if (badge) badge.innerText = t.heroBadge;
+
+      const h1 = document.querySelector('.hero-h1');
+      if (h1) h1.innerHTML = t.heroH1;
+
+      const sub = document.querySelector('.hero-subtext');
+      if (sub) sub.innerHTML = t.heroSubtext;
+
+      const heroBtns = document.querySelectorAll('.hero-btns button');
+      if (heroBtns.length >= 2) {
+        heroBtns[0].innerText = t.heroBtn1;
+        heroBtns[1].innerText = t.heroBtn2;
+      }
+
+      // 3. Stat Pills
+      const statPills = document.querySelectorAll('.hero-stat-pill');
+      if (statPills.length >= 4) {
+        statPills[0].querySelector('.stat-top-val').innerText = t.statPill1Val;
+        statPills[0].querySelector('.stat-sub-text').innerText = t.statPill1Sub;
+        statPills[1].querySelector('.stat-top-val').innerText = t.statPill2Val;
+        statPills[1].querySelector('.stat-sub-text').innerText = t.statPill2Sub;
+        statPills[2].querySelector('.stat-top-val').innerText = t.statPill3Val;
+        statPills[2].querySelector('.stat-sub-text').innerText = t.statPill3Sub;
+        statPills[3].querySelector('.stat-top-val').innerText = t.statPill4Val;
+        statPills[3].querySelector('.stat-sub-text').innerText = t.statPill4Sub;
+      }
+
+      // 4. Section Heads
+      const secHeads = document.querySelectorAll('.sec-head');
+      if (secHeads.length >= 4) {
+        secHeads[0].querySelector('.sec-tag').innerText = t.sec2Tag;
+        secHeads[0].querySelector('.sec-title').innerHTML = t.sec2Title;
+        secHeads[0].querySelector('.sec-desc').innerText = t.sec2Desc;
+
+        secHeads[1].querySelector('.sec-tag').innerText = t.sec3Tag;
+        secHeads[1].querySelector('.sec-title').innerText = t.sec3Title;
+        secHeads[1].querySelector('.sec-desc').innerText = t.sec3Desc;
+
+        secHeads[2].querySelector('.sec-tag').innerText = t.sec4Tag;
+        secHeads[2].querySelector('.sec-title').innerHTML = t.sec4Title;
+        secHeads[2].querySelector('.sec-desc').innerText = t.sec4Desc;
+
+        secHeads[3].querySelector('.sec-tag').innerText = t.sec5Tag;
+        secHeads[3].querySelector('.sec-title').innerText = t.sec5Title;
+        secHeads[3].querySelector('.sec-desc').innerText = t.sec5Desc;
+      }
+
+      // 5. Bento Cards
+      const bentoCards = document.querySelectorAll('.bento-card');
+      if (bentoCards.length >= 6 && t.bento) {
+        t.bento.forEach((b, i) => {
+          if (bentoCards[i]) {
+            bentoCards[i].querySelector('.bento-tag').innerText = b.tag;
+            bentoCards[i].querySelector('.bento-title').innerHTML = b.title;
+            bentoCards[i].querySelector('.bento-desc').innerHTML = b.desc;
+          }
+        });
+      }
+
+      // 6. Location Tabs
+      const locTabs = document.querySelectorAll('.loc-usp-tab');
+      if (locTabs.length >= 8 && t.locTabs) {
+        t.locTabs.forEach((lt, i) => {
+          if (locTabs[i]) {
+            locTabs[i].querySelector('.tab-name').innerText = lt.name;
+            locTabs[i].querySelector('.tab-val').innerText = lt.val;
+          }
+        });
+      }
+      switchLocUsp(0);
+
+      // 7. Cinema Player
+      if (t.cinema) {
+        const catBtns = document.querySelectorAll('.cat-btn-row .cat-btn');
+        if (catBtns.length >= 4) {
+          catBtns[0].innerText = t.cinema.all;
+          catBtns[1].innerText = t.cinema.drones;
+          catBtns[2].innerText = t.cinema.construction;
+          catBtns[3].innerText = t.cinema.nature;
+        }
+      }
+
+      // 8. Unit Catalog
+      const cTabBtns = document.querySelectorAll('.c-tab-btn');
+      if (cTabBtns.length >= 4 && t.catalogTabs) {
+        cTabBtns.forEach((btn, i) => { btn.innerText = t.catalogTabs[i]; });
+      }
+      if (t.units) {
+        t.units.forEach((u) => {
+          const card = document.getElementById(u.id);
+          if (card) {
+            const h3 = card.querySelector('.unit-h3');
+            if (h3) h3.innerText = u.title;
+
+            const specs = card.querySelector('.unit-badge-specs');
+            if (specs) specs.innerText = u.specs;
+
+            const desc = card.querySelector('.unit-desc-p');
+            if (desc) desc.innerText = u.desc;
+
+            const items = card.querySelectorAll('.unit-check-list li');
+            if (items && u.items) {
+              u.items.forEach((itemText, idx) => { if (items[idx]) items[idx].innerText = itemText; });
+            }
+
+            const btn = card.querySelector('button');
+            if (btn) btn.innerText = u.btn;
+          }
+        });
+      }
+
+      // 9. FAQ Section
+      const faqLeft = document.querySelector('.faq-left-col');
+      if (faqLeft) {
+        faqLeft.querySelector('.sec-tag').innerText = t.sec6Tag;
+        faqLeft.querySelector('.sec-title').innerHTML = t.sec6Title;
+        faqLeft.querySelector('.sec-desc').innerText = t.sec6Desc;
+        const faqBtn = faqLeft.querySelector('button');
+        if (faqBtn && t.faqBtn) faqBtn.innerText = t.faqBtn;
+      }
+
+      const faqItems = document.querySelectorAll('.faq-item');
+      if (faqItems.length >= 8 && t.faq) {
+        t.faq.forEach((f, i) => {
+          if (faqItems[i]) {
+            faqItems[i].querySelector('.faq-q span').innerText = f.q;
+            faqItems[i].querySelector('.faq-a').innerHTML = f.a;
+          }
+        });
+      }
+
+      // 10. CTA Form
+      const ctaH2 = document.querySelector('.cta-banner h2');
+      if (ctaH2 && t.ctaTitle) ctaH2.innerText = t.ctaTitle;
+
+      const ctaSub = document.querySelector('.cta-form-wrapper p');
+      if (ctaSub && t.ctaSub) ctaSub.innerText = t.ctaSub;
+
+      const formName = document.querySelector('input[name="name"]');
+      if (formName && t.formName) formName.placeholder = t.formName;
+
+      const formPhone = document.querySelector('input[name="phone"]');
+      if (formPhone && t.formPhone) formPhone.placeholder = t.formPhone;
+
+      const formEmail = document.querySelector('input[name="email"]');
+      if (formEmail && t.formEmail) formEmail.placeholder = t.formEmail;
+
+      const ctaBtn = document.querySelector('.cta-form-wrapper button[type="submit"]');
+      if (ctaBtn && t.formBtn) ctaBtn.innerText = t.formBtn;
+
+      localStorage.setItem('tulum_lang', lang);
+    }
+  </script>
+</body>
+</html>
+
+
+
+

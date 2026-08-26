@@ -1,0 +1,10 @@
+videos/tulum_drone_hero.mp4
+videos/tulum_site_1.mp4
+videos/tulum_site_2.mp4
+videos/tulum_site_3.mp4
+node_modules/
+compress.js
+
+videos/*.mp4
+videos/*.MOV
+videos/*.mov
