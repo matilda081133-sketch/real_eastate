@@ -662,7 +662,7 @@
     }
     .bento-desc {
       font-family: 'TildaSans', sans-serif !important;
-      font-size: 16.5px;
+      font-size: 13.5px;
       color: #3A3D3C;
       line-height: 1.55;
       font-weight: 400;
@@ -687,6 +687,14 @@
       justify-content: center;
       color: var(--accent);
       font-size: 14px;
+      transition: all 0.3s;
+    }
+      background: #FAF9F7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 16px;
       transition: all 0.3s;
     }
     .bento-card:hover .bento-arrow {
@@ -1540,7 +1548,7 @@
           <span>+52 (984) 123-4567</span>
         </a>
         <button class="btn btn-accent" id="header-catalog-btn" onclick="openModal('Скачать презентацию проекта')">
-          Получить брошюру
+          Скачать каталог
         </button>
       </div>
     </div>
@@ -1556,16 +1564,16 @@
 
     <div class="container">
       <div class="hero-body">
-        <span class="hero-badge" style="background: rgba(255,210,80,0.18); color: #FFD24D; border-color: rgba(255,210,80,0.4);">8 ЭКСКЛЮЗИВНЫХ ЮНИТОВ ОТ СОБСТВЕННИКА</span>
+        <span class="hero-badge" style="background:rgba(255,210,80,0.18);color:#FFD24D;border-color:rgba(255,210,80,0.4);">8 ЭКСКЛЮЗИВНЫХ ЮНИТОВ ОТ СОБСТВЕННИКА</span>
         <h1 class="hero-h1">
-          Обеспечьте семье <span style="color: #FFD24D;">пассивный доход 9% годовых</span> и второй дом на Карибах в Тулуме
+          Обеспечьте семье <span style='color:#FFD24D;'>пассивный доход 9% годовых</span> и второй дом на Карибах в Тулуме
         </h1>
         <p class="hero-subtext">
           Премиальные резиденции в закрытом приватном комьюнити Тулума.<br>
           Откройте для себя уникальный эко-стиль жизни на Карибском побережье Мексики,<br>
           где первозданная природа сочетается с высокими стандартами комфорта и статусом.<br><br>
           <strong style="color: var(--accent); font-weight: 600;">
-            Скачайте гайд «5 причин переехать в Мексику» и брошюру<br>
+            Скачайте гайд «5 причин переехать в Мексику» и полный каталог 8 резиденций<br>
             с планировками и ценами прямо сейчас:
           </strong>
         </p>
@@ -1586,7 +1594,7 @@
           </div>
           <div class="hero-stat-pill">
             <div class="stat-top-val">Развитая инфраструктура</div>
-            <div class="stat-sub-text">Аэропорт TQO, поезд Tren Maya, ТЦ, Michelin-рестораны и детские сады, парки и частные клиники</div>
+            <div class="stat-sub-text">Аэропорт TQO, поезд Tren Maya, ТЦ, Michelin-рестораны и элитное крипто-комьюнити</div>
           </div>
           <div class="hero-stat-pill">
             <div class="stat-top-val">100% Фрихолд</div>
@@ -1818,7 +1826,7 @@
           <div class="loc-display-img-wrap">
             <img src="images/img_61.jpg" id="usp-img" class="loc-display-img" alt="Инфраструктура Tulum Gardens">
             <div class="loc-display-img-overlay">
-              <div class="loc-img-badge" id="usp-badge">15 мин до аэропорта</div>
+              <div class="loc-img-badge" id="usp-badge">18 мин до аэропорта</div>
             </div>
           </div>
           <div class="loc-display-content">
@@ -1826,11 +1834,11 @@
               <span class="loc-display-tag" id="usp-tag">01 / Авиасообщение и логистика</span>
               <h3 class="loc-display-title" id="usp-title">Новый Международный аэропорт Тулума</h3>
               <p class="loc-display-text" id="usp-text">
-                Международный аэропорт имени Фелипе Каррильо Пуэрто (TQO) принимает прямые рейсы из США, Канады и Европы. Время в пути от терминала до резиденций — <strong>всего 15 минут</strong> на автомобиле или скоростном поезде <strong>Tren Maya</strong>.
+                Международный аэропорт имени Фелипе Каррильо Пуэрто (TQO) принимает прямые рейсы из США, Канады и Европы. Время в пути от терминала до резиденций — <strong>всего 18 минут</strong> на автомобиле или скоростном поезде <strong>Tren Maya</strong>.
               </p>
             </div>
             <div class="loc-display-metric" id="usp-metric">
-              15 мин <span>до международного терминала TQO</span>
+              18 мин <span>до международного терминала TQO</span>
             </div>
           </div>
         </div>
@@ -1910,7 +1918,7 @@
           </div>
           <div class="unit-thumbs">
             <img src="images/img_24.jpg" onclick="swapImg('gh-main', 'images/img_24.jpg')" alt="Garden House Фасад">
-            <img src="images/img_13.jpg" onclick="swapImg('gh-main', 'images/img_26.jpg')" alt="Гранд-гостиная с кухней">
+            <img src="images/img_26.jpg" onclick="swapImg('gh-main', 'images/img_26.jpg')" alt="Гранд-гостиная с кухней">
             <img src="images/img_36.jpg" onclick="swapImg('gh-main', 'images/img_36.jpg')" alt="Крытое патио с лаунжем">
             <img src="images/img_58.jpg" onclick="swapImg('gh-main', 'images/img_58.jpg')" alt="Премиальная мастер-спальня">
           </div>
@@ -2303,28 +2311,28 @@
 
     // REAL SITE VIDEO CINEMA LIBRARY CONTROLLER
     const cinemaVideos = [
-      { src: '1XraGthDNOCUOd0wAC0scIgZKMshcTBjk', cat: 'drone',        tag: 'Drone 4K',    titleRu: 'Аэросъёмка — DJI 0017',    titleEn: 'Aerial Shot — DJI 0017',   desc: 'Панорамный дроновый облёт комплекса.' },
-      { src: '1GwOY_7TVcvjpjTz6cNga_4SWyA9hfYN-', cat: 'drone',        tag: 'Drone 4K',    titleRu: 'Аэросъёмка — DJI 0019',    titleEn: 'Aerial Shot — DJI 0019',   desc: 'Вид сверху на массив резиденций.' },
-      { src: '1xq-Po4Eejjp5IZByaZ0mSuS53Oe-RUe6', cat: 'drone',        tag: 'Drone 4K',    titleRu: 'Аэросъёмка — DJI 0022',    titleEn: 'Aerial Shot — DJI 0022',   desc: 'Облёт периметра комьюнити.' },
-      { src: '1MO27PHaqKER0FITkLmOxd1caRhiN-KDo', cat: 'drone',        tag: 'Drone 4K',    titleRu: 'Аэросъёмка — DJI 0023',    titleEn: 'Aerial Shot — DJI 0023',   desc: 'Высотная панорама.' },
-      { src: '1r3YK9qz07Kl401XRcqVpdx2Gj0XyiHL9', cat: 'drone',        tag: 'Drone 4K',    titleRu: 'Аэросъёмка — DJI 0024',    titleEn: 'Aerial Shot — DJI 0024',   desc: 'Динамичный облёт территории.' },
-      { src: '1qL_wl58BBwPFpKJeQrGXHezUtv9OKy-J', cat: 'drone',        tag: 'Drone 4K',    titleRu: 'Аэросъёмка — DJI 0025',    titleEn: 'Aerial Shot — DJI 0025',   desc: 'Аллеи и зелёные зоны.' },
-      { src: '19Tdurv0JKMASjUNTAXpQU_fUAFY-JnXE', cat: 'drone',        tag: 'Drone 4K',    titleRu: 'Аэросъёмка — DJI 0026',    titleEn: 'Aerial Shot — DJI 0026',   desc: 'Завершающий облёт генплана.' },
-      { src: '1HrKha19QUXnz3AwG2DYuPtfa0Z-F2Cs5', cat: 'construction', tag: 'Стройка',     titleRu: 'Площадка — SSR 5103',       titleEn: 'Site — SSR 5103',          desc: 'Подготовка участков.' },
-      { src: '1E5THDBGDpIPwKpxmNTM2l_JQ7vWzNDsy', cat: 'construction', tag: 'Стройка',     titleRu: 'Площадка — SSR 5104',       titleEn: 'Site — SSR 5104',          desc: 'Ход строительства.' },
-      { src: '1yOKVShY6d8nlQbtpn4yfxVBn-j4-bSH0', cat: 'construction', tag: 'Стройка',     titleRu: 'Площадка — SSR 5105',       titleEn: 'Site — SSR 5105',          desc: 'Возведение конструкций.' },
-      { src: '12_7HQRUU_bSoNJqpC08hxQMFyVphnmig',  cat: 'construction', tag: 'Стройка',     titleRu: 'Площадка — SSR 5107',       titleEn: 'Site — SSR 5107',          desc: 'Монтаж перекрытий.' },
-      { src: '1SZaJxEFXTDhm9Iniun8D_X9u8LoMIEyd', cat: 'construction', tag: 'Стройка',     titleRu: 'Площадка — SSR 5108',       titleEn: 'Site — SSR 5108',          desc: 'Фиксация строительства.' },
-      { src: '15LRPgQigDEA48stzS4B2sDjmY1GnzOJF', cat: 'construction', tag: 'Стройка',     titleRu: 'Площадка — SSR 5109',       titleEn: 'Site — SSR 5109',          desc: 'Стены и кровля.' },
-      { src: '1tzGvnhicLI92ZaucUVli7ZgWDFXQ5cPI', cat: 'construction', tag: 'Стройка',     titleRu: 'Площадка — SSR 5110',       titleEn: 'Site — SSR 5110',          desc: 'Строительство юнитов.' },
-      { src: '1kva0WARo73K3783LdFwbd2wnIde7NlGb', cat: 'construction', tag: 'Стройка',     titleRu: 'Площадка — SSR 5111',       titleEn: 'Site — SSR 5111',          desc: 'Фасадные работы.' },
-      { src: '1YiyyE3JlRxrgpWaDSIYkKbJ6OUXxhlKI', cat: 'nature',       tag: 'Территория',  titleRu: 'Территория — SSR 5112',     titleEn: 'Territory — SSR 5112',     desc: 'Ландшафт и эко-среда.' },
-      { src: '1ehFQd3_nd89sLIcGAUBJC38oMk75QUm_', cat: 'nature',       tag: 'Территория',  titleRu: 'Территория — SSR 5113',     titleEn: 'Territory — SSR 5113',     desc: 'Тропическая зелень.' },
-      { src: '1lItmw51eYNyCLW7BN_DJ_YxwpOk30YR_', cat: 'nature',       tag: 'Территория',  titleRu: 'Территория — SSR 5114',     titleEn: 'Territory — SSR 5114',     desc: 'Пешеходные аллеи.' },
-      { src: '1CyrclHHNt233OPxSZYjrwAlF7uMw4Ma_', cat: 'nature',       tag: 'Территория',  titleRu: 'Территория — SSR 5115',     titleEn: 'Territory — SSR 5115',     desc: 'Безопасность и уединение.' },
-      { src: '1InOC5AKFgw8QaYYR2fByCupnnXUxCL1-', cat: 'nature',       tag: 'Территория',  titleRu: 'Территория — SSR 5116',     titleEn: 'Territory — SSR 5116',     desc: 'Зелёная зона.' },
-      { src: '1Hfsr4D56PPw9onXaduNrxpjNlUw5CK2p', cat: 'nature',       tag: 'Территория',  titleRu: 'Территория — SSR 5117',     titleEn: 'Territory — SSR 5117',     desc: 'Эко-концепция.' },
-      { src: '1CWj-QthM3r3nZlvJSBjrtx0VJ0uE-pNH', cat: 'nature',       tag: 'Территория',  titleRu: 'Территория — SSR 5118',     titleEn: 'Territory — SSR 5118',     desc: 'Финальный обход.' }
+      { src: '1XraGthDNOCUOd0wAC0scIgZKMshcTBjk', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка — DJI 0017',  titleEn: 'Aerial Shot — DJI 0017',  desc: 'Панорамный дроновый облёт комплекса.' },
+      { src: '1GwOY_7TVcvjpjTz6cNga_4SWyA9hfYN-', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка — DJI 0019',  titleEn: 'Aerial Shot — DJI 0019',  desc: 'Вид сверху на резиденции.' },
+      { src: '1xq-Po4Eejjp5IZByaZ0mSuS53Oe-RUe6', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка — DJI 0022',  titleEn: 'Aerial Shot — DJI 0022',  desc: 'Облёт периметра.' },
+      { src: '1MO27PHaqKER0FITkLmOxd1caRhiN-KDo', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка — DJI 0023',  titleEn: 'Aerial Shot — DJI 0023',  desc: 'Высотная панорама.' },
+      { src: '1r3YK9qz07Kl401XRcqVpdx2Gj0XyiHL9', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка — DJI 0024',  titleEn: 'Aerial Shot — DJI 0024',  desc: 'Динамичный облёт.' },
+      { src: '1qL_wl58BBwPFpKJeQrGXHezUtv9OKy-J', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка — DJI 0025',  titleEn: 'Aerial Shot — DJI 0025',  desc: 'Аллеи и зелёные зоны.' },
+      { src: '19Tdurv0JKMASjUNTAXpQU_fUAFY-JnXE', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка — DJI 0026',  titleEn: 'Aerial Shot — DJI 0026',  desc: 'Завершающий облёт.' },
+      { src: '1HrKha19QUXnz3AwG2DYuPtfa0Z-F2Cs5', cat: 'construction', tag: 'Стройка',    titleRu: 'Площадка — SSR 5103',    titleEn: 'Site — SSR 5103',         desc: 'Подготовка участков.' },
+      { src: '1E5THDBGDpIPwKpxmNTM2l_JQ7vWzNDsy', cat: 'construction', tag: 'Стройка',    titleRu: 'Площадка — SSR 5104',    titleEn: 'Site — SSR 5104',         desc: 'Ход строительства.' },
+      { src: '1yOKVShY6d8nlQbtpn4yfxVBn-j4-bSH0', cat: 'construction', tag: 'Стройка',    titleRu: 'Площадка — SSR 5105',    titleEn: 'Site — SSR 5105',         desc: 'Возведение конструкций.' },
+      { src: '12_7HQRUU_bSoNJqpC08hxQMFyVphnmig',  cat: 'construction', tag: 'Стройка',    titleRu: 'Площадка — SSR 5107',    titleEn: 'Site — SSR 5107',         desc: 'Монтаж перекрытий.' },
+      { src: '1SZaJxEFXTDhm9Iniun8D_X9u8LoMIEyd', cat: 'construction', tag: 'Стройка',    titleRu: 'Площадка — SSR 5108',    titleEn: 'Site — SSR 5108',         desc: 'Фиксация.' },
+      { src: '15LRPgQigDEA48stzS4B2sDjmY1GnzOJF', cat: 'construction', tag: 'Стройка',    titleRu: 'Площадка — SSR 5109',    titleEn: 'Site — SSR 5109',         desc: 'Стены и кровля.' },
+      { src: '1tzGvnhicLI92ZaucUVli7ZgWDFXQ5cPI', cat: 'construction', tag: 'Стройка',    titleRu: 'Площадка — SSR 5110',    titleEn: 'Site — SSR 5110',         desc: 'Строительство юнитов.' },
+      { src: '1kva0WARo73K3783LdFwbd2wnIde7NlGb', cat: 'construction', tag: 'Стройка',    titleRu: 'Площадка — SSR 5111',    titleEn: 'Site — SSR 5111',         desc: 'Фасадные работы.' },
+      { src: '1YiyyE3JlRxrgpWaDSIYkKbJ6OUXxhlKI', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5112',  titleEn: 'Territory — SSR 5112',    desc: 'Ландшафт.' },
+      { src: '1ehFQd3_nd89sLIcGAUBJC38oMk75QUm_', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5113',  titleEn: 'Territory — SSR 5113',    desc: 'Зелёные зоны.' },
+      { src: '1lItmw51eYNyCLW7BN_DJ_YxwpOk30YR_', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5114',  titleEn: 'Territory — SSR 5114',    desc: 'Аллеи и патио.' },
+      { src: '1CyrclHHNt233OPxSZYjrwAlF7uMw4Ma_', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5115',  titleEn: 'Territory — SSR 5115',    desc: 'Безопасность.' },
+      { src: '1InOC5AKFgw8QaYYR2fByCupnnXUxCL1-', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5116',  titleEn: 'Territory — SSR 5116',    desc: 'Зелёная зона.' },
+      { src: '1Hfsr4D56PPw9onXaduNrxpjNlUw5CK2p', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5117',  titleEn: 'Territory — SSR 5117',    desc: 'Эко-концепция.' },
+      { src: '1CWj-QthM3r3nZlvJSBjrtx0VJ0uE-pNH', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5118',  titleEn: 'Territory — SSR 5118',    desc: 'Финальный обход.' }
     ];
 
     let currentCinemaIdx = 0;
@@ -2501,11 +2509,11 @@
 
         const pinsData = [
           { coords: [20.2048, -87.4692], label: "📍 Tulum Gardens", isPrimary: true },
-          { coords: [20.2041, -87.4684], label: "🏫 Colegio Inglés (300 м)", isPrimary: false },
-          { coords: [20.2115, -87.4753], label: "🚆 Tren Maya Station (800 м)", isPrimary: false },
-          { coords: [20.2170, -87.4580], label: "🏞️ Cenote & Jaguar Park", isPrimary: false },
-          { coords: [20.2095, -87.4628], label: "🛒 Soriana & Carretera 307", isPrimary: false },
-          { coords: [20.1955, -87.4373], label: "🏖️ Пляжи Карибов (15 мин)", isPrimary: false }
+          { coords: [20.2030, -87.4725], label: "🏫 Colegio Inglés (300 м)", isPrimary: false },
+          { coords: [20.2100, -87.4770], label: "🚆 Tulum Station Tren Maya (800 м)", isPrimary: false },
+          { coords: [20.2175, -87.4560], label: "🏊‍♂️ Cenote Calavera & Jaguar Park (2 мин)", isPrimary: false },
+          { coords: [20.2110, -87.4640], label: "🛒 Soriana & Carretera 307 (4-6 мин)", isPrimary: false },
+          { coords: [20.1955, -87.4373], label: "🏖️ Пляжи Карибов & Chedraui (8-10 мин)", isPrimary: false }
         ];
 
         pinsData.forEach(p => {
@@ -2600,7 +2608,7 @@
         text: 'Tulum has received a massive infrastructure boost: the <strong>new Felipe Carrillo Puerto International Airport (TQO)</strong> and the <strong>high-speed Tren Maya train station just 800 meters from the residences</strong>. High-speed rail connects residents with the airport, Cancun, Playa del Carmen, and Yucatan, while new highway networks ensure fast, smooth travel.',
         metric: '800 m',
         sub: 'to Tren Maya station and TQO Airport',
-        img: 'images/img_4.jpg',
+        img: 'images/tulum_airport_station.jpg',
         badge: '01 / TQO Airport & Tren Maya Train'
       },
       {
@@ -2818,18 +2826,25 @@
         navMedia: "Медиатека",
         navCatalog: "Таунхаусы",
         navFaq: "FAQ",
-        headerCatalogBtn: "Получить брошюру",
+        headerCatalogBtn: "Скачать каталог",
 
         heroBadge: "8 ЭКСКЛЮЗИВНЫХ ЮНИТОВ ОТ СОБСТВЕННИКА",
-        heroH1: "Обеспечьте семье <span style="color: #FFD24D;">пассивный доход 9% годовых</span> и второй дом на Карибах в Тулуме",
-        heroSubtext: "Премиальные резиденции в закрытом приватном комьюнити Тулума.<br>Откройте для себя уникальный эко-стиль жизни на Карибском побережье Мексики,<br>где первозданная тропическая природа сочетается с высокими стандартами комфорта<br>и международной привлекательностью.<br><br><strong style=\"color: var(--accent); font-weight: 600;\">Скачайте гайд «5 причин переехать в Мексику» и брошюру<br>с планировками и ценами прямо сейчас:</strong>",
+        heroH1: "Обеспечьте семье <span style='color:#FFD24D;'>пассивный доход 9% годовых</span> и второй дом на Карибах в Тулуме",
+        heroSubtext: "Премиальные резиденции в закрытом приватном комьюнити Тулума.<br>Откройте для себя уникальный эко-стиль жизни на Карибском побережье Мексики,<br>где первозданная тропическая природа сочетается с высокими стандартами комфорта<br>и международной привлекательностью.<br><br><strong style=\"color: var(--accent); font-weight: 600;\">Скачайте гайд «5 причин переехать в Мексику» и полный каталог 8 резиденций<br>с планировками и ценами прямо сейчас:</strong>",
         heroBtn1: "Скачать гайд «5 причин переехать в Мексику»",
         heroBtn2: "Получить консультацию",
 
         statPill1Val: "Частная школа • 300 м",
         statPill1Sub: "Международный колледж Colegio Inglés в 3 мин пешком по безопасным парковым аллеям",
         statPill2Val: "Развитая инфраструктура",
-        statPill2Sub: "Аэропорт TQO, поезд Tren Maya, ТЦ, Michelin-рестораны и детские сады, парки и частные клиники<br>на физическое лицо', desc: 'Каждый таунхаус передается в безусловную личную частную собственность (Фрихолд) на физлицо с 100% владением землей и строением, правом перепродажи, сдачи и дарения.' },
+        statPill2Sub: "Аэропорт TQO, поезд Tren Maya, ТЦ, Michelin-рестораны и элитное крипто-комьюнити",
+        statPill3Val: "100% Фрихолд",
+        statPill3Sub: "Безусловная личная частная собственность на недвижимость и землю с правом наследования",
+        statPill4Val: "15 минут до Карибов",
+        statPill4Sub: "Белоснежные карибские пляжи, биосферный заповедник Jaguar Park и пляжные клубы",
+
+        bento: [
+          { tag: 'Юридический статус', title: '100% Фрихолд<br>на физическое лицо', desc: 'Каждый таунхаус передается в безусловную личную частную собственность (Фрихолд) на физлицо с 100% владением землей и строением, правом перепродажи, сдачи и дарения.' },
           { tag: 'Статус и Гражданство', title: 'ВНЖ и Паспорт<br>(150+ стран без виз)', desc: 'Инвестиции дают вам и вашей семье право на получение ВНЖ Residente Temporal в Мексике с перспективой оформления гражданства. Паспорт Мексики обеспечивает безвизовый въезд в 150+ стран мира.' },
           { tag: 'Сервис и операционка', title: 'Топовая Управляющая<br>Компания', desc: 'Профессиональная Управляющая Компания полного цикла берет на себя 100% операционной работы: премиальное продвижение, встречу гостей, клининг, охрану и регулярные выплаты на ваш счет.' },
           { tag: 'Арендный доход и Ликвидность', title: 'Пассивный доход<br>9% годовых', desc: 'Инновационная система Lock-Off позволяет комфортно проживать в одной части резиденции и параллельно сдавать остальные автономные зоны. Дефицит семейных лотов гарантирует быструю и выгодную перепродажу.' },
@@ -2941,12 +2956,12 @@
           { q: "Безопасно ли в Тулуме, что с мифами про картели в СМИ и как организована охрана?", a: "Штат Кинтана-Роо (Тулум и Ривьера Майя) находится под особым контролем федеральных властей (Guardia Nacional и Policía Turística). Tulum Gardens — это закрытый приватный комьюнити 24/7 с биометрическим контролем доступа, видеонаблюдением и службой безопасности." }
         ],
 
-        ctaTitle: "Скачайте полный брошюру с планировками с планировками и ценами",
+        ctaTitle: "Скачайте полный каталог 8 резиденций с планировками и ценами",
         ctaSub: "Оставьте ваш WhatsApp или Email для получения презентации и прайс-листа за 2 минуты:",
         formName: "Ваше имя",
         formPhone: "Телефон / WhatsApp",
         formEmail: "Электронная почта",
-        formBtn: "Получить брошюру (PDF)"
+        formBtn: "Скачать каталог (PDF)"
       }
     };
 
