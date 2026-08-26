@@ -1676,30 +1676,60 @@
     .consulting-banner-wrap {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, #0e1512 0%, #152219 50%, #0d161d 100%);
-      padding: 84px 0;
+      background: linear-gradient(135deg, #0e1512 0%, #132017 50%, #0a1219 100%);
+      padding: 88px 0;
       border-top: 1px solid rgba(212,175,55,0.25);
       border-bottom: 1px solid rgba(212,175,55,0.25);
     }
     .consulting-vector {
       position: absolute;
       top: 50%;
-      width: 220px;
-      height: 320px;
+      width: 250px;
       pointer-events: none;
       z-index: 1;
       will-change: transform, opacity;
-      transition: transform 0.1s ease-out, opacity 0.15s ease-out;
     }
     .consulting-vector.left-vector {
-      left: calc(50% - 470px);
-      transform: translateY(-50%) translateX(-180px);
-      opacity: 0.1;
+      left: 0;
+      transform: translateY(-50%) translateX(-100%);
+      opacity: 0;
     }
     .consulting-vector.right-vector {
-      right: calc(50% - 470px);
-      transform: translateY(-50%) scaleX(-1) translateX(-180px);
-      opacity: 0.1;
+      right: 0;
+      transform: translateY(-50%) translateX(100%);
+      opacity: 0;
+    }
+    .fin-card-creative {
+      background: rgba(18, 24, 21, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 12px;
+      padding: 16px 20px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+    .fin-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .fin-card-title {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 700;
+    }
+    .fin-card-metric {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: #D4AF37;
+      font-weight: 800;
+      letter-spacing: 0.05em;
     }
     @media (max-width: 1100px) {
       .consulting-vector {
@@ -1965,74 +1995,61 @@
   </section>
 
 
-  <!-- BROKER CTA BANNER (WITH PARALLAX FINANCIAL & INVESTMENT GROWTH VECTORS) -->
+  <!-- BROKER CTA BANNER (WITH SCREEN-EDGE GLIDING FINANCIAL ASSET CREATIVES) -->
   <div id="consulting-banner" class="consulting-banner-wrap">
-    <!-- LEFT GLIDING FINANCIAL ASSET CREATIVE -->
+    <!-- LEFT GLIDING FINANCIAL ASSET CARD -->
     <div id="consulting-vector-left" class="consulting-vector left-vector">
-      <svg width="220" height="280" viewBox="0 0 220 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Financial growth bars -->
-        <rect x="15" y="190" width="14" height="60" rx="3" fill="url(#finGradL)" opacity="0.35"/>
-        <rect x="45" y="150" width="14" height="100" rx="3" fill="url(#finGradL)" opacity="0.45"/>
-        <rect x="75" y="115" width="14" height="135" rx="3" fill="url(#finGradL)" opacity="0.6"/>
-        <rect x="105" y="75" width="14" height="175" rx="3" fill="url(#finGradL)" opacity="0.75"/>
-        <rect x="135" y="35" width="14" height="215" rx="3" fill="url(#finGradL)" opacity="0.9"/>
-        <!-- Dynamic Ascending ROI Trajectory Curve -->
-        <path d="M10 220 C35 200, 60 165, 90 130 C120 95, 145 60, 185 20" stroke="url(#finLineGradL)" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M165 20 L185 20 L185 40" stroke="#FAF9F7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Investment Nodes -->
-        <circle cx="22" cy="205" r="3.5" fill="#D4AF37"/>
-        <circle cx="52" cy="165" r="4" fill="#D4AF37"/>
-        <circle cx="82" cy="125" r="4.5" fill="#D4AF37"/>
-        <circle cx="112" cy="85" r="5" fill="#FAF9F7"/>
-        <circle cx="185" cy="20" r="5.5" fill="#D4AF37" stroke="#FAF9F7" stroke-width="2"/>
-        <line x1="10" y1="250" x2="190" y2="250" stroke="rgba(212, 175, 55, 0.25)" stroke-width="1" stroke-dasharray="3 3"/>
-        <defs>
-          <linearGradient id="finGradL" x1="0" y1="0" x2="0" y2="280" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FAF9F7" stop-opacity="0.9"/>
-            <stop offset="0.4" stop-color="#D4AF37" stop-opacity="0.6"/>
-            <stop offset="1" stop-color="#111413" stop-opacity="0.05"/>
-          </linearGradient>
-          <linearGradient id="finLineGradL" x1="10" y1="220" x2="185" y2="20" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#C5A880"/>
-            <stop offset="0.7" stop-color="#FAF9F7"/>
-            <stop offset="1" stop-color="#D4AF37"/>
-          </linearGradient>
-        </defs>
-      </svg>
+      <div class="fin-card-creative">
+        <div class="fin-card-header">
+          <span class="fin-card-title">Динамика доходности</span>
+          <span class="fin-card-metric">+9.0% ROI</span>
+        </div>
+        <svg width="210" height="110" viewBox="0 0 210 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Fine grid lines -->
+          <line x1="0" y1="25" x2="210" y2="25" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="0" y1="55" x2="210" y2="55" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="0" y1="85" x2="210" y2="85" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 3"/>
+          <!-- Area Gradient Fill -->
+          <path d="M5 95 Q 45 75, 80 80 T 150 40 T 205 15 L 205 105 L 5 105 Z" fill="url(#finAreaL)" opacity="0.4"/>
+          <!-- Trendline Curve -->
+          <path d="M5 95 Q 45 75, 80 80 T 150 40 T 205 15" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Data Nodes -->
+          <circle cx="5" cy="95" r="3" fill="#D4AF37"/>
+          <circle cx="80" cy="80" r="3.5" fill="#D4AF37"/>
+          <circle cx="150" cy="40" r="4" fill="#FAF9F7"/>
+          <circle cx="205" cy="15" r="5" fill="#D4AF37" stroke="#FAF9F7" stroke-width="2"/>
+          <defs>
+            <linearGradient id="finAreaL" x1="0" y1="0" x2="0" y2="110" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#D4AF37" stop-opacity="0.5"/>
+              <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
     </div>
 
-    <!-- RIGHT GLIDING FINANCIAL ASSET CREATIVE (MIRRORED) -->
+    <!-- RIGHT GLIDING FINANCIAL ASSET CARD -->
     <div id="consulting-vector-right" class="consulting-vector right-vector">
-      <svg width="220" height="280" viewBox="0 0 220 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Financial growth bars -->
-        <rect x="15" y="190" width="14" height="60" rx="3" fill="url(#finGradR)" opacity="0.35"/>
-        <rect x="45" y="150" width="14" height="100" rx="3" fill="url(#finGradR)" opacity="0.45"/>
-        <rect x="75" y="115" width="14" height="135" rx="3" fill="url(#finGradR)" opacity="0.6"/>
-        <rect x="105" y="75" width="14" height="175" rx="3" fill="url(#finGradR)" opacity="0.75"/>
-        <rect x="135" y="35" width="14" height="215" rx="3" fill="url(#finGradR)" opacity="0.9"/>
-        <!-- Dynamic Ascending ROI Trajectory Curve -->
-        <path d="M10 220 C35 200, 60 165, 90 130 C120 95, 145 60, 185 20" stroke="url(#finLineGradR)" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M165 20 L185 20 L185 40" stroke="#FAF9F7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Investment Nodes -->
-        <circle cx="22" cy="205" r="3.5" fill="#D4AF37"/>
-        <circle cx="52" cy="165" r="4" fill="#D4AF37"/>
-        <circle cx="82" cy="125" r="4.5" fill="#D4AF37"/>
-        <circle cx="112" cy="85" r="5" fill="#FAF9F7"/>
-        <circle cx="185" cy="20" r="5.5" fill="#D4AF37" stroke="#FAF9F7" stroke-width="2"/>
-        <line x1="10" y1="250" x2="190" y2="250" stroke="rgba(212, 175, 55, 0.25)" stroke-width="1" stroke-dasharray="3 3"/>
-        <defs>
-          <linearGradient id="finGradR" x1="0" y1="0" x2="0" y2="280" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FAF9F7" stop-opacity="0.9"/>
-            <stop offset="0.4" stop-color="#D4AF37" stop-opacity="0.6"/>
-            <stop offset="1" stop-color="#111413" stop-opacity="0.05"/>
-          </linearGradient>
-          <linearGradient id="finLineGradR" x1="10" y1="220" x2="185" y2="20" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#C5A880"/>
-            <stop offset="0.7" stop-color="#FAF9F7"/>
-            <stop offset="1" stop-color="#D4AF37"/>
-          </linearGradient>
-        </defs>
-      </svg>
+      <div class="fin-card-creative">
+        <div class="fin-card-header">
+          <span class="fin-card-title">Рост капитала</span>
+          <span class="fin-card-metric">+28% 3 года</span>
+        </div>
+        <svg width="210" height="110" viewBox="0 0 210 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Fine grid lines -->
+          <line x1="0" y1="25" x2="210" y2="25" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="0" y1="55" x2="210" y2="55" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="0" y1="85" x2="210" y2="85" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 3"/>
+          <!-- Financial Asset Bar Highlights -->
+          <rect x="25" y="70" width="12" height="35" rx="2" fill="#D4AF37" opacity="0.35"/>
+          <rect x="65" y="55" width="12" height="50" rx="2" fill="#D4AF37" opacity="0.5"/>
+          <rect x="105" y="40" width="12" height="65" rx="2" fill="#D4AF37" opacity="0.65"/>
+          <rect x="145" y="25" width="12" height="80" rx="2" fill="#D4AF37" opacity="0.8"/>
+          <rect x="185" y="10" width="12" height="95" rx="2" fill="#FAF9F7" opacity="0.95"/>
+          <!-- Capital Growth Step Line -->
+          <path d="M15 85 L31 70 L71 55 L111 40 L151 25 L191 10" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
     </div>
 
     <div class="container" style="text-align:center;max-width:700px;position:relative;z-index:2;">
@@ -3578,13 +3595,16 @@
         if (rect.top < windowH && rect.bottom > 0) {
           const progress = Math.min(Math.max((windowH - rect.top) / (windowH * 0.75), 0), 1);
           const ease = 1 - Math.pow(1 - progress, 3);
-          const offset = (1 - ease) * 180;
-          const opacity = 0.1 + ease * 0.85;
           
-          vLeft.style.transform = `translateY(-50%) translateX(${-offset}px)`;
+          // Emerges from exact screen borders (-100% offscreen) and slides into comfortable margin near text
+          const travelPx = Math.min(window.innerWidth * 0.14, 160);
+          const currentOffset = (-100 * (1 - ease)) + (ease * travelPx);
+          const opacity = Math.min(ease * 1.2, 1);
+          
+          vLeft.style.transform = `translateY(-50%) translateX(${currentOffset}px)`;
           vLeft.style.opacity = opacity;
           
-          vRight.style.transform = `translateY(-50%) scaleX(-1) translateX(${-offset}px)`;
+          vRight.style.transform = `translateY(-50%) translateX(${-currentOffset}px)`;
           vRight.style.opacity = opacity;
         }
       }
