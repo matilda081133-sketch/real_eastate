@@ -1507,6 +1507,39 @@
       margin-top: 8px;
       padding: 0;
     }
+
+    @keyframes pillReveal {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes borderGrow {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+    .stat-pill-wrap {
+      animation: pillReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .stat-pill-wrap:nth-child(1) { animation-delay: 0.3s; }
+    .stat-pill-wrap:nth-child(2) { animation-delay: 0.48s; }
+    .stat-pill-wrap:nth-child(3) { animation-delay: 0.66s; }
+    .stat-pill-wrap:nth-child(4) { animation-delay: 0.84s; }
+    .hero-stat-pill {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-stat-pill::after {
+      content: "";
+      position: absolute;
+      top: -2px; left: 0;
+      width: 100%; height: 2px;
+      background: rgba(212,175,55,0.9);
+      transform-origin: left center;
+      animation: borderGrow 0.6s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .stat-pill-wrap:nth-child(1) .hero-stat-pill::after { animation-delay: 0.3s; }
+    .stat-pill-wrap:nth-child(2) .hero-stat-pill::after { animation-delay: 0.48s; }
+    .stat-pill-wrap:nth-child(3) .hero-stat-pill::after { animation-delay: 0.66s; }
+    .stat-pill-wrap:nth-child(4) .hero-stat-pill::after { animation-delay: 0.84s; }
 </style>
 </head>
 <body>
