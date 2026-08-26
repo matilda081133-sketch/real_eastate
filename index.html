@@ -2603,10 +2603,10 @@
 
       // INITIALIZE INTERACTIVE LEAFLET MAP WITH GEOGRAPHICALLY PINNED MARKERS
       if (typeof L !== 'undefined') {
-        const tulumCoords = [20.2114, -87.4654];
+        const mapCenter = [20.2210, -87.4480];
         const map = L.map('leaflet-map-canvas', {
-          center: tulumCoords,
-          zoom: 14,
+          center: mapCenter,
+          zoom: 13,
           scrollWheelZoom: false
         });
 
@@ -2617,12 +2617,13 @@
         }).addTo(map);
 
         const pinsData = [
-          { coords: [20.2048, -87.4692], label: "📍 Tulum Gardens", isPrimary: true },
-          { coords: [20.2041, -87.4684], label: "🏫 Colegio Inglés (300 м)", isPrimary: false },
-          { coords: [20.2115, -87.4753], label: "🚆 Tren Maya Station (800 м)", isPrimary: false },
-          { coords: [20.2170, -87.4580], label: "🏞️ Cenote & Jaguar Park", isPrimary: false },
-          { coords: [20.2095, -87.4628], label: "🛒 Soriana & Carretera 307", isPrimary: false },
-          { coords: [20.1980, -87.4440], label: "🏖️ Пляжи Карибов (15 мин)", isPrimary: false }
+          { coords: [20.235855, -87.461299], label: "📍 Tulum Gardens", isPrimary: true },
+          { coords: [20.2398, -87.4653], label: "🏫 Colegio Inglés", isPrimary: false },
+          { coords: [20.2380, -87.4580], label: "🚆 Tren Maya Station", isPrimary: false },
+          { coords: [20.2234, -87.4571], label: "🛒 Soriana & Carretera 307", isPrimary: false },
+          { coords: [20.2119, -87.4354], label: "🏞️ Jaguar Park & Сеноты", isPrimary: false },
+          { coords: [20.2068, -87.4304], label: "🏖️ Playa Paraíso & Santa Fe", isPrimary: false },
+          { coords: [20.2153, -87.4295], label: "🏛️ Руины майя Tulum", isPrimary: false }
         ];
 
         pinsData.forEach(p => {
