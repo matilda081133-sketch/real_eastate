@@ -1872,7 +1872,7 @@
         <!-- RIGHT ANIMATED DISPLAY (MAGAZINE PHOTO CARD) -->
         <div class="loc-usp-display">
           <div class="loc-display-img-wrap">
-            <img src="images/img_61.jpg" id="usp-img" class="loc-display-img" alt="Инфраструктура Tulum Gardens">
+            <img src="images/tulum_airport_station.jpg" id="usp-img" class="loc-display-img" loading="eager" alt="Инфраструктура Tulum Gardens">
             <div class="loc-display-img-overlay">
               <div class="loc-img-badge" id="usp-badge">18 мин до аэропорта</div>
             </div>
@@ -1928,7 +1928,7 @@
               <button class="cat-btn active" onclick="filterCinema('all', this)">Все (21)</button>
               <button class="cat-btn" onclick="filterCinema('drone', this)">Дроны</button>
               <button class="cat-btn" onclick="filterCinema('construction', this)">Стройка</button>
-              <button class="cat-btn" onclick="filterCinema('nature', this)">Эко</button>
+              
             </div>
           </div>
 
@@ -2297,15 +2297,45 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="container footer-wrap">
-      <a href="#" class="logo-box">
-        <div class="logo-badge-wrap">
-          <img src="images/tulum_gardens_logo.png" alt="TulumGardens The Location" class="logo-img">
+  <footer style="background:#0a0f0c;border-top:1px solid rgba(212,175,55,0.2);padding:64px 0 0;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;flex-wrap:wrap;">
+        <div>
+          <a href="#" class="logo-box" style="margin-left:0;margin-bottom:16px;display:inline-flex;">
+            <img src="images/tulum_gardens_logo.png" alt="Tulum Gardens" class="logo-img" style="height:48px;">
+          </a>
+          <p style="font-family:'TildaSans',sans-serif;font-size:14px;color:#6B6860;line-height:1.7;margin:16px 0 20px;max-width:280px;">Премиальный закрытый комплекс таунхаусов в Тулуме, Мексика. 8 эксклюзивных резиденций в частной собственности.</p>
+          <a href="tel:+529841234567" style="font-family:var(--font-sans);font-size:14px;color:#D4AF37;text-decoration:none;font-weight:600;">+52 (984) 123-4567</a>
         </div>
-      </a>
-      <div>
-        © 2026 TulumGardens • Stellar Residences. Все права защищены.
+        <div>
+          <div style="font-family:var(--font-sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#D4AF37;font-weight:700;margin-bottom:20px;">Проект</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+            <li><a href="#guarantees" style="font-family:'TildaSans',sans-serif;font-size:14px;color:#8C887F;text-decoration:none;">Гарантии и статус</a></li>
+            <li><a href="#location" style="font-family:'TildaSans',sans-serif;font-size:14px;color:#8C887F;text-decoration:none;">Локация</a></li>
+            <li><a href="#video" style="font-family:'TildaSans',sans-serif;font-size:14px;color:#8C887F;text-decoration:none;">Видео с объекта</a></li>
+            <li><a href="#catalog" style="font-family:'TildaSans',sans-serif;font-size:14px;color:#8C887F;text-decoration:none;">Форматы юнитов</a></li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:var(--font-sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#D4AF37;font-weight:700;margin-bottom:20px;">Юридическое</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+            <li><a href="#" style="font-family:'TildaSans',sans-serif;font-size:14px;color:#8C887F;text-decoration:none;">100% Фрихолд</a></li>
+            <li><a href="#" style="font-family:'TildaSans',sans-serif;font-size:14px;color:#8C887F;text-decoration:none;">Право собственности</a></li>
+            <li><a href="#" style="font-family:'TildaSans',sans-serif;font-size:14px;color:#8C887F;text-decoration:none;">Политика конфиденциальности</a></li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:var(--font-sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#D4AF37;font-weight:700;margin-bottom:20px;">Контакты</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+            <li><a href="https://wa.me/529841234567" target="_blank" style="font-family:'TildaSans',sans-serif;font-size:14px;color:#8C887F;text-decoration:none;">WhatsApp</a></li>
+            <li><a href="https://t.me/tulumgardens" target="_blank" style="font-family:'TildaSans',sans-serif;font-size:14px;color:#8C887F;text-decoration:none;">Telegram</a></li>
+            <li><a href="mailto:info@tulumgardens.mx" style="font-family:'TildaSans',sans-serif;font-size:14px;color:#8C887F;text-decoration:none;">info@tulumgardens.mx</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.06);padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <p style="font-family:'TildaSans',sans-serif;font-size:12px;color:#4A4840;margin:0;">© 2026 Tulum Gardens · Stellar Residences. Все права защищены.</p>
+        <p style="font-family:'TildaSans',sans-serif;font-size:11px;color:#3A3830;margin:0;max-width:600px;text-align:right;">Информация носит ознакомительный характер и не является публичной офертой. Права собственности регулируются законодательством Мексики (Código Civil Federal).</p>
       </div>
     </div>
   </footer>
@@ -2433,13 +2463,13 @@
       { src: '15LRPgQigDEA48stzS4B2sDjmY1GnzOJF', cat: 'construction', tag: 'Стройка',    titleRu: 'Площадка — SSR 5109',    titleEn: 'Site — SSR 5109',         desc: 'Стены и кровля.' },
       { src: '1tzGvnhicLI92ZaucUVli7ZgWDFXQ5cPI', cat: 'construction', tag: 'Стройка',    titleRu: 'Площадка — SSR 5110',    titleEn: 'Site — SSR 5110',         desc: 'Строительство юнитов.' },
       { src: '1kva0WARo73K3783LdFwbd2wnIde7NlGb', cat: 'construction', tag: 'Стройка',    titleRu: 'Площадка — SSR 5111',    titleEn: 'Site — SSR 5111',         desc: 'Фасадные работы.' },
-      { src: '1YiyyE3JlRxrgpWaDSIYkKbJ6OUXxhlKI', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5112',  titleEn: 'Territory — SSR 5112',    desc: 'Ландшафт.' },
-      { src: '1ehFQd3_nd89sLIcGAUBJC38oMk75QUm_', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5113',  titleEn: 'Territory — SSR 5113',    desc: 'Зелёные зоны.' },
-      { src: '1lItmw51eYNyCLW7BN_DJ_YxwpOk30YR_', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5114',  titleEn: 'Territory — SSR 5114',    desc: 'Аллеи и патио.' },
-      { src: '1CyrclHHNt233OPxSZYjrwAlF7uMw4Ma_', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5115',  titleEn: 'Territory — SSR 5115',    desc: 'Безопасность.' },
-      { src: '1InOC5AKFgw8QaYYR2fByCupnnXUxCL1-', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5116',  titleEn: 'Territory — SSR 5116',    desc: 'Зелёная зона.' },
-      { src: '1Hfsr4D56PPw9onXaduNrxpjNlUw5CK2p', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5117',  titleEn: 'Territory — SSR 5117',    desc: 'Эко-концепция.' },
-      { src: '1CWj-QthM3r3nZlvJSBjrtx0VJ0uE-pNH', cat: 'nature',       tag: 'Территория', titleRu: 'Территория — SSR 5118',  titleEn: 'Territory — SSR 5118',    desc: 'Финальный обход.' }
+      { src: '1YiyyE3JlRxrgpWaDSIYkKbJ6OUXxhlKI', cat: 'construction',       tag: 'Территория', titleRu: 'Территория — SSR 5112',  titleEn: 'Territory — SSR 5112',    desc: 'Ландшафт.' },
+      { src: '1ehFQd3_nd89sLIcGAUBJC38oMk75QUm_', cat: 'construction',       tag: 'Территория', titleRu: 'Территория — SSR 5113',  titleEn: 'Territory — SSR 5113',    desc: 'Зелёные зоны.' },
+      { src: '1lItmw51eYNyCLW7BN_DJ_YxwpOk30YR_', cat: 'construction',       tag: 'Территория', titleRu: 'Территория — SSR 5114',  titleEn: 'Territory — SSR 5114',    desc: 'Аллеи и патио.' },
+      { src: '1CyrclHHNt233OPxSZYjrwAlF7uMw4Ma_', cat: 'construction',       tag: 'Территория', titleRu: 'Территория — SSR 5115',  titleEn: 'Territory — SSR 5115',    desc: 'Безопасность.' },
+      { src: '1InOC5AKFgw8QaYYR2fByCupnnXUxCL1-', cat: 'construction',       tag: 'Территория', titleRu: 'Территория — SSR 5116',  titleEn: 'Territory — SSR 5116',    desc: 'Зелёная зона.' },
+      { src: '1Hfsr4D56PPw9onXaduNrxpjNlUw5CK2p', cat: 'construction',       tag: 'Территория', titleRu: 'Территория — SSR 5117',  titleEn: 'Territory — SSR 5117',    desc: 'Эко-концепция.' },
+      { src: '1CWj-QthM3r3nZlvJSBjrtx0VJ0uE-pNH', cat: 'construction',       tag: 'Территория', titleRu: 'Территория — SSR 5118',  titleEn: 'Territory — SSR 5118',    desc: 'Финальный обход.' }
     ];
 
     let currentCinemaIdx = 0;
