@@ -1579,7 +1579,41 @@
     .stat-pill-wrap:nth-child(2) .hero-stat-pill::after { animation-delay: 0.48s; }
     .stat-pill-wrap:nth-child(3) .hero-stat-pill::after { animation-delay: 0.66s; }
     .stat-pill-wrap:nth-child(4) .hero-stat-pill::after { animation-delay: 0.84s; }
-</style>
+    /* CONSULTING BANNER PARALLAX VECTORS */
+    .consulting-banner-wrap {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0e1512 0%, #152219 50%, #0d161d 100%);
+      padding: 84px 0;
+      border-top: 1px solid rgba(212,175,55,0.25);
+      border-bottom: 1px solid rgba(212,175,55,0.25);
+    }
+    .consulting-vector {
+      position: absolute;
+      top: 50%;
+      width: 220px;
+      height: 320px;
+      pointer-events: none;
+      z-index: 1;
+      will-change: transform, opacity;
+      transition: transform 0.1s ease-out, opacity 0.15s ease-out;
+    }
+    .consulting-vector.left-vector {
+      left: 3%;
+      transform: translateY(-50%) translateX(-140px);
+      opacity: 0.15;
+    }
+    .consulting-vector.right-vector {
+      right: 3%;
+      transform: translateY(-50%) scaleX(-1) translateX(-140px);
+      opacity: 0.15;
+    }
+    @media (max-width: 1100px) {
+      .consulting-vector {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -1810,9 +1844,49 @@
   </section>
 
 
-  <!-- BROKER CTA BANNER -->
-  <div style="background:linear-gradient(135deg,#0e1512 0%,#1a2b1f 50%,#111c28 100%);padding:72px 0;border-top:1px solid rgba(212,175,55,0.2);border-bottom:1px solid rgba(212,175,55,0.2);">
-    <div class="container" style="text-align:center;max-width:680px;">
+  <!-- BROKER CTA BANNER (WITH PARALLAX GLIDING LUXURY VECTORS) -->
+  <div id="consulting-banner" class="consulting-banner-wrap">
+    <!-- LEFT GLIDING LUXURY CREATIVE -->
+    <div id="consulting-vector-left" class="consulting-vector left-vector">
+      <svg width="220" height="320" viewBox="0 0 220 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 300C30 240 70 180 160 140C120 130 80 110 50 60C90 80 140 90 190 70C150 50 120 20 110 0C140 30 190 40 220 30" stroke="url(#goldGradLeft)" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+        <path d="M25 310C50 250 90 195 180 160C140 150 100 130 70 85C110 105 160 110 210 95" stroke="url(#goldGradLeft)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.55"/>
+        <path d="M5 280 C60 210 120 170 200 130" stroke="url(#goldGradLeft)" stroke-width="1" opacity="0.4"/>
+        <circle cx="160" cy="140" r="4" fill="#D4AF37"/>
+        <circle cx="190" cy="70" r="3" fill="#D4AF37"/>
+        <circle cx="210" cy="95" r="2.5" fill="#D4AF37"/>
+        <circle cx="220" cy="30" r="3.5" fill="#D4AF37"/>
+        <defs>
+          <linearGradient id="goldGradLeft" x1="0" y1="0" x2="220" y2="320" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#D4AF37"/>
+            <stop offset="0.5" stop-color="#FAF9F7" stop-opacity="0.9"/>
+            <stop offset="1" stop-color="#997A15" stop-opacity="0.3"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- RIGHT GLIDING LUXURY CREATIVE (MIRRORED) -->
+    <div id="consulting-vector-right" class="consulting-vector right-vector">
+      <svg width="220" height="320" viewBox="0 0 220 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 300C30 240 70 180 160 140C120 130 80 110 50 60C90 80 140 90 190 70C150 50 120 20 110 0C140 30 190 40 220 30" stroke="url(#goldGradRight)" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+        <path d="M25 310C50 250 90 195 180 160C140 150 100 130 70 85C110 105 160 110 210 95" stroke="url(#goldGradRight)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.55"/>
+        <path d="M5 280 C60 210 120 170 200 130" stroke="url(#goldGradRight)" stroke-width="1" opacity="0.4"/>
+        <circle cx="160" cy="140" r="4" fill="#D4AF37"/>
+        <circle cx="190" cy="70" r="3" fill="#D4AF37"/>
+        <circle cx="210" cy="95" r="2.5" fill="#D4AF37"/>
+        <circle cx="220" cy="30" r="3.5" fill="#D4AF37"/>
+        <defs>
+          <linearGradient id="goldGradRight" x1="0" y1="0" x2="220" y2="320" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#D4AF37"/>
+            <stop offset="0.5" stop-color="#FAF9F7" stop-opacity="0.9"/>
+            <stop offset="1" stop-color="#997A15" stop-opacity="0.3"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="container" style="text-align:center;max-width:700px;position:relative;z-index:2;">
       <div style="font-family:var(--font-sans);font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#D4AF37;margin-bottom:20px;font-weight:700;">Персональный консалтинг</div>
       <h3 style="font-family:var(--font-serif);font-size:clamp(28px,3.5vw,42px);color:#FAF9F7;font-weight:400;margin:0 0 20px;line-height:1.2;">Аудит вашего инвестиционного портфеля</h3>
       <p style="font-family:'TildaSans',sans-serif;font-size:17px;color:#B8B4AE;line-height:1.7;margin:0 0 36px;">Мы проведём детальный аудит вашей инвестиционной ситуации, подберём оптимальный формат и возьмём на себя <strong style="color:#FAF9F7;">100% процесса покупки</strong> — от первого звонка до получения ключей и оформления собственности.</p>
@@ -3324,6 +3398,35 @@
         text.innerText = 'Выключить звук';
       }
     }
+      // PARALLAX VECTOR ANIMATION FOR CONSULTING BANNER
+    function initConsultingParallax() {
+      const banner = document.getElementById('consulting-banner');
+      const vLeft = document.getElementById('consulting-vector-left');
+      const vRight = document.getElementById('consulting-vector-right');
+      if (!banner || !vLeft || !vRight) return;
+
+      function onScroll() {
+        const rect = banner.getBoundingClientRect();
+        const windowH = window.innerHeight;
+        
+        if (rect.top < windowH && rect.bottom > 0) {
+          const progress = Math.min(Math.max((windowH - rect.top) / (windowH * 0.8), 0), 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          const offset = (1 - ease) * 140;
+          const opacity = 0.15 + ease * 0.75;
+          
+          vLeft.style.transform = `translateY(-50%) translateX(${-offset}px)`;
+          vLeft.style.opacity = opacity;
+          
+          vRight.style.transform = `translateY(-50%) scaleX(-1) translateX(${-offset}px)`;
+          vRight.style.opacity = opacity;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+    document.addEventListener('DOMContentLoaded', initConsultingParallax);
   </script>
 </body>
 </html>
