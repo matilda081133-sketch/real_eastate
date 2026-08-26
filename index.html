@@ -437,6 +437,7 @@
     .hero-stat-cards-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      align-items: start;
       gap: 14px;
       width: 100%;
       max-width: 960px;
@@ -1511,7 +1512,22 @@
       .stage-player { height: 260px; }
       .map-img { height: 420px; }
     }
-  </style>
+  
+    .stat-pill-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .stat-pill-wrap .stat-sub-text {
+      display: block;
+      overflow: visible;
+      -webkit-line-clamp: unset;
+      color: rgba(255,255,255,0.82);
+      font-size: 13px;
+      line-height: 1.55;
+      padding: 0 2px;
+    }
+</style>
 </head>
 <body>
 
@@ -1548,7 +1564,7 @@
           <button class="lang-btn active" id="btn-lang-ru" onclick="toggleLanguage('ru')">RU</button>
           <button class="lang-btn" id="btn-lang-en" onclick="toggleLanguage('en')">EN</button>
         </div>
-        <a href="tel:+529841234567" class="header-phone">
+        <a href="tel:+529841234567" class="header-phone" style="color:#FFFFFF;">
           <span>+52 (984) 123-4567</span>
         </a>
         <button class="btn btn-accent" id="header-catalog-btn" onclick="openModal('Скачать презентацию проекта')">
@@ -1592,21 +1608,21 @@
 
         <!-- LUXURY 4-STAT GRID DIRECTLY ALIGNED WITH HERO TITLE & CONTAINER -->
         <div class="hero-stat-cards-grid" style="margin-top: 36px;">
-          <div class="hero-stat-pill">
-            <div class="stat-top-val">Частная школа</div>
-            <div class="stat-sub-text">300 м • Международный колледж Colegio Inglés в 3 мин пешком по безопасным парковым аллеям</div>
+          <div class="stat-pill-wrap">
+            <div class="hero-stat-pill"><div class="stat-top-val">Частная школа</div></div>
+            <div class="stat-sub-text">300 м • Colegio Inglés в 3 мин пешком</div>
           </div>
-          <div class="hero-stat-pill">
-            <div class="stat-top-val">Развитая инфраструктура</div>
-            <div class="stat-sub-text">Аэропорт TQO, поезд Tren Maya, ТЦ, Michelin-рестораны, детские сады, парки и частные клиники</div>
+          <div class="stat-pill-wrap">
+            <div class="hero-stat-pill"><div class="stat-top-val">Развитая инфраструктура</div></div>
+            <div class="stat-sub-text">Аэропорт TQO, Tren Maya, ТЦ, детские сады и парки</div>
           </div>
-          <div class="hero-stat-pill">
-            <div class="stat-top-val">100% Фрихолд</div>
-            <div class="stat-sub-text">Безусловная личная частная собственность на недвижимость и землю с правом наследования</div>
+          <div class="stat-pill-wrap">
+            <div class="hero-stat-pill"><div class="stat-top-val">100% Фрихолд</div></div>
+            <div class="stat-sub-text">Личная собственность на недвижимость и землю с правом наследования</div>
           </div>
-          <div class="hero-stat-pill">
-            <div class="stat-top-val">15 минут до Карибов</div>
-            <div class="stat-sub-text">Белоснежные карибские пляжи, биосферный заповедник Jaguar Park и пляжные клубы</div>
+          <div class="stat-pill-wrap">
+            <div class="hero-stat-pill"><div class="stat-top-val">15 мин до Карибов</div></div>
+            <div class="stat-sub-text">Белоснежные пляжи, Jaguar Park и пляжные клубы</div>
           </div>
         </div>
       </div>
