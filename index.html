@@ -2452,11 +2452,9 @@
       currentCinemaIdx = idx;
       const vid = cinemaVideos[idx];
       const player = document.getElementById('stage-player');
-      const source = document.getElementById('stage-source');
-      
-      source.src = vid.src;
-      player.load();
-      player.play().catch(() => {});
+
+      // iframe-based Google Drive player
+      player.src = 'https://drive.google.com/file/d/' + vid.src + '/preview';
 
       document.getElementById('stage-title').innerText = currentLang === 'en' ? vid.titleEn : vid.titleRu;
       document.getElementById('stage-desc').innerText = vid.desc;
