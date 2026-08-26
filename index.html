@@ -2450,10 +2450,7 @@
         item.onclick = () => selectCinemaVideo(vid.originalIndex);
         
         item.innerHTML = `
-          <div class="v-thumb">
-            <video muted playsinline preload="metadata"><source src="${vid.src}#t=1" type="video/mp4"></video>
-            <div class="v-play">▶</div>
-          </div>
+          <div class="v-thumb" style="background:url(`https://drive.google.com/thumbnail?id=${vid.src}&sz=w320`) center/cover no-repeat;min-height:80px;"><div class="v-play">▶</div></div>
           <div class="v-info">
             <span class="v-tag">${vid.tag}</span>
             <h4 class="v-name">${vid.title}</h4>
@@ -3242,6 +3239,7 @@
   </script>
 </body>
 </html>
+
 
 
 
