@@ -772,7 +772,7 @@
     #leaflet-map-canvas {
       width: 100%;
       height: 540px;
-      border-radius: var(--radius-lg);
+      border-radius: 6px;
       z-index: 1;
     }
     /* LEAFLET GEOGRAPHIC MARKERS */
@@ -1336,7 +1336,7 @@
     .cta-dark-card {
       background: var(--dark);
       color: #FFFFFF;
-      border-radius: var(--radius-lg);
+      border-radius: 8px;
       padding: 64px 48px;
       position: relative;
       overflow: hidden;
@@ -1833,7 +1833,7 @@
       </div>
 
       <div class="map-box" style="position: relative;">
-        <div id="leaflet-map-canvas" style="width: 100%; height: 540px; border-radius: var(--radius-lg); border: 1px solid var(--border-accent); z-index: 1;"></div>
+        <div id="leaflet-map-canvas" style="width: 100%; height: 540px; border-radius: 6px; border: 1px solid var(--border-accent); z-index: 1;"></div>
       </div>
 
       <!-- COMPACT INTERACTIVE LOCATION & PROJECT USP PANEL -->
@@ -1908,7 +1908,7 @@
         <!-- RIGHT ANIMATED DISPLAY (MAGAZINE PHOTO CARD) -->
         <div class="loc-usp-display">
           <div class="loc-display-img-wrap">
-            <img src="images/tulum_airport_station.jpg" id="usp-img" class="loc-display-img" loading="eager" alt="Инфраструктура Tulum Gardens">
+            <img src="images/tulum_airport_station.jpg" id="usp-img" class="loc-display-img" src="images/tulum_airport_station.jpg" loading="eager" alt="Инфраструктура Tulum Gardens">
             <div class="loc-display-img-overlay">
               <div class="loc-img-badge" id="usp-badge">18 мин до аэропорта</div>
             </div>
@@ -2242,7 +2242,7 @@
               Гайд «Топ-5 причин переехать<br>в Мексику» + Брошюра с планировками
             </h2>
             <p style="font-size: 16px; color: rgba(255, 255, 255, 0.7); line-height: 1.7; font-weight: 300; margin-bottom: 28px;">
-              Заполните форму, чтобы моментально скачать гайд и брошюру 8 юнитов от собственника, 
+              Заполните форму, чтобы моментально скачать гайд. 
             </p>
             <div style="display: flex; gap: 20px; font-size: 13px; color: rgba(255, 255, 255, 0.6); flex-wrap: wrap;">
               <span>Ответ за 15 минут</span>
@@ -2266,7 +2266,7 @@
                 <input type="email" class="form-input" placeholder="investor@domain.com" required>
               </div>
               <button type="submit" class="btn btn-accent btn-block" style="padding: 18px; font-size: 12px; margin-top: 10px;">
-                Скачать гайд и брошюру
+                Скачать гайд
               </button>
               <div style="font-size: 11px; color: rgba(255,255,255,0.4); text-align: center; margin-top: 10px;">
                 Нажимая кнопку, вы соглашаетесь на обработку персональных данных
@@ -2365,7 +2365,7 @@
           Ваш гайд «Топ-5 причин переехать в Мексику» и брошюру 8 юнитов готовы к скачиванию. Наш миграционный эксперт свяжется с вами в течение 15 минут.
         </p>
         <a href="Brochure_StellarResidences_TulumGardens.pdf" download class="btn btn-accent btn-block" style="padding: 16px; text-decoration: none;">
-          📥 Скачать гайд и брошюру (PDF)
+          📥 Скачать гайд (PDF)
         </a>
         <button class="btn" style="margin-top: 12px; background: transparent; border: 1px solid var(--border); color: var(--text-muted);" onclick="closeModal()">Закрыть</button>
       </div>
@@ -2635,10 +2635,9 @@
           scrollWheelZoom: false
         });
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
-          subdomains: 'abcd',
-          attribution: '© OpenStreetMap © CARTO'
+          attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
         const pinsData = [
