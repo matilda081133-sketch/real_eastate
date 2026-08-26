@@ -1684,8 +1684,8 @@
     .consulting-vector {
       position: absolute;
       top: 50%;
-      width: 220px;
-      height: 280px;
+      width: 240px;
+      height: 190px;
       pointer-events: none;
       z-index: 1;
       will-change: transform, opacity;
@@ -1964,51 +1964,77 @@
   </section>
 
 
-  <!-- BROKER CTA BANNER (WITH 2 IDENTICAL SYMMETRICAL LUXURY GOLDEN GLIDING VECTORS) -->
+  <!-- BROKER CTA BANNER (WITH 2 IDENTICAL SYMMETRICAL UPWARD GROWTH CHART VECTORS) -->
   <div id="consulting-banner" class="consulting-banner-wrap">
-    <!-- LEFT LUXURY VECTOR -->
+    <!-- LEFT ASCENDING GROWTH GRAPH -->
     <div id="consulting-vector-left" class="consulting-vector left-vector">
-      <svg width="220" height="280" viewBox="0 0 220 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15 260 C40 210, 80 160, 150 120 C185 100, 205 70, 210 20" stroke="url(#goldLuxeGradL)" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M30 270 C55 220, 95 170, 165 130 C200 110, 220 80, 225 30" stroke="url(#goldLuxeGradL)" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.65"/>
-        <path d="M5 240 C50 180, 110 140, 180 100" stroke="url(#goldLuxeGradL)" stroke-width="1" opacity="0.45"/>
-        <path d="M110 270 A120 120 0 0 0 210 160" stroke="url(#goldLuxeGradL)" stroke-width="1" stroke-dasharray="2 3" opacity="0.35"/>
-        <path d="M140 270 A90 90 0 0 0 210 200" stroke="url(#goldLuxeGradL)" stroke-width="1" opacity="0.25"/>
-        <circle cx="150" cy="120" r="3.5" fill="#D4AF37"/>
-        <circle cx="180" cy="100" r="3" fill="#D4AF37"/>
-        <circle cx="210" cy="20" r="4.5" fill="#D4AF37" stroke="#FAF9F7" stroke-width="1.5"/>
-        <circle cx="70" cy="170" r="2.5" fill="#D4AF37" opacity="0.7"/>
-        <line x1="15" y1="260" x2="210" y2="260" stroke="url(#goldLuxeGradL)" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+      <svg width="240" height="190" viewBox="0 0 240 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="10" y1="170" x2="230" y2="170" stroke="rgba(212, 175, 55, 0.35)" stroke-width="1.5"/>
+        <line x1="10" y1="20" x2="10" y2="170" stroke="rgba(212, 175, 55, 0.35)" stroke-width="1.5"/>
+        <!-- Vertical Grid Lines -->
+        <line x1="55" y1="170" x2="55" y2="140" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="100" y1="170" x2="100" y2="110" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="145" y1="170" x2="145" y2="75" stroke="rgba(212, 175, 55, 0.25)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="190" y1="170" x2="190" y2="35" stroke="rgba(212, 175, 55, 0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+        <!-- Gradient Area Fill -->
+        <path d="M10 170 L10 160 C45 155, 75 130, 110 105 C145 80, 175 45, 215 15 L215 170 Z" fill="url(#chartAreaGradL)" opacity="0.3"/>
+        <!-- Main Growth Curve Trending UP -->
+        <path d="M10 160 C45 155, 75 130, 110 105 C145 80, 175 45, 215 15" stroke="url(#chartLineGradL)" stroke-width="3" stroke-linecap="round"/>
+        <!-- Arrowhead pointing UP-RIGHT -->
+        <path d="M190 15 L215 15 L215 40" stroke="#FAF9F7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Data Points -->
+        <circle cx="55" cy="140" r="3.5" fill="#D4AF37"/>
+        <circle cx="100" cy="110" r="4" fill="#D4AF37"/>
+        <circle cx="145" cy="75" r="4.5" fill="#D4AF37"/>
+        <circle cx="190" cy="35" r="5" fill="#FAF9F7"/>
+        <circle cx="215" cy="15" r="6" fill="#D4AF37" stroke="#FAF9F7" stroke-width="2"/>
         <defs>
-          <linearGradient id="goldLuxeGradL" x1="0" y1="280" x2="220" y2="0" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#C5A880" stop-opacity="0.3"/>
-            <stop offset="0.5" stop-color="#D4AF37" stop-opacity="0.85"/>
-            <stop offset="0.85" stop-color="#FAF9F7" stop-opacity="0.95"/>
-            <stop offset="1" stop-color="#D4AF37"/>
+          <linearGradient id="chartAreaGradL" x1="0" y1="15" x2="0" y2="170" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#D4AF37" stop-opacity="0.6"/>
+            <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="chartLineGradL" x1="10" y1="160" x2="215" y2="15" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5A880"/>
+            <stop offset="0.6" stop-color="#D4AF37"/>
+            <stop offset="1" stop-color="#FAF9F7"/>
           </linearGradient>
         </defs>
       </svg>
     </div>
 
-    <!-- RIGHT LUXURY VECTOR (EXACT IDENTICAL SYMMETRICAL COUNTERPART) -->
+    <!-- RIGHT ASCENDING GROWTH GRAPH (IDENTICAL MIRRORED TOWARDS CENTER) -->
     <div id="consulting-vector-right" class="consulting-vector right-vector">
-      <svg width="220" height="280" viewBox="0 0 220 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15 260 C40 210, 80 160, 150 120 C185 100, 205 70, 210 20" stroke="url(#goldLuxeGradR)" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M30 270 C55 220, 95 170, 165 130 C200 110, 220 80, 225 30" stroke="url(#goldLuxeGradR)" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.65"/>
-        <path d="M5 240 C50 180, 110 140, 180 100" stroke="url(#goldLuxeGradR)" stroke-width="1" opacity="0.45"/>
-        <path d="M110 270 A120 120 0 0 0 210 160" stroke="url(#goldLuxeGradR)" stroke-width="1" stroke-dasharray="2 3" opacity="0.35"/>
-        <path d="M140 270 A90 90 0 0 0 210 200" stroke="url(#goldLuxeGradR)" stroke-width="1" opacity="0.25"/>
-        <circle cx="150" cy="120" r="3.5" fill="#D4AF37"/>
-        <circle cx="180" cy="100" r="3" fill="#D4AF37"/>
-        <circle cx="210" cy="20" r="4.5" fill="#D4AF37" stroke="#FAF9F7" stroke-width="1.5"/>
-        <circle cx="70" cy="170" r="2.5" fill="#D4AF37" opacity="0.7"/>
-        <line x1="15" y1="260" x2="210" y2="260" stroke="url(#goldLuxeGradR)" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3"/>
+      <svg width="240" height="190" viewBox="0 0 240 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="10" y1="170" x2="230" y2="170" stroke="rgba(212, 175, 55, 0.35)" stroke-width="1.5"/>
+        <line x1="10" y1="20" x2="10" y2="170" stroke="rgba(212, 175, 55, 0.35)" stroke-width="1.5"/>
+        <!-- Vertical Grid Lines -->
+        <line x1="55" y1="170" x2="55" y2="140" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="100" y1="170" x2="100" y2="110" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="145" y1="170" x2="145" y2="75" stroke="rgba(212, 175, 55, 0.25)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="190" y1="170" x2="190" y2="35" stroke="rgba(212, 175, 55, 0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+        <!-- Gradient Area Fill -->
+        <path d="M10 170 L10 160 C45 155, 75 130, 110 105 C145 80, 175 45, 215 15 L215 170 Z" fill="url(#chartAreaGradR)" opacity="0.3"/>
+        <!-- Main Growth Curve Trending UP -->
+        <path d="M10 160 C45 155, 75 130, 110 105 C145 80, 175 45, 215 15" stroke="url(#chartLineGradR)" stroke-width="3" stroke-linecap="round"/>
+        <!-- Arrowhead pointing UP-RIGHT -->
+        <path d="M190 15 L215 15 L215 40" stroke="#FAF9F7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Data Points -->
+        <circle cx="55" cy="140" r="3.5" fill="#D4AF37"/>
+        <circle cx="100" cy="110" r="4" fill="#D4AF37"/>
+        <circle cx="145" cy="75" r="4.5" fill="#D4AF37"/>
+        <circle cx="190" cy="35" r="5" fill="#FAF9F7"/>
+        <circle cx="215" cy="15" r="6" fill="#D4AF37" stroke="#FAF9F7" stroke-width="2"/>
         <defs>
-          <linearGradient id="goldLuxeGradR" x1="0" y1="280" x2="220" y2="0" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#C5A880" stop-opacity="0.3"/>
-            <stop offset="0.5" stop-color="#D4AF37" stop-opacity="0.85"/>
-            <stop offset="0.85" stop-color="#FAF9F7" stop-opacity="0.95"/>
-            <stop offset="1" stop-color="#D4AF37"/>
+          <linearGradient id="chartAreaGradR" x1="0" y1="15" x2="0" y2="170" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#D4AF37" stop-opacity="0.6"/>
+            <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="chartLineGradR" x1="10" y1="160" x2="215" y2="15" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5A880"/>
+            <stop offset="0.6" stop-color="#D4AF37"/>
+            <stop offset="1" stop-color="#FAF9F7"/>
           </linearGradient>
         </defs>
       </svg>
@@ -2865,16 +2891,16 @@
       // INITIALIZE INTERACTIVE LEAFLET MAP WITH GEOGRAPHICALLY PINNED MARKERS
       if (typeof L !== 'undefined') {
         const pinsData = [
-          { coords: [20.235855, -87.461299], label: "📍 Tulum Gardens", isPrimary: true },
-          { coords: [20.239844, -87.465303], label: "🏫 Colegio Inglés", isPrimary: false },
-          { coords: [20.245000, -87.468000], label: "🚆 Tren Maya Station", isPrimary: false },
-          { coords: [20.230592, -87.457223], label: "💧 Cenote Calavera", isPrimary: false },
-          { coords: [20.223417, -87.457053], label: "🛒 Soriana & ТЦ", isPrimary: false },
-          { coords: [20.211860, -87.435411], label: "🏞️ Jaguar Park", isPrimary: false },
-          { coords: [20.216142, -87.428887], label: "🏛️ Руины майя Tulum", isPrimary: false },
-          { coords: [20.209787, -87.429976], label: "🏖️ Playa Santa Fe", isPrimary: false },
-          { coords: [20.203859, -87.430655], label: "🏖️ Playa Paraíso", isPrimary: false },
-          { coords: [20.166436, -87.659087], label: "✈️ Аэропорт TQO (15 мин)", isPrimary: false }
+          { coords: [20.235855, -87.461299], label: "📍 Tulum Gardens", isPrimary: true, dir: 'top', offset: [0, -10] },
+          { coords: [20.239844, -87.465303], label: "🏫 Colegio Inglés", isPrimary: false, dir: 'left', offset: [-10, 0] },
+          { coords: [20.245000, -87.468000], label: "🚆 Tren Maya Station", isPrimary: false, dir: 'top', offset: [0, -10] },
+          { coords: [20.230592, -87.457223], label: "💧 Cenote Calavera", isPrimary: false, dir: 'left', offset: [-10, 0] },
+          { coords: [20.223417, -87.457053], label: "🛒 Soriana & ТЦ", isPrimary: false, dir: 'bottom', offset: [0, 10] },
+          { coords: [20.211860, -87.435411], label: "🏞️ Jaguar Park", isPrimary: false, dir: 'left', offset: [-10, 0] },
+          { coords: [20.216142, -87.428887], label: "🏛️ Руины майя Tulum", isPrimary: false, dir: 'top', offset: [0, -10] },
+          { coords: [20.209787, -87.429976], label: "🏖️ Playa Santa Fe", isPrimary: false, dir: 'right', offset: [10, 0] },
+          { coords: [20.203859, -87.430655], label: "🏖️ Playa Paraíso", isPrimary: false, dir: 'right', offset: [10, 0] },
+          { coords: [20.166436, -87.659087], label: "✈️ Аэропорт TQO (15 мин)", isPrimary: false, dir: 'top', offset: [0, -10] }
         ];
 
         const map = L.map('leaflet-map-canvas', {
@@ -2901,8 +2927,8 @@
           const marker = L.marker(p.coords, { icon: icon }).addTo(map);
           marker.bindTooltip(p.label, { 
             permanent: true, 
-            direction: 'top', 
-            offset: [0, -8],
+            direction: p.dir || 'top', 
+            offset: p.offset || [0, -8],
             className: p.isPrimary ? 'leaflet-tooltip-primary' : 'leaflet-tooltip-custom'
           });
           if (p.coords[1] > -87.60) {
