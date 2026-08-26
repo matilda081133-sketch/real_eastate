@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -2442,7 +2442,7 @@
         item.onclick = () => selectCinemaVideo(vid.originalIndex);
         
         item.innerHTML = `
-          <div class="v-thumb" style="background:url(`https://drive.google.com/thumbnail?id=${vid.src}&sz=w320`) center/cover no-repeat;min-height:80px;"><div class="v-play">▶</div></div>
+          <div class="v-thumb" style="background:url('https://drive.google.com/thumbnail?id=${vid.src}&sz=w320') center/cover no-repeat;min-height:80px;"><div class="v-play">▶</div></div>
           <div class="v-info">
             <span class="v-tag">${vid.tag}</span>
             <h4 class="v-name">${currentLang === "en" ? vid.titleEn : vid.titleRu}</h4>
