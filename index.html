@@ -704,14 +704,6 @@
       font-size: 14px;
       transition: all 0.3s;
     }
-      background: #FAF9F7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 16px;
-      transition: all 0.3s;
-    }
     .bento-card:hover .bento-arrow {
       background: var(--accent);
       color: #FFFFFF;
@@ -2411,28 +2403,28 @@
 
     // src = Google Drive File ID
     const cinemaVideos = [
-      { src: '1XraGthDNOCUOd0wAC0scIgZKMshcTBjk', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0017',   desc: 'Панорамный дроновый облёт комплекса Tulum Gardens.' },
-      { src: '1GwOY_7TVcvjpjTz6cNga_4SWyA9hfYN-', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0019',   desc: 'Вид сверху на массив резиденций и эко-окружение.' },
-      { src: '1xq-Po4Eejjp5IZByaZ0mSuS53Oe-RUe6', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0022',   desc: 'Облёт периметра закрытого комьюнити.' },
-      { src: '1MO27PHaqKER0FITkLmOxd1caRhiN-KDo', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0023',   desc: 'Высотная панорама: границы лотов и тропический лес.' },
-      { src: '1r3YK9qz07Kl401XRcqVpdx2Gj0XyiHL9', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0024',   desc: 'Динамичный облёт территории с дрона.' },
-      { src: '1qL_wl58BBwPFpKJeQrGXHezUtv9OKy-J', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0025',   desc: 'Деталь застройки: внутренние аллеи и зелёные зоны.' },
-      { src: '19Tdurv0JKMASjUNTAXpQU_fUAFY-JnXE', cat: 'drone',        tag: 'Drone 4K',         title: 'Аэросъёмка объекта — DJI 0026',   desc: 'Завершающий дроновый облёт генплана комплекса.' },
-      { src: '1HrKha19QUXnz3AwG2DYuPtfa0Z-F2Cs5', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5103', desc: 'Подготовка участков и земляные работы.' },
-      { src: '1E5THDBGDpIPwKpxmNTM2l_JQ7vWzNDsy', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5104', desc: 'Фиксация хода строительных работ от собственника.' },
-      { src: '1yOKVShY6d8nlQbtpn4yfxVBn-j4-bSH0', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5105', desc: 'Прогресс возведения несущих конструкций таунхаусов.' },
-      { src: '12_7HQRUU_bSoNJqpC08hxQMFyVphnmig',  cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5107', desc: 'Монтаж межэтажных перекрытий и арматурных каркасов.' },
-      { src: '1SZaJxEFXTDhm9Iniun8D_X9u8LoMIEyd', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5108', desc: 'Детальная фиксация строительного процесса.' },
-      { src: '15LRPgQigDEA48stzS4B2sDjmY1GnzOJF', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5109', desc: 'Строительная динамика: стены и кровельные работы.' },
-      { src: '1tzGvnhicLI92ZaucUVli7ZgWDFXQ5cPI', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5110', desc: 'Видеофиксация хода строительства юнитов.' },
-      { src: '1kva0WARo73K3783LdFwbd2wnIde7NlGb', cat: 'construction', tag: 'Стройка',          title: 'Строительная площадка — SSR 5111', desc: 'Монтаж фасадных конструкций и отделочные работы.' },
-      { src: '1YiyyE3JlRxrgpWaDSIYkKbJ6OUXxhlKI', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5112',  desc: 'Ландшафт и эко-среда вокруг резиденций.' },
-      { src: '1ehFQd3_nd89sLIcGAUBJC38oMk75QUm_', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5113',  desc: 'Тропическая зелень и зоны общего пользования.' },
-      { src: '1lItmw51eYNyCLW7BN_DJ_YxwpOk30YR_', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5114',  desc: 'Пешеходные аллеи и приватные патио резиденций.' },
-      { src: '1CyrclHHNt233OPxSZYjrwAlF7uMw4Ma_', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5115',  desc: 'Закрытая территория: безопасность и уединение.' },
-      { src: '1InOC5AKFgw8QaYYR2fByCupnnXUxCL1-', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5116',  desc: 'Панорама зелёной зоны и общественных пространств.' },
-      { src: '1Hfsr4D56PPw9onXaduNrxpjNlUw5CK2p', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5117',  desc: 'Эко-концепция: сохранение природного баланса.' },
-      { src: '1CWj-QthM3r3nZlvJSBjrtx0VJ0uE-pNH', cat: 'nature',       tag: 'Территория',       title: 'Территория комплекса — SSR 5118',  desc: 'Финальный обход территории: жизнь в тропиках.' }
+      { src: '1XraGthDNOCUOd0wAC0scIgZKMshcTBjk', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка объекта — DJI 0017',   titleEn: 'Aerial Drone Shot — DJI 0017',   desc: 'Панорамный дроновый облёт комплекса Tulum Gardens.' },
+      { src: '1GwOY_7TVcvjpjTz6cNga_4SWyA9hfYN-', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка объекта — DJI 0019',   titleEn: 'Aerial Drone Shot — DJI 0019',   desc: 'Вид сверху на массив резиденций и эко-окружение.' },
+      { src: '1xq-Po4Eejjp5IZByaZ0mSuS53Oe-RUe6', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка объекта — DJI 0022',   titleEn: 'Aerial Drone Shot — DJI 0022',   desc: 'Облёт периметра закрытого комьюнити.' },
+      { src: '1MO27PHaqKER0FITkLmOxd1caRhiN-KDo', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка объекта — DJI 0023',   titleEn: 'Aerial Drone Shot — DJI 0023',   desc: 'Высотная панорама: границы лотов и тропический лес.' },
+      { src: '1r3YK9qz07Kl401XRcqVpdx2Gj0XyiHL9', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка объекта — DJI 0024',   titleEn: 'Aerial Drone Shot — DJI 0024',   desc: 'Динамичный облёт территории с дрона.' },
+      { src: '1qL_wl58BBwPFpKJeQrGXHezUtv9OKy-J', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка объекта — DJI 0025',   titleEn: 'Aerial Drone Shot — DJI 0025',   desc: 'Деталь застройки: внутренние аллеи и зелёные зоны.' },
+      { src: '19Tdurv0JKMASjUNTAXpQU_fUAFY-JnXE', cat: 'drone',        tag: 'Drone 4K',   titleRu: 'Аэросъёмка объекта — DJI 0026',   titleEn: 'Aerial Drone Shot — DJI 0026',   desc: 'Завершающий дроновый облёт генплана комплекса.' },
+      { src: '1HrKha19QUXnz3AwG2DYuPtfa0Z-F2Cs5', cat: 'construction', tag: 'Site',       titleRu: 'Строительная площадка — SSR 5103', titleEn: 'Construction Site — SSR 5103',   desc: 'Подготовка участков и земляные работы.' },
+      { src: '1E5THDBGDpIPwKpxmNTM2l_JQ7vWzNDsy', cat: 'construction', tag: 'Site',       titleRu: 'Строительная площадка — SSR 5104', titleEn: 'Construction Site — SSR 5104',   desc: 'Фиксация хода строительных работ от собственника.' },
+      { src: '1yOKVShY6d8nlQbtpn4yfxVBn-j4-bSH0', cat: 'construction', tag: 'Site',       titleRu: 'Строительная площадка — SSR 5105', titleEn: 'Construction Site — SSR 5105',   desc: 'Прогресс возведения несущих конструкций таунхаусов.' },
+      { src: '12_7HQRUU_bSoNJqpC08hxQMFyVphnmig',  cat: 'construction', tag: 'Site',       titleRu: 'Строительная площадка — SSR 5107', titleEn: 'Construction Site — SSR 5107',   desc: 'Монтаж межэтажных перекрытий и арматурных каркасов.' },
+      { src: '1SZaJxEFXTDhm9Iniun8D_X9u8LoMIEyd', cat: 'construction', tag: 'Site',       titleRu: 'Строительная площадка — SSR 5108', titleEn: 'Construction Site — SSR 5108',   desc: 'Детальная фиксация строительного процесса.' },
+      { src: '15LRPgQigDEA48stzS4B2sDjmY1GnzOJF', cat: 'construction', tag: 'Site',       titleRu: 'Строительная площадка — SSR 5109', titleEn: 'Construction Site — SSR 5109',   desc: 'Строительная динамика: стены и кровельные работы.' },
+      { src: '1tzGvnhicLI92ZaucUVli7ZgWDFXQ5cPI', cat: 'construction', tag: 'Site',       titleRu: 'Строительная площадка — SSR 5110', titleEn: 'Construction Site — SSR 5110',   desc: 'Видеофиксация хода строительства юнитов.' },
+      { src: '1kva0WARo73K3783LdFwbd2wnIde7NlGb', cat: 'construction', tag: 'Site',       titleRu: 'Строительная площадка — SSR 5111', titleEn: 'Construction Site — SSR 5111',   desc: 'Монтаж фасадных конструкций и отделочные работы.' },
+      { src: '1YiyyE3JlRxrgpWaDSIYkKbJ6OUXxhlKI', cat: 'nature',       tag: 'Territory',  titleRu: 'Территория комплекса — SSR 5112',  titleEn: 'Estate Territory — SSR 5112',    desc: 'Ландшафт и эко-среда вокруг резиденций.' },
+      { src: '1ehFQd3_nd89sLIcGAUBJC38oMk75QUm_', cat: 'nature',       tag: 'Territory',  titleRu: 'Территория комплекса — SSR 5113',  titleEn: 'Estate Territory — SSR 5113',    desc: 'Тропическая зелень и зоны общего пользования.' },
+      { src: '1lItmw51eYNyCLW7BN_DJ_YxwpOk30YR_', cat: 'nature',       tag: 'Territory',  titleRu: 'Территория комплекса — SSR 5114',  titleEn: 'Estate Territory — SSR 5114',    desc: 'Пешеходные аллеи и приватные патио резиденций.' },
+      { src: '1CyrclHHNt233OPxSZYjrwAlF7uMw4Ma_', cat: 'nature',       tag: 'Territory',  titleRu: 'Территория комплекса — SSR 5115',  titleEn: 'Estate Territory — SSR 5115',    desc: 'Закрытая территория: безопасность и уединение.' },
+      { src: '1InOC5AKFgw8QaYYR2fByCupnnXUxCL1-', cat: 'nature',       tag: 'Territory',  titleRu: 'Территория комплекса — SSR 5116',  titleEn: 'Estate Territory — SSR 5116',    desc: 'Панорама зелёной зоны и общественных пространств.' },
+      { src: '1Hfsr4D56PPw9onXaduNrxpjNlUw5CK2p', cat: 'nature',       tag: 'Territory',  titleRu: 'Территория комплекса — SSR 5117',  titleEn: 'Estate Territory — SSR 5117',    desc: 'Эко-концепция: сохранение природного баланса.' },
+      { src: '1CWj-QthM3r3nZlvJSBjrtx0VJ0uE-pNH', cat: 'nature',       tag: 'Territory',  titleRu: 'Территория комплекса — SSR 5118',  titleEn: 'Estate Territory — SSR 5118',    desc: 'Финальный обход территории: жизнь в тропиках.' }
     ];
 
     let currentCinemaIdx = 0;
@@ -2453,7 +2445,7 @@
           <div class="v-thumb" style="background:url(`https://drive.google.com/thumbnail?id=${vid.src}&sz=w320`) center/cover no-repeat;min-height:80px;"><div class="v-play">▶</div></div>
           <div class="v-info">
             <span class="v-tag">${vid.tag}</span>
-            <h4 class="v-name">${vid.title}</h4>
+            <h4 class="v-name">${currentLang === "en" ? vid.titleEn : vid.titleRu}</h4>
             <p class="v-sub">${vid.desc}</p>
           </div>
         `;
@@ -2469,7 +2461,7 @@
       // Google Drive preview iframe
       player.src = `https://drive.google.com/file/d/${vid.src}/preview`;
 
-      document.getElementById('stage-title').innerText = vid.title;
+      document.getElementById('stage-title').innerText = currentLang === "en" ? vid.titleEn : vid.titleRu;
       document.getElementById('stage-desc').innerText = vid.desc;
 
       const activeBtn = document.querySelector('.cat-btn.active');
@@ -2603,12 +2595,12 @@
         }).addTo(map);
 
         const pinsData = [
-          { coords: [20.2052, -87.4708], label: "рџ“Ќ Tulum Gardens", isPrimary: true },
-          { coords: [20.2030, -87.4725], label: "рџЏ« Colegio InglГ©s (300 Рј)", isPrimary: false },
-          { coords: [20.2100, -87.4770], label: "рџљ† Tulum Station Tren Maya (800 Рј)", isPrimary: false },
-          { coords: [20.2175, -87.4560], label: "рџЏЉвЂЌв™‚пёЏ Cenote Calavera & Jaguar Park (2 РјРёРЅ)", isPrimary: false },
-          { coords: [20.2110, -87.4640], label: "рџ›’ Soriana & Carretera 307 (4-6 РјРёРЅ)", isPrimary: false },
-          { coords: [20.2020, -87.4320], label: "рџЏ–пёЏ РџР»СЏР¶Рё РљР°СЂРёР±РѕРІ & Chedraui (8-10 РјРёРЅ)", isPrimary: false }
+          { coords: [20.2048, -87.4692], label: "📍 Tulum Gardens", isPrimary: true },
+          { coords: [20.2041, -87.4684], label: "🏫 Colegio Inglés (300 м)", isPrimary: false },
+          { coords: [20.2115, -87.4753], label: "🚆 Tren Maya Station (800 м)", isPrimary: false },
+          { coords: [20.2170, -87.4580], label: "🏞️ Cenote Calavera & Jaguar Park", isPrimary: false },
+          { coords: [20.2095, -87.4628], label: "🛒 Soriana & Carretera 307", isPrimary: false },
+          { coords: [20.1955, -87.4373], label: "🏖️ Пляжи Карибов (15 мин)", isPrimary: false }
         ];
 
         pinsData.forEach(p => {
@@ -3239,6 +3231,9 @@
   </script>
 </body>
 </html>
+
+
+
 
 
 
