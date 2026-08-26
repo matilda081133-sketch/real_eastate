@@ -1244,16 +1244,22 @@
     }
     .unit-main-view {
       height: 440px;
-      background: #B6AC9C;
+      background: #EBE9E4;
       border-radius: var(--radius);
       overflow: hidden;
-      border: 1px solid rgba(26, 26, 26, 0.12);
+      border: 1px solid rgba(26, 26, 26, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 0;
       box-sizing: border-box;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      position: relative;
+      cursor: zoom-in;
+      transition: border-color 0.25s;
+    }
+    .unit-main-view:hover {
+      border-color: var(--accent);
     }
     .unit-main-view img {
       width: 100%;
@@ -1261,6 +1267,93 @@
       object-fit: contain;
       object-position: center;
       display: block;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .unit-main-view:hover img {
+      transform: scale(1.02);
+    }
+    .zoom-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(17, 20, 19, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      color: #FAF9F7;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      z-index: 2;
+    }
+    /* FULLSCREEN IMAGE LIGHTBOX MODAL */
+    .img-lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 13, 11, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      cursor: zoom-out;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .img-lightbox-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    .img-lightbox-content {
+      position: relative;
+      max-width: 95vw;
+      max-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: default;
+    }
+    .img-lightbox-content img {
+      max-width: 92vw;
+      max-height: 88vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7);
+    }
+    .img-lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      z-index: 10001;
+    }
+    .img-lightbox-close:hover {
+      background: var(--accent);
+      color: #111413;
+      border-color: var(--accent);
     }
     .unit-thumbs {
       display: grid;
@@ -2071,7 +2164,8 @@
       <!-- UNIT 1: GARDEN HOUSE -->
       <div id="tab-gh" class="unit-card-box active">
         <div class="unit-gallery">
-          <div class="unit-main-view">
+          <div class="unit-main-view" onclick="zoomImage(this)">
+            <div class="zoom-badge">🔍 Увеличить</div>
             <img src="images/img_13.jpg" id="gh-main" alt="Garden House Фасад резиденции">
           </div>
           <div class="unit-thumbs">
@@ -2104,7 +2198,8 @@
       <!-- UNIT 2: PENTHOUSE -->
       <div id="tab-p" class="unit-card-box">
         <div class="unit-gallery">
-          <div class="unit-main-view">
+          <div class="unit-main-view" onclick="zoomImage(this)">
+            <div class="zoom-badge">🔍 Увеличить</div>
             <img src="images/img_22.jpg" id="p-main" alt="PentHouse Поэтажный план">
           </div>
           <div class="unit-thumbs">
@@ -2135,7 +2230,8 @@
       <!-- UNIT 3: PENTHOUSE PLUS -->
       <div id="tab-pp" class="unit-card-box">
         <div class="unit-gallery">
-          <div class="unit-main-view">
+          <div class="unit-main-view" onclick="zoomImage(this)">
+            <div class="zoom-badge">🔍 Увеличить</div>
             <img src="images/img_23.jpg" id="pp-main" alt="PentHouse Plus Поэтажный план">
           </div>
           <div class="unit-thumbs">
@@ -2166,7 +2262,8 @@
       <!-- UNIT 4: SKYHOUSE -->
       <div id="tab-s" class="unit-card-box">
         <div class="unit-gallery">
-          <div class="unit-main-view">
+          <div class="unit-main-view" onclick="zoomImage(this)">
+            <div class="zoom-badge">🔍 Увеличить</div>
             <img src="images/img_33.jpg" id="s-main" alt="SkyHouse Архитектурный план">
           </div>
           <div class="unit-thumbs">
@@ -3427,6 +3524,38 @@
       onScroll();
     }
     document.addEventListener('DOMContentLoaded', initConsultingParallax);
+      // IMAGE LIGHTBOX ZOOM
+    function zoomImage(container) {
+      const img = container.querySelector('img');
+      if (!img) return;
+      const modal = document.getElementById('img-lightbox-modal');
+      const targetImg = document.getElementById('lightbox-img-element');
+      targetImg.src = img.src;
+      targetImg.alt = img.alt || 'План резиденции';
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageZoom(e) {
+      const modal = document.getElementById('img-lightbox-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeImageZoom();
+      }
+    });
   </script>
+  <!-- FULLSCREEN IMAGE LIGHTBOX MODAL -->
+  <div class="img-lightbox-overlay" id="img-lightbox-modal" onclick="closeImageZoom(event)">
+    <button class="img-lightbox-close" onclick="closeImageZoom(event)">×</button>
+    <div class="img-lightbox-content" onclick="event.stopPropagation()">
+      <img id="lightbox-img-element" src="" alt="План резиденции">
+    </div>
+  </div>
 </body>
 </html>
