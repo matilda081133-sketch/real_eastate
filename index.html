@@ -2885,9 +2885,21 @@
 
       // INITIALIZE INTERACTIVE LEAFLET MAP WITH GEOGRAPHICALLY PINNED MARKERS
       if (typeof L !== 'undefined') {
-        const mapCenter = [20.2210, -87.4480];
+        const pinsData = [
+          { coords: [20.235855, -87.461299], label: "📍 Tulum Gardens", isPrimary: true },
+          { coords: [20.239844, -87.465303], label: "🏫 Colegio Inglés", isPrimary: false },
+          { coords: [20.245000, -87.468000], label: "🚆 Tren Maya Station", isPrimary: false },
+          { coords: [20.230592, -87.457223], label: "💧 Cenote Calavera", isPrimary: false },
+          { coords: [20.223417, -87.457053], label: "🛒 Soriana & ТЦ", isPrimary: false },
+          { coords: [20.211860, -87.435411], label: "🏞️ Jaguar Park", isPrimary: false },
+          { coords: [20.216142, -87.428887], label: "🏛️ Руины майя Tulum", isPrimary: false },
+          { coords: [20.209787, -87.429976], label: "🏖️ Playa Santa Fe", isPrimary: false },
+          { coords: [20.203859, -87.430655], label: "🏖️ Playa Paraíso", isPrimary: false },
+          { coords: [20.166436, -87.659087], label: "✈️ Аэропорт TQO (15 мин)", isPrimary: false }
+        ];
+
         const map = L.map('leaflet-map-canvas', {
-          center: mapCenter,
+          center: [20.2240, -87.4470],
           zoom: 13,
           scrollWheelZoom: false
         });
@@ -2897,20 +2909,7 @@
           attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        const pinsData = [
-          { coords: [20.235855, -87.461299], label: "📍 Tulum Gardens", isPrimary: true },
-          { coords: [20.239844, -87.465303], label: "🏫 Colegio Inglés", isPrimary: false },
-          { coords: [20.238000, -87.458000], label: "🚆 Tren Maya Station", isPrimary: false },
-          { coords: [20.230592, -87.457223], label: "💧 Cenote Calavera", isPrimary: false },
-          { coords: [20.223417, -87.457053], label: "🛒 Soriana & ТЦ", isPrimary: false },
-          { coords: [20.211860, -87.435411], label: "🏞️ Jaguar Park", isPrimary: false },
-          { coords: [20.209787, -87.429976], label: "🏖️ Playa Santa Fe", isPrimary: false },
-          { coords: [20.203859, -87.430655], label: "🏖️ Playa Paraíso", isPrimary: false },
-          { coords: [20.216142, -87.428887], label: "🏛️ Руины майя Tulum", isPrimary: false },
-          { coords: [20.166436, -87.659087], label: "✈️ Аэропорт TQO (15 мин)", isPrimary: false }
-        ];
-
-        const markerGroup = [];
+        const markers = [];
         pinsData.forEach(p => {
           const pinClass = p.isPrimary ? 'custom-leaflet-pin primary-pin' : 'custom-leaflet-pin';
           const pulseHtml = p.isPrimary ? '<div class="mini-pin-pulse"></div>' : '';
@@ -2927,8 +2926,17 @@
             offset: [0, -8],
             className: p.isPrimary ? 'leaflet-tooltip-primary' : 'leaflet-tooltip-custom'
           });
-          markerGroup.push(marker);
+          if (p.coords[1] > -87.60) {
+            markers.push(marker);
+          }
         });
+
+        if (markers.length > 0) {
+          const group = L.featureGroup(markers);
+          map.fitBounds(group.getBounds().pad(0.08));
+        }
+
+        setTimeout(() => { map.invalidateSize(); }, 350);
       }
     });
 
