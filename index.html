@@ -1013,8 +1013,23 @@
        CINEMA VIDEO GALLERY WITH 21 CLIPS & CATEGORIES
        ======================================================== */
     .cinema-sec {
-      background: var(--dark);
+      background: radial-gradient(circle at 50% 8%, #1e3326 0%, #0e1712 45%, #080d0a 100%);
       color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .cinema-sec::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 320px;
+      background: radial-gradient(ellipse at top, rgba(212, 175, 55, 0.14), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
     }
     .cinema-sec .sec-tag { color: var(--accent); }
     .cinema-sec .sec-title { color: #FFFFFF; }
