@@ -1737,6 +1737,20 @@
     </div>
   </section>
 
+
+  <!-- BROKER CTA BANNER -->
+  <div style="background:linear-gradient(135deg,#0e1512 0%,#1a2b1f 50%,#111c28 100%);padding:56px 0;border-top:1px solid rgba(212,175,55,0.2);border-bottom:1px solid rgba(212,175,55,0.2);">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:260px;">
+        <div style="font-family:var(--font-sans);font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4AF37;margin-bottom:14px;font-weight:700;">Персональный подбор</div>
+        <h3 style="font-family:var(--font-serif);font-size:clamp(24px,3vw,36px);color:#FAF9F7;font-weight:400;margin:0 0 14px;line-height:1.25;">Узнайте, какая резиденция<br>подходит вашей семье</h3>
+        <p style="font-family:'TildaSans',sans-serif;font-size:16px;color:#B8B4AE;line-height:1.6;margin:0;max-width:520px;">Брокер ответит на все вопросы, подберёт формат и проведёт вас через каждый шаг сделки — от просмотра до получения ключей.</p>
+      </div>
+      <div style="flex-shrink:0;">
+        <button class="btn btn-accent" onclick="openModal('Персональный подбор: Получить консультацию')" style="font-size:17px;padding:18px 40px;">Получить консультацию →</button>
+      </div>
+    </div>
+  </div>
   <!-- ========================================================
        SECTION 3: LOCATION & INTERACTIVE MAP
        ======================================================== -->
@@ -1911,6 +1925,65 @@
       </div>
 
       <!-- UNIT 1: GARDEN HOUSE -->
+      <div id="tab-gh" class="unit-card-box active">
+        <div class="unit-gallery">
+          <div class="unit-main-view">
+            <img src="images/img_24.jpg" id="gh-main" alt="Garden House Фасад резиденции">
+          </div>
+          <div class="unit-thumbs">
+            <img src="images/img_24.jpg" onclick="swapImg('gh-main', 'images/img_24.jpg')" alt="Garden House Фасад">
+            <img src="images/img_26.jpg" onclick="swapImg('gh-main', 'images/img_26.jpg')" alt="Гранд-гостиная с кухней">
+            <img src="images/img_36.jpg" onclick="swapImg('gh-main', 'images/img_36.jpg')" alt="Крытое патио с лаунжем">
+            <img src="images/img_58.jpg" onclick="swapImg('gh-main', 'images/img_58.jpg')" alt="Премиальная мастер-спальня">
+          </div>
+        </div>
+        <div class="unit-info-box">
+          <div>
+            <h3 class="unit-h3">Garden House</h3>
+            <span class="unit-badge-specs">84 м² жилая / 104 м² общая • 2 уровня • 2 спальни • 2 санузла • Частный сад & Патио</span>
+            <p class="unit-desc-p">
+              Двухуровневая резиденция первого уровня с прямой интеграцией в ландшафтный тропический сад. На 1-м уровне — гранд-гостиная с панорамным слайд-остеклением, кухня с островом из кварцита, обеденная зона и гостевой санузел. На 2-м уровне — мастер-спальня с гардеробной и ванной en-suite, плюс вторая спальня.
+            </p>
+            <ul class="unit-check-list">
+              <li>Приватное крытое патио с перголой и выходом в личный сад</li>
+              <li>Двухуровневая планировка (Ground Floor + Mezzanine)</li>
+              <li>Кухня с островом и встроенной техникой премиум-класса</li>
+              <li>Мастер-спальня с индивидуальным санузлом и гардеробом</li>
+              <li>Мультисплит система климат-контроля VRV в каждой комнате</li>
+              <li>1 персональное парковочное место перед домом</li>
+            </ul>
+          </div>
+          <button class="btn btn-accent btn-block" onclick="openModal('Каталог: Запрос планировки Garden House')">Получить планировку в PDF</button>
+        </div>
+      </div>
+
+      <!-- UNIT 2: PENTHOUSE -->
+      <div id="tab-p" class="unit-card-box">
+        <div class="unit-gallery">
+          <div class="unit-main-view">
+            <img src="images/img_22.jpg" id="p-main" alt="PentHouse Поэтажный план">
+          </div>
+          <div class="unit-thumbs">
+            <img src="images/img_22.jpg" onclick="swapImg('p-main', 'images/img_22.jpg')" alt="Поэтажный план PentHouse">
+            <img src="images/img_36.jpg" onclick="swapImg('p-main', 'images/img_36.jpg')" alt="Лаунж-терраса на крыше">
+            <img src="images/img_19.jpg" onclick="swapImg('p-main', 'images/img_19.jpg')" alt="Спальня с видом на джунгли">
+            <img src="images/img_17.jpg" onclick="swapImg('p-main', 'images/img_17.jpg')" alt="Санузел с отделкой под камень">
+          </div>
+        </div>
+        <div class="unit-info-box">
+          <div>
+            <h3 class="unit-h3">PentHouse</h3>
+              <li>Панорамные виды на кроны тропического леса</li>
+              <li>Приватная терраса на кровле для коктейлей и BBQ</li>
+              <li>Максимальная загрузка в высокий сезон</li>
+              <li>100% доверительное управление отельным оператором</li>
+            </ul>
+          </div>
+          <button class="btn btn-accent btn-block" onclick="openModal('Каталог: Запрос планировки PentHouse')">Получить планировку в PDF</button>
+        </div>
+      </div>
+
+      <!-- UNIT 3: PENTHOUSE PLUS -->
       <div id="tab-gh" class="unit-card-box active">
         <div class="unit-gallery">
           <div class="unit-main-view">
