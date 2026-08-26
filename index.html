@@ -437,6 +437,7 @@
     .hero-stat-cards-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      border-left: 1px solid rgba(255,255,255,0.08);
       align-items: start;
       gap: 14px;
       width: 100%;
@@ -445,37 +446,21 @@
       box-sizing: border-box;
     }
     .hero-stat-pill {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(17, 20, 19, 0.68) 100%);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-top: 1px solid rgba(212, 175, 55, 0.45);
-      border-radius: 12px;
-      padding: 16px 18px 18px;
+      background: transparent;
+      border: none;
+      border-top: 2px solid rgba(212, 175, 55, 0.7);
+      padding: 18px 0 0;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      box-sizing: border-box;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      transition: border-color 0.3s;
     }
-    .hero-stat-pill::before {
-      display: none;
-    }
-    .hero-stat-pill:hover {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(17, 20, 19, 0.88) 100%);
-      border-color: rgba(212, 175, 55, 0.65);
-      transform: translateY(-5px);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45), 0 0 20px rgba(212, 175, 55, 0.15);
-    }
-    .pill-top-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
+    
+    .hero-stat-pill:hover { border-top-color: rgba(212, 175, 55, 1); }
+    .pill-top-row { display: none; }
     .pill-num {
       font-family: var(--font-sans);
       font-size: 10px;
@@ -493,7 +478,7 @@
     }
     .stat-top-val {
       font-family: var(--font-serif);
-      font-size: clamp(18px, 1.6vw, 22px);
+      font-size: clamp(16px, 1.4vw, 20px);
       color: #FFFFFF;
       font-weight: 700;
       margin-bottom: 6px;
@@ -1508,16 +1493,19 @@
     .stat-pill-wrap {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 0;
+      padding: 0 24px 0 0;
+      border-right: 1px solid rgba(255,255,255,0.08);
     }
     .stat-pill-wrap .stat-sub-text {
       display: block;
       overflow: visible;
       -webkit-line-clamp: unset;
-      color: rgba(255,255,255,0.82);
+      color: rgba(255,255,255,0.6);
       font-size: 13px;
       line-height: 1.55;
-      padding: 0 2px;
+      margin-top: 8px;
+      padding: 0;
     }
 </style>
 </head>
