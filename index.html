@@ -14,7 +14,13 @@
   <link rel="apple-touch-icon" href="images/favicon.svg">
   
   <!-- FONTS: Playfair Display (Serif), Montserrat, TildaSans -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://mt1.google.com">
+  <link rel="dns-prefetch" href="https://drive.google.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
@@ -1947,6 +1953,29 @@
       color: #FAF9F7 !important;
     }
 
+  
+    /* CORE PERFORMANCE & GPU COMPOSITING */
+    html {
+      scroll-behavior: smooth;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    .bento-card, .loc-interactive-panel, .unit-card-box, .cinema-container, .faq-item {
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+    /* CONTENT-VISIBILITY RENDERING ACCELERATION */
+    .bento-section, .loc-sec, .cinema-sec, .units-catalog-sec, .atmosphere-sec, .faq-sec {
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 700px;
+    }
+
   </style>
 </head>
 
@@ -1955,7 +1984,7 @@
   <!-- PRELOADER WITH PROGRESS PERCENT (FATUKHIN EFFECT) -->
   <div id="preloader" style="display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important;">
     <div class="logo-badge-wrap" style="margin-bottom: 20px; transform: scale(1.15);">
-      <img src="images/tulum_gardens_logo.png" alt="TulumGardens The Location" class="logo-img">
+      <img src="images/tulum_gardens_logo.png" alt="TulumGardens The Location" class="logo-img" fetchpriority="high" decoding="async">
     </div>
     <div class="pre-num" id="pre-counter">0%</div>
     <div class="pre-bar-bg">
@@ -1968,7 +1997,7 @@
     <div class="container nav-wrap">
       <a href="#" class="logo-box">
         <div class="logo-badge-wrap">
-          <img src="images/tulum_gardens_logo.png" alt="TulumGardens The Location" class="logo-img">
+          <img src="images/tulum_gardens_logo.png" alt="TulumGardens The Location" class="logo-img" fetchpriority="high" decoding="async">
         </div>
       </a>
 
@@ -2183,12 +2212,12 @@
   <div id="consulting-banner" class="consulting-banner-wrap">
     <!-- LEFT 3D GOLDEN GROWTH CHART -->
     <div id="consulting-vector-left" class="consulting-vector left-vector">
-      <img src="images/gold_growth_chart.png" alt="Динамика доходности" class="consulting-chart-img">
+      <img src="images/gold_growth_chart.png" alt="Динамика доходности" class="consulting-chart-img" loading="lazy" decoding="async">
     </div>
 
     <!-- RIGHT 3D GOLDEN GROWTH CHART (MIRRORED) -->
     <div id="consulting-vector-right" class="consulting-vector right-vector">
-      <img src="images/gold_growth_chart.png" alt="Динамика доходности" class="consulting-chart-img" style="transform: scaleX(-1);">
+      <img src="images/gold_growth_chart.png" alt="Динамика доходности" class="consulting-chart-img" style="transform: scaleX(-1);" loading="lazy" decoding="async">
     </div>
 
     <div class="container" style="text-align:center;max-width:720px;position:relative;z-index:2;">
@@ -2295,7 +2324,7 @@
         <!-- RIGHT ANIMATED DISPLAY (MAGAZINE PHOTO CARD) -->
         <div class="loc-usp-display">
           <div class="loc-display-img-wrap">
-            <img src="images/tulum_airport_station.jpg" id="usp-img" class="loc-display-img" src="images/tulum_airport_station.jpg" loading="eager" alt="Инфраструктура Tulum Gardens">
+            <img src="images/tulum_airport_station.jpg" id="usp-img" class="loc-display-img" src="images/tulum_airport_station.jpg" loading="eager" alt="Инфраструктура Tulum Gardens" decoding="async">
             <div class="loc-display-img-overlay">
               <div class="loc-img-badge" id="usp-badge">18 мин до аэропорта</div>
             </div>
@@ -2333,7 +2362,7 @@
       <div class="cinema-container">
         <!-- MAIN PLAYER STAGE -->
         <div class="stage-wrapper">
-          <iframe id="stage-player" class="stage-player" src="https://drive.google.com/file/d/1XraGthDNOCUOd0wAC0scIgZKMshcTBjk/preview" allow="autoplay; fullscreen" allowfullscreen style="border:none;width:100%;height:100%;display:block;"></iframe>
+          <iframe id="stage-player" loading="lazy" class="stage-player" src="https://drive.google.com/file/d/1XraGthDNOCUOd0wAC0scIgZKMshcTBjk/preview" allow="autoplay; fullscreen" allowfullscreen style="border:none;width:100%;height:100%;display:block;"></iframe>
           <div class="stage-bar">
             <div>
               <h3 class="stage-title" id="stage-title">Съемка с дрона: Границы массива Tulum Gardens</h3>
@@ -2388,13 +2417,13 @@
         <div class="unit-gallery">
           <div class="unit-main-view" onclick="zoomImage(this)">
             
-            <img src="images/img_13.jpg" id="gh-main" alt="Garden House Фасад резиденции">
+            <img src="images/img_13.jpg" id="gh-main" alt="Garden House Фасад резиденции" loading="lazy" decoding="async">
           </div>
           <div class="unit-thumbs">
-            <img src="images/img_13.jpg" onclick="swapImg('gh-main', 'images/img_13.jpg')" alt="Garden House Фасад">
-            <img src="images/img_26.jpg" onclick="swapImg('gh-main', 'images/img_26.jpg')" alt="Гранд-гостиная с кухней">
-            <img src="images/img_36.jpg" onclick="swapImg('gh-main', 'images/img_36.jpg')" alt="Крытое патио с лаунжем">
-            <img src="images/img_58.jpg" onclick="swapImg('gh-main', 'images/img_58.jpg')" alt="Премиальная мастер-спальня">
+            <img src="images/img_13.jpg" onclick="swapImg('gh-main', 'images/img_13.jpg')" alt="Garden House Фасад" loading="lazy" decoding="async">
+            <img src="images/img_26.jpg" onclick="swapImg('gh-main', 'images/img_26.jpg')" alt="Гранд-гостиная с кухней" loading="lazy" decoding="async">
+            <img src="images/img_36.jpg" onclick="swapImg('gh-main', 'images/img_36.jpg')" alt="Крытое патио с лаунжем" loading="lazy" decoding="async">
+            <img src="images/img_58.jpg" onclick="swapImg('gh-main', 'images/img_58.jpg')" alt="Премиальная мастер-спальня" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="unit-info-box">
@@ -2422,13 +2451,13 @@
         <div class="unit-gallery">
           <div class="unit-main-view" onclick="zoomImage(this)">
             
-            <img src="images/img_22.jpg" id="p-main" alt="PentHouse Поэтажный план">
+            <img src="images/img_22.jpg" id="p-main" alt="PentHouse Поэтажный план" loading="lazy" decoding="async">
           </div>
           <div class="unit-thumbs">
-            <img src="images/img_22.jpg" onclick="swapImg('p-main', 'images/img_22.jpg')" alt="Поэтажный план PentHouse">
-            <img src="images/img_36.jpg" onclick="swapImg('p-main', 'images/img_36.jpg')" alt="Лаунж-терраса на крыше">
-            <img src="images/img_19.jpg" onclick="swapImg('p-main', 'images/img_19.jpg')" alt="Спальня с видом на джунгли">
-            <img src="images/img_17.jpg" onclick="swapImg('p-main', 'images/img_17.jpg')" alt="Санузел с отделкой под камень">
+            <img src="images/img_22.jpg" onclick="swapImg('p-main', 'images/img_22.jpg')" alt="Поэтажный план PentHouse" loading="lazy" decoding="async">
+            <img src="images/img_36.jpg" onclick="swapImg('p-main', 'images/img_36.jpg')" alt="Лаунж-терраса на крыше" loading="lazy" decoding="async">
+            <img src="images/img_19.jpg" onclick="swapImg('p-main', 'images/img_19.jpg')" alt="Спальня с видом на джунгли" loading="lazy" decoding="async">
+            <img src="images/img_17.jpg" onclick="swapImg('p-main', 'images/img_17.jpg')" alt="Санузел с отделкой под камень" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="unit-info-box">
@@ -2454,13 +2483,13 @@
         <div class="unit-gallery">
           <div class="unit-main-view" onclick="zoomImage(this)">
             
-            <img src="images/img_23.jpg" id="pp-main" alt="PentHouse Plus Поэтажный план">
+            <img src="images/img_23.jpg" id="pp-main" alt="PentHouse Plus Поэтажный план" loading="lazy" decoding="async">
           </div>
           <div class="unit-thumbs">
-            <img src="images/img_23.jpg" onclick="swapImg('pp-main', 'images/img_23.jpg')" alt="Поэтажный план PentHouse Plus">
-            <img src="images/img_24.jpg" onclick="swapImg('pp-main', 'images/img_24.jpg')" alt="Фасад верхнего уровня">
-            <img src="images/img_62.jpg" onclick="swapImg('pp-main', 'images/img_62.jpg')" alt="Увеличенная терраса">
-            <img src="images/img_56.jpg" onclick="swapImg('pp-main', 'images/img_56.jpg')" alt="Мастер-спальня Plus">
+            <img src="images/img_23.jpg" onclick="swapImg('pp-main', 'images/img_23.jpg')" alt="Поэтажный план PentHouse Plus" loading="lazy" decoding="async">
+            <img src="images/img_24.jpg" onclick="swapImg('pp-main', 'images/img_24.jpg')" alt="Фасад верхнего уровня" loading="lazy" decoding="async">
+            <img src="images/img_62.jpg" onclick="swapImg('pp-main', 'images/img_62.jpg')" alt="Увеличенная терраса" loading="lazy" decoding="async">
+            <img src="images/img_56.jpg" onclick="swapImg('pp-main', 'images/img_56.jpg')" alt="Мастер-спальня Plus" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="unit-info-box">
@@ -2486,13 +2515,13 @@
         <div class="unit-gallery">
           <div class="unit-main-view" onclick="zoomImage(this)">
             
-            <img src="images/img_33.jpg" id="s-main" alt="SkyHouse Архитектурный план">
+            <img src="images/img_33.jpg" id="s-main" alt="SkyHouse Архитектурный план" loading="lazy" decoding="async">
           </div>
           <div class="unit-thumbs">
-            <img src="images/img_33.jpg" onclick="swapImg('s-main', 'images/img_33.jpg')" alt="Архитектурный план SkyHouse">
-            <img src="images/img_26.jpg" onclick="swapImg('s-main', 'images/img_26.jpg')" alt="Гранд-гостиная с кухней">
-            <img src="images/img_38.jpg" onclick="swapImg('s-main', 'images/img_38.jpg')" alt="Кровельная VIP-терраса">
-            <img src="images/img_58.jpg" onclick="swapImg('s-main', 'images/img_58.jpg')" alt="Премиальная мастер-спальня">
+            <img src="images/img_33.jpg" onclick="swapImg('s-main', 'images/img_33.jpg')" alt="Архитектурный план SkyHouse" loading="lazy" decoding="async">
+            <img src="images/img_26.jpg" onclick="swapImg('s-main', 'images/img_26.jpg')" alt="Гранд-гостиная с кухней" loading="lazy" decoding="async">
+            <img src="images/img_38.jpg" onclick="swapImg('s-main', 'images/img_38.jpg')" alt="Кровельная VIP-терраса" loading="lazy" decoding="async">
+            <img src="images/img_58.jpg" onclick="swapImg('s-main', 'images/img_58.jpg')" alt="Премиальная мастер-спальня" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="unit-info-box">
@@ -2706,7 +2735,7 @@
       <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;flex-wrap:wrap;">
         <div>
           <a href="#" class="logo-box" style="margin-left:0;margin-bottom:16px;display:inline-flex;">
-            <img src="images/tulum_gardens_logo.png" alt="Tulum Gardens" class="logo-img" style="height:48px;">
+            <img src="images/tulum_gardens_logo.png" alt="Tulum Gardens" class="logo-img" style="height:48px;" fetchpriority="high" decoding="async">
           </a>
           <p style="font-family:'TildaSans',sans-serif;font-size:14px;color:#6B6860;line-height:1.7;margin:16px 0 20px;max-width:280px;">Премиальный закрытый комплекс таунхаусов в Тулуме, Мексика. Готовые резиденции в частной собственности.</p>
           <a href="tel:+529999974246" style="font-family:var(--font-sans);font-size:14px;color:#C5BEB3;text-decoration:none;font-weight:500;transition:color 0.2s;" onmouseover="this.style.color='#FAF9F7'" onmouseout="this.style.color='#C5BEB3'">+52 (999) 997-4246</a>
@@ -2930,7 +2959,7 @@
         
         item.innerHTML = `
           <div class="v-thumb">
-            <img src="https://drive.google.com/thumbnail?id=${vid.src}&sz=w320" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+            <img src="https://drive.google.com/thumbnail?id=${vid.src}&sz=w320" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async">
             <div class="v-play">▶</div>
           </div>
           <div class="v-info">
@@ -3951,7 +3980,7 @@
   <div class="img-lightbox-overlay" id="img-lightbox-modal" onclick="closeImageZoom(event)">
     <button class="img-lightbox-close" onclick="closeImageZoom(event)">×</button>
     <div class="img-lightbox-content" onclick="event.stopPropagation()">
-      <img id="lightbox-img-element" src="" alt="План резиденции">
+      <img id="lightbox-img-element" src="" alt="План резиденции" loading="lazy" decoding="async">
     </div>
   </div>
 <script>
