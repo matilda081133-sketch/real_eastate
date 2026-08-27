@@ -4865,21 +4865,31 @@
     const preBar = document.getElementById('pre-bar');
     const preloader = document.getElementById('preloader');
 
+    function dismissPreloader() {
+      if (preloader && !preloader.classList.contains('hidden')) {
+        preCounter.innerText = '100%';
+        preBar.style.width = '100%';
+        preloader.classList.add('hidden');
+      }
+    }
+
     const loadInterval = setInterval(() => {
-      progress += Math.floor(Math.random() * 15) + 5;
+      progress += Math.floor(Math.random() * 20) + 10;
       if (progress >= 100) {
         progress = 100;
         clearInterval(loadInterval);
         preCounter.innerText = '100%';
         preBar.style.width = '100%';
-        setTimeout(() => {
-          preloader.classList.add('hidden');
-        }, 300);
+        setTimeout(dismissPreloader, 200);
       } else {
         preCounter.innerText = progress + '%';
         preBar.style.width = progress + '%';
       }
-    }, 40);
+    }, 25);
+
+    // Guaranteed failsafe: dismiss after 700ms max under all conditions
+    setTimeout(dismissPreloader, 700);
+    window.addEventListener('DOMContentLoaded', () => setTimeout(dismissPreloader, 400));
 
     // HERO ZERO-PAUSE VIDEO BACKGROUND
     const heroPlaylist = [
