@@ -763,7 +763,7 @@
       border-radius: 6px;
       z-index: 1;
     }
-    /* LUXURY DARK-GOLD LEAFLET GEOGRAPHIC MARKERS */
+    /* LEAFLET GEOGRAPHIC MARKERS */
     #leaflet-map-canvas {
       width: 100%;
       height: 560px;
@@ -3085,10 +3085,9 @@
           scrollWheelZoom: false
         });
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-          subdomains: 'abcd',
-          maxZoom: 19,
-          attribution: '© OpenStreetMap, © CARTO'
+        L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=ru', {
+          maxZoom: 20,
+          attribution: '© Google Maps'
         }).addTo(map);
 
         const markers = [];
