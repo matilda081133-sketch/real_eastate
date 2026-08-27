@@ -1684,13 +1684,18 @@
     .consulting-vector {
       position: absolute;
       top: 50%;
-      width: 240px;
-      height: 190px;
+      width: clamp(130px, 14vw, 190px);
       pointer-events: none;
       z-index: 1;
       will-change: transform, opacity;
       opacity: 0;
       transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease-out;
+    }
+    .consulting-chart-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.65));
     }
     .consulting-vector.left-vector {
       left: 0;
@@ -2050,80 +2055,16 @@
   </section>
 
 
-  <!-- BROKER CTA BANNER (WITH 2 IDENTICAL SYMMETRICAL UPWARD GROWTH CHART VECTORS) -->
+  <!-- BROKER CTA BANNER (WITH 3D GLOSSY GOLDEN GROWTH CHART CREATIVES) -->
   <div id="consulting-banner" class="consulting-banner-wrap">
-    <!-- LEFT ASCENDING GROWTH GRAPH -->
+    <!-- LEFT 3D GOLDEN GROWTH CHART -->
     <div id="consulting-vector-left" class="consulting-vector left-vector">
-      <svg width="240" height="190" viewBox="0 0 240 190" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Axes -->
-        <line x1="10" y1="170" x2="230" y2="170" stroke="rgba(212, 175, 55, 0.35)" stroke-width="1.5"/>
-        <line x1="10" y1="20" x2="10" y2="170" stroke="rgba(212, 175, 55, 0.35)" stroke-width="1.5"/>
-        <!-- Vertical Grid Lines -->
-        <line x1="55" y1="170" x2="55" y2="140" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" stroke-dasharray="3 3"/>
-        <line x1="100" y1="170" x2="100" y2="110" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" stroke-dasharray="3 3"/>
-        <line x1="145" y1="170" x2="145" y2="75" stroke="rgba(212, 175, 55, 0.25)" stroke-width="1" stroke-dasharray="3 3"/>
-        <line x1="190" y1="170" x2="190" y2="35" stroke="rgba(212, 175, 55, 0.3)" stroke-width="1" stroke-dasharray="3 3"/>
-        <!-- Gradient Area Fill -->
-        <path d="M10 170 L10 160 C45 155, 75 130, 110 105 C145 80, 175 45, 215 15 L215 170 Z" fill="url(#chartAreaGradL)" opacity="0.3"/>
-        <!-- Main Growth Curve Trending UP -->
-        <path d="M10 160 C45 155, 75 130, 110 105 C145 80, 175 45, 215 15" stroke="url(#chartLineGradL)" stroke-width="3" stroke-linecap="round"/>
-        <!-- Arrowhead pointing UP-RIGHT -->
-        <path d="M190 15 L215 15 L215 40" stroke="#FAF9F7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Data Points -->
-        <circle cx="55" cy="140" r="3.5" fill="#D4AF37"/>
-        <circle cx="100" cy="110" r="4" fill="#D4AF37"/>
-        <circle cx="145" cy="75" r="4.5" fill="#D4AF37"/>
-        <circle cx="190" cy="35" r="5" fill="#FAF9F7"/>
-        <circle cx="215" cy="15" r="6" fill="#D4AF37" stroke="#FAF9F7" stroke-width="2"/>
-        <defs>
-          <linearGradient id="chartAreaGradL" x1="0" y1="15" x2="0" y2="170" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#D4AF37" stop-opacity="0.6"/>
-            <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="chartLineGradL" x1="10" y1="160" x2="215" y2="15" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#C5A880"/>
-            <stop offset="0.6" stop-color="#D4AF37"/>
-            <stop offset="1" stop-color="#FAF9F7"/>
-          </linearGradient>
-        </defs>
-      </svg>
+      <img src="images/gold_growth_chart.png" alt="Динамика доходности" class="consulting-chart-img">
     </div>
 
-    <!-- RIGHT ASCENDING GROWTH GRAPH (IDENTICAL MIRRORED TOWARDS CENTER) -->
+    <!-- RIGHT 3D GOLDEN GROWTH CHART (MIRRORED) -->
     <div id="consulting-vector-right" class="consulting-vector right-vector">
-      <svg width="240" height="190" viewBox="0 0 240 190" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Axes -->
-        <line x1="10" y1="170" x2="230" y2="170" stroke="rgba(212, 175, 55, 0.35)" stroke-width="1.5"/>
-        <line x1="10" y1="20" x2="10" y2="170" stroke="rgba(212, 175, 55, 0.35)" stroke-width="1.5"/>
-        <!-- Vertical Grid Lines -->
-        <line x1="55" y1="170" x2="55" y2="140" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" stroke-dasharray="3 3"/>
-        <line x1="100" y1="170" x2="100" y2="110" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" stroke-dasharray="3 3"/>
-        <line x1="145" y1="170" x2="145" y2="75" stroke="rgba(212, 175, 55, 0.25)" stroke-width="1" stroke-dasharray="3 3"/>
-        <line x1="190" y1="170" x2="190" y2="35" stroke="rgba(212, 175, 55, 0.3)" stroke-width="1" stroke-dasharray="3 3"/>
-        <!-- Gradient Area Fill -->
-        <path d="M10 170 L10 160 C45 155, 75 130, 110 105 C145 80, 175 45, 215 15 L215 170 Z" fill="url(#chartAreaGradR)" opacity="0.3"/>
-        <!-- Main Growth Curve Trending UP -->
-        <path d="M10 160 C45 155, 75 130, 110 105 C145 80, 175 45, 215 15" stroke="url(#chartLineGradR)" stroke-width="3" stroke-linecap="round"/>
-        <!-- Arrowhead pointing UP-RIGHT -->
-        <path d="M190 15 L215 15 L215 40" stroke="#FAF9F7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Data Points -->
-        <circle cx="55" cy="140" r="3.5" fill="#D4AF37"/>
-        <circle cx="100" cy="110" r="4" fill="#D4AF37"/>
-        <circle cx="145" cy="75" r="4.5" fill="#D4AF37"/>
-        <circle cx="190" cy="35" r="5" fill="#FAF9F7"/>
-        <circle cx="215" cy="15" r="6" fill="#D4AF37" stroke="#FAF9F7" stroke-width="2"/>
-        <defs>
-          <linearGradient id="chartAreaGradR" x1="0" y1="15" x2="0" y2="170" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#D4AF37" stop-opacity="0.6"/>
-            <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="chartLineGradR" x1="10" y1="160" x2="215" y2="15" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#C5A880"/>
-            <stop offset="0.6" stop-color="#D4AF37"/>
-            <stop offset="1" stop-color="#FAF9F7"/>
-          </linearGradient>
-        </defs>
-      </svg>
+      <img src="images/gold_growth_chart.png" alt="Динамика доходности" class="consulting-chart-img" style="transform: scaleX(-1);">
     </div>
 
     <div class="container" style="text-align:center;max-width:720px;position:relative;z-index:2;">
@@ -3701,17 +3642,17 @@
           // Silky smooth cubic easing
           const ease = rawProgress * (2 - rawProgress);
           
-          // Emerges from edge (-180px) into visible space (up to +180px inward toward text)
-          const startX = -180;
-          const maxInward = Math.max((window.innerWidth - 740) / 2 - 200, 30);
-          const targetInward = Math.min(maxInward, 180);
+          // Emerges from edge (-160px) into visible space (up to +180px inward toward text)
+          const startX = -160;
+          const maxInward = Math.max((window.innerWidth - 740) / 2 - 180, 20);
+          const targetInward = Math.min(maxInward, 160);
           const currentX = startX + (ease * (targetInward - startX));
-          const opacity = Math.min(rawProgress * 1.3, 0.92);
+          const opacity = Math.min(rawProgress * 1.4, 0.96);
           
           vLeft.style.transform = `translateY(-50%) translateX(${currentX}px)`;
           vLeft.style.opacity = opacity;
           
-          vRight.style.transform = `translateY(-50%) scaleX(-1) translateX(${currentX}px)`;
+          vRight.style.transform = `translateY(-50%) translateX(${-currentX}px)`;
           vRight.style.opacity = opacity;
         }
         ticking = false;
