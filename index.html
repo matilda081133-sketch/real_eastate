@@ -1102,6 +1102,20 @@
       border-top: 1px solid rgba(212, 175, 55, 0.2);
       border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     }
+    .cinema-dust-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.88;
+    }
+    .cinema-sec .container {
+      position: relative;
+      z-index: 2;
+    }
     .cinema-sec::before {
       content: "";
       position: absolute;
@@ -2307,6 +2321,8 @@
        SECTION 4: CINEMA THEATER & EXPANDED 21-VIDEO GALLERY
        ======================================================== -->
   <section class="cinema-sec" id="video">
+    <!-- AMBIENT FLOATING GOLD DUST PARTICLES CANVAS -->
+    <canvas id="cinema-dust-canvas" class="cinema-dust-canvas"></canvas>
     <div class="container">
       <div class="sec-head">
         <span class="sec-tag">Медиатека объекта в HD / 4K</span>
@@ -3938,6 +3954,121 @@
       <img id="lightbox-img-element" src="" alt="План резиденции">
     </div>
   </div>
+<script>
+    // AMBIENT GOLD DUST PARTICLE SYSTEM (CINEMA SECTION)
+    function initCinemaGoldDust() {
+      const canvas = document.getElementById('cinema-dust-canvas');
+      const section = document.getElementById('video');
+      if (!canvas || !section) return;
+
+      const ctx = canvas.getContext('2d');
+      let w = canvas.width = section.offsetWidth;
+      let h = canvas.height = section.offsetHeight;
+
+      function resize() {
+        if (!canvas || !section) return;
+        w = canvas.width = section.offsetWidth;
+        h = canvas.height = section.offsetHeight;
+      }
+      window.addEventListener('resize', resize, { passive: true });
+
+      // Sparse, elegant luxury particles (28-34 particles total)
+      const particleCount = 30;
+      const particles = [];
+      const colors = [
+        '223, 199, 155', // #DFC79B (Consulting vector gold)
+        '212, 175, 55',  // #D4AF37 (Warm amber gold)
+        '238, 221, 185', // #EEDDB9 (Light champagne)
+        '184, 150, 94'   // #B8965E (Deep gold)
+      ];
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          radius: Math.random() * 2.2 + 0.8, // subtle dust speck size
+          color: colors[Math.floor(Math.random() * colors.length)],
+          alpha: Math.random() * 0.5 + 0.15,
+          targetAlpha: Math.random() * 0.65 + 0.2,
+          speedAlpha: Math.random() * 0.008 + 0.003,
+          vx: (Math.random() - 0.5) * 0.28,
+          vy: -(Math.random() * 0.35 + 0.12), // gentle upward float
+          swaySpeed: Math.random() * 0.015 + 0.005,
+          swayAngle: Math.random() * Math.PI * 2,
+          swayDistance: Math.random() * 0.45 + 0.2
+        });
+      }
+
+      let isVisible = true;
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            isVisible = entry.isIntersecting;
+          });
+        }, { rootMargin: '100px' });
+        observer.observe(section);
+      }
+
+      function draw() {
+        if (!isVisible) {
+          requestAnimationFrame(draw);
+          return;
+        }
+
+        ctx.clearRect(0, 0, w, h);
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+
+          // Float and harmonic sway
+          p.swayAngle += p.swaySpeed;
+          p.x += p.vx + Math.sin(p.swayAngle) * p.swayDistance;
+          p.y += p.vy;
+
+          // Pulse opacity smoothly
+          p.alpha += (p.targetAlpha - p.alpha) * p.speedAlpha;
+          if (Math.abs(p.targetAlpha - p.alpha) < 0.05) {
+            p.targetAlpha = Math.random() * 0.65 + 0.15;
+          }
+
+          // Screen wrap
+          if (p.y < -10) {
+            p.y = h + 10;
+            p.x = Math.random() * w;
+          }
+          if (p.x < -10) p.x = w + 10;
+          if (p.x > w + 10) p.x = -10;
+
+          // Render soft glowing dust speck
+          const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius * 3.5);
+          grad.addColorStop(0, 'rgba(' + p.color + ', ' + p.alpha + ')');
+          grad.addColorStop(0.35, 'rgba(' + p.color + ', ' + (p.alpha * 0.45) + ')');
+          grad.addColorStop(1, 'rgba(' + p.color + ', 0)');
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius * 3.5, 0, Math.PI * 2);
+          ctx.fillStyle = grad;
+          ctx.fill();
+
+          // Sharp radiant core
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius * 0.6, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255, 255, 255, ' + (p.alpha * 0.8) + ')';
+          ctx.fill();
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCinemaGoldDust);
+    } else {
+      initCinemaGoldDust();
+    }
+</script>
 </body>
 </html>
 
