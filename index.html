@@ -1705,33 +1705,119 @@
         display: none;
       }
     }
-      /* PERMANENT LUXURY MAP TOOLTIPS */
-    .leaflet-tooltip-custom {
-      background: rgba(17, 20, 19, 0.88) !important;
-      color: #FAF9F7 !important;
-      border: 1px solid rgba(212, 175, 55, 0.4) !important;
-      border-radius: 6px !important;
-      font-family: var(--font-sans) !important;
-      font-size: 11px !important;
-      font-weight: 600 !important;
-      padding: 3px 8px !important;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
-      white-space: nowrap !important;
+      /* LUXURY MAP MARKERS & HOVER TOOLTIPS */
+    .map-primary-marker {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
-    .leaflet-tooltip-primary {
-      background: #D4AF37 !important;
-      color: #0E1210 !important;
-      border: 1px solid #FAF9F7 !important;
-      border-radius: 6px !important;
-      font-family: var(--font-sans) !important;
-      font-size: 12px !important;
-      font-weight: 800 !important;
-      padding: 4px 10px !important;
-      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.5) !important;
-      white-space: nowrap !important;
+    .map-pulse-ring {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.4);
+      animation: pulseGoldMap 2.4s infinite ease-out;
+      pointer-events: none;
     }
-    .leaflet-tooltip-top:before {
-      border-top-color: rgba(17, 20, 19, 0.88) !important;
+    .map-pulse-ring-2 {
+      position: absolute;
+      inset: -14px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.2);
+      animation: pulseGoldMap 2.4s infinite ease-out 0.8s;
+      pointer-events: none;
+    }
+    @keyframes pulseGoldMap {
+      0% { transform: scale(0.6); opacity: 0.9; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    .map-primary-core {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #FAF9F7 0%, #D4AF37 60%, #997A15 100%);
+      border: 2.5px solid #0E1210;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.75), 0 2px 6px rgba(0,0,0,0.5);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .map-primary-marker:hover .map-primary-core {
+      transform: scale(1.2);
+    }
+
+    .map-secondary-marker {
+      position: relative;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .map-sec-core {
+      width: 14px;
+      height: 14px;
+      background: linear-gradient(135deg, #FAF9F7 0%, #D4AF37 100%);
+      border: 2px solid #0E1210;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      transition: all 0.25s ease;
+    }
+    .map-secondary-marker:hover .map-sec-core {
+      transform: scale(1.4);
+      background: #FAF9F7;
+      border-color: #D4AF37;
+      box-shadow: 0 0 14px rgba(212, 175, 55, 1);
+    }
+
+    /* LEAFLET HOVER CARD TOOLTIP (SHOWS ONLY ON HOVER) */
+    .leaflet-hover-card {
+      background: rgba(14, 18, 16, 0.95) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      border: 1px solid rgba(212, 175, 55, 0.6) !important;
+      border-radius: 8px !important;
+      padding: 8px 14px !important;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 1px rgba(212, 175, 55, 0.5) !important;
+      pointer-events: none !important;
+    }
+    .leaflet-hover-card::before {
+      border-top-color: rgba(14, 18, 16, 0.95) !important;
+    }
+    .custom-map-hover-tip {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: left;
+    }
+    .custom-map-hover-tip .tip-badge {
+      font-family: var(--font-sans);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #D4AF37;
+      font-weight: 700;
+    }
+    .custom-map-hover-tip .tip-title {
+      font-family: var(--font-serif);
+      font-size: 14.5px;
+      color: #FAF9F7;
+      font-weight: 500;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+    .custom-map-hover-tip .tip-sub {
+      font-family: 'TildaSans', sans-serif;
+      font-size: 11.5px;
+      color: rgba(255, 255, 255, 0.65);
+      margin-top: 2px;
+      white-space: nowrap;
     }
   </style>
 </head>
@@ -2894,16 +2980,16 @@
       // INITIALIZE INTERACTIVE LEAFLET MAP WITH GEOGRAPHICALLY PINNED MARKERS
       if (typeof L !== 'undefined') {
         const pinsData = [
-          { coords: [20.235855346599823, -87.46129904576173], label: "📍 Tulum Gardens", isPrimary: true },
-          { coords: [20.239844021033065, -87.46530303395095], label: "🏫 Colegio Inglés", isPrimary: false },
-          { coords: [20.245000000000000, -87.46800000000000], label: "🚆 Tren Maya Station", isPrimary: false },
-          { coords: [20.230591539726948, -87.45722293340401], label: "💧 Cenote Calavera", isPrimary: false },
-          { coords: [20.223416881595217, -87.45705263611099], label: "🛒 Soriana & ТЦ", isPrimary: false },
-          { coords: [20.211859777519160, -87.43541097467136], label: "🏞️ Jaguar Park", isPrimary: false },
-          { coords: [20.216142435310370, -87.42888744869036], label: "🏛️ Руины майя Tulum", isPrimary: false },
-          { coords: [20.209786577829405, -87.42997647257600], label: "🏖️ Playa Santa Fe", isPrimary: false },
-          { coords: [20.203859086924630, -87.43065532121350], label: "🏖️ Playa Paraíso", isPrimary: false },
-          { coords: [20.166436272428385, -87.65908685740240], label: "✈️ Аэропорт TQO (15 мин)", isPrimary: false }
+          { coords: [20.235855346599823, -87.46129904576173], label: "📍 Tulum Gardens", badge: "РЕЗИДЕНЦИИ", sub: "Комплекс таунхаусов • 100% Freehold", isPrimary: true },
+          { coords: [20.239844021033065, -87.46530303395095], label: "🏫 Colegio Inglés", badge: "ОБРАЗОВАНИЕ", sub: "Международный колледж • 100 м", isPrimary: false },
+          { coords: [20.245000000000000, -87.46800000000000], label: "🚆 Станция Tren Maya", badge: "СКОРОСТНОЙ ПОЕЗД", sub: "ЖД-станция Тулум • 800 м", isPrimary: false },
+          { coords: [20.230591539726948, -87.45722293340401], label: "💧 Сенот Calavera", badge: "ПРИРОДА И ДЗЕН", sub: "Кристальный сенот в джунглях • 2 мин", isPrimary: false },
+          { coords: [20.223416881595217, -87.45705263611099], label: "🛒 Супермаркет Soriana & ТЦ", badge: "ГОРОДСКИЕ СЕРВИСЫ", sub: "Торговые центры и магазины • 3 мин", isPrimary: false },
+          { coords: [20.211859777519160, -87.43541097467136], label: "🏞️ Jaguar Park", badge: "БИОСФЕРНЫЙ ПАРК", sub: "Национальный эко-заповедник", isPrimary: false },
+          { coords: [20.216142435310370, -87.42888744869036], label: "🏛️ Руины майя Tulum", badge: "ИСТОРИЯ & ЮНЕСКО", sub: "Древние пирамиды на скалах", isPrimary: false },
+          { coords: [20.209786577829405, -87.42997647257600], label: "🏖️ Playa Santa Fe", badge: "КАРИБСКИЙ ПЛЯЖ", sub: "Белоснежный песчаный пляж", isPrimary: false },
+          { coords: [20.203859086924630, -87.43065532121350], label: "🏖️ Playa Paraíso", badge: "ПРЕМИАЛЬНЫЙ ПЛЯЖ", sub: "Лучшие пляжные клубы Тулума • 12 мин", isPrimary: false },
+          { coords: [20.166436272428385, -87.65908685740240], label: "✈️ Аэропорт TQO", badge: "АВИАСООБЩЕНИЕ", sub: "Международный аэропорт • 15 мин", isPrimary: false }
         ];
 
         const map = L.map('leaflet-map-canvas', {
@@ -2919,23 +3005,43 @@
 
         const markers = [];
         pinsData.forEach(p => {
-          const pinSvg = p.isPrimary ? 
-            `<div style="position:relative;width:24px;height:24px;"><div class="mini-pin-pulse"></div><div style="width:18px;height:18px;background:#D4AF37;border:3px solid #111413;border-radius:50%;position:absolute;top:3px;left:3px;box-shadow:0 0 12px rgba(212,175,55,1);"></div></div>` :
-            `<div style="width:14px;height:14px;background:#D4AF37;border:2px solid #FFFFFF;border-radius:50%;box-shadow:0 0 8px rgba(0,0,0,0.4);"></div>`;
+          const pinHtml = p.isPrimary ? 
+            `<div class="map-primary-marker">
+               <div class="map-pulse-ring"></div>
+               <div class="map-pulse-ring-2"></div>
+               <div class="map-primary-core">
+                 <svg width="14" height="14" viewBox="0 0 24 24" fill="#0E1210"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+               </div>
+             </div>` :
+            `<div class="map-secondary-marker">
+               <div class="map-sec-core"></div>
+             </div>`;
 
           const icon = L.divIcon({
-            html: pinSvg,
+            html: pinHtml,
             className: '',
-            iconSize: p.isPrimary ? [24, 24] : [14, 14],
-            iconAnchor: p.isPrimary ? [12, 12] : [7, 7]
+            iconSize: p.isPrimary ? [36, 36] : [22, 22],
+            iconAnchor: p.isPrimary ? [18, 18] : [11, 11]
           });
           const marker = L.marker(p.coords, { icon: icon }).addTo(map);
-          marker.bindTooltip(p.label, { 
-            permanent: true, 
+
+          // TOOLTIP APPEARS STRICTLY ON HOVER (permanent: false)
+          const tooltipContent = `
+            <div class="custom-map-hover-tip">
+              <div class="tip-badge">${p.badge}</div>
+              <div class="tip-title">${p.label}</div>
+              <div class="tip-sub">${p.sub}</div>
+            </div>
+          `;
+
+          marker.bindTooltip(tooltipContent, { 
+            permanent: false, 
             direction: 'top', 
-            offset: [0, -10],
-            className: p.isPrimary ? 'leaflet-tooltip-primary' : 'leaflet-tooltip-custom'
+            offset: p.isPrimary ? [0, -18] : [0, -12],
+            className: 'leaflet-hover-card',
+            opacity: 1
           });
+
           if (p.coords[1] > -87.60) {
             markers.push(marker);
           }
