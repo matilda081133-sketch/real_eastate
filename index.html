@@ -2535,7 +2535,7 @@
           </div>
 
           <div>
-            <form onsubmit="processForm(event, 'Главная форма')">
+            <form onsubmit="processForm(event, 'Нижний блок: Запрос подборки таунхаусов и расчета окупаемости')">
               <div class="form-group">
                 <label>Ваше имя</label>
                 <input type="text" class="form-input" placeholder="Александр" required>
@@ -2647,7 +2647,7 @@
           Заполните форму — сразу после отправки вы моментально получите прямую ссылку на скачивание файла прямо на странице «Спасибо» без перехода в соцсети, чат-боты или сторонние мессенджеры.
         </p>
 
-        <form onsubmit="processForm(event, 'Модальная форма')">
+        <form onsubmit="processForm(event)">
           <div class="form-group">
             <label style="color: var(--text); font-size: 11px;">Ваше имя</label>
             <input type="text" class="form-input" style="background: var(--bg); color: var(--text); border-color: var(--border);" placeholder="Иван" required>
@@ -3161,7 +3161,7 @@
         timestamp: now.toISOString(),
         date: now.toLocaleDateString('ru-RU'),
         time: now.toLocaleTimeString('ru-RU'),
-        source: src || document.getElementById('modal-head')?.innerText || 'Сайт Tulum Gardens',
+        source: (src && src !== 'Модальная форма') ? src : (document.getElementById('modal-head')?.innerText || 'Форма сайта Tulum Gardens'),
         name: nameInput ? nameInput.value : '',
         phone: phoneInput ? phoneInput.value : '',
         email: emailInput ? emailInput.value : '',
