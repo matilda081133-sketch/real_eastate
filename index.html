@@ -1684,7 +1684,7 @@
     .consulting-vector {
       position: absolute;
       top: 50%;
-      width: clamp(130px, 14vw, 190px);
+      width: clamp(180px, 19vw, 270px);
       pointer-events: none;
       z-index: 1;
       will-change: transform, opacity;
@@ -3642,12 +3642,12 @@
           // Silky smooth cubic easing
           const ease = rawProgress * (2 - rawProgress);
           
-          // Emerges from edge (-160px) into visible space (up to +180px inward toward text)
-          const startX = -160;
-          const maxInward = Math.max((window.innerWidth - 740) / 2 - 180, 20);
-          const targetInward = Math.min(maxInward, 160);
+          // Emerges from edge (-220px) into visible space with comfortable breathing room from text
+          const startX = -220;
+          const maxInward = Math.max((window.innerWidth - 750) / 2 - 240, 20);
+          const targetInward = Math.min(maxInward, 200);
           const currentX = startX + (ease * (targetInward - startX));
-          const opacity = Math.min(rawProgress * 1.4, 0.96);
+          const opacity = Math.min(rawProgress * 1.4, 0.98);
           
           vLeft.style.transform = `translateY(-50%) translateX(${currentX}px)`;
           vLeft.style.opacity = opacity;
