@@ -2985,10 +2985,9 @@
           scrollWheelZoom: false
         });
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}{r}.png', {
-          subdomains: 'abcd',
+        L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=ru', {
           maxZoom: 20,
-          attribution: '© CARTO · OpenStreetMap'
+          attribution: '© Google Maps'
         }).addTo(map);
 
         const markers = [];
