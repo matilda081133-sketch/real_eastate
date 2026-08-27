@@ -2983,14 +2983,12 @@
             opacity: 1
           });
 
-          if (p.coords[1] > -87.60) {
-            markers.push(marker);
-          }
+          markers.push(marker);
         });
 
         if (markers.length > 0) {
           const group = L.featureGroup(markers);
-          map.fitBounds(group.getBounds().pad(0.08));
+          map.fitBounds(group.getBounds().pad(0.06));
         }
 
         setTimeout(() => { map.invalidateSize(); }, 350);
