@@ -3163,7 +3163,7 @@
         time: now.toLocaleTimeString('ru-RU'),
         source: (src && src !== 'Модальная форма') ? src : (document.getElementById('modal-head')?.innerText || 'Форма сайта Tulum Gardens'),
         name: nameInput ? nameInput.value : '',
-        phone: phoneInput ? phoneInput.value : '',
+        phone: phoneInput ? phoneInput.value.trim().replace(/^\+/, '') : '',
         email: emailInput ? emailInput.value : '',
         extra: extraInfo.join(' | '),
         ...getUtmParams()
