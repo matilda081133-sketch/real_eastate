@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Tulum Gardens — Инвестиционный Гайд 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0E1210;
+      color: #FAF9F7;
+      font-size: 13px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      background: #0E1210;
+      padding: 24mm 20mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* TYPOGRAPHY */
+    .serif { font-family: 'Playfair Display', serif; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 400; color: #FAF9F7; }
+    .gold-text { color: #D4AF37; }
+    .gold-gradient {
+      background: linear-gradient(135deg, #FAF9F7 0%, #D4AF37 60%, #997A15 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #D4AF37;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .page-title {
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .page-desc {
+      font-size: 12.5px;
+      color: #B8B3A8;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    /* HEADER & FOOTER */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header-logo { height: 26px; }
+    .header-tag { font-size: 8.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E8A82; }
+
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 12px;
+      font-size: 9px;
+      color: #6E6A62;
+    }
+
+    /* GRIDS & CARDS */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+    
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .card-highlight {
+      background: rgba(212, 175, 55, 0.06);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+    }
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: #FAF9F7;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .card-text { font-size: 11.5px; color: #B8B3A8; line-height: 1.6; }
+
+    .stat-badge {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .stat-val { font-family: 'Playfair Display', serif; font-size: 26px; color: #D4AF37; font-weight: 600; line-height: 1; }
+    .stat-label { font-size: 10px; color: #8E8A82; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    .img-box {
+      width: 100%;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* LISTS */
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 11.5px;
+      color: #D8D4CC;
+    }
+    .feature-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid #D4AF37;
+      color: #D4AF37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* COVER SPECIFIC */
+    .cover-page {
+      background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 60%), #0E1210;
+      padding: 0;
+    }
+    .cover-hero-img {
+      height: 140mm;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(14,18,16,0.2) 0%, rgba(14,18,16,0.95) 100%);
+    }
+    .cover-body {
+      padding: 0 20mm 20mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 157mm;
+    }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 11px; }
+    th { text-align: left; padding: 8px 10px; background: rgba(212, 175, 55, 0.1); color: #D4AF37; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: 600; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.1em; }
+    td { padding: 8px 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #D8D4CC; }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================
+       PAGE 1: COVER
+       ======================================================== -->
+  <div class="page cover-page">
+    <div class="cover-hero-img">
+      <img src="images/tulum_atmosphere_8k.jpg" alt="Tulum Gardens">
+      <div class="cover-overlay"></div>
+      <div style="position: absolute; top: 20mm; left: 20mm; z-index: 5;">
+        <img src="images/tulum_gardens_logo.png" alt="Tulum Gardens" style="height: 38px;">
+      </div>
+    </div>
+    <div class="cover-body">
+      <div>
+        <span class="tag">ИНВЕСТИЦИОННЫЙ ГАЙД 2026</span>
+        <h1 style="font-size: 38px; line-height: 1.15; margin-bottom: 14px; color: #FAF9F7;">
+          5 причин инвестировать<br>и переехать в <span class="gold-gradient">Тулум</span>
+        </h1>
+        <p style="font-size: 14px; color: #C5BEB3; line-height: 1.6; max-width: 520px;">
+          Полное руководство для частных инвесторов: 100% Фрихолд на физлицо, пассивный доход 9% годовых в USD, получение ВНЖ/паспорта и безопасная среда для всей семьи.
+        </p>
+      </div>
+
+      <div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; border-top: 1px solid rgba(212, 175, 55, 0.25); padding-top: 16px; margin-bottom: 14px;">
+          <div>
+            <div style="font-size: 18px; color: #D4AF37; font-weight: 700; font-family: 'Playfair Display';">100%</div>
+            <div style="font-size: 9px; color: #8E8A82; text-transform: uppercase;">Фрихолд Title</div>
+          </div>
+          <div>
+            <div style="font-size: 18px; color: #D4AF37; font-weight: 700; font-family: 'Playfair Display';">9% ROI</div>
+            <div style="font-size: 9px; color: #8E8A82; text-transform: uppercase;">В валюте (USD)</div>
+          </div>
+          <div>
+            <div style="font-size: 18px; color: #D4AF37; font-weight: 700; font-family: 'Playfair Display';">150+</div>
+            <div style="font-size: 9px; color: #8E8A82; text-transform: uppercase;">Стран без виз</div>
+          </div>
+          <div>
+            <div style="font-size: 18px; color: #D4AF37; font-weight: 700; font-family: 'Playfair Display';">100 м</div>
+            <div style="font-size: 9px; color: #8E8A82; text-transform: uppercase;">Colegio Inglés</div>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 9px; color: #6E6A62;">
+          <span>STELLAR RESIDENCES · TULUM GARDENS</span>
+          <span>МЕКСИКА, КИНТАНА-РОО · 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 2: LOCATION & INFRASTRUCTURE BREAKTHROUGH
+       ======================================================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <img src="images/tulum_gardens_logo.png" alt="Tulum Gardens" class="header-logo">
+        <span class="header-tag">01 / ИНФРАСТРУКТУРА И ЛОКАЦИЯ</span>
+      </div>
+
+      <span class="tag">ЭПИЦЕНТР ТУЛУМА</span>
+      <h2 class="page-title">Инфраструктурный бум: «Второе Бали» с мировым статусом</h2>
+      <p class="page-desc">
+        Тулум переживает историческую трансформацию благодаря федеральным инфраструктурным проектам Мексики. При постоянном населении 50–60 тыс. жителей, в высокий сезон численность города вырастает в 3–4 раза (до 200 000+ человек), создавая колоссальный круглогодичный дефицит премиального жилья.
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 16px;">
+        <div class="card">
+          <div class="stat-badge">
+            <span class="stat-val">15 мин</span>
+            <span class="stat-label">Международный аэропорт TQO</span>
+          </div>
+          <p class="card-text">
+            Новый ультрасовременный международный аэропорт Фелипе Каррильо Пуэрто принимает прямые рейсы из США, Канады и Европы, обеспечивая непрерывный платежеспособный туристический трафик.
+          </p>
+        </div>
+        <div class="card">
+          <div class="stat-badge">
+            <span class="stat-val">800 м</span>
+            <span class="stat-label">Скоростной поезд Tren Maya</span>
+          </div>
+          <p class="card-text">
+            Главная высокоскоростная магистраль полуострова Юкатан связывает резидентов комплекса с аэропортом, Канкуном, Плайя-дель-Кармен и памятниками майя за считанные минуты.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-bottom: 16px;">
+        <div class="card">
+          <div style="font-size: 14px; color: #D4AF37; font-weight: 700; margin-bottom: 4px;">🏖️ 12 минут</div>
+          <div style="font-size: 11px; font-weight: 600; color: #FAF9F7; margin-bottom: 4px;">Пляжи & Нацпарк</div>
+          <p class="card-text">Белоснежные пляжи Карибского моря и биосферный заповедник Jaguar Park.</p>
+        </div>
+        <div class="card">
+          <div style="font-size: 14px; color: #D4AF37; font-weight: 700; margin-bottom: 4px;">🛒 3 минуты</div>
+          <div style="font-size: 11px; font-weight: 600; color: #FAF9F7; margin-bottom: 4px;">ТЦ & Soriana</div>
+          <p class="card-text">Новые торговые галереи, супермаркеты, банки и сервисы.</p>
+        </div>
+        <div class="card">
+          <div style="font-size: 14px; color: #D4AF37; font-weight: 700; margin-bottom: 4px;">★ Michelin 2024</div>
+          <div style="font-size: 11px; font-weight: 600; color: #FAF9F7; margin-bottom: 4px;">Гастро-столица</div>
+          <p class="card-text">Авторские рестораны, сенот Calavera и мировая фестивальная сцена (Zamna).</p>
+        </div>
+      </div>
+
+      <div class="img-box" style="height: 52mm;">
+        <img src="images/tulum_airport_station.jpg" alt="Инфраструктура Тулума">
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Tulum Gardens · Инвестиционный Гайд 2026</span>
+      <span>Страница 02</span>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 3: LEGAL TITLE & 100% FREEHOLD
+       ======================================================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <img src="images/tulum_gardens_logo.png" alt="Tulum Gardens" class="header-logo">
+        <span class="header-tag">02 / ЮРИДИЧЕСКАЯ ЧИСТОТА И ПРАВО СОБСТВЕННОСТИ</span>
+      </div>
+
+      <span class="tag">100% БЕЗУСЛОВНАЯ СОБСТВЕННОСТЬ</span>
+      <h2 class="page-title">100% Freehold на физическое лицо: земля и здание</h2>
+      <p class="page-desc">
+        Законодательство Мексики гарантирует иностранным покупателям абсолютную защиту частной собственности на федеральном уровне (Código Civil Federal).
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 16px;">
+        <div class="card card-highlight">
+          <h3 class="card-title" style="color: #D4AF37;">Механизм Fideicomiso (Банковский Траст)</h3>
+          <p class="card-text" style="margin-bottom: 10px;">
+            В прибрежной 50-километровой зоне право собственности оформляется через безотзывный 50-летний банковский траст (Fideicomiso) с автоматическим продлением.
+          </p>
+          <ul class="feature-list">
+            <li class="feature-item"><span class="feature-icon">✓</span><span>Вы являетесь 100% первичным бенефициаром и владельцем</span></li>
+            <li class="feature-item"><span class="feature-icon">✓</span><span>Полные права продажи, дарения, залога и сдачи в аренду</span></li>
+            <li class="feature-item"><span class="feature-icon">✓</span><span>Безналоговая прямая передача наследникам по завещанию</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Налоговая оптимизация</h3>
+          <p class="card-text" style="margin-bottom: 12px;">
+            Штат Кинтана-Роо предоставляет одни из самых низких ставок налогообложения недвижимости в Западном полушарии:
+          </p>
+          <table>
+            <tr>
+              <th>Налог</th>
+              <th>Ставка</th>
+            </tr>
+            <tr>
+              <td>Налог на покупку (ISAI)</td>
+              <td style="color: #D4AF37; font-weight: 600;">2.0%</td>
+            </tr>
+            <tr>
+              <td>Годовой налог (Predial)</td>
+              <td style="color: #D4AF37; font-weight: 600;">0.1% – 0.2%</td>
+            </tr>
+            <tr>
+              <td>Налог на прирост (ISR)</td>
+              <td>Оптимизируется до 0%</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="background: rgba(14,18,16,0.6); border: 1px solid rgba(212,175,55,0.3); padding: 14px 18px;">
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <div style="font-size: 28px; color: #D4AF37;">⚖️</div>
+          <div>
+            <div style="font-size: 12px; font-weight: 600; color: #FAF9F7; margin-bottom: 2px;">Полное сопровождение нотариусом (Notario Público)</div>
+            <div style="font-size: 11px; color: #A8A49C; line-height: 1.5;">Сделка регистрируется государственным нотариусом в Едином Публичном Реестре Прав Собственности Мексики (Registro Público de la Propiedad). Юридическая чистота гарантирована.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Tulum Gardens · Инвестиционный Гайд 2026</span>
+      <span>Страница 03</span>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 4: RESIDENCY & CITIZENSHIP
+       ======================================================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <img src="images/tulum_gardens_logo.png" alt="Tulum Gardens" class="header-logo">
+        <span class="header-tag">03 / СТАТУС, ВНЖ И ПАСПОРТ</span>
+      </div>
+
+      <span class="tag">МИГРАЦИОННЫЙ СТАТУС</span>
+      <h2 class="page-title">ВНЖ и Паспорт Мексики для всей семьи</h2>
+      <p class="page-desc">
+        Покупка недвижимости в Tulum Gardens открывает прямой путь к легальному получению мексиканского резидентства и сильного международного паспорта.
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 16px;">
+        <div class="card card-highlight">
+          <div class="stat-badge">
+            <span class="stat-val">150+</span>
+            <span class="stat-label">Стран без виз с паспортом Мексики</span>
+          </div>
+          <p class="card-text" style="margin-bottom: 12px;">
+            Паспорт Мексики входит в топ-25 сильнейших паспортов мира: свободный безвизовый въезд в страны Евросоюза (Шенген), Великобританию, Японию, Сингапур, Новую Зеландию и всю Латинскую Америку.
+          </p>
+          <ul class="feature-list">
+            <li class="feature-item"><span class="feature-icon">✓</span><span>Право на Residente Temporal для инвестора и семьи</span></li>
+            <li class="feature-item"><span class="feature-icon">✓</span><span>Быстрый переход в бессрочный ПМЖ через 4 года</span></li>
+            <li class="feature-item"><span class="feature-icon">✓</span><span>Возможность подачи на гражданство и второй паспорт</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Роды в Мексике (Jus Soli)</h3>
+          <p class="card-text" style="margin-bottom: 12px;">
+            Мексика — признанный мировой центр медицинского и родильного туризма благодаря праву почвы:
+          </p>
+          <div style="background: rgba(255,255,255,0.03); border-radius: 6px; padding: 10px; margin-bottom: 10px;">
+            <div style="color: #D4AF37; font-weight: 600; font-size: 11.5px; margin-bottom: 2px;">👶 Ребенок получает гражданство по рождению</div>
+            <div style="font-size: 10.5px; color: #9E9A92;">Автоматически при рождении в любой аккредитованной клинике.</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border-radius: 6px; padding: 10px;">
+            <div style="color: #D4AF37; font-weight: 600; font-size: 11.5px; margin-bottom: 2px;">👨‍👩‍👧 Родители получают бессрочный ПМЖ</div>
+            <div style="font-size: 10.5px; color: #9E9A92;">По ускоренной государственной процедуре (всего 2 года до паспорта).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-box" style="height: 52mm;">
+        <img src="images/tulum_caribbean_beach.jpg" alt="Пляжи Тулума">
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Tulum Gardens · Инвестиционный Гайд 2026</span>
+      <span>Страница 04</span>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 5: EDUCATION, HEALTHCARE & SAFETY
+       ======================================================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <img src="images/tulum_gardens_logo.png" alt="Tulum Gardens" class="header-logo">
+        <span class="header-tag">04 / ЖИЗНЬ, СЕМЬЯ И БЕЗОПАСНОСТЬ</span>
+      </div>
+
+      <span class="tag">ПРЕМИАЛЬНАЯ СРЕДА</span>
+      <h2 class="page-title">Школа Colegio Inglés (100 м), медицина и охрана 24/7</h2>
+      <p class="page-desc">
+        Tulum Gardens спроектирован как закрытое семейное комьюнити с развитой социальной инфраструктурой пешей доступности.
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 16px;">
+        <div class="card card-highlight">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h3 class="card-title" style="color: #D4AF37; margin: 0;">Colegio Inglés Tulum</h3>
+            <span style="font-size: 10px; font-weight: 700; color: #FAF9F7; background: #D4AF37; padding: 2px 8px; border-radius: 4px;">100 метров</span>
+          </div>
+          <p class="card-text" style="margin-bottom: 10px;">
+            Ведущий международный билингвальный колледж и детский сад в 1–2 минутах пешком по закрытым зеленым аллеям без выезда на проезжую часть.
+          </p>
+          <ul class="feature-list">
+            <li class="feature-item"><span class="feature-icon">✓</span><span>Аккредитация IB / Cambridge International Education</span></li>
+            <li class="feature-item"><span class="feature-icon">✓</span><span>Обучение на английском и испанском языках</span></li>
+            <li class="feature-item"><span class="feature-icon">✓</span><span>Дипломы для поступления в топ-университеты США и Европы</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Медицина & Безопасность 24/7</h3>
+          <p class="card-text" style="margin-bottom: 10px;">
+            Международные стандарты здравоохранения и полная защищенность:
+          </p>
+          <ul class="feature-list">
+            <li class="feature-item"><span class="feature-icon">🏥</span><span><strong>Госпитали JCI (3–5 мин):</strong> Сеть частных клиник Costamed и Hospiten со стандартами США и англоязычным персоналом.</span></li>
+            <li class="feature-item"><span class="feature-icon">🛡️</span><span><strong>Охрана 24/7:</strong> Круглосуточный КПП, контроль доступа, видеонаблюдение по периметру и патрулирование.</span></li>
+            <li class="feature-item"><span class="feature-icon">⚡</span><span><strong>Интернет до 500 Мбит/с & Starlink:</strong> Прямое выделенное оптоволокно для стабильной удаленной работы.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="img-box" style="height: 52mm;">
+        <img src="images/tulum_colegio_ingles.jpg" alt="Colegio Inglés Tulum">
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Tulum Gardens · Инвестиционный Гайд 2026</span>
+      <span>Страница 05</span>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 6: FINANCIAL MODEL & 9% ROI
+       ======================================================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <img src="images/tulum_gardens_logo.png" alt="Tulum Gardens" class="header-logo">
+        <span class="header-tag">05 / ИНВЕСТИЦИОННАЯ МОДЕЛЬ И ДОХОДНОСТЬ</span>
+      </div>
+
+      <span class="tag">ФИНАНСОВЫЙ РАСЧЕТ</span>
+      <h2 class="page-title">Пассивный доход 9% годовых и система Lock-Off</h2>
+      <p class="page-desc">
+        Благодаря системе раздельных входов (Lock-Off) резиденция может сдаваться как 2 или 3 автономных номера одновременно, обеспечивая максимальную среднегодовую доходность.
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 16px;">
+        <div class="card card-highlight">
+          <div class="stat-badge">
+            <span class="stat-val">9.0%</span>
+            <span class="stat-label">Чистая валютная доходность в USD</span>
+          </div>
+          <p class="card-text" style="margin-bottom: 12px;">
+            Управляющая компания полного цикла берет на себя 100% операционной работы: маркетинг на аудиторию США и Канады, встречу гостей, консьерж-сервис 24/7, уборку и ежемесячные выплаты на ваш счет.
+          </p>
+          <table>
+            <tr>
+              <th>Параметр</th>
+              <th>Показатель</th>
+            </tr>
+            <tr>
+              <td>Среднегодовая загрузка (Occupancy)</td>
+              <td style="color: #D4AF37; font-weight: 600;">70% – 78%</td>
+            </tr>
+            <tr>
+              <td>Средняя ставка аренды (ADR)</td>
+              <td style="color: #D4AF37; font-weight: 600;">$280 – $650 / ночь</td>
+            </tr>
+            <tr>
+              <td>Чистый годовой доход (NOI)</td>
+              <td style="color: #D4AF37; font-weight: 600;">$32,000 – $68,000 USD</td>
+            </tr>
+            <tr>
+              <td>Рост капитализации объекта</td>
+              <td style="color: #D4AF37; font-weight: 600;">+12% – 15% в год</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Преимущества системы Lock-Off</h3>
+          <p class="card-text" style="margin-bottom: 10px;">
+            Гибкость использования резиденции:
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #D4AF37; padding: 8px 12px;">
+              <div style="font-weight: 600; color: #FAF9F7; font-size: 11px;">100% Сдача в аренду</div>
+              <div style="font-size: 10.5px; color: #A8A49C;">Сдача всей виллы целиком премиальным семьям или группам гостей.</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #D4AF37; padding: 8px 12px;">
+              <div style="font-weight: 600; color: #FAF9F7; font-size: 11px;">Гибридный формат</div>
+              <div style="font-size: 10.5px; color: #A8A49C;">Вы живете в мастер-сьюте, а студия со своим входом приносит пассивный доход.</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #D4AF37; padding: 8px 12px;">
+              <div style="font-weight: 600; color: #FAF9F7; font-size: 11px;">Высокая ликвидность</div>
+              <div style="font-size: 10.5px; color: #A8A49C;">Дефицит просторных семейных юнитов гарантирует быструю перепродажу.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-box" style="height: 52mm;">
+        <img src="images/tulum_roi_management.jpg" alt="Инвестиции Tulum Gardens">
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Tulum Gardens · Инвестиционный Гайд 2026</span>
+      <span>Страница 06</span>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 7: RESIDENCE FORMATS & FLOOR PLANS
+       ======================================================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <img src="images/tulum_gardens_logo.png" alt="Tulum Gardens" class="header-logo">
+        <span class="header-tag">06 / ФОРМАТЫ РЕЗИДЕНЦИЙ</span>
+      </div>
+
+      <span class="tag">8 ЭКСКЛЮЗИВНЫХ ТАУНХАУСОВ</span>
+      <h2 class="page-title">Коллекция юнитов: от патио-садов до SkyHouse</h2>
+      <p class="page-desc">
+        Архитектура в стиле Tropical Modernism: натуральный известняк, термодерево, панорамное остекление, личные бассейны и террасы с перголами для BBQ.
+      </p>
+
+      <div class="grid-2" style="gap: 12px; margin-bottom: 16px;">
+        <div class="card" style="padding: 12px;">
+          <div style="font-size: 13px; font-weight: 700; color: #D4AF37; font-family: 'Playfair Display'; margin-bottom: 2px;">🌿 Garden House</div>
+          <div style="font-size: 10px; color: #8E8A82; margin-bottom: 6px;">114 м² · Патио с садом 40 м² · Частный бассейн</div>
+          <div class="img-box" style="height: 38mm;"><img src="images/img_13.jpg" alt="Garden House"></div>
+        </div>
+        <div class="card" style="padding: 12px;">
+          <div style="font-size: 13px; font-weight: 700; color: #D4AF37; font-family: 'Playfair Display'; margin-bottom: 2px;">🏙️ PentHouse</div>
+          <div style="font-size: 10px; color: #8E8A82; margin-bottom: 6px;">153 м² · Панорамный балкон · Мастер-сьют</div>
+          <div class="img-box" style="height: 38mm;"><img src="images/img_22.jpg" alt="PentHouse"></div>
+        </div>
+        <div class="card" style="padding: 12px;">
+          <div style="font-size: 13px; font-weight: 700; color: #D4AF37; font-family: 'Playfair Display'; margin-bottom: 2px;">✨ PentHouse Plus</div>
+          <div style="font-size: 10px; color: #8E8A82; margin-bottom: 6px;">168 м² · Двухуровневый объем · Руфтоп-лаундж</div>
+          <div class="img-box" style="height: 38mm;"><img src="images/img_23.jpg" alt="PentHouse Plus"></div>
+        </div>
+        <div class="card" style="padding: 12px;">
+          <div style="font-size: 13px; font-weight: 700; color: #D4AF37; font-family: 'Playfair Display'; margin-bottom: 2px;">👑 SkyHouse</div>
+          <div style="font-size: 10px; color: #8E8A82; margin-bottom: 6px;">192 м² · 3 уровня · Видовой бассейн на крыше 360°</div>
+          <div class="img-box" style="height: 38mm;"><img src="images/img_33.jpg" alt="SkyHouse"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Tulum Gardens · Инвестиционный Гайд 2026</span>
+      <span>Страница 07</span>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 8: STEPS TO PURCHASE & CONTACTS
+       ======================================================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <img src="images/tulum_gardens_logo.png" alt="Tulum Gardens" class="header-logo">
+        <span class="header-tag">07 / ПОШАГОВЫЙ ПЛАН И КОНТАКТЫ</span>
+      </div>
+
+      <span class="tag">ПРОЦЕСС СДЕЛКИ ПОД КЛЮЧ</span>
+      <h2 class="page-title">5 простых шагов к собственности в Мексике</h2>
+      <p class="page-desc">
+        Мы сопровождаем 100% процесса сделки: от первой онлайн-экскурсии до регистрации траста и заселения.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+        <div class="card" style="padding: 10px 14px; display: flex; align-items: center; gap: 14px;">
+          <div style="font-family: 'Playfair Display'; font-size: 20px; color: #D4AF37; font-weight: 700;">01</div>
+          <div>
+            <div style="font-weight: 600; color: #FAF9F7; font-size: 11.5px;">Персональная консультация и видео-тур</div>
+            <div style="font-size: 10.5px; color: #8E8A82;">Подбор подходящего формата резиденции и индивидуальный расчет финансовой модели.</div>
+          </div>
+        </div>
+        <div class="card" style="padding: 10px 14px; display: flex; align-items: center; gap: 14px;">
+          <div style="font-family: 'Playfair Display'; font-size: 20px; color: #D4AF37; font-weight: 700;">02</div>
+          <div>
+            <div style="font-weight: 600; color: #FAF9F7; font-size: 11.5px;">Бронирование лота</div>
+            <div style="font-size: 10.5px; color: #8E8A82;">Фиксация выбранного таунхауса и стоимости юридическим соглашением о бронировании.</div>
+          </div>
+        </div>
+        <div class="card" style="padding: 10px 14px; display: flex; align-items: center; gap: 14px;">
+          <div style="font-family: 'Playfair Display'; font-size: 20px; color: #D4AF37; font-weight: 700;">03</div>
+          <div>
+            <div style="font-weight: 600; color: #FAF9F7; font-size: 11.5px;">Юридический аудит и подготовка траста Fideicomiso</div>
+            <div style="font-size: 10.5px; color: #8E8A82;">Проверка документов сертифицированным мексиканским нотариусом.</div>
+          </div>
+        </div>
+        <div class="card" style="padding: 10px 14px; display: flex; align-items: center; gap: 14px;">
+          <div style="font-family: 'Playfair Display'; font-size: 20px; color: #D4AF37; font-weight: 700;">04</div>
+          <div>
+            <div style="font-weight: 600; color: #FAF9F7; font-size: 11.5px;">Подписание Escritura Pública</div>
+            <div style="font-size: 10.5px; color: #8E8A82;">Оформление права собственности у государственного нотариуса и внесение в Реестр.</div>
+          </div>
+        </div>
+        <div class="card card-highlight" style="padding: 10px 14px; display: flex; align-items: center; gap: 14px;">
+          <div style="font-family: 'Playfair Display'; font-size: 20px; color: #D4AF37; font-weight: 700;">05</div>
+          <div>
+            <div style="font-weight: 600; color: #FAF9F7; font-size: 11.5px;">Получение ключей и запуск аренды</div>
+            <div style="font-size: 10.5px; color: #D8D4CC;">Передача объекта Управляющей Компании, оформление ВНЖ и получение первого валютного дохода.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT CTA CARD -->
+      <div class="card card-highlight" style="padding: 18px 24px; text-align: center;">
+        <h3 style="font-size: 20px; color: #FAF9F7; margin-bottom: 6px;">Свяжитесь с официальным представителем</h3>
+        <p style="font-size: 11.5px; color: #C5BEB3; margin-bottom: 14px;">Задайте любые вопросы о проекте, забронируйте онлайн-показ или запросите аудит документов:</p>
+        <div style="display: flex; justify-content: center; gap: 20px; align-items: center;">
+          <a href="https://wa.me/529841234567" style="color: #D4AF37; text-decoration: none; font-weight: 700; font-size: 13px;">WhatsApp: +52 (984) 123-4567</a>
+          <span style="color: #6E6A62;">·</span>
+          <a href="https://t.me/tulumgardens" style="color: #D4AF37; text-decoration: none; font-weight: 700; font-size: 13px;">Telegram: @tulumgardens</a>
+          <span style="color: #6E6A62;">·</span>
+          <a href="mailto:info@tulumgardens.mx" style="color: #D4AF37; text-decoration: none; font-weight: 700; font-size: 13px;">info@tulumgardens.mx</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>© 2026 Stellar Residences · Tulum Gardens. Все права защищены.</span>
+      <span>Страница 08</span>
+    </div>
+  </div>
+
+</body>
+</html>
