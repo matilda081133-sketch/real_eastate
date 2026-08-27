@@ -111,6 +111,7 @@
        PRELOADER WITH PERCENT COUNTER (FATUKHIN STYLE)
        ======================================================== */
     #preloader {
+      display: none !important;
       position: fixed;
       inset: 0;
       z-index: 9999;
@@ -1874,8 +1875,8 @@
   <!-- HERO SECTION WITH VIDEO BACKGROUND -->
   <section class="hero">
     <div class="hero-bg-media">
-      <video class="active" id="hero-v1" src="videos/tulum_drone_hero_compressed.mp4" autoplay muted playsinline></video>
-      <video id="hero-v2" autoplay muted playsinline></video>
+      <video preload="metadata" class="active" id="hero-v1" src="videos/tulum_drone_hero_compressed.mp4" autoplay muted playsinline></video>
+      <video preload="metadata" id="hero-v2" autoplay muted playsinline></video>
     </div>
     <div class="hero-overlay"></div>
 
@@ -4068,8 +4069,8 @@
   <!-- HERO SECTION WITH VIDEO BACKGROUND -->
   <section class="hero">
     <div class="hero-bg-media">
-      <video class="active" id="hero-v1" src="videos/tulum_drone_hero_compressed.mp4" autoplay muted playsinline></video>
-      <video id="hero-v2" autoplay muted playsinline></video>
+      <video preload="metadata" class="active" id="hero-v1" src="videos/tulum_drone_hero_compressed.mp4" autoplay muted playsinline></video>
+      <video preload="metadata" id="hero-v2" autoplay muted playsinline></video>
     </div>
     <div class="hero-overlay"></div>
 
@@ -4736,7 +4737,7 @@
        STANDALONE FULLSCREEN ATMOSPHERE VIDEO SHOWCASE
        ======================================================== -->
   <section class="fullscreen-video-sec" style="position: relative; height: 85vh; min-height: 560px; max-height: 880px; width: 100%; overflow: hidden; background: #0A0D0B; display: flex; align-items: center; justify-content: center; border-top: 1px solid rgba(212, 175, 55, 0.2);">
-    <video id="atmosphere-video" autoplay muted loop playsinline poster="https://tulumgardens.com/wp-content/uploads/2026/06/66448cfa595c8aa0179d14c120ParadiseE29320Family20of20-20Gardens281080p20h26429_poster.0000000.jpeg" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; z-index: 1;">
+    <video preload="metadata" id="atmosphere-video" autoplay muted loop playsinline poster="https://tulumgardens.com/wp-content/uploads/2026/06/66448cfa595c8aa0179d14c120ParadiseE29320Family20of20-20Gardens281080p20h26429_poster.0000000.jpeg" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; z-index: 1;">
       <source src="videos/tulum_atmosphere_hq.mp4" type="video/mp4">
     </video>
 
