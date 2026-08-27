@@ -2582,7 +2582,7 @@
     <div style="position: absolute; inset: -20px; background: url('images/tulum_atmosphere_8k.jpg') center/cover no-repeat; animation: kenBurnsAtmosphere 26s infinite alternate ease-in-out; z-index: 1;"></div>
 
     <!-- Top & Bottom Blending Gradients -->
-    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 14, 12, 0.85) 0%, rgba(10, 14, 12, 0.68) 50%, rgba(8, 11, 9, 0.94) 100%); z-index: 2; pointer-events: none;"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 14, 12, 0.38) 0%, rgba(10, 14, 12, 0.56) 45%, rgba(8, 11, 9, 0.92) 100%); z-index: 2; pointer-events: none;"></div>
 
     <!-- Centered Content Overlay -->
     <div class="container" style="position: relative; z-index: 3; text-align: center; max-width: 880px; padding: 0 20px;">
@@ -5819,19 +5819,96 @@
       document.getElementById('modal-window').classList.remove('active');
     }
 
+    // GOOGLE SHEETS / EXCEL LIVE WEBHOOK INTEGRATION
+    const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwc30G8ekG_PHpOSHOSJbzmhq5vyfw8qadfVZFebjKxFgG__oEbg04CUEjqfzrBBZdU1g/exec';
+
+    function getUtmParams() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return {
+        utm_source: urlParams.get('utm_source') || '',
+        utm_medium: urlParams.get('utm_medium') || '',
+        utm_campaign: urlParams.get('utm_campaign') || '',
+        utm_content: urlParams.get('utm_content') || '',
+        utm_term: urlParams.get('utm_term') || '',
+        referrer: document.referrer || 'Direct'
+      };
+    }
+
+    function saveLeadLocally(leadData) {
+      try {
+        const stored = JSON.parse(localStorage.getItem('tulum_leads') || '[]');
+        stored.push(leadData);
+        localStorage.setItem('tulum_leads', JSON.stringify(stored));
+      } catch (err) {
+        console.warn('LocalStorage error:', err);
+      }
+    }
+
     function processForm(e, src) {
       e.preventDefault();
-      document.getElementById('modal-form-view').style.display = 'none';
-      document.getElementById('modal-success-view').style.display = 'block';
-      if (!document.getElementById('modal-window').classList.contains('active')) {
-        document.getElementById('modal-window').classList.add('active');
+      const form = e.target;
+      
+      const nameInput = form.querySelector('input[type="text"]');
+      const phoneInput = form.querySelector('input[type="tel"]');
+      const emailInput = form.querySelector('input[type="email"]');
+      const selectInputs = form.querySelectorAll('select');
+      
+      let extraInfo = [];
+      selectInputs.forEach(s => {
+        if (s.value) extraInfo.push(s.name + ': ' + s.value);
+      });
+
+      const now = new Date();
+      const leadData = {
+        timestamp: now.toISOString(),
+        date: now.toLocaleDateString('ru-RU'),
+        time: now.toLocaleTimeString('ru-RU'),
+        source: src || document.getElementById('modal-head')?.innerText || 'Сайт Tulum Gardens',
+        name: nameInput ? nameInput.value : '',
+        phone: phoneInput ? phoneInput.value : '',
+        email: emailInput ? emailInput.value : '',
+        extra: extraInfo.join(' | '),
+        ...getUtmParams()
+      };
+
+      // 1. Save backup to browser LocalStorage (never lose leads)
+      saveLeadLocally(leadData);
+
+      // 2. Dispatch to Google Sheets / Online Excel Webhook via FormData/Fetch
+      if (GOOGLE_SHEETS_WEBHOOK_URL) {
+        try {
+          fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(leadData)
+          }).catch(err => console.error('Webhook error:', err));
+        } catch (err) {
+          console.warn('Webhook dispatch failed:', err);
+        }
       }
-      const a = document.createElement('a');
-      a.href = 'Tulum_Gardens_Investment_Guide_2026.pdf';
-      a.download = 'Tulum_Gardens_Investment_Guide_2026.pdf';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+
+      // 3. Display Success View
+      const formView = document.getElementById('modal-form-view');
+      const successView = document.getElementById('modal-success-view');
+      if (formView) formView.style.display = 'none';
+      if (successView) successView.style.display = 'block';
+      
+      const modalWin = document.getElementById('modal-window');
+      if (modalWin && !modalWin.classList.contains('active')) {
+        modalWin.classList.add('active');
+      }
+
+      // 4. Download file if lead requested materials
+      const titleLower = (leadData.source || '').toLowerCase();
+      if (titleLower.includes('гайд') || titleLower.includes('материал') || titleLower.includes('доклад') || titleLower.includes('причин')) {
+        const a = document.createElement('a');
+        a.href = 'Tulum_Gardens_Investment_Guide_2026.pdf';
+        a.download = 'Tulum_Gardens_Investment_Guide_2026.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
     }
 
     // BILINGUAL TRANSLATION SYSTEM (FULL LANDING PAGE RU & EN)
