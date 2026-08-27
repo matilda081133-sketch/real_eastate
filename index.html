@@ -2098,6 +2098,2192 @@
           <div class="loc-usp-tab active" onclick="switchLocUsp(0)">
             <div class="tab-left">
               <span class="tab-num">01</span>
+              <span class="tab-name">Международный аэропорт TQO</span>
+            </div>
+            <span class="tab-val">15 мин</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(1)">
+            <div class="tab-left">
+              <span class="tab-num">02</span>
+              <span class="tab-name">Скоростной поезд Tren Maya</span>
+            </div>
+            <span class="tab-val">800 м</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(2)">
+            <div class="tab-left">
+              <span class="tab-num">03</span>
+              <span class="tab-name">Торговые Центры и Soriana</span>
+            </div>
+            <span class="tab-val">Новые ТЦ</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(3)">
+            <div class="tab-left">
+              <span class="tab-num">04</span>
+              <span class="tab-name">Пляжи Карибов и Jaguar Park</span>
+            </div>
+            <span class="tab-val">12 мин</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(4)">
+            <div class="tab-left">
+              <span class="tab-num">05</span>
+              <span class="tab-name">«Второе Бали»</span>
+            </div>
+            <span class="tab-val">3-4х рост</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(5)">
+            <div class="tab-left">
+              <span class="tab-num">06</span>
+              <span class="tab-name">Школа Colegio Inglés</span>
+            </div>
+            <span class="tab-val">100 м</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(6)">
+            <div class="tab-left">
+              <span class="tab-num">07</span>
+              <span class="tab-name">Рестораны & Michelin</span>
+            </div>
+            <span class="tab-val">Michelin ★</span>
+          </div>
+
+          <div class="loc-usp-tab" onclick="switchLocUsp(7)">
+            <div class="tab-left">
+              <span class="tab-num">08</span>
+              <span class="tab-name">Частные клиники и медицина</span>
+            </div>
+            <span class="tab-val">3–5 мин</span>
+          </div>
+        </div>
+
+        <!-- RIGHT DISPLAY CARD (DYNAMICALLY UPDATED) -->
+        <div class="loc-usp-display" id="loc-usp-display-box">
+          <div class="loc-display-img-wrap">
+            <img src="images/tulum_airport_station.jpg" alt="Инфраструктура Тулума" class="loc-display-img" id="loc-usp-img">
+            <div class="loc-display-overlay"></div>
+            <div class="loc-display-badge" id="loc-usp-badge">01 / Аэропорт TQO • 15 мин</div>
+          </div>
+          <div class="loc-display-body">
+            <div class="loc-display-tag" id="loc-usp-tag">01 / Авиасообщение</div>
+            <h3 class="loc-display-title" id="loc-usp-title">Международный аэропорт Фелипе Каррильо Пуэрто (TQO)</h3>
+            <p class="loc-display-text" id="loc-usp-text">
+              Тулум получил собственный <strong>ультрасовременный международный аэропорт (TQO)</strong> всего в 15 минутах от комплекса. Прямые рейсы из США, Канады, Европы и Латинской Америки обеспечивают круглогодичный приток платежеспособных туристов и постоянных резидентов.
+            </p>
+            <div class="loc-display-metric-row">
+              <div class="loc-metric-val" id="loc-usp-metric">15 мин</div>
+              <div class="loc-metric-sub" id="loc-usp-sub">до международного аэропорта TQO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  ﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STELLAR RESIDENCES • TULUM GARDENS | Премиальные резиденции в Мексике</title>
+  
+  <!-- FAVICON (HIGH CONTRAST LUXURY EMBLEM) -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="images/favicon.svg">
+  <link rel="apple-touch-icon" href="images/favicon.svg">
+  
+  <!-- FONTS: Playfair Display (Serif), Montserrat, TildaSans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- LEAFLET MAP CSS & JS FOR REAL GEOGRAPHIC COORDINATE MARKERS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+  <style>
+    @font-face {
+      font-family: 'TildaSans';
+      src: url('https://static.tildacdn.com/fonts/tildasans/TildaSans-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'TildaSans';
+      src: url('https://static.tildacdn.com/fonts/tildasans/TildaSans-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'TildaSans';
+      src: url('https://static.tildacdn.com/fonts/tildasans/TildaSans-Semibold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'TildaSans';
+      src: url('https://static.tildacdn.com/fonts/tildasans/TildaSans-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ========================================================
+       FATUKHIN-INSPIRED LUXURY DESIGN SYSTEM (LEGAL & CLEAN)
+       ======================================================== */
+    :root {
+      --bg: #FAF9F7;
+      --bg-white: #FFFFFF;
+      --bg-surface: #F4F1EA;
+      --dark: #111413;
+      --dark-card: #181C1B;
+      --accent: #C1A080;
+      --accent-hover: #B08E6E;
+      --accent-light: #DFC79B;
+      --text: #1A1A1A;
+      --text-muted: #7A7A7A;
+      --text-white: #FAF9F7;
+      --border: rgba(26, 26, 26, 0.08);
+      --border-accent: rgba(193, 160, 128, 0.4);
+      --radius: 12px;
+      --radius-lg: 20px;
+      
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'TildaSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-serif {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .font-sans {
+      font-family: var(--font-sans);
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img, video { max-width: 100%; height: auto; display: block; }
+    .container { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
+
+    /* ========================================================
+       PRELOADER WITH PERCENT COUNTER (FATUKHIN STYLE)
+       ======================================================== */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.7s;
+    }
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .pre-brand {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      color: var(--accent);
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+    .pre-num {
+      font-family: var(--font-serif);
+      font-size: 12vw;
+      line-height: 1;
+      font-weight: 400;
+      color: #FFFFFF;
+      margin-bottom: 30px;
+    }
+    .pre-bar-bg {
+      width: 220px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .pre-bar-fill {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 0%;
+      background: var(--accent);
+      transition: width 0.05s linear;
+    }
+
+    /* ========================================================
+       GLASS HEADER WITH BLUR & ACCENTS
+       ======================================================== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(17, 20, 19, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      transition: all 0.4s ease;
+    }
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 96px;
+    }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      margin-left: 58px;
+    }
+    @media (max-width: 768px) {
+      .logo-box {
+        margin-left: 0;
+      }
+    }
+    .logo-badge-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #111413;
+      padding: 6px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(193, 160, 128, 0.4);
+      transition: all 0.35s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+    .logo-badge-wrap:hover {
+      border-color: var(--accent);
+      box-shadow: 0 6px 20px rgba(193, 160, 128, 0.3);
+      transform: translateY(-1px);
+    }
+    .logo-img {
+      height: 44px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #FFFFFF;
+      transition: color 0.25s;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .lang-switch-box {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--accent);
+      border-radius: 30px;
+      padding: 2px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.65);
+      cursor: pointer;
+      padding: 5px 14px;
+      border-radius: 20px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      outline: none;
+    }
+    .lang-btn:hover {
+      color: var(--accent);
+    }
+    .lang-btn.active {
+      color: #0E1210 !important;
+      background: var(--accent);
+      font-weight: 800;
+      box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+    }
+    .header-phone {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border-accent);
+      padding: 10px 18px;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    .header-phone:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: center;
+      border-radius: 4px;
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: #FFFFFF;
+      box-shadow: 0 10px 25px rgba(193, 160, 128, 0.25);
+    }
+    .btn-accent:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(193, 160, 128, 0.35);
+    }
+    .btn-white {
+      background: #FFFFFF;
+      color: var(--accent);
+      border: 1px solid #FFFFFF;
+    }
+    .btn-white:hover {
+      background: #FAF9F7;
+      transform: translateY(-2px);
+    }
+    .btn-outline-gold {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--text-white);
+    }
+    .btn-outline-gold:hover {
+      background: var(--accent);
+      color: #FFFFFF;
+    }
+    .btn-block { width: 100%; }
+
+    /* ========================================================
+       HERO SECTION WITH ZERO-PAUSE VIDEO BACKGROUND
+       ======================================================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--dark);
+      color: var(--text-white);
+      padding: 130px 0 32px;
+      overflow: hidden;
+    }
+    .hero-bg-media {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .hero-bg-media video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    .hero-bg-media video.active {
+      opacity: 0.85;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(17, 20, 19, 0.35) 0%, rgba(17, 20, 19, 0.72) 100%);
+      z-index: 2;
+    }
+    .hero-body {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      margin-left: 0;
+      font-weight: 700;
+      text-align: left;
+      align-self: flex-start;
+    }
+    .hero-h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.18;
+      margin-bottom: 24px;
+      margin-left: 0;
+      text-transform: uppercase;
+      font-weight: 400;
+      text-align: left;
+      width: 100%;
+      max-width: 1100px;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.75);
+    }
+    .hero-h1 span {
+      color: var(--accent);
+      font-style: italic;
+    }
+    .hero-subtext {
+      font-family: 'TildaSans', sans-serif !important;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #FFFFFF;
+      max-width: 960px;
+      margin-bottom: 38px;
+      margin-left: 0;
+      font-weight: 400;
+      text-align: left;
+      text-wrap: balance;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+    }
+    .hero-btns {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    /* SEAMLESS FLOATING STAT PILLS OVER HERO BACKGROUND */
+    .hero-glass-bar {
+      position: absolute;
+      bottom: 28px; left: 0; right: 0;
+      z-index: 4;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-top: none;
+      padding: 0;
+    }
+    .hero-stat-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-left: 1px solid rgba(255,255,255,0.08);
+      align-items: start;
+      gap: 14px;
+      width: 100%;
+      max-width: 960px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .hero-stat-pill {
+      background: transparent;
+      border: none;
+      border-top: 2px solid rgba(212, 175, 55, 0.7);
+      padding: 18px 0 0;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      transition: border-color 0.3s;
+    }
+    
+    .hero-stat-pill:hover { border-top-color: rgba(212, 175, 55, 1); }
+    .pill-top-row { display: none; }
+    .pill-num {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .pill-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent);
+    }
+    .stat-top-val {
+      font-family: var(--font-serif);
+      font-size: clamp(16px, 1.4vw, 20px);
+      color: #FFFFFF;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      position: relative;
+      z-index: 2;
+    }
+    .stat-top-val span {
+      font-size: 18px;
+      font-family: var(--font-serif);
+      color: var(--accent);
+    }
+    .stat-sub-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-family: 'TildaSans', sans-serif !important;
+      font-size: 16.5px;
+      color: #D6D2CA;
+      font-weight: 400;
+      line-height: 1.45;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* RUNNING MARQUEE TICKER (LIGHT SURFACE, HIGH-CONTRAST TEXT) */
+    .ticker-bar {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 35s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 36px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #111413;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .marquee-item span {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ========================================================
+       SECTIONS & HEADINGS
+       ======================================================== */
+    section {
+      padding: 120px 0;
+      position: relative;
+    }
+    .sec-head {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 70px;
+    }
+    .sec-tag {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 14px;
+    }
+    .sec-title {
+      font-size: clamp(28px, 3.8vw, 48px);
+      line-height: 1.2;
+      color: var(--text);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .sec-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ========================================================
+       FATUKHIN-STYLE BENTO GRID / SKEWED ARCHITECTURE CARDS
+       ======================================================== */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .bento-card {
+      background: var(--bg-white);
+      border: 1px solid rgba(26, 26, 26, 0.12);
+      border-radius: var(--radius);
+      padding: 22px 20px 16px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.35s ease;
+      box-shadow: 0 8px 24px rgba(17, 20, 19, 0.08), 0 2px 6px rgba(17, 20, 19, 0.04);
+    }
+    .bento-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 14px 32px rgba(17, 20, 19, 0.14);
+    }
+    .bento-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+    .bento-num {
+      position: absolute;
+      top: -16px;
+      right: -8px;
+      font-family: var(--font-serif);
+      font-size: 85px;
+      color: rgba(184, 150, 86, 0.12);
+      font-weight: 800;
+      line-height: 0.8;
+      letter-spacing: -0.04em;
+      user-select: none;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .bento-tag {
+      font-family: var(--font-sans);
+      font-size: 9.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #8C887F;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+    }
+    .bento-title {
+      font-family: var(--font-serif);
+      font-size: 23px;
+      color: #111413;
+      margin-bottom: 8px;
+      line-height: 1.25;
+      font-weight: 600;
+      max-width: 85%;
+      position: relative;
+      z-index: 2;
+    }
+    .bento-desc {
+      font-family: 'TildaSans', sans-serif !important;
+      font-size: 16.5px;
+      color: #3A3D3C;
+      line-height: 1.55;
+      font-weight: 400;
+    }
+    .bento-desc strong {
+      color: #111413;
+      font-weight: 600;
+    }
+    .bento-bottom-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 12px;
+    }
+    .bento-arrow {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(26, 26, 26, 0.15);
+      background: #FAF9F7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .bento-card:hover .bento-arrow {
+      background: var(--accent);
+      color: #FFFFFF;
+      border-color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    /* SKEWED CLIP-PATH GALLERY (FATUKHIN STYLE) */
+    .skew-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .skew-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+    .skew-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+    }
+    .skew-media {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+    .skew-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .skew-card:hover .skew-media img {
+      transform: scale(1.08);
+    }
+    .skew-footer {
+      padding: 18px 20px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .skew-footer h4 {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      color: var(--text);
+    }
+    .skew-footer span {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ========================================================
+       LOCATION & INTERACTIVE MAP (CLEAN AESTHETIC)
+       ======================================================== */
+    .map-section {
+      background: var(--bg-white);
+    }
+    .map-box {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(17, 20, 19, 0.12);
+      border: 1px solid var(--border);
+      background: var(--bg-white);
+    }
+    #leaflet-map-canvas {
+      width: 100%;
+      height: 540px;
+      border-radius: 6px;
+      z-index: 1;
+    }
+    /* LEAFLET GEOGRAPHIC MARKERS */
+    .custom-leaflet-pin {
+      position: relative;
+      cursor: pointer;
+    }
+    .custom-leaflet-pin .mini-pin-dot {
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border: 2px solid #FFFFFF;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(193, 160, 128, 0.9);
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .custom-leaflet-pin.primary-pin .mini-pin-dot {
+      width: 16px;
+      height: 16px;
+      background: #DFC79B;
+      border: 3px solid #111413;
+    }
+    .custom-leaflet-pin.primary-pin .mini-pin-pulse {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 38px; height: 38px;
+      margin-top: -19px; margin-left: -19px;
+      border: 2px solid #DFC79B;
+      border-radius: 50%;
+      animation: pinPulse 2s infinite ease-out;
+      pointer-events: none;
+    }
+    @keyframes pinPulse {
+      0% { transform: scale(0.6); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    .custom-leaflet-pin .mini-pin-label {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      background: rgba(17, 20, 19, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #FFFFFF;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 11px;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      transition: all 0.25s ease;
+      pointer-events: auto;
+    }
+    .custom-leaflet-pin.primary-pin .mini-pin-label {
+      background: #111413;
+      border-color: var(--accent);
+    }
+    .mini-map-pin:hover .mini-pin-label {
+      background: #FFFFFF;
+      color: #111413;
+      border-color: var(--accent);
+    }
+
+    /* COMPACT ANIMATED LOCATION USP SYSTEM */
+    .loc-interactive-panel {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 32px;
+      margin-top: 40px;
+      background: var(--bg-white);
+      border: 1px solid rgba(26, 26, 26, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: 0 24px 60px rgba(17, 20, 19, 0.14), 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+    .loc-usp-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .loc-usp-tab {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background: #FAF9F7;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .loc-usp-tab:hover {
+      background: #F4F1EA;
+      border-color: rgba(193, 160, 128, 0.3);
+    }
+    .loc-usp-tab.active {
+      background: #FFFFFF;
+      border-color: var(--accent);
+      box-shadow: 0 8px 25px rgba(193, 160, 128, 0.18);
+    }
+    .tab-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .tab-num {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+    .tab-name {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      color: var(--dark);
+      font-weight: 600;
+    }
+    .tab-val {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      color: #111413;
+      background: rgba(26, 26, 26, 0.06);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .loc-usp-tab.active .tab-val {
+      background: var(--accent);
+      color: #FFFFFF;
+    }
+    .loc-usp-display {
+      background: #FFFFFF;
+      border: 1px solid rgba(26, 26, 26, 0.08);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 16px 40px rgba(17, 20, 19, 0.12), 0 3px 12px rgba(0, 0, 0, 0.05);
+      transition: all 0.35s ease;
+    }
+    .loc-display-img-wrap {
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+      background: var(--dark);
+    }
+    .loc-display-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .loc-display-img-wrap:hover .loc-display-img {
+      transform: scale(1.05);
+    }
+    .loc-display-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(17, 20, 19, 0.1) 0%, rgba(17, 20, 19, 0.75) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px 24px;
+    }
+    .loc-img-badge {
+      background: rgba(17, 20, 19, 0.85);
+      border: 1px solid var(--accent);
+      color: #FFFFFF;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 4px;
+      backdrop-filter: blur(8px);
+    }
+    .loc-display-content {
+      padding: 28px 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      background: #FFFFFF;
+    }
+    .loc-display-tag {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .loc-display-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      color: var(--dark);
+      margin-bottom: 12px;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+    .loc-display-text {
+      font-family: 'TildaSans', sans-serif !important;
+      font-size: 15px;
+      color: #3A3D3C;
+      line-height: 1.65;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .loc-display-text strong {
+      color: #111413;
+      font-weight: 600;
+    }
+    .loc-display-metric {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      font-family: var(--font-serif);
+      font-size: 30px;
+      color: var(--accent);
+      font-weight: 700;
+      border-top: 1px solid rgba(26, 26, 26, 0.08);
+      padding-top: 14px;
+    }
+    .loc-display-metric span {
+      font-size: 13px;
+      font-family: 'TildaSans', sans-serif;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* ========================================================
+       CINEMA VIDEO GALLERY WITH 21 CLIPS & CATEGORIES
+       ======================================================== */
+    .cinema-sec {
+      background: radial-gradient(circle at 50% 8%, #1e2120 0%, #111413 50%, #080a09 100%);
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .cinema-sec::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 320px;
+      background: radial-gradient(ellipse at top, rgba(212, 175, 55, 0.14), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .cinema-sec .sec-tag { color: var(--accent); }
+    .cinema-sec .sec-title { color: #FFFFFF; }
+    .cinema-sec .sec-desc { color: rgba(255, 255, 255, 0.7); }
+    
+    .cinema-container {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 28px;
+      background: var(--dark-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    }
+    .stage-wrapper {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .stage-player {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+    .stage-bar {
+      padding: 20px 24px;
+      background: #111413;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .stage-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+    .stage-desc {
+      font-size: 12px;
+      color: #8C887F;
+    }
+    .playlist-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .playlist-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .cat-btn-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .cat-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #9C988F;
+      font-size: 10px;
+      font-family: var(--font-sans);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-weight: 700;
+      border-radius: 4px;
+      transition: all 0.25s;
+    }
+    .cat-btn.active, .cat-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+    }
+    .playlist-scroll {
+      max-height: 520px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-right: 6px;
+    }
+    .playlist-scroll::-webkit-scrollbar { width: 4px; }
+    .playlist-scroll::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); }
+    .v-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .v-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .v-item.active {
+      background: rgba(193, 160, 128, 0.15);
+      border-color: var(--accent);
+    }
+    .v-thumb {
+      width: 90px;
+      height: 60px;
+      background: #000;
+      position: relative;
+      flex-shrink: 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .v-thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .v-play {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #FFF;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    .v-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .v-tag {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .v-name {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      color: #FFFFFF;
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+    .v-sub {
+      font-size: 11px;
+      color: #8C887F;
+    }
+
+    /* ========================================================
+       UNITS CATALOG (4 REAL MODELS)
+       ======================================================== */
+    .catalog-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .c-tab-btn {
+      padding: 14px 28px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-muted);
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .c-tab-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+      box-shadow: 0 6px 20px rgba(193, 160, 128, 0.3);
+    }
+    .unit-card-box {
+      display: none;
+      background: var(--bg-white);
+      border: 1px solid rgba(26, 26, 26, 0.14);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(17, 20, 19, 0.13), 0 4px 14px rgba(17, 20, 19, 0.07);
+    }
+    .unit-card-box.active {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+    .unit-gallery {
+      padding: 32px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .unit-main-view {
+      height: 440px;
+      background: #EBE9E4;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(26, 26, 26, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      box-sizing: border-box;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      position: relative;
+      cursor: zoom-in;
+      transition: border-color 0.25s;
+    }
+    .unit-main-view:hover {
+      border-color: var(--accent);
+    }
+    .unit-main-view img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .unit-main-view:hover img {
+      transform: scale(1.02);
+    }
+    .zoom-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(17, 20, 19, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      color: #FAF9F7;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      z-index: 2;
+    }
+    /* FULLSCREEN IMAGE LIGHTBOX MODAL */
+    .img-lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 13, 11, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      cursor: zoom-out;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .img-lightbox-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    .img-lightbox-content {
+      position: relative;
+      max-width: 95vw;
+      max-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: default;
+    }
+    .img-lightbox-content img {
+      max-width: 92vw;
+      max-height: 88vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7);
+    }
+    .img-lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      z-index: 10001;
+    }
+    .img-lightbox-close:hover {
+      background: var(--accent);
+      color: #111413;
+      border-color: var(--accent);
+    }
+    .unit-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .unit-thumbs img {
+      height: 80px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      opacity: 0.75;
+      transition: all 0.25s;
+    }
+    .unit-thumbs img:hover {
+      opacity: 1;
+      border-color: var(--accent);
+    }
+    .unit-info-box {
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .unit-h3 {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .unit-badge-specs {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .unit-desc-p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+    .unit-check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .unit-check-list li {
+      font-size: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .unit-check-list li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* ========================================================
+       FATUKHIN-STYLE DARK FORM & CTA CARD
+       ======================================================== */
+    .cta-dark-card {
+      background: var(--dark);
+      color: #FFFFFF;
+      border-radius: 8px;
+      padding: 64px 48px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    }
+    .cta-dark-card::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(193, 160, 128, 0.2) 0%, rgba(17, 20, 19, 0) 70%);
+      pointer-events: none;
+    }
+    .cta-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .form-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      padding: 14px 18px;
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* FAQ 2-COLUMN SPLIT LAYOUT & HIGH-CONTRAST TYPOGRAPHY */
+    .faq-split-layout {
+      display: grid;
+      grid-template-columns: 480px 1fr;
+      justify-content: space-between;
+      gap: 48px;
+      align-items: start;
+    }
+    .faq-left-col {
+      position: sticky;
+      top: 110px;
+      padding-right: 10px;
+    }
+    @media (max-width: 992px) {
+      .faq-split-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .faq-left-col {
+        position: static;
+      }
+    }
+    .faq-item {
+      background: var(--bg-white);
+      border: 1px solid rgba(26, 26, 26, 0.12);
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
+    .faq-item:hover, .faq-item.active {
+      border-color: var(--accent);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    }
+    .faq-q {
+      padding: 22px 26px;
+      font-family: var(--font-serif);
+      font-size: 23px;
+      color: #111413;
+      font-weight: 600;
+      line-height: 1.4;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-icon {
+      font-size: 24px;
+      color: var(--accent);
+      font-weight: 700;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+      padding: 0 26px;
+      font-family: 'TildaSans', sans-serif !important;
+      font-size: 16px;
+      color: #2C2E2D;
+      line-height: 1.75;
+      font-weight: 400;
+    }
+    .faq-a strong {
+      color: #111413;
+      font-weight: 600;
+    }
+    .faq-item.active .faq-a {
+      max-height: 400px;
+      padding-bottom: 24px;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 20, 19, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      max-width: 520px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 60px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 12px;
+    }
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      .cinema-container { grid-template-columns: 1fr; }
+      .bento-grid { grid-template-columns: repeat(2, 1fr); }
+      .skew-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .header-phone { display: none; }
+      .bento-grid, .skew-gallery-grid, .loc-stats-row { grid-template-columns: 1fr; }
+      .unit-card-box.active { grid-template-columns: 1fr; }
+      .stage-player { height: 260px; }
+      .map-img { height: 420px; }
+    }
+  
+    .stat-pill-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0 24px 0 0;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-pill-wrap .stat-sub-text {
+      display: block;
+      overflow: visible;
+      -webkit-line-clamp: unset;
+      color: rgba(255,255,255,0.78);
+      font-size: 13.5px;
+      line-height: 1.55;
+      margin-top: 8px;
+      padding: 0;
+    }
+
+    @keyframes pillReveal {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes borderGrow {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+    .stat-pill-wrap {
+      animation: pillReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .stat-pill-wrap:nth-child(1) { animation-delay: 0.3s; }
+    .stat-pill-wrap:nth-child(2) { animation-delay: 0.48s; }
+    .stat-pill-wrap:nth-child(3) { animation-delay: 0.66s; }
+    .stat-pill-wrap:nth-child(4) { animation-delay: 0.84s; }
+    .hero-stat-pill {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-stat-pill::after {
+      content: "";
+      position: absolute;
+      top: -2px; left: 0;
+      width: 100%; height: 2px;
+      background: rgba(212,175,55,0.9);
+      transform-origin: left center;
+      animation: borderGrow 0.6s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .stat-pill-wrap:nth-child(1) .hero-stat-pill::after { animation-delay: 0.3s; }
+    .stat-pill-wrap:nth-child(2) .hero-stat-pill::after { animation-delay: 0.48s; }
+    .stat-pill-wrap:nth-child(3) .hero-stat-pill::after { animation-delay: 0.66s; }
+    .stat-pill-wrap:nth-child(4) .hero-stat-pill::after { animation-delay: 0.84s; }
+    /* CONSULTING BANNER PARALLAX VECTORS */
+    .consulting-banner-wrap {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0e1512 0%, #152219 50%, #0d161d 100%);
+      padding: 86px 0;
+      border-top: 1px solid rgba(212,175,55,0.25);
+      border-bottom: 1px solid rgba(212,175,55,0.25);
+    }
+    .consulting-vector {
+      position: absolute;
+      top: 50%;
+      width: clamp(180px, 19vw, 270px);
+      pointer-events: none;
+      z-index: 1;
+      will-change: transform, opacity;
+      opacity: 0;
+      transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease-out;
+    }
+    .consulting-chart-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.65));
+    }
+    .consulting-vector.left-vector {
+      left: 0;
+      transform: translateY(-50%) translateX(-100%);
+    }
+    .consulting-vector.right-vector {
+      right: 0;
+      transform: translateY(-50%) scaleX(-1) translateX(-100%);
+    }
+    @media (max-width: 768px) {
+      .consulting-vector {
+        display: none;
+      }
+    }
+      /* LUXURY MAP MARKERS & HOVER TOOLTIPS */
+    .map-primary-marker {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .map-pulse-ring {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.4);
+      animation: pulseGoldMap 2.4s infinite ease-out;
+      pointer-events: none;
+    }
+    .map-pulse-ring-2 {
+      position: absolute;
+      inset: -14px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.2);
+      animation: pulseGoldMap 2.4s infinite ease-out 0.8s;
+      pointer-events: none;
+    }
+    @keyframes pulseGoldMap {
+      0% { transform: scale(0.6); opacity: 0.9; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    .map-primary-core {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #FAF9F7 0%, #D4AF37 60%, #997A15 100%);
+      border: 2.5px solid #0E1210;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.75), 0 2px 6px rgba(0,0,0,0.5);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .map-primary-marker:hover .map-primary-core {
+      transform: scale(1.2);
+    }
+
+    .map-secondary-marker {
+      position: relative;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .map-sec-core {
+      width: 14px;
+      height: 14px;
+      background: linear-gradient(135deg, #FAF9F7 0%, #D4AF37 100%);
+      border: 2px solid #0E1210;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      transition: all 0.25s ease;
+    }
+    .map-secondary-marker:hover .map-sec-core {
+      transform: scale(1.4);
+      background: #FAF9F7;
+      border-color: #D4AF37;
+      box-shadow: 0 0 14px rgba(212, 175, 55, 1);
+    }
+
+    /* LEAFLET HOVER CARD TOOLTIP (SHOWS ONLY ON HOVER) */
+    .leaflet-hover-card {
+      background: rgba(14, 18, 16, 0.95) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      border: 1px solid rgba(212, 175, 55, 0.6) !important;
+      border-radius: 8px !important;
+      padding: 8px 14px !important;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 1px rgba(212, 175, 55, 0.5) !important;
+      pointer-events: none !important;
+    }
+    .leaflet-hover-card::before {
+      border-top-color: rgba(14, 18, 16, 0.95) !important;
+    }
+    .custom-map-hover-tip {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: left;
+    }
+    .custom-map-hover-tip .tip-badge {
+      font-family: var(--font-sans);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #D4AF37;
+      font-weight: 700;
+    }
+    .custom-map-hover-tip .tip-title {
+      font-family: var(--font-serif);
+      font-size: 14.5px;
+      color: #FAF9F7;
+      font-weight: 500;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+    .custom-map-hover-tip .tip-sub {
+      font-family: 'TildaSans', sans-serif;
+      font-size: 11.5px;
+      color: rgba(255, 255, 255, 0.65);
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER WITH PROGRESS PERCENT (FATUKHIN EFFECT) -->
+  <div id="preloader">
+    <div class="logo-badge-wrap" style="margin-bottom: 20px; transform: scale(1.15);">
+      <img src="images/tulum_gardens_logo.png" alt="TulumGardens The Location" class="logo-img">
+    </div>
+    <div class="pre-num" id="pre-counter">0%</div>
+    <div class="pre-bar-bg">
+      <div class="pre-bar-fill" id="pre-bar"></div>
+    </div>
+  </div>
+
+  <!-- GLASS HEADER -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="logo-box">
+        <div class="logo-badge-wrap">
+          <img src="images/tulum_gardens_logo.png" alt="TulumGardens The Location" class="logo-img">
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#benefits">Гарантии</a></li>
+        <li><a href="#location">Локация</a></li>
+        <li><a href="#video">Медиатека</a></li>
+        <li><a href="#catalog">Таунхаусы</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <div class="header-cta">
+        <div class="lang-switch-box">
+          <button class="lang-btn active" id="btn-lang-ru" onclick="toggleLanguage('ru')">RU</button>
+          <button class="lang-btn" id="btn-lang-en" onclick="toggleLanguage('en')">EN</button>
+        </div>
+        <a href="tel:+529841234567" class="header-phone" style="color:#FFFFFF;">
+          <span>+52 (984) 123-4567</span>
+        </a>
+        <button class="btn btn-accent" id="header-catalog-btn" onclick="openModal('Скачать презентацию проекта')">
+          Скачать брошюру
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH VIDEO BACKGROUND -->
+  <section class="hero">
+    <div class="hero-bg-media">
+      <video class="active" id="hero-v1" src="videos/tulum_drone_hero_compressed.mp4" autoplay muted playsinline></video>
+      <video id="hero-v2" autoplay muted playsinline></video>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <div class="hero-body">
+        <span class="hero-badge">ГОТОВЫЕ ЮНИТЫ ОТ СОБСТВЕННИКА</span>
+        <h1 class="hero-h1">
+          Обеспечьте себе <span>пассивный доход 9% годовых</span> и второй дом на Карибах в Тулуме
+        </h1>
+        <p class="hero-subtext">
+          Премиальные резиденции в закрытом приватном комьюнити Тулума.<br>
+          Откройте для себя уникальный эко-стиль жизни на Карибском побережье Мексики,<br>
+          где первозданная природа сочетается с высокими стандартами комфорта и статусом.<br><br>
+          <strong style="color: var(--accent); font-weight: 600;">
+            Скачайте гайд «5 причин переехать в Мексику»
+            и получите персональную консультацию эксперта:
+          </strong>
+        </p>
+        <div class="hero-btns">
+          <button class="btn btn-accent" onclick="openModal('Главный экран: Скачать гайд 5 причин переехать в Мексику')">
+            Скачать гайд «5 причин переехать в Мексику»
+          </button>
+          <button class="btn btn-outline-gold" onclick="openModal('Главный экран: Получить консультацию')">
+            Получить консультацию
+          </button>
+        </div>
+
+        <!-- LUXURY 4-STAT GRID DIRECTLY ALIGNED WITH HERO TITLE & CONTAINER -->
+        <div class="hero-stat-cards-grid" style="margin-top: 36px;">
+          <div class="stat-pill-wrap">
+            <div class="hero-stat-pill"><div class="stat-top-val">Развитая инфраструктура</div></div>
+            <div class="stat-sub-text">Рядом аэропорт TQO, скоростной поезд Tren Maya, ТЦ, детские сады и частные клиники</div>
+          </div>
+          <div class="stat-pill-wrap">
+            <div class="hero-stat-pill"><div class="stat-top-val">100% Собственность</div></div>
+            <div class="stat-sub-text">Безусловная личная частная собственность на землю и таунхаус с полным правом дарения и наследования</div>
+          </div>
+          <div class="stat-pill-wrap">
+            <div class="hero-stat-pill"><div class="stat-top-val">Частная школа</div></div>
+            <div class="stat-sub-text">100 м • Международный колледж Colegio Inglés в 1-2 мин пешком по безопасным парковым аллеям</div>
+          </div>
+          <div class="stat-pill-wrap">
+            <div class="hero-stat-pill"><div class="stat-top-val">12 мин до пляжа</div></div>
+            <div class="stat-sub-text">Белоснежные карибские пляжи,<br>эко-заповедник Jaguar Park<br>и премиальные пляжные клубы</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUNNING MARQUEE TICKER (FATUKHIN EFFECT) -->
+  <div class="ticker-bar">
+    <div class="marquee-track">
+      <div class="marquee-item">8 Таунхаусов <span>от собственника</span></div>
+      <div class="marquee-item">Частная собственность <span>Фрихолд</span></div>
+      <div class="marquee-item">Доходность <span>9% годовых</span></div>
+      <div class="marquee-item">Статус резидента <span>ВНЖ и Паспорт 150+ стран</span></div>
+      <div class="marquee-item">Пляжи Карибского моря <span>15 минут</span></div>
+      <div class="marquee-item">Школа Colegio Inglés <span>100 метров</span></div>
+      <div class="marquee-item">Английская школа <span>Colegio Inglés близко</span></div>
+      <div class="marquee-item">Эксклюзивные юниты <span>от собственника</span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-item">8 Таунхаусов <span>от собственника</span></div>
+      <div class="marquee-item">Частная собственность <span>Фрихолд</span></div>
+      <div class="marquee-item">Доходность <span>9% годовых</span></div>
+      <div class="marquee-item">Статус резидента <span>ВНЖ и Паспорт 150+ стран</span></div>
+      <div class="marquee-item">Пляжи Карибского моря <span>15 минут</span></div>
+      <div class="marquee-item">Школа Colegio Inglés <span>100 метров</span></div>
+      <div class="marquee-item">Английская школа <span>Colegio Inglés близко</span></div>
+      <div class="marquee-item">Эксклюзивные юниты <span>от собственника</span></div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       SECTION 2: LEGAL & FINANCIAL GUARANTEES (BENTO CARDS)
+       ======================================================== -->
+  <section id="benefits" style="background: var(--bg);">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Гарантии и Статус</span>
+        <h2 class="sec-title">Юридическая прозрачность<br>и привилегии резидентов</h2>
+        <p class="sec-desc">Полная правовая защита, готовая отельная модель управления и идеальные условия для жизни семьи.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- CARD 1 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-num">01</span>
+              <span class="bento-tag">Статус и Гражданство</span>
+            </div>
+            <h3 class="bento-title">ВНЖ и Паспорт<br>(150+ стран без виз)</h3>
+            <p class="bento-desc">Инвестиции дают вам и вашей семье право на получение ВНЖ Residente Temporal в Мексике с перспективой оформления гражданства. Паспорт Мексики обеспечивает безвизовый въезд в 150+ стран мира.</p>
+          </div>
+          <div class="bento-bottom-row">
+            <div class="bento-arrow">↗</div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-num">02</span>
+              <span class="bento-tag">Юридический статус</span>
+            </div>
+            <h3 class="bento-title">100% Freehold<br>на физическое лицо</h3>
+            <p class="bento-desc">Каждый таунхаус передается в безусловную личную частную собственность (Фрихолд) на физлицо с 100% владением землей и строением, правом перепродажи, сдачи и дарения.</p>
+          </div>
+          <div class="bento-bottom-row">
+            <div class="bento-arrow">↗</div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-num">03</span>
+              <span class="bento-tag">Сервис и операционка</span>
+            </div>
+            <h3 class="bento-title">Топовая Управляющая<br>Компания</h3>
+            <p class="bento-desc">Профессиональная Управляющая Компания полного цикла берет на себя 100% операционной работы: премиальное продвижение, встречу гостей, клининг, охрану и регулярные выплаты на ваш счет.</p>
+          </div>
+          <div class="bento-bottom-row">
+            <div class="bento-arrow">↗</div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-num">04</span>
+              <span class="bento-tag">Арендный доход и Ликвидность</span>
+            </div>
+            <h3 class="bento-title">Пассивный доход<br>9% годовых</h3>
+            <p class="bento-desc">Инновационная система Lock-Off позволяет комфортно проживать в одной части резиденции и параллельно сдавать остальные автономные зоны. Дефицит семейных лотов гарантирует быструю и выгодную перепродажу.</p>
+          </div>
+          <div class="bento-bottom-row">
+            <div class="bento-arrow">↗</div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-num">05</span>
+              <span class="bento-tag">Образование и Дети</span>
+            </div>
+            <h3 class="bento-title">100 метров до школы<br>Colegio Inglés</h3>
+            <p class="bento-desc">Всего в 100 метрах находится ведущий международный билингвальный колледж Colegio Inglés (аккредитация IB / Cambridge). Дети доходят на занятия за 3 минуты по закрытым парковым аллеям без машин.</p>
+          </div>
+          <div class="bento-bottom-row">
+            <div class="bento-arrow">↗</div>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-num">06</span>
+              <span class="bento-tag">Инфраструктура и Дороги</span>
+            </div>
+            <h3 class="bento-title">Развитая инфраструктура<br>и Торговые Центры</h3>
+            <p class="bento-desc">В непосредственной близости расположен новый международный аэропорт TQO, скоростной поезд Tren Maya (800 м), супермаркеты Soriana, торговые центры, Michelin-ресторан Cetli и фестивальный центр Zamna.</p>
+          </div>
+          <div class="bento-bottom-row">
+            <div class="bento-arrow">↗</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BROKER CTA BANNER (WITH 3D GLOSSY GOLDEN GROWTH CHART CREATIVES) -->
+  <div id="consulting-banner" class="consulting-banner-wrap">
+    <!-- LEFT 3D GOLDEN GROWTH CHART -->
+    <div id="consulting-vector-left" class="consulting-vector left-vector">
+      <img src="images/gold_growth_chart.png" alt="Динамика доходности" class="consulting-chart-img">
+    </div>
+
+    <!-- RIGHT 3D GOLDEN GROWTH CHART (MIRRORED) -->
+    <div id="consulting-vector-right" class="consulting-vector right-vector">
+      <img src="images/gold_growth_chart.png" alt="Динамика доходности" class="consulting-chart-img" style="transform: scaleX(-1);">
+    </div>
+
+    <div class="container" style="text-align:center;max-width:720px;position:relative;z-index:2;">
+      <div style="font-family:var(--font-sans);font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#D4AF37;margin-bottom:20px;font-weight:700;">Для частных инвесторов</div>
+      <h3 style="font-family:var(--font-serif);font-size:clamp(26px,3.5vw,40px);color:#FAF9F7;font-weight:400;margin:0 0 20px;line-height:1.25;">Если вы инвестор: персональный аудит и расчет окупаемости</h3>
+      <p style="font-family:'TildaSans',sans-serif;font-size:17px;color:#B8B4AE;line-height:1.48;margin:0 0 32px;">Мы проведём детальный финансовый аудит вашей инвестиционной стратегии, подберём оптимальный формат резиденции и возьмём на себя 100% процесса покупки — от первого звонка до получения ключей и оформления собственности.</p>
+      <div style="display:flex;justify-content:center;">
+        <button class="btn btn-accent" onclick="openModal('Аудит инвестиционного портфеля')" style="font-size:17px;padding:18px 48px;">Запросить инвестиционный аудит →</button>
+      </div>
+    </div>
+  </div>
+  <!-- ========================================================
+       SECTION 3: LOCATION & INTERACTIVE MAP
+       ======================================================== -->
+  <section class="map-section" id="location">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Инфраструктура и локация</span>
+        <h2 class="sec-title">Эпицентр курортного Тулума: 15 минут до Карибского моря</h2>
+        <p class="sec-desc">Интерактивная карта: наведите на метки, чтобы увидеть расстояния до ключевых объектов инфраструктуры.</p>
+      </div>
+
+      <div class="map-box" style="position: relative;">
+        <div id="leaflet-map-canvas" style="width: 100%; height: 540px; border-radius: 6px; border: 1px solid var(--border-accent); z-index: 1;"></div>
+      </div>
+
+      <!-- COMPACT INTERACTIVE LOCATION & PROJECT USP PANEL -->
+      <div class="loc-interactive-panel">
+        <!-- LEFT TAB SELECTOR (8 COMPREHENSIVE USPs) -->
+        <div class="loc-usp-nav">
+          <div class="loc-usp-tab active" onclick="switchLocUsp(0)">
+            <div class="tab-left">
+              <span class="tab-num">01</span>
               <span class="tab-name">Аэропорт TQO и Поезд Tren Maya</span>
             </div>
             <span class="tab-val">800 м</span>
@@ -2816,76 +5002,76 @@
     // LOCATION & PROJECT USP DATA (FULLY DETAILED WITH REAL TULUM MARKET & INFRASTRUCTURE FACTS)
     const locUsps = [
       {
-        tag: '01 / Авиасообщение и Скоростной Транспорт',
-        title: 'Новый международный аэропорт TQO и станция поезда Tren Maya (800 м)',
-        text: 'Тулум получил колоссальный инфраструктурный импульс: <strong>новый международный аэропорт Фелипе Каррильо Пуэрто (TQO)</strong> и <strong>станция скоростного поезда Tren Maya всего в 800 метрах от комплекса</strong>. Скоростная ЖД-магистраль связывает резидентов с аэропортом, Канкуном, Плайя-дель-Кармен и Юкатаном, а новые многополосные автомагистрали обеспечивают быстрый и комфортный трафик.',
-        metric: '800 м',
-        sub: 'до станции поезда Tren Maya и аэропорта TQO',
+        tag: '01 / Авиасообщение',
+        title: 'Международный аэропорт Фелипе Каррильо Пуэрто (TQO)',
+        text: 'Тулум получил собственный <strong>ультрасовременный международный аэропорт (TQO)</strong> всего в 15 минутах от комплекса. Прямые рейсы из США, Канады, Европы и Латинской Америки обеспечивают круглогодичный приток платежеспособных туристов и постоянных резидентов.',
+        metric: '15 мин',
+        sub: 'до международного аэропорта TQO',
         img: 'images/tulum_airport_station.jpg',
-        badge: '01 / Аэропорт TQO & Поезд Tren Maya'
+        badge: '01 / Аэропорт TQO • 15 мин'
       },
       {
-        tag: '02 / Торговля и Городские Сервисы',
+        tag: '02 / Скоростной ЖД-Транспорт',
+        title: 'Станция скоростного поезда Tren Maya (800 м)',
+        text: 'Главная скоростная ЖД-магистраль Юкатана связывает резидентов комплекса с аэропортом, Канкуном, Плайя-дель-Кармен и археологическими парками. <strong>Станция поезда Tren Maya находится всего в 800 метрах</strong> от Tulum Gardens.',
+        metric: '800 м',
+        sub: 'до станции скоростного поезда Tren Maya',
+        img: 'images/tulum_airport_station.jpg',
+        badge: '02 / Поезд Tren Maya • 800 м'
+      },
+      {
+        tag: '03 / Торговля и Городские Сервисы',
         title: 'Крупные новые Торговые Центры, Soriana и Городские Парки',
         text: 'В Тулуме открываются <strong>современные Торговые Центры премиум-класса</strong>, открытые торговые галереи, гипермаркет Soriana и благоустроенные городские парки. Все сервисы мировой инфраструктуры (частные госпитальные центры, банки, спа-павильоны и фитнес-клубы) находятся в радиусе 3–5 минут.',
         metric: 'Новые ТЦ',
         sub: 'торговые центры, парки и супермаркеты',
         img: 'images/tulum_shopping_mall.jpg',
-        badge: '02 / Торговые Центры & Soriana'
+        badge: '03 / Торговые Центры & Soriana'
       },
       {
-        tag: '03 / Пляжи Карибов & Нацпарк',
+        tag: '04 / Пляжи Карибов & Нацпарк',
         title: 'Пляжи Карибского моря и Jaguar Park (12 мин)',
         text: 'Всего <strong>12 минут на авто или электровелосипеде</strong> по живописной эко-трассе через национальный биосферный заповедник <strong>Jaguar Park</strong> до белоснежных карибских пляжей с бирюзовой водой и пляжными клубами мирового уровня.',
         metric: '12 мин',
         sub: 'до белоснежных пляжей Карибского моря',
         img: 'images/tulum_caribbean_beach.jpg',
-        badge: '03 / Пляжи Карибов & Jaguar Park'
+        badge: '04 / Пляжи Карибов & Jaguar Park'
       },
       {
-        tag: '04 / «Второе Бали» & Сообщество',
-        title: '«Второе Бали»: Духовный центр, Крипто-хаб и Музфестивали (Zamna)',
-        text: 'Тулум (постоянное население 50–60 тыс. жителей) по праву называют «Вторым Бали»: это главное место притяжения для <strong>мирового криптокомьюнити, духовных практик и легендарных музыкальных фестивалей (Zamna)</strong>. В сезон численность населения вырастает в 3–4 раза за счет состоятельных гостей из США и Европы.',
-        metric: '3-4х рост',
-        sub: 'населения и туристов в высокий сезон',
+        tag: '05 / Сезонный Спрос & Сообщество',
+        title: '«Второе Бали»: Сезонный прирост населения в 3–4 раза и мировой крипто-хаб',
+        text: 'При постоянном населении Тулума в 50–60 тыс. жителей, <strong>в каждый высокий сезон численность людей в городе вырастает в 3–4 раза (до 200 000+ человек)</strong> за счёт состоятельных туристов, экспатов, цифровых кочевников и участников мировых музыкальных фестивалей (Zamna). Это обеспечивает постоянный ажиотажный спрос на аренду премиальных резиденций.',
+        metric: '3–4х рост',
+        sub: 'прирост населения и туристов в сезон',
         img: 'images/tulum_bali_crypto.jpg',
-        badge: '04 / «Второе Бали» & Крипто-комьюнити'
+        badge: '05 / «Второе Бали»'
       },
       {
-        tag: '05 / Премиальное Образование',
+        tag: '06 / Премиальное Образование',
         title: '100 метров до элитной частной школы Colegio Inglés',
-        text: 'Ведущий международный частный <strong>билингвальный колледж Colegio Inglés в 100 метрах от резиденций</strong>. Аккредитация IB / Cambridge, обучение на английском и испанском языках с дипломами для поступления в топ-университеты США и Европы. Дети доходят на занятия за 3 минуты по закрытым зеленым аллеям без выезда на проезжую часть.',
-        metric: '300 м',
+        text: 'Ведущий международный частный <strong>билингвальный колледж Colegio Inglés в 100 метрах от резиденций</strong>. Аккредитация IB / Cambridge, обучение на английском и испанском языках с дипломами для поступления в топ-университеты США и Европы. Дети доходят на занятия за 1-2 минуты по закрытым зеленым аллеям без выезда на проезжую часть.',
+        metric: '100 м',
         sub: 'пешком по закрытым безопасным аллеям',
         img: 'images/tulum_colegio_ingles.jpg',
-        badge: '05 / Школа Colegio Inglés • 100 м'
+        badge: '06 / Школа Colegio Inglés • 100 м'
       },
       {
-        tag: '06 / Высокая Гастрономия & Природа',
-        title: 'Рестораны Cetli Michelin и Природные Сеноты',
-        text: 'Гастрономическая сцена Тулума славится концептуальными заведениями высокого класса. Напротив комплекса — авторский ресторан <strong>Cetli со звездой Michelin</strong>, а рядом расположены кристальные природные сеноты (Gran Cenote, Calavera) и древние пирамиды Майя.',
+        tag: '07 / Высокая Гастрономия & Природа',
+        title: 'Рестораны Мишлен, Дзен-сеноты и Бутиковая Культура',
+        text: 'Тулум признан новой гастрономической столицей Латинской Америки с гидом <strong>Michelin 2024</strong>. В пешей доступности и нескольких минутах езды находятся 30+ ресторанных концепций, знаменитый сенот Calavera и живописные джунгли.',
         metric: 'Michelin ★',
-        sub: 'ресторан Cetli, сеноты и древние Майя',
+        sub: 'рестораны и кристальные сеноты',
         img: 'images/tulum_michelin_restaurants.jpg',
-        badge: '06 / Рестораны & Michelin'
+        badge: '07 / Гастрономия Michelin & Сеноты'
       },
       {
-        tag: '07 / Собственность & Архитектура',
-        title: '100% Freehold на физлицо, Патио и Крыши-Террасы 360°',
-        text: 'Каждый таунхаус передается со <strong>100% оформлением земли и недвижимости в личную частную собственность (Фрихолд)</strong> на физическое лицо с правами продажи, сдачи и наследования. Комплекс оснащен приватными патио, видовыми террасами на крыше под перголами для BBQ и системой Lock-Off.',
-        metric: 'Фрихолд',
-        sub: 'личное владение землей и таунхаусом',
-        img: 'images/tulum_freehold_terrace.jpg',
-        badge: '07 / 100% Freehold и Террасы'
-      },
-      {
-        tag: '08 / Доходность & Дефицит Рынка',
-        title: 'Пассивный доход 9% ROI и Дефицит семейных юнитов',
-        text: 'На рынке Тулума переизбыток 1-комнатных студий, поэтому на семейные многокомнатные таунхаусы с системой Lock-Off сохраняется колоссальный дефицит. Объект <strong>всегда легко и выгодно продается</strong>. Топовая Управляющая Компания берет на себя 100% операционной работы под ключ с расчетным доходом <strong>9% годовых в твердой валюте</strong>.',
-        metric: '9% ROI',
-        sub: 'пассивный доход и ликвидная перепродажа',
-        img: 'images/tulum_roi_management.jpg',
-        badge: '08 / Пассивный доход 9% ROI & Управление'
+        tag: '08 / Медицина и Здравоохранение',
+        title: 'Современные частные клиники и международная медицина (3–5 мин)',
+        text: 'В Тулуме и вдоль курортной трассы 307 работает разветвленная сеть <strong>современных частных госпиталей и клиник международного уровня (стандарты США и Европы)</strong>. Круглосуточная скорая помощь, англоязычный медицинский персонал, высокоточная диагностика и международные страховые программы.',
+        metric: '3–5 мин',
+        sub: 'до частных госпиталей и клиник',
+        img: 'images/tulum_shopping_mall.jpg',
+        badge: '08 / Частные госпитали • 3–5 мин'
       }
     ];
 
@@ -3182,14 +5368,14 @@
         sec3Desc: "Interactive Map: Hover or tap markers to view distances to key infrastructure landmarks.",
 
         locTabs: [
-          { name: "TQO Airport & Tren Maya Train", val: "800 m" },
-          { name: "Shopping Malls & Soriana", val: "New Malls" },
-          { name: "Caribbean Beaches & Jaguar Park", val: "15 min" },
-          { name: "\"Second Bali\" & Crypto Community", val: "3-4x Growth" },
-          { name: "Colegio Inglés School", val: "100 m" },
-          { name: "Michelin Dining & Cenotes", val: "Michelin ★" },
-          { name: "100% Freehold & Terraces", val: "Freehold" },
-          { name: "9% Passive ROI & Management", val: "9% ROI" }
+          { name: "Международный аэропорт TQO", val: "15 мин" },
+          { name: "Скоростной поезд Tren Maya", val: "800 м" },
+          { name: "Торговые Центры и Soriana", val: "Новые ТЦ" },
+          { name: "Пляжи Карибов и Jaguar Park", val: "12 мин" },
+          { name: "«Второе Бали»", val: "3-4х рост" },
+          { name: "Школа Colegio Inglés", val: "100 м" },
+          { name: "Рестораны & Michelin", val: "Michelin ★" },
+          { name: "Частные клиники и медицина", val: "3–5 мин" }
         ],
 
         sec4Tag: "Property Media Library in HD / 4K",
