@@ -2627,9 +2627,9 @@
       <!-- FORM VIEW -->
       <div id="modal-form-view">
         <span class="sec-tag" style="margin-bottom: 6px;">Stellar Residences</span>
-        <h3 style="font-family: var(--font-serif); font-size: 24px; color: var(--dark); margin-bottom: 10px;" id="modal-head">Получить персональную консультацию</h3>
+        <h3 style="font-family: var(--font-serif); font-size: 24px; color: var(--dark); margin-bottom: 10px;" id="modal-head">Скачать гайд «5 причин переехать в Мексику»</h3>
         <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6;" id="modal-desc">
-          Оставьте контактные данные — эксперт свяжется с вами в течение 15 минут, подробно ответит на все вопросы и предоставит персональный расчет окупаемости.
+          Заполните форму — сразу после отправки вы моментально получите прямую ссылку на скачивание файла прямо на странице «Спасибо» без перехода в соцсети, чат-боты или сторонние мессенджеры.
         </p>
 
         <form onsubmit="processForm(event, 'Модальная форма')">
@@ -2643,12 +2643,12 @@
           </div>
           <div class="form-group">
             <label style="color: var(--text); font-size: 11px;">Email</label>
-            <input type="email" class="form-input" style="background: var(--bg); color: var(--text); border-color: var(--border);" placeholder="investor@example.com" required>
+            <input type="email" class="form-input" style="background: var(--bg); color: var(--text); border-color: var(--border);" placeholder="ivan@example.com" required>
           </div>
-          <button type="submit" class="btn btn-accent btn-block" style="padding: 16px; margin-top: 8px;">
-            Получить гайд и брошюру с планировками
+          <button type="submit" id="modal-submit-btn" class="btn btn-accent btn-block" style="padding: 16px; font-size: 15px;">
+            Скачать гайд (PDF)
           </button>
-          <div style="font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 10px;">
+          <div style="font-size: 10px; color: var(--text-muted); text-align: center; margin-top: 12px; line-height: 1.4;">
             Нажимая кнопку, вы соглашаетесь на обработку персональных данных
           </div>
         </form>
@@ -3057,11 +3057,29 @@
 
     // MODAL
     function openModal(title) {
-      if (title) document.getElementById('modal-head').innerText = title;
+      const headEl = document.getElementById('modal-head');
+      const descEl = document.getElementById('modal-desc');
+      const btnEl = document.getElementById('modal-submit-btn');
+
+      const modalTitle = title || 'Получить консультацию';
+      if (headEl) headEl.innerText = modalTitle;
+
+      const tLower = modalTitle.toLowerCase();
+      const isGuideOrDownload = tLower.includes('гайд') || tLower.includes('скачать') || tLower.includes('guide') || tLower.includes('материал') || tLower.includes('доклад') || tLower.includes('причин') || tLower.includes('презентац');
+
+      if (isGuideOrDownload) {
+        if (descEl) descEl.innerText = 'Заполните форму — сразу после отправки вы моментально получите прямую ссылку на скачивание файла прямо на странице «Спасибо» без перехода в соцсети, чат-боты или сторонние мессенджеры.';
+        if (btnEl) btnEl.innerText = 'Скачать гайд (PDF)';
+      } else {
+        if (descEl) descEl.innerText = 'Оставьте контактные данные — эксперт свяжется с вами в течение 15 минут, подробно ответит на все вопросы и предоставит персональный расчет окупаемости.';
+        if (btnEl) btnEl.innerText = 'Отправить запрос';
+      }
+
       document.getElementById('modal-form-view').style.display = 'block';
       document.getElementById('modal-success-view').style.display = 'none';
       document.getElementById('modal-window').classList.add('active');
     }
+
     function closeModal() {
       document.getElementById('modal-window').classList.remove('active');
     }
