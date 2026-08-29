@@ -3536,29 +3536,30 @@
 
     // REAL SITE VIDEO CINEMA LIBRARY CONTROLLER
     const cinemaVideos = [
-      { src: '1XraGthDNOCUOd0wAC0scIgZKMshcTBjk', cat: 'drone',        tag: 'Аэросъемка 4K', titleRu: 'Панорамный обзор комплекса с высоты птичьего полета',  titleEn: 'Panoramic Aerial 4K Drone Tour',          desc: 'Высотная панорама комьюнити Tulum Gardens и экологического окружения.' },
-      { src: '19Tdurv0JKMASjUNTAXpQU_fUAFY-JnXE', cat: 'drone',        tag: 'Аэросъемка 4K', titleRu: 'Границы участков и транспортные подъезды',             titleEn: 'Masterplan & Access Roads Flyover',        desc: 'Обзор границ комьюнити, дорожной сети и подъездных аллей.' },
-      { src: '1HrKha19QUXnz3AwG2DYuPtfa0Z-F2Cs5', cat: 'construction', tag: 'Ход стройки',   titleRu: 'Инженерная подготовка пятен застройки',               titleEn: 'Site Engineering & Ground Prep',          desc: 'Видеофиксация земельных работ и подготовки участков.' },
-      { src: '1E5THDBGDpIPwKpxmNTM2l_JQ7vWzNDsy', cat: 'construction', tag: 'Ход стройки',   titleRu: 'Возведение монолитного каркаса таунхаусов',           titleEn: 'Monolithic Frame Construction',           desc: 'Динамика монолитных работ и возведения несущих конструкций.' },
-      { src: '1yOKVShY6d8nlQbtpn4yfxVBn-j4-bSH0', cat: 'construction', tag: 'Ход стройки',   titleRu: 'Строительство стен и межэтажных перекрытий',          titleEn: 'Structural Walls & Floor Slabs',          desc: 'Качество кладочных материалов и монтаж перекрытий.' },
-      { src: '12_7HQRUU_bSoNJqpC08hxQMFyVphnmig',  cat: 'construction', tag: 'Ход стройки',   titleRu: 'Монтаж архитектурных форм и террас',                  titleEn: 'Architectural Forms & Terraces',          desc: 'Формирование контуров видовых террас и патио.' },
-      { src: '1SZaJxEFXTDhm9Iniun8D_X9u8LoMIEyd', cat: 'construction', tag: 'Ход стройки',   titleRu: 'Контроль качества армирования и бетонирования',       titleEn: 'Reinforcement & Concrete QC',             desc: 'Инспекция монолитных узлов и конструктивной надежности.' },
-      { src: '15LRPgQigDEA48stzS4B2sDjmY1GnzOJF', cat: 'construction', tag: 'Ход стройки',   titleRu: 'Возведение верхних уровней и кровельных террас',      titleEn: 'Upper Levels & Rooftop Terraces',         desc: 'Готовность верхних террас под перголы и зоны BBQ.' },
-      { src: '1tzGvnhicLI92ZaucUVli7ZgWDFXQ5cPI', cat: 'construction', tag: 'Ход стройки',   titleRu: 'Фасадные работы и архитектурная отделка',             titleEn: 'Facade Works & Architectural Finishes',   desc: 'Применение натурального камня и эко-материалов в отделке.' },
-      { src: '1kva0WARo73K3783LdFwbd2wnIde7NlGb', cat: 'construction', tag: 'Ход стройки',   titleRu: 'Остекление и подготовка оконных проемов',             titleEn: 'Glazing & Window Openings',               desc: 'Установка энергоэффективного панорамного остекления.' },
-      { src: '1YiyyE3JlRxrgpWaDSIYkKbJ6OUXxhlKI', cat: 'construction', tag: 'Территория',    titleRu: 'Ландшафтный дизайн и тропическое озеленение',         titleEn: 'Landscape Design & Tropical Flora',       desc: 'Интеграция резиденций в естественный природный ландшафт.' },
-      { src: '1ehFQd3_nd89sLIcGAUBJC38oMk75QUm_', cat: 'construction', tag: 'Территория',    titleRu: 'Приватные внутренние дворики и патио',                titleEn: 'Private Courtyards & Green Patios',       desc: 'Обустройство личных зеленых зон отдыха первого уровня.' },
-      { src: '1lItmw51eYNyCLW7BN_DJ_YxwpOk30YR_', cat: 'construction', tag: 'Территория',    titleRu: 'Пешеходные эко-аллеи без автомобильного трафика',     titleEn: 'Car-Free Pedestrian Greenways',           desc: 'Безопасные зеленые коридоры для прогулок жителей и детей.' },
-      { src: '1CyrclHHNt233OPxSZYjrwAlF7uMw4Ma_', cat: 'construction', tag: 'Территория',    titleRu: 'Зоны отдыха у бассейнов и лаунж-пространства',        titleEn: 'Poolside Lounges & Relaxation Areas',     desc: 'Пространства для отдыха на открытом воздухе.' },
-      { src: '1InOC5AKFgw8QaYYR2fByCupnnXUxCL1-', cat: 'construction', tag: 'Территория',    titleRu: 'Природное окружение реликтового тропического леса',   titleEn: 'Ancient Tropical Rainforest Buffer',      desc: 'Заповедное экологическое окружение комьюнити.' },
-      { src: '1Hfsr4D56PPw9onXaduNrxpjNlUw5CK2p', cat: 'construction', tag: 'Территория',    titleRu: 'Эко-концепция и естественное освещение',              titleEn: 'Eco-Living & Natural Daylighting',        desc: 'Гармония современной архитектуры с тропической природой.' },
-      { src: '1CWj-QthM3r3nZlvJSBjrtx0VJ0uE-pNH', cat: 'construction', tag: 'Территория',    titleRu: 'Финальный видеообход территории комьюнити',           titleEn: 'Comprehensive Community Walkthrough',     desc: 'Итоговый обзор готовности инфраструктуры комплекса.' }
+      { src: '1XraGthDNOCUOd0wAC0scIgZKMshcTBjk', cat: 'drone',        tagRu: 'Аэросъемка 4K', tagEn: '4K Aerial Drone',        titleRu: 'Панорамный обзор комплекса с высоты птичьего полета',  titleEn: 'Panoramic Aerial 4K Drone Tour',          descRu: 'Высотная панорама комьюнити Tulum Gardens и экологического окружения.', descEn: 'High-altitude aerial flyover of Tulum Gardens community & eco-surroundings.' },
+      { src: '19Tdurv0JKMASjUNTAXpQU_fUAFY-JnXE', cat: 'drone',        tagRu: 'Аэросъемка 4K', tagEn: '4K Aerial Drone',        titleRu: 'Границы участков и транспортные подъезды',             titleEn: 'Masterplan Boundaries & Access Roads',    descRu: 'Обзор границ комьюнити, дорожной сети и подъездных аллей.',            descEn: 'Overview of lot boundaries, road infrastructure & access avenues.' },
+      { src: '1HrKha19QUXnz3AwG2DYuPtfa0Z-F2Cs5', cat: 'construction', tagRu: 'Ход стройки',   tagEn: 'Construction Progress',  titleRu: 'Инженерная подготовка пятен застройки',               titleEn: 'Site Engineering & Ground Preparation',   descRu: 'Видеофиксация земельных работ и подготовки участков.',                  descEn: 'Video recording of ground leveling & site preparation.' },
+      { src: '1E5THDBGDpIPwKpxmNTM2l_JQ7vWzNDsy', cat: 'construction', tagRu: 'Ход стройки',   tagEn: 'Construction Progress',  titleRu: 'Возведение монолитного каркаса таунхаусов',           titleEn: 'Townhouse Monolithic Frame Construction', descRu: 'Динамика монолитных работ и возведения несущих конструкций.',         descEn: 'Monolithic concrete pouring & structural frame dynamics.' },
+      { src: '1yOKVShY6d8nlQbtpn4yfxVBn-j4-bSH0', cat: 'construction', tagRu: 'Ход стройки',   tagEn: 'Construction Progress',  titleRu: 'Строительство стен и межэтажных перекрытий',          titleEn: 'Structural Walls & Interfloor Slabs',      descRu: 'Качество кладочных материалов и монтаж перекрытий.',                    descEn: 'Masonry material quality & reinforced slab installation.' },
+      { src: '12_7HQRUU_bSoNJqpC08hxQMFyVphnmig',  cat: 'construction', tagRu: 'Ход стройки',   tagEn: 'Construction Progress',  titleRu: 'Монтаж архитектурных форм и террас',                  titleEn: 'Architectural Elements & Terrace Assembly',descRu: 'Формирование контуров видовых террас и патио.',                      descEn: 'Shaping rooftop terrace contours, balconies & patios.' },
+      { src: '1SZaJxEFXTDhm9Iniun8D_X9u8LoMIEyd', cat: 'construction', tagRu: 'Ход стройки',   tagEn: 'Construction Progress',  titleRu: 'Контроль качества армирования и бетонирования',       titleEn: 'Reinforcement & Concrete Quality Control', descRu: 'Инспекция монолитных узлов и конструктивной надежности.',              descEn: 'Inspection of reinforced structural nodes & durability.' },
+      { src: '15LRPgQigDEA48stzS4B2sDjmY1GnzOJF', cat: 'construction', tagRu: 'Ход стройки',   tagEn: 'Construction Progress',  titleRu: 'Возведение верхних уровней и кровельных террас',      titleEn: 'Upper Levels & Rooftop Terrace Buildout', descRu: 'Готовность верхних террас под перголы и зоны BBQ.',                    descEn: 'Readiness of upper solarium decks for pergolas & BBQ.' },
+      { src: '1tzGvnhicLI92ZaucUVli7ZgWDFXQ5cPI', cat: 'construction', tagRu: 'Ход стройки',   tagEn: 'Construction Progress',  titleRu: 'Фасадные работы и архитектурная отделка',             titleEn: 'Facade Works & Architectural Finishes',   descRu: 'Применение натурального камня и эко-материалов в отделке.',             descEn: 'Application of natural Yucatan stone & eco-materials.' },
+      { src: '1kva0WARo73K3783LdFwbd2wnIde7NlGb', cat: 'construction', tagRu: 'Ход стройки',   tagEn: 'Construction Progress',  titleRu: 'Остекление и подготовка оконных проемов',             titleEn: 'Panoramic Glazing & Window Openings',     descRu: 'Установка энергоэффективного панорамного остекления.',                    descEn: 'Installation of energy-efficient panoramic glazing.' },
+      { src: '1YiyyE3JlRxrgpWaDSIYkKbJ6OUXxhlKI', cat: 'construction', tagRu: 'Территория',    tagEn: 'Territory & Landscape',  titleRu: 'Ландшафтный дизайн и тропическое озеленение',         titleEn: 'Landscape Architecture & Tropical Greenery',descRu: 'Интеграция резиденций в естественный природный ландшафт.',            descEn: 'Seamless integration of residences into natural botanical flora.' },
+      { src: '1ehFQd3_nd89sLIcGAUBJC38oMk75QUm_', cat: 'construction', tagRu: 'Территория',    tagEn: 'Territory & Landscape',  titleRu: 'Приватные внутренние дворики и патио',                titleEn: 'Private Courtyards & Ground Patios',       descRu: 'Обустройство личных зеленых зон отдыха первого уровня.',                 descEn: 'Design & layout of private ground-level outdoor lounges.' },
+      { src: '1lItmw51eYNyCLW7BN_DJ_YxwpOk30YR_', cat: 'construction', tagRu: 'Территория',    tagEn: 'Territory & Landscape',  titleRu: 'Пешеходные эко-аллеи без автомобильного трафика',     titleEn: 'Car-Free Pedestrian Greenways',           descRu: 'Безопасные зеленые коридоры для прогулок жителей и детей.',             descEn: 'Safe, tranquil walking corridors for families & children.' },
+      { src: '1CyrclHHNt233OPxSZYjrwAlF7uMw4Ma_', cat: 'construction', tagRu: 'Территория',    tagEn: 'Territory & Landscape',  titleRu: 'Зоны отдыха у бассейнов и лаунж-пространства',        titleEn: 'Poolside Lounges & Sun Decks',            descRu: 'Пространства для отдыха на открытом воздухе.',                           descEn: 'Open-air relaxation spaces surrounding private pools.' },
+      { src: '1InOC5AKFgw8QaYYR2fByCupnnXUxCL1-', cat: 'construction', tagRu: 'Территория',    tagEn: 'Territory & Landscape',  titleRu: 'Природное окружение реликтового тропического леса',   titleEn: 'Ancient Tropical Rainforest Buffer',      descRu: 'Заповедное экологическое окружение комьюнити.',                          descEn: 'Protected ecological flora surrounding the community.' },
+      { src: '1Hfsr4D56PPw9onXaduNrxpjNlUw5CK2p', cat: 'construction', tagRu: 'Территория',    tagEn: 'Territory & Landscape',  titleRu: 'Эко-концепция и естественное освещение',              titleEn: 'Eco-Living Concept & Natural Lighting',   descRu: 'Гармония современной архитектуры с тропической природой.',             descEn: 'Harmony of modern architecture with tropical nature.' },
+      { src: '1CWj-QthM3r3nZlvJSBjrtx0VJ0uE-pNH', cat: 'construction', tagRu: 'Территория',    tagEn: 'Territory & Landscape',  titleRu: 'Финальный видеообход территории комьюнити',           titleEn: 'Comprehensive Community Walkthrough',     descRu: 'Итоговый обзор готовности инфраструктуры комплекса.',                   descEn: 'Final walkthrough of community infrastructure & readiness.' }
     ];
 
     let currentCinemaIdx = 0;
 
     function renderPlaylist(filterCat = 'all') {
       const container = document.getElementById('cinema-playlist-items');
+      if (!container) return;
       container.innerHTML = '';
       
       const filtered = cinemaVideos.map((v, i) => ({ ...v, originalIndex: i }))
@@ -3569,15 +3570,19 @@
         item.className = 'v-item' + (vid.originalIndex === currentCinemaIdx ? ' active' : '');
         item.onclick = () => selectCinemaVideo(vid.originalIndex);
         
+        const tagText = currentLang === 'en' ? vid.tagEn : vid.tagRu;
+        const titleText = currentLang === 'en' ? vid.titleEn : vid.titleRu;
+        const descText = currentLang === 'en' ? vid.descEn : vid.descRu;
+
         item.innerHTML = `
           <div class="v-thumb">
             <img src="https://drive.google.com/thumbnail?id=${vid.src}&sz=w320" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async">
             <div class="v-play">▶</div>
           </div>
           <div class="v-info">
-            <span class="v-tag">${vid.tag}</span>
-            <h4 class="v-name">${currentLang === "en" ? vid.titleEn : vid.titleRu}</h4>
-            <p class="v-sub">${vid.desc}</p>
+            <span class="v-tag">${tagText}</span>
+            <h4 class="v-name">${titleText}</h4>
+            <p class="v-sub">${descText}</p>
           </div>
         `;
         container.appendChild(item);
@@ -3589,11 +3594,14 @@
       const vid = cinemaVideos[idx];
       const player = document.getElementById('stage-player');
 
-      // iframe-based Google Drive player
-      player.src = 'https://drive.google.com/file/d/' + vid.src + '/preview';
+      if (player && vid) {
+        player.src = 'https://drive.google.com/file/d/' + vid.src + '/preview';
+      }
 
-      document.getElementById('stage-title').innerText = currentLang === 'en' ? vid.titleEn : vid.titleRu;
-      document.getElementById('stage-desc').innerText = vid.desc;
+      const stageTitle = document.getElementById('stage-title');
+      const stageDesc = document.getElementById('stage-desc');
+      if (stageTitle && vid) stageTitle.innerText = currentLang === 'en' ? vid.titleEn : vid.titleRu;
+      if (stageDesc && vid) stageDesc.innerText = currentLang === 'en' ? vid.descEn : vid.descRu;
 
       const activeBtn = document.querySelector('.cat-btn.active');
       renderPlaylist(activeBtn ? activeBtn.getAttribute('onclick').match(/'(.*?)'/)[1] : 'all');
@@ -4043,217 +4051,226 @@
 
         heroBadge: "8 EXCLUSIVE RESIDENCES FROM THE OWNER",
         heroH1: "Secure a <span>9% Annual ROI</span> & a Luxury Caribbean Home in Tulum for Your Family",
-        heroSubtext: "Premium residences in a gated private community in Tulum.<br>Discover an exceptional eco-luxury lifestyle on Mexico’s Caribbean Coast,<br>where pristine tropical nature meets world-class comfort<br>and high international rental demand.<br><br><strong style=\"color: var(--accent); font-weight: 600;\">Download the \"Top 5 Reasons to Move to Mexico\" Guide & get an expert consultation:</strong>",
+        heroSubtext: "Spacious residences in a gated private community in Tulum.<br>Discover an exceptional eco-luxury lifestyle on Mexico’s Caribbean Coast,<br>where pristine tropical nature meets world-class comfort<br>and high international rental demand.<br><br><strong style="color: var(--accent); font-weight: 600;">Download the "Top 5 Reasons to Move to Mexico" Guide & get an expert consultation:</strong>",
         heroBtn1: "Download Guide (PDF)",
         heroBtn2: "Schedule a Consultation",
 
-        statPill1Val: "Developed Infrastructure",
-        statPill1Sub: "Nearby TQO Airport, Tren Maya rail, shopping malls, kindergartens, parks & private clinics",
-        statPill2Val: "100% Freehold Title",
-        statPill2Sub: "Direct personal land & property title deed with full inheritance rights",
-        statPill3Val: "Private School",
-        statPill3Sub: "100m • Prestigious Colegio Inglés college just 1-2 min walk via safe gated green walkways",
-        statPill4Val: "15 Min to Beach",
-        statPill4Sub: "Pristine Caribbean white sand beaches, Jaguar Park biosphere & luxury beach clubs",
+        statPill1Val: "Private School • 100m",
+        statPill1Sub: "Colegio Inglés bilingual IB college just 1-2 min walk via safe gated green walkways",
+        statPill2Val: "Developed Infrastructure",
+        statPill2Sub: "TQO Airport, Tren Maya rail, luxury malls, Michelin dining & global crypto community",
+        statPill3Val: "100% Freehold Title",
+        statPill3Sub: "Unconditional private property deed in individual name with full inheritance rights",
+        statPill4Val: "15 Min to Caribbean",
+        statPill4Sub: "Pristine white sand beaches, Jaguar Park biosphere & world-class beach clubs",
 
         bento: [
           { tag: 'LEGAL STATUS', title: '100% Freehold Title<br>in Individual Name', desc: '<strong>Full personal ownership:</strong> unconditional private property title to both residence and land with full right to sell, rent, or pass to heirs.' },
           { tag: 'RESIDENCY & PASSPORT', title: 'Residency & Passport<br>(150+ Visa-Free Countries)', desc: '<strong>Favorable immigration policy:</strong> swift Temporary Residency (Residente Temporal) and Citizenship for your entire family. <em>Free legal consultation included.</em>' },
           { tag: 'SERVICES & OPERATIONS', title: 'Top Hospitality<br>Management Company', desc: '<strong>360° Turnkey Management:</strong> operator handles 100% of tasks — global marketing, US/Canada guest hosting, housekeeping, and USD payouts. 80%+ occupancy.' },
-          { tag: 'RENTAL YIELD & LIQUIDITY', title: '9% Annual Passive ROI<br>in USD', desc: '<strong>Lock-Off System (9% ROI):</strong> live in your residence while independently renting out guest suites with private entrances. High family unit deficit ensures easy resale.' },
-          { tag: 'EDUCATION & KIDS', title: '100 Meters to<br>Colegio Inglés School', desc: '<strong>Colegio Inglés School (100m):</strong> prestigious IB/Cambridge bilingual private college. 3-min walk via safe gated green walkways without car traffic.' },
-          { tag: 'INFRASTRUCTURE & ROADS', title: 'Prime Infrastructure<br>& Shopping Malls', desc: '<strong>Infrastructure Hub:</strong> TQO Airport, Tren Maya train station (800m), highway network, shopping centers, Soriana, "Second Bali" crypto community, and Zamna festival.' }
+          { tag: 'RENTAL YIELD & LIQUIDITY', title: '9% Annual Passive ROI<br>in USD', desc: '<strong>Lock-Off System (9% ROI):</strong> live in your residence and rent out autonomous suites, or earn hands-free passive yield in hard currency with capital appreciation.' },
+          { tag: 'EDUCATION & KIDS', title: '100 Meters to<br>Colegio Inglés School', desc: '<strong>Colegio Inglés School (100m):</strong> prestigious IB/Cambridge bilingual private college. 2-min walk via safe pedestrian greenways without cars.' },
+          { tag: 'PRIVACY & EXCLUSIVITY', title: 'Private Gated Community<br>of 8 Townhouses', desc: '<strong>8 exclusive residences from owner:</strong> individual plunge pools, private ground patios, rooftop solarium terraces with BBQ, and serene car-free park alleys.' }
         ],
 
-        sec2Tag: "Guarantees & Status",
-        sec2Title: "Legal Transparency<br>& Resident Privileges",
-        sec2Desc: "Full legal protection, turnkey hotel management model, and ideal living conditions for your family.",
+        // CONSULTING BANNER TRANSLATIONS
+        consultingTag: "FOR PRIVATE INVESTORS",
+        consultingTitle: "For Investors: Tailored Financial Audit & ROI Modeling",
+        consultingDesc: "We will conduct an in-depth financial audit of your investment strategy, select the optimal residence layout, and manage 100% of the acquisition process — from the initial consultation to title deed registration and turnkey handover.",
+        consultingBtn: "Request Investment Audit →",
 
-        sec3Tag: "Infrastructure & Location",
-        sec3Title: "The Epicenter of Tulum Resort: 15 Minutes to the Caribbean Sea",
-        sec3Desc: "Interactive Map: Hover or tap markers to view distances to key infrastructure landmarks.",
+        sec2Tag: "Location & Infrastructure",
+        sec2Title: "Prime Infrastructure Hub in Tulum:<br>Airport, Tren Maya, School & Beach",
+        sec2Desc: "Strategic location: 15 min to TQO International Airport, 800m to Tren Maya train station, 100m to Colegio Inglés school, and 15 min to Caribbean beaches.",
 
         locTabs: [
-          { name: "TQO International Airport", val: "15 min" },
+          { name: "TQO Airport & Transit", val: "15 min" },
           { name: "Tren Maya Train Station", val: "800 m" },
           { name: "Shopping Malls & Soriana", val: "New Malls" },
-          { name: "Caribbean Beaches & Jaguar Park", val: "12 min" },
-          { name: "“Second Bali”", val: "3-4x Growth" },
+          { name: "Caribbean Beaches & Park", val: "12 min" },
+          { name: "«Second Bali» & Community", val: "3-4x Growth" },
           { name: "Colegio Inglés School", val: "100 m" },
           { name: "Michelin Dining & Cenotes", val: "Michelin ★" },
-          { name: "Private Terraces & Pools", val: "Pool & BBQ" },
-          { name: "Private Gated Community", val: "Privacy" }
+          { name: "Terraces & Private Pools", val: "Pool & BBQ" },
+          { name: "Gated Community & Privacy", val: "Privacy" }
         ],
 
-        sec4Tag: "Property Media Library in HD / 4K",
-        sec4Title: "Real Construction Progress<br>& Tulum Gardens Panoramas",
-        sec4Desc: "Interactive Player: Toggle drone flyovers, construction updates, and eco-surroundings in real time.",
+        sec3Tag: "HD / 4K Media Library",
+        sec3Title: "Real Construction Dynamics<br>& Tulum Gardens Panoramas",
+        sec3Desc: "Interactive video player: explore 4K drone flights, construction progress, and eco-surroundings in real time.",
+        cinema: { all: "All (17)", drones: "Drones", construction: "Construction", nature: "Territory" },
+        cinemaStageBtn: "Get Project Materials",
 
-        cinema: { all: "All (21)", drones: "Drones", construction: "Construction", nature: "Eco" },
+        sec4Tag: "Atmosphere & Lifestyle",
+        sec4Title: "Pure Caribbean Atmosphere<br>& Architectural Aesthetics",
+        sec4Desc: "Experience the harmony of modern tropical minimalism, natural textures, private plunge pools, and untouched jungle tranquility.",
 
-        sec5Tag: "Collection of 8 Residences",
-        sec5Title: "Townhouse Catalog & Architectural Plans",
-        sec5Desc: "Select a residence format to view detailed layout specs, square meters, finishing standards, and 3D interior renders.",
+        sec5Tag: "Townhouse Collection",
+        sec5Title: "4 Layout Formats<br>from 103 to 240 m²",
+        sec5Desc: "Private patios, panoramic master bedrooms, private rooftop terraces, and 100% freehold individual title deed.",
 
-        catalogTabs: [ "Garden House (104 m²)", "PentHouse (103 m²)", "PentHouse Plus (137 m²)", "SkyHouse Flagship (205–240 m²)" ],
+        catalogTabs: ["Garden House (103 m²)", "PentHouse (103 m²)", "PentHouse Plus (137 m²)", "SkyHouse (240 m²)"],
 
         units: [
           {
             id: 'tab-gh',
             title: 'Garden House',
-            specs: '84 m² living / 104 m² total • 2 levels • 2 bedrooms • 2 bathrooms • Private Garden & Patio',
-            desc: 'Two-level ground floor residence with direct integration into a landscaped tropical garden. Level 1 features a grand living room with panoramic sliding glass doors, quartzite island kitchen, dining area, and powder room. Level 2 offers a master suite with walk-in wardrobe and en-suite bathroom, plus a second bedroom.',
+            specs: '80 m² interior / 103 m² total • 2 Levels • 2 Bedrooms • 2 Bathrooms • Private Plunge Pool & Patio',
+            desc: 'A stylish 2-level residence with a private tropical ground patio, private plunge pool, and panoramic sliding floor-to-ceiling windows.',
             items: [
-              'Covered private patio with pergola and direct access to private garden',
-              'Two-level layout (Ground Floor + Mezzanine)',
-              'Kitchen with quartzite island and premium built-in appliances',
-              'Master suite with private bathroom and walk-in closet',
-              'VRV multi-split climate control system in every room',
-              '1 dedicated private parking space in front of residence'
+              'Private plunge pool and green patio on ground floor',
+              'Panoramic glazing with tropical jungle views',
+              'Fully turnkey furnished and designer fitted',
+              'Ideal for family living or high-occupancy rental'
             ],
-            btn: 'Get Layout Floor Plan (PDF)'
+            btn: 'Download PDF Floorplan'
           },
           {
             id: 'tab-p',
             title: 'PentHouse',
-            specs: '78 m² living / 103 m² total • 2 levels • 2 bedrooms • 2 bathrooms • Private Solarium',
-            desc: 'Two-level penthouse featuring a private rooftop solarium, lounge zone, and panoramic views over tropical jungle canopies.',
+            specs: '78 m² interior / 103 m² total • 2 Levels • 2 Bedrooms • 2 Bathrooms • Private Rooftop Solarium',
+            desc: 'A duplex penthouse with a private rooftop sun terrace, lounge space, and sweeping panoramic views over the lush jungle canopy.',
             items: [
-              'Panoramic views over tropical forest canopies',
-              'Private rooftop terrace for cocktails and BBQ',
-              'Maximum seasonal occupancy and high rental yield',
-              '100% turnkey hotel management by professional operator'
+              'Panoramic views over tropical rainforest canopy',
+              'Private rooftop terrace for evening cocktails & BBQ',
+              'Maximum occupancy during high rental season',
+              '100% turnkey hospitality management by operator'
             ],
-            btn: 'Get Layout Floor Plan (PDF)'
+            btn: 'Download PDF Floorplan'
           },
           {
             id: 'tab-pp',
             title: 'PentHouse Plus',
-            specs: '102 m² living / 137 m² total • 3 levels • 3 bedrooms • 3 bathrooms • Rooftop Plunge Pool',
-            desc: 'Three-level residence featuring a private rooftop plunge pool, pergola, lounge terrace, and master suite.',
+            specs: '102 m² interior / 137 m² total • 3 Levels • 3 Bedrooms • 3 Bathrooms • Rooftop Pool & Pergola',
+            desc: 'A spacious 3-level residence with a private rooftop swimming pool, natural wooden pergola, sunset lounge deck, and master suite.',
             items: [
-              '3 full bedrooms and 3 full bathrooms',
-              'Spacious BBQ and relaxation zone under rooftop pergola',
-              '1 dedicated private parking space on closed territory',
-              'High liquidity for rapid resale of the unit'
+              '3 full master bedrooms and 3 luxury bathrooms',
+              'Spacious BBQ & relaxation terrace under wooden pergola',
+              'Dedicated parking space within private community',
+              'High liquidity and rapid capital appreciation'
             ],
-            btn: 'Get Layout Floor Plan (PDF)'
+            btn: 'Download PDF Floorplan'
           },
           {
             id: 'tab-s',
             title: 'SkyHouse (Flagship)',
-            specs: '160 m² living / 205–240 m² total • 3 levels • 5 bedrooms • 4 bathrooms • Triple Lock-Off',
-            desc: 'Three-level flagship residence with Lock-Off system for independent rental of multiple autonomous suites to maximize cash flow.',
+            specs: '160 m² interior / 205–240 m² total • 3 Levels • 5 Bedrooms • 4 Bathrooms • Triple Lock-Off System',
+            desc: 'Flagship 3-level residence with autonomous Lock-Off zoning allowing simultaneous rental to multiple guests to maximize cashflow.',
             items: [
-              'Lock-Off system for independent suite rental',
+              'Triple Lock-Off independent suite rental configuration',
               '5 spacious bedrooms for VIP guests and large families',
-              'Grand lounge terrace with 360° views',
-              '9% annual passive ROI in hard currency'
+              'Grand format panoramic lounge terrace with 360° views',
+              '9% annual passive rental ROI in USD'
             ],
-            btn: 'Get Layout Floor Plan (PDF)'
+            btn: 'Download PDF Floorplan'
           }
         ],
 
-        sec6Tag: "Q&A",
-        sec6Title: "Living, Taxes<br>& Property Ownership in Mexico",
-        sec6Desc: "Comprehensive legal and practical guide for investors and families purchasing real estate in Tulum.",
+        sec6Tag: "Frequently Asked Questions",
+        sec6Title: "Everything About Living,<br>Taxes & Property Ownership in Mexico",
+        sec6Desc: "Comprehensive legal and practical information for investors and families planning real estate acquisition in Tulum.",
         faqBtn: "Ask an Expert",
 
         faq: [
-          { q: "How is property title and land ownership legally registered?", a: "Foreign buyers purchase real estate in Mexico through a <strong>Fideicomiso (Bank Trust)</strong> or a Mexican LLC (S. de R.L. de C.V.). This guarantees <strong>100% full unconditional personal ownership</strong> of both land and building with full rights to sell, lease, transfer, or inherit." },
-          { q: "What taxes are associated with buying and owning real estate in Tulum?", a: "The acquisition tax (ISAI) is 2%. Annual property tax (Predial) in Quintana Roo is extremely low (approx. 0.1–0.2% of assessed value). When selling, capital gains tax (ISR) is optimized through legal mechanisms." },
-          { q: "How is property rental managed and how is 9% annual ROI achieved?", a: "Your property is managed by a <strong>top turnkey hospitality management company</strong>. The operator handles 100% of operations: US/Canada marketing, guest hosting, housekeeping, and USD payouts. The <strong>Lock-Off system</strong> allows living in one suite while renting out guest suites." },
-          { q: "Does buying property give the right to Mexican Temporary Residency (Residente Temporal)?", a: "Yes. Investing in real estate over $220,000 USD qualifies you and your family for <strong>Temporary Residency (Residente Temporal)</strong>, convertible to Permanent Residency and Citizenship." },
-          { q: "Where is Colegio Inglés located and how do children reach school?", a: "Colegio Inglés is just <strong>100 meters from the residences</strong>. Children walk to school in 1-2 minutes via private gated green walkways without crossing car traffic." },
-          { q: "What is the distance to beaches, TQO Airport, and Tren Maya station?", a: "The new TQO International Airport and Tren Maya train station are <strong>800 meters away</strong>. Caribbean beaches and Jaguar Park are a 15-minute drive." },
-          { q: "In what currency are rental income payouts made and how are funds transferred to US/EU accounts?", a: "Rental income payouts are executed monthly in <strong>USD or MXN</strong> via direct bank transfer to your account anywhere in the world." },
-          { q: "Is Tulum safe, what about media myths regarding cartels, and how is security organized?", a: "Quintana Roo (Tulum & Riviera Maya) is a premier international resort zone under dedicated federal protection (National Guard & Tourist Police). Tulum Gardens is a private 24/7 gated community with biometric access control, CCTV, and private security guards." }
+          { q: "How is real estate and land ownership legally structured for foreigners?", a: "Foreign buyers purchase real estate in Mexico through a <strong>Fideicomiso (bank trust)</strong> or a Mexican legal entity. This guarantees <strong>100% unconditional private freehold ownership</strong> of both land and property with full rights to sell, rent, gift, or pass to heirs." },
+          { q: "What taxes apply when purchasing and owning a residence in Tulum?", a: "Acquisition tax (ISAI) is 2%. The annual municipal property tax (Predial) in Quintana Roo is exceptionally low (approx. 0.1–0.2% of cadastral value). Capital gains tax (ISR) is optimized through standard tax deductions." },
+          { q: "How is rental management handled and how is the 9% ROI achieved?", a: "Your property is managed by a <strong>top-tier full-cycle hospitality operator</strong>. They manage 100% of operations: global marketing on premium channels, US & European guest concierge, housekeeping, maintenance, and USD payouts. The <strong>Lock-Off system</strong> allows autonomous multi-key rentals." },
+          { q: "Does buying property qualify for Mexican Residency (Residente Temporal)?", a: "Yes. Real estate investment starting from $220,000 qualifies you and your entire family for <strong>Residente Temporal (Temporary Residency)</strong> leading to Permanent Residency and Mexican Citizenship." },
+          { q: "Where is Colegio Inglés located and how do children reach school?", a: "Colegio Inglés school is located <strong>just 100 meters from the residences</strong>. Children walk to school in 1-2 minutes along safe, gated green parkways without crossing any public roads." },
+          { q: "What is the distance to beaches, TQO Airport, and Tren Maya train station?", a: "The new TQO International Airport and Tren Maya high-speed station are located <strong>within 15 minutes and 800 meters</strong> respectively. Caribbean white sand beaches and Jaguar Park biosphere are a 12-15 minute scenic drive." },
+          { q: "In what currency is rental income paid and how can funds be transferred abroad?", a: "Rental earnings are disbursed monthly in <strong>USD or MXN</strong> via direct international bank transfer to your account in any country worldwide." },
+          { q: "Is Tulum safe and how is security arranged?", a: "Quintana Roo (Tulum & Riviera Maya) is under the strict protection of federal authorities. Tulum Gardens is a <strong>private gated community</strong> with an isolated green perimeter and quiet pedestrian walkways." }
         ],
 
-        ctaTitle: "Download Full 8-Residence Catalog with Floor Plans & Pricing",
+        ctaTitle: "Download the «5 Reasons to Move to Mexico» Guide & Get an Expert Consultation",
         ctaSub: "Leave your WhatsApp or Email to receive the presentation and pricing within 2 minutes:",
         formName: "Your Name",
         formPhone: "Phone / WhatsApp",
-        formEmail: "Email",
-        formBtn: "Download Catalog (PDF)"
+        formEmail: "Email Address",
+        formBtn: "Download Brochure (PDF)"
       },
+
       ru: {
         navBenefits: "Гарантии",
         navLocation: "Локация",
         navMedia: "Медиатека",
         navCatalog: "Таунхаусы",
         navFaq: "FAQ",
-        headerCatalogBtn: "Скачать брошюру",
+        headerCatalogBtn: "Скачать каталог",
 
-        heroBadge: "ГОТОВЫЕ ЮНИТЫ ОТ СОБСТВЕННИКА",
-        heroH1: "Обеспечьте себе <span>пассивный доход 9% годовых</span> и второй дом на Карибах в Тулуме",
-        heroSubtext: "Просторные резиденции в закрытом приватном комьюнити Тулума.<br>Откройте для себя уникальный эко-стиль жизни на Карибском побережье Мексики,<br>где первозданная тропическая природа сочетается с высокими стандартами комфорта<br>и международной привлекательностью.<br><br><strong style=\"color: var(--accent); font-weight: 600;\">Скачайте гайд «5 причин переехать в Мексику» и получите персональную консультацию эксперта:</strong>",
+        heroBadge: "8 ЭКСКЛЮЗИВНЫХ ЮНИТОВ ОТ СОБСТВЕННИКА",
+        heroH1: "Обеспечьте семье <span>пассивный доход 9% годовых</span> и второй дом на Карибах в Тулуме",
+        heroSubtext: "Просторные резиденции в закрытом приватном комьюнити Тулума.<br>Откройте для себя уникальный эко-стиль жизни на Карибском побережье Мексики,<br>где первозданная природа сочетается с высокими стандартами комфорта и статусом.<br><br><strong style="color: var(--accent); font-weight: 600;">Скачайте гайд «5 причин переехать в Мексику» и полный каталог 8 резиденций<br>с планировками и ценами прямо сейчас:</strong>",
         heroBtn1: "Скачать гайд «5 причин переехать в Мексику»",
         heroBtn2: "Получить консультацию",
 
-        statPill1Val: "Развитая инфраструктура",
-        statPill1Sub: "Рядом аэропорт TQO, скоростной поезд Tren Maya, ТЦ, детские сады и частные клиники",
-        statPill2Val: "100% Собственность",
-        statPill2Sub: "Безусловная личная частная собственность на землю и таунхаус с полным правом дарения и наследования",
-        statPill3Val: "Частная школа",
-        statPill3Sub: "100 м • Международный колледж Colegio Inglés в 1-2 мин пешком по безопасным парковым аллеям",
-        statPill4Val: "12 мин до пляжа",
-        statPill4Sub: "Белоснежные карибские пляжи,<br>эко-заповедник Jaguar Park<br>и премиальные пляжные клубы",
+        statPill1Val: "Частная школа • 100 м",
+        statPill1Sub: "Международный колледж Colegio Inglés в 1-2 мин пешком по безопасным парковым аллеям",
+        statPill2Val: "Развитая инфраструктура",
+        statPill2Sub: "Аэропорт TQO, поезд Tren Maya, ТЦ, Michelin-рестораны и элитное крипто-комьюнити",
+        statPill3Val: "100% Фрихолд",
+        statPill3Sub: "Безусловная личная частная собственность на недвижимость и землю с правом наследования",
+        statPill4Val: "15 минут до Карибов",
+        statPill4Sub: "Белоснежные карибские пляжи, биосферный заповедник Jaguar Park и пляжные клубы",
 
         bento: [
-          { tag: 'Статус и Гражданство', title: 'ВНЖ и Паспорт<br>(150+ стран без виз)', desc: 'Инвестиции дают вам и вашей семье право на получение ВНЖ Residente Temporal в Мексике с перспективой оформления гражданства. Паспорт Мексики обеспечивает безвизовый въезд в 150+ стран мира.' },
-          { tag: 'Юридический статус', title: '100% Freehold<br>на физическое лицо', desc: 'Каждый таунхаус передается в безусловную личную частную собственность на физлицо с 100% владением землей и строением, правом перепродажи, сдачи и дарения.' },
-          { tag: 'Сервис и операционка', title: 'Топовая Управляющая<br>Компания', desc: 'Профессиональная Управляющая Компания полного цикла берет на себя 100% операционной работы: премиальное продвижение, встречу гостей, клининг, охрану и регулярные выплаты на ваш счет.' },
-          { tag: 'Арендный доход и Ликвидность', title: 'Пассивный доход<br>9% годовых', desc: 'Инновационная система Lock-Off позволяет комфортно проживать в одной части резиденции и параллельно сдавать остальные автономные зоны. Дефицит семейных лотов гарантирует быструю и выгодную перепродажу.' },
-          { tag: 'Образование и Дети', title: '300 метров до школы<br>Colegio Inglés', desc: 'Всего в 100 метрах находится ведущий международный билингвальный колледж Colegio Inglés (аккредитация IB / Cambridge). Дети доходят на занятия за 3 минуты по закрытым парковым аллеям без машин.' },
-          { tag: 'Инфраструктура и Дороги', title: 'Развитая инфраструктура<br>и Торговые Центры', desc: 'В непосредственной близости расположен новый международный аэропорт TQO, скоростной поезд Tren Maya (800 м), супермаркеты Soriana, торговые центры, Michelin-ресторан Cetli и фестивальный центр Zamna.' }
+          { tag: 'ЮРИДИЧЕСКИЙ СТАТУС', title: '100% Фрихолд<br>в частную собственность', desc: '<strong>Безусловная частная собственность:</strong> каждый таунхаус передается в личную собственность на физлицо (здание и земельный участок) с правом продажи, сдачи, дарения и наследования.' },
+          { tag: 'ВНЖ И ГРАЖДАНСТВО', title: 'ВНЖ и Паспорт Мексики<br>(150+ стран без виз)', desc: '<strong>Легализация для всей семьи:</strong> ускоренное получение ВНЖ (Residente Temporal), ПМЖ и второго гражданства. <em>Бесплатное юридическое сопровождение сделки под ключ.</em>' },
+          { tag: 'СЕРВИС И ОПЕРАЦИИ', title: 'Топовая Управляющая<br>Компания отельного типа', desc: '<strong>Пассивный доход под ключ:</strong> управляющая компания берет на себя 100% задач — маркетинг, приём гостей из США и Канады, клининг, охрану и выплаты. Загрузка 80%+.' },
+          { tag: 'ДОХОДНОСТЬ И ВАЛЮТА', title: 'Пассивный доход 9% годовых<br>в валюте (USD)', desc: '<strong>Система Lock-Off (9% ROI):</strong> живите в своих апартаментах и сдавайте изолированные студии туристам, получая ежемесячные выплаты в твердой валюте с ростом капитала.' },
+          { tag: 'ОБРАЗОВАНИЕ И ДЕТИ', title: '100 метров до школы<br>Colegio Inglés', desc: '<strong>Школа Colegio Inglés (100м):</strong> ведущий международный билингвальный колледж (аккредитация IB / Cambridge). Дети доходят на занятия за 1-2 минуты по закрытым парковым аллеям.' },
+          { tag: 'ПРИВАТНОСТЬ И СТАТУС', title: 'Закрытый приватный клуб<br>на 8 резиденций', desc: '<strong>8 эксклюзивных юнитов от собственника:</strong> личные бассейны, приватные зеленые патио на 1 уровне, видовые солярии на кровле с зоной BBQ и безопасная среда без машин.' }
         ],
 
-        sec2Tag: "Гарантии и Статус",
-        sec2Title: "Юридическая прозрачность<br>и привилегии резидентов",
-        sec2Desc: "Полная правовая защита, готовая отельная модель управления и идеальные условия для жизни семьи.",
+        // CONSULTING BANNER TRANSLATIONS
+        consultingTag: "ДЛЯ ЧАСТНЫХ ИНВЕСТОРОВ",
+        consultingTitle: "Если вы инвестор: персональный аудит и расчет окупаемости",
+        consultingDesc: "Мы проведём детальный финансовый аудит вашей инвестиционной стратегии, подберём оптимальный формат резиденции и возьмём на себя 100% процесса покупки — от первого звонка до получения ключей и оформления собственности.",
+        consultingBtn: "Запросить инвестиционный аудит →",
 
-        sec3Tag: "Инфраструктура и локация",
-        sec3Title: "Эпицентр курортного Тулума: 15 минут до Карибского моря",
-        sec3Desc: "Интерактивная карта: наведите на метки, чтобы увидеть расстояния до ключевых объектов инфраструктуры.",
+        sec2Tag: "Локация и инфраструктура",
+        sec2Title: "Главный инфраструктурный хаб Тулума:<br>Аэропорт, Tren Maya, Школа и Пляжи",
+        sec2Desc: "Уникальное расположение: 15 минут до международного аэропорта TQO, 800 метров до станции поезда Tren Maya, 100 метров до школы Colegio Inglés и 15 минут до пляжей.",
 
         locTabs: [
-          { name: "Международный аэропорт TQO", val: "15 мин" },
-          { name: "Скоростной поезд Tren Maya", val: "800 м" },
+          { name: "Аэропорт TQO и Логистика", val: "15 мин" },
+          { name: "Станция Tren Maya", val: "800 м" },
           { name: "Торговые Центры и Soriana", val: "Новые ТЦ" },
           { name: "Пляжи Карибов и Jaguar Park", val: "12 мин" },
-          { name: "«Второе Бали»", val: "3-4х рост" },
+          { name: "«Второе Бали» & Сообщество", val: "3-4х рост" },
           { name: "Школа Colegio Inglés", val: "100 м" },
           { name: "Рестораны & Michelin", val: "Michelin ★" },
           { name: "Террасы и личные бассейны", val: "Pool & BBQ" },
           { name: "Закрытая территория и приватность", val: "Приватность" }
         ],
 
-        sec4Tag: "Медиатека объекта в HD / 4K",
-        sec4Title: "Реальная строительная динамика<br>и панорамы Tulum Gardens",
-        sec4Desc: "Интерактивный плеер: переключайте съемки с дрона, строительную динамику и эко-окружение в реальном времени.",
+        sec3Tag: "Медиатека объекта в HD / 4K",
+        sec3Title: "Реальная строительная динамика<br>и панорамы Tulum Gardens",
+        sec3Desc: "Интерактивный плеер: переключайте съемки с дрона, строительную динамику и эко-окружение в реальном времени.",
+        cinema: { all: "Все (17)", drones: "Дроны", construction: "Стройка", nature: "Территория" },
+        cinemaStageBtn: "Получить материалы",
 
-        cinema: { all: "Все (21)", drones: "Дроны", construction: "Стройка", nature: "Эко" },
+        sec4Tag: "Атмосфера и концепция",
+        sec4Title: "Первозданная карибская атмосфера<br>и архитектурная эстетика",
+        sec4Desc: "Почувствуйте гармонию современного тропического минимализма, натуральных фактур, личных бассейнов и абсолютной тишины джунглей.",
 
-        sec5Tag: "Коллекция 8 резиденций",
-        sec5Title: "Каталог таунхаусов и архитектурные планы",
-        sec5Desc: "Выберите формат резиденции для просмотра детальных характеристик планировок, метража, отделки и 3D-интерьеров.",
+        sec5Tag: "Коллекция таунхаусов",
+        sec5Title: "4 формата таунхаусов<br>от 103 до 240 м²",
+        sec5Desc: "Индивидуальные патио, панорамные спальни, приватные террасы на кровле<br>и 100% оформление в личную собственность.",
 
-        catalogTabs: [ "Garden House (104 м²)", "PentHouse (103 м²)", "PentHouse Plus (137 м²)", "SkyHouse Флагман (205–240 м²)" ],
+        catalogTabs: ["Garden House (103 м²)", "PentHouse (103 м²)", "PentHouse Plus (137 м²)", "SkyHouse (240 м²)"],
 
         units: [
           {
             id: 'tab-gh',
             title: 'Garden House',
-            specs: '84 м² жилая / 104 м² общая • 2 уровня • 2 спальни • 2 санузла • Частный сад & Патио',
-            desc: 'Двухуровневая резиденция первого уровня с прямой интеграцией в ландшафтный тропический сад. На 1-м уровне — гранд-гостиная с панорамным слайд-остеклением, кухня с островом из кварцита, обеденная зона и гостевой санузел. На 2-м уровне — мастер-спальня с гардеробной и ванной en-suite, плюс вторая спальня.',
+            specs: '80 м² жилая / 103 м² общая • 2 уровня • 2 спальни • 2 санузла • Личный бассейн и Патио',
+            desc: 'Двухуровневая резиденция с собственным тропическим садом на первом этаже, личным бассейном и панорамным выходом в зону отдыха.',
             items: [
-              'Приватное крытое патио с перголой и выходом в личный сад',
-              'Двухуровневая планировка (Ground Floor + Mezzanine)',
-              'Кухня с островом и встроенной техникой премиум-класса',
-              'Мастер-спальня с индивидуальным санузлом и гардеробом',
-              'Мультисплит система климат-контроля VRV в каждой комнате',
-              '1 персональное парковочное место перед домом'
+              'Собственный бассейн и приватное зеленое патио',
+              'Панорамное остекление в пол с видом на тропический сад',
+              'Полная премиальная чистовая отделка и меблировка',
+              'Идеально для постоянного проживания или аренды'
             ],
             btn: 'Получить планировку в PDF'
           },
@@ -4311,7 +4328,7 @@
           { q: "Где находится школа Colegio Inglés и как дети добираются на занятия?", a: "Школа Colegio Inglés расположена <strong>всего в 100 метрах от резиденций</strong>. Дети доходят за 1-2 минуты по закрытым зеленым аллеям без выезда на проезжую часть." },
           { q: "Какое расстояние до пляжей, аэропорта TQO и поезда Tren Maya?", a: "Новый международный аэропорт TQO и станция поезда Tren Maya находятся <strong>в 800 метрах</strong>. Пляжи Карибского моря и нацпарк Jaguar Park — в 15 минутах езды." },
           { q: "В какой валюте выплачивается арендный доход и как переводить средства на международный счет?", a: "Выплаты арендного дохода производятся ежемесячно в <strong>USD или MXN</strong> банковским переводом на ваш счет в любой стране мира." },
-          { q: "Безопасно ли в Тулуме, что с мифами про картели в СМИ и как организована охрана?", a: "Штат Кинтана-Роо (Тулум и Ривьера Майя) находится под особым контролем федеральных властей (Guardia Nacional и Policía Turística). Tulum Gardens — это закрытый приватный комьюнити 24/7 с биометрическим контролем доступа, видеонаблюдением и службой безопасности." }
+          { q: "Безопасно ли в Тулуме, что с мифами про картели в СМИ и как организована охрана?", a: "Штат Кинтана-Роо (Тулум и Ривьера Майя) находится под особым контролем федеральных властей (Guardia Nacional и Policía Turística). Tulum Gardens — это закрытый приватный комьюнити с собственной территорией и зелеными пешеходными аллеями." }
         ],
 
         ctaTitle: "Скачайте гайд «5 причин переехать в Мексику» и получите консультацию",
@@ -4362,39 +4379,19 @@
       }
 
       // 3. Stat Pills
-      const wraps = document.querySelectorAll('.stat-pill-wrap');
-      if (wraps.length >= 4) {
-        wraps[0].querySelector('.stat-top-val').innerText = t.statPill1Val;
-        wraps[0].querySelector('.stat-sub-text').innerText = t.statPill1Sub;
-        wraps[1].querySelector('.stat-top-val').innerText = t.statPill2Val;
-        wraps[1].querySelector('.stat-sub-text').innerText = t.statPill2Sub;
-        wraps[2].querySelector('.stat-top-val').innerText = t.statPill3Val;
-        wraps[2].querySelector('.stat-sub-text').innerText = t.statPill3Sub;
-        wraps[3].querySelector('.stat-top-val').innerText = t.statPill4Val;
-        wraps[3].querySelector('.stat-sub-text').innerText = t.statPill4Sub;
+      const statPills = document.querySelectorAll('.hero-stat-pill');
+      if (statPills.length >= 4) {
+        statPills[0].querySelector('.stat-top-val').innerText = t.statPill1Val;
+        statPills[0].querySelector('.stat-sub-text').innerText = t.statPill1Sub;
+        statPills[1].querySelector('.stat-top-val').innerText = t.statPill2Val;
+        statPills[1].querySelector('.stat-sub-text').innerText = t.statPill2Sub;
+        statPills[2].querySelector('.stat-top-val').innerText = t.statPill3Val;
+        statPills[2].querySelector('.stat-sub-text').innerText = t.statPill3Sub;
+        statPills[3].querySelector('.stat-top-val').innerText = t.statPill4Val;
+        statPills[3].querySelector('.stat-sub-text').innerText = t.statPill4Sub;
       }
 
-      // 4. Section Heads
-      const secHeads = document.querySelectorAll('.sec-head');
-      if (secHeads.length >= 4) {
-        secHeads[0].querySelector('.sec-tag').innerText = t.sec2Tag;
-        secHeads[0].querySelector('.sec-title').innerHTML = t.sec2Title;
-        secHeads[0].querySelector('.sec-desc').innerText = t.sec2Desc;
-
-        secHeads[1].querySelector('.sec-tag').innerText = t.sec3Tag;
-        secHeads[1].querySelector('.sec-title').innerText = t.sec3Title;
-        secHeads[1].querySelector('.sec-desc').innerText = t.sec3Desc;
-
-        secHeads[2].querySelector('.sec-tag').innerText = t.sec4Tag;
-        secHeads[2].querySelector('.sec-title').innerHTML = t.sec4Title;
-        secHeads[2].querySelector('.sec-desc').innerText = t.sec4Desc;
-
-        secHeads[3].querySelector('.sec-tag').innerText = t.sec5Tag;
-        secHeads[3].querySelector('.sec-title').innerText = t.sec5Title;
-        secHeads[3].querySelector('.sec-desc').innerText = t.sec5Desc;
-      }
-
-      // 5. Bento Cards
+      // 4. Bento Cards
       const bentoCards = document.querySelectorAll('.bento-card');
       if (bentoCards.length >= 6 && t.bento) {
         t.bento.forEach((b, i) => {
@@ -4406,7 +4403,37 @@
         });
       }
 
-      // 6. Location Tabs
+      // 5. Consulting Investment Banner
+      const consultTag = document.getElementById('consulting-tag');
+      const consultTitle = document.getElementById('consulting-title');
+      const consultDesc = document.getElementById('consulting-desc');
+      const consultBtn = document.getElementById('consulting-btn');
+      if (consultTag && t.consultingTag) consultTag.innerText = t.consultingTag;
+      if (consultTitle && t.consultingTitle) consultTitle.innerText = t.consultingTitle;
+      if (consultDesc && t.consultingDesc) consultDesc.innerText = t.consultingDesc;
+      if (consultBtn && t.consultingBtn) consultBtn.innerText = t.consultingBtn;
+
+      // 6. Section Heads
+      const secHeads = document.querySelectorAll('.sec-head');
+      if (secHeads.length >= 3) {
+        if (secHeads[0]) {
+          secHeads[0].querySelector('.sec-tag').innerText = t.sec2Tag;
+          secHeads[0].querySelector('.sec-title').innerHTML = t.sec2Title;
+          secHeads[0].querySelector('.sec-desc').innerText = t.sec2Desc;
+        }
+        if (secHeads[1]) {
+          secHeads[1].querySelector('.sec-tag').innerText = t.sec3Tag;
+          secHeads[1].querySelector('.sec-title').innerHTML = t.sec3Title;
+          secHeads[1].querySelector('.sec-desc').innerText = t.sec3Desc;
+        }
+        if (secHeads[2]) {
+          secHeads[2].querySelector('.sec-tag').innerText = t.sec5Tag;
+          secHeads[2].querySelector('.sec-title').innerHTML = t.sec5Title;
+          secHeads[2].querySelector('.sec-desc').innerHTML = t.sec5Desc;
+        }
+      }
+
+      // 7. Location Tabs
       const locTabs = document.querySelectorAll('.loc-usp-tab');
       if (locTabs.length >= 8 && t.locTabs) {
         t.locTabs.forEach((lt, i) => {
@@ -4418,7 +4445,7 @@
       }
       switchLocUsp(0);
 
-      // 7. Cinema Player
+      // 8. Media Cinema Player (Titles, Categories, Stage)
       if (t.cinema) {
         const catBtns = document.querySelectorAll('.cat-btn-row .cat-btn');
         if (catBtns.length >= 4) {
@@ -4427,9 +4454,28 @@
           catBtns[2].innerText = t.cinema.construction;
           catBtns[3].innerText = t.cinema.nature;
         }
+        const stageBtn = document.querySelector('.stage-bar .btn');
+        if (stageBtn && t.cinemaStageBtn) stageBtn.innerText = t.cinemaStageBtn;
       }
+      const activeCatBtn = document.querySelector('.cat-btn.active');
+      const activeCat = activeCatBtn ? activeCatBtn.getAttribute('onclick').match(/'(.*?)'/)[1] : 'all';
+      renderPlaylist(activeCat);
+      
+      const currentVid = cinemaVideos[currentCinemaIdx];
+      const stageTitle = document.getElementById('stage-title');
+      const stageDesc = document.getElementById('stage-desc');
+      if (stageTitle && currentVid) stageTitle.innerText = lang === 'en' ? currentVid.titleEn : currentVid.titleRu;
+      if (stageDesc && currentVid) stageDesc.innerText = lang === 'en' ? currentVid.descEn : currentVid.descRu;
 
-      // 8. Unit Catalog
+      // 9. Atmosphere Section
+      const atmTag = document.querySelector('.atmosphere-tag');
+      const atmTitle = document.querySelector('.atmosphere-title');
+      const atmText = document.querySelector('.atmosphere-text');
+      if (atmTag && t.sec4Tag) atmTag.innerText = t.sec4Tag;
+      if (atmTitle && t.sec4Title) atmTitle.innerHTML = t.sec4Title;
+      if (atmText && t.sec4Desc) atmText.innerText = t.sec4Desc;
+
+      // 10. Unit Catalog
       const cTabBtns = document.querySelectorAll('.c-tab-btn');
       if (cTabBtns.length >= 4 && t.catalogTabs) {
         cTabBtns.forEach((btn, i) => { btn.innerText = t.catalogTabs[i]; });
@@ -4458,7 +4504,7 @@
         });
       }
 
-      // 9. FAQ Section
+      // 11. FAQ Section
       const faqLeft = document.querySelector('.faq-left-col');
       if (faqLeft) {
         faqLeft.querySelector('.sec-tag').innerText = t.sec6Tag;
@@ -4478,7 +4524,7 @@
         });
       }
 
-      // 10. CTA Form
+      // 12. Bottom CTA Form
       const ctaH2 = document.querySelector('.cta-banner h2');
       if (ctaH2 && t.ctaTitle) ctaH2.innerText = t.ctaTitle;
 
