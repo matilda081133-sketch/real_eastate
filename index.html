@@ -1971,7 +1971,7 @@
       backface-visibility: hidden;
     }
     /* CONTENT-VISIBILITY RENDERING ACCELERATION */
-    .bento-section, .loc-sec, .cinema-sec, .units-catalog-sec, .atmosphere-sec, .faq-sec {
+    .bento-section, .cinema-sec, .units-catalog-sec, .atmosphere-sec, .faq-sec {
       content-visibility: auto;
       contain-intrinsic-size: 1px 700px;
     }
@@ -3597,31 +3597,9 @@
     const preBar = document.getElementById('pre-bar');
     const preloader = document.getElementById('preloader');
 
-    function dismissPreloader() {
-      if (preloader && !preloader.classList.contains('hidden')) {
-        preCounter.innerText = '100%';
-        preBar.style.width = '100%';
-        preloader.classList.add('hidden');
-      }
-    }
-
-    const loadInterval = setInterval(() => {
-      progress += Math.floor(Math.random() * 20) + 10;
-      if (progress >= 100) {
-        progress = 100;
-        clearInterval(loadInterval);
-        preCounter.innerText = '100%';
-        preBar.style.width = '100%';
-        setTimeout(dismissPreloader, 200);
-      } else {
-        preCounter.innerText = progress + '%';
-        preBar.style.width = progress + '%';
-      }
-    }, 25);
-
-    // Guaranteed failsafe: dismiss after 700ms max under all conditions
-    setTimeout(dismissPreloader, 700);
-    window.addEventListener('DOMContentLoaded', () => setTimeout(dismissPreloader, 400));
+    // PRELOADER DISMISS
+    const p = document.getElementById('preloader');
+    if (p) p.remove();
 
     // HERO ZERO-PAUSE VIDEO BACKGROUND
     const heroPlaylist = [
@@ -4190,7 +4168,7 @@
 
         heroBadge: "8 EXCLUSIVE RESIDENCES FROM THE OWNER",
         heroH1: "Secure a <span>9% Annual ROI</span> & a Luxury Caribbean Home in Tulum for Your Family",
-        heroSubtext: "Spacious residences in a gated private community in Tulum.<br>Discover an exceptional eco-luxury lifestyle on Mexico’s Caribbean Coast,<br>where pristine tropical nature meets world-class comfort<br>and high international rental demand.<br><br><strong style="color: var(--accent); font-weight: 600;">Download the "Top 5 Reasons to Move to Mexico" Guide & get an expert consultation:</strong>",
+        heroSubtext: 'Spacious residences in a gated private community in Tulum.<br>Discover an exceptional eco-luxury lifestyle on Mexico’s Caribbean Coast,<br>where pristine tropical nature meets world-class comfort<br>and high international rental demand.<br><br><strong style="color: var(--accent); font-weight: 600;">Download the "Top 5 Reasons to Move to Mexico" Guide & get an expert consultation:</strong>',
         heroBtn1: "Download Guide (PDF)",
         heroBtn2: "Schedule a Consultation",
 
@@ -4341,7 +4319,7 @@
 
         heroBadge: "8 ЭКСКЛЮЗИВНЫХ ЮНИТОВ ОТ СОБСТВЕННИКА",
         heroH1: "Обеспечьте семье <span>пассивный доход 9% годовых</span> и второй дом на Карибах в Тулуме",
-        heroSubtext: "Просторные резиденции в закрытом приватном комьюнити Тулума.<br>Откройте для себя уникальный эко-стиль жизни на Карибском побережье Мексики,<br>где первозданная природа сочетается с высокими стандартами комфорта и статусом.<br><br><strong style="color: var(--accent); font-weight: 600;">Скачайте гайд «5 причин переехать в Мексику» и полный каталог 8 резиденций<br>с планировками и ценами прямо сейчас:</strong>",
+        heroSubtext: 'Просторные резиденции в закрытом приватном комьюнити Тулума.<br>Откройте для себя уникальный эко-стиль жизни на Карибском побережье Мексики,<br>где первозданная природа сочетается с высокими стандартами комфорта и статусом.<br><br><strong style="color: var(--accent); font-weight: 600;">Скачайте гайд «5 причин переехать в Мексику» и полный каталог 8 резиденций<br>с планировками и ценами прямо сейчас:</strong>',
         heroBtn1: "Скачать гайд «5 причин переехать в Мексику»",
         heroBtn2: "Получить консультацию",
 
@@ -4708,7 +4686,7 @@
         text.innerText = 'Выключить звук';
       }
     }
-      // PARALLAX VECTOR ANIMATION FOR CONSULTING BANNER
+      // PARALLAX VECTOR ANIMATION FOR CONSULTING BANNER (ROBUST & IMMEDIATE)
     function initConsultingParallax() {
       const banner = document.getElementById('consulting-banner');
       const vLeft = document.getElementById('consulting-vector-left');
@@ -4722,25 +4700,28 @@
         const windowH = window.innerHeight;
         
         if (rect.top <= windowH && rect.bottom >= 0) {
-          const totalDistance = windowH * 0.85;
+          const totalDistance = windowH + rect.height;
           const currentDistance = windowH - rect.top;
           const rawProgress = Math.min(Math.max(currentDistance / totalDistance, 0), 1);
           
-          // Silky smooth cubic easing
+          // Smooth easing
           const ease = rawProgress * (2 - rawProgress);
           
-          // Emerges from edge (-220px) into visible space with comfortable breathing room from text
-          const startX = -220;
-          const maxInward = Math.max((window.innerWidth - 750) / 2 - 240, 20);
-          const targetInward = Math.min(maxInward, 200);
+          // Responsive inward motion
+          const maxInward = Math.max((window.innerWidth - 720) / 2 - 200, 20);
+          const targetInward = Math.min(maxInward, 180);
+          const startX = -180;
           const currentX = startX + (ease * (targetInward - startX));
-          const opacity = Math.min(rawProgress * 1.4, 0.98);
+          const opacity = Math.min(rawProgress * 1.5, 0.95);
           
-          vLeft.style.transform = `translateY(-50%) translateX(${currentX}px)`;
+          vLeft.style.transform = 'translateY(-50%) translateX(' + currentX + 'px)';
           vLeft.style.opacity = opacity;
           
-          vRight.style.transform = `translateY(-50%) translateX(${-currentX}px)`;
+          vRight.style.transform = 'translateY(-50%) translateX(' + (-currentX) + 'px)';
           vRight.style.opacity = opacity;
+        } else {
+          vLeft.style.opacity = '0';
+          vRight.style.opacity = '0';
         }
         ticking = false;
       }
@@ -4755,8 +4736,15 @@
       window.addEventListener('scroll', requestTick, { passive: true });
       window.addEventListener('resize', requestTick, { passive: true });
       update();
+      setTimeout(update, 300);
     }
-    document.addEventListener('DOMContentLoaded', initConsultingParallax);
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initConsultingParallax);
+    } else {
+      initConsultingParallax();
+    }
+    window.addEventListener('load', initConsultingParallax);
       // IMAGE LIGHTBOX ZOOM
     function zoomImage(container) {
       const img = container.querySelector('img');
