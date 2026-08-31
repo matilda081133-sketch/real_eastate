@@ -2588,6 +2588,145 @@
       }
     }
 
+  
+    /* FLOATING WHATSAPP WIDGET */
+    .wa-float-widget {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 998;
+      display: flex;
+      align-items: center;
+    }
+    .wa-float-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .wa-float-btn:hover {
+      transform: scale(1.06);
+    }
+    .wa-icon-box {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4), 0 4px 15px rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 3;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    .wa-pulse-glow {
+      position: absolute;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(37, 211, 102, 0.35);
+      animation: waPulse 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+      z-index: 1;
+      right: 0;
+      top: 0;
+    }
+    .wa-pulse-glow-2 {
+      position: absolute;
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(37, 211, 102, 0.45);
+      animation: waPulse2 2.6s cubic-bezier(0.25, 1, 0.5, 1) infinite 0.6s;
+      z-index: 1;
+      right: -8px;
+      top: -8px;
+    }
+    @keyframes waPulse {
+      0% { transform: scale(0.7); opacity: 0.9; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    @keyframes waPulse2 {
+      0% { transform: scale(0.7); opacity: 0.7; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+    .wa-tooltip {
+      position: absolute;
+      right: 70px;
+      background: rgba(14, 18, 16, 0.94);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      backdrop-filter: blur(12px);
+      padding: 9px 14px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0.96;
+      transform: translateX(0);
+      transition: all 0.25s ease;
+    }
+    .wa-float-btn:hover .wa-tooltip {
+      opacity: 1;
+      border-color: #D4AF37;
+      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.25), 0 10px 30px rgba(0, 0, 0, 0.7);
+    }
+    .wa-status-dot {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 7px;
+      height: 7px;
+      background: #25D366;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #25D366;
+    }
+    .wa-tooltip .wa-title {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      color: #FAF9F7;
+      letter-spacing: 0.02em;
+    }
+    .wa-tooltip .wa-sub {
+      font-family: 'TildaSans', sans-serif;
+      font-size: 11px;
+      color: #B8B4AE;
+      font-weight: 400;
+    }
+
+    @media (max-width: 768px) {
+      .wa-float-widget {
+        bottom: 20px !important;
+        right: 18px !important;
+      }
+      .wa-icon-box {
+        width: 50px !important;
+        height: 50px !important;
+      }
+      .wa-icon-box svg {
+        width: 25px !important;
+        height: 25px !important;
+      }
+      .wa-pulse-glow {
+        width: 50px !important;
+        height: 50px !important;
+      }
+      .wa-pulse-glow-2 {
+        width: 64px !important;
+        height: 64px !important;
+        right: -7px !important;
+        top: -7px !important;
+      }
+      .wa-tooltip {
+        display: none !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -4078,6 +4217,8 @@
         consultingTitle: "For Investors: Tailored Financial Audit & ROI Modeling",
         consultingDesc: "We will conduct an in-depth financial audit of your investment strategy, select the optimal residence layout, and manage 100% of the acquisition process — from the initial consultation to title deed registration and turnkey handover.",
         consultingBtn: "Request Investment Audit →",
+        waTitle: "Chat on WhatsApp",
+        waSub: "Online • 2 min response",
 
         sec2Tag: "Location & Infrastructure",
         sec2Title: "Prime Infrastructure Hub in Tulum:<br>Airport, Tren Maya, School & Beach",
@@ -4227,6 +4368,8 @@
         consultingTitle: "Если вы инвестор: персональный аудит и расчет окупаемости",
         consultingDesc: "Мы проведём детальный финансовый аудит вашей инвестиционной стратегии, подберём оптимальный формат резиденции и возьмём на себя 100% процесса покупки — от первого звонка до получения ключей и оформления собственности.",
         consultingBtn: "Запросить инвестиционный аудит →",
+        waTitle: "Напишите в WhatsApp",
+        waSub: "Ответим за 2 минуты",
 
         sec2Tag: "Локация и инфраструктура",
         sec2Title: "Главный инфраструктурный хаб Тулума:<br>Аэропорт, Tren Maya, Школа и Пляжи",
@@ -4524,6 +4667,12 @@
         });
       }
 
+      // WhatsApp Widget Tooltip Translation
+      const waTitle = document.querySelector('.wa-tooltip .wa-title');
+      const waSub = document.querySelector('.wa-tooltip .wa-sub');
+      if (waTitle && t.waTitle) waTitle.innerText = t.waTitle;
+      if (waSub && t.waSub) waSub.innerText = t.waSub;
+
       // 12. Bottom CTA Form
       const ctaH2 = document.querySelector('.cta-banner h2');
       if (ctaH2 && t.ctaTitle) ctaH2.innerText = t.ctaTitle;
@@ -4756,6 +4905,25 @@
       initCinemaGoldDust();
     }
 </script>
+
+  <!-- FLOATING WHATSAPP WIDGET (BOTTOM RIGHT) -->
+  <aside aria-label="WhatsApp Chat Widget" id="wa-floating-widget" class="wa-float-widget">
+    <a href="https://wa.me/529999974246?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5%20%D0%BE%20%D1%82%D0%B0%D1%83%D0%BD%D1%85%D0%B0%D1%83%D1%81%D0%B0%D1%85%20Tulum%20Gardens" target="_blank" rel="noopener noreferrer" class="wa-float-btn" id="wa-float-link" title="Написать в WhatsApp">
+      <div class="wa-pulse-glow"></div>
+      <div class="wa-pulse-glow-2"></div>
+      <div class="wa-icon-box">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor">
+          <path d="M16 2C8.268 2 2 8.268 2 16c0 2.76 0.79 5.34 2.16 7.52L2.05 30l6.7-2.07C10.82 29.25 13.34 30 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.55c-2.39 0-4.63-0.68-6.53-1.87l-0.47-0.29-4.85 1.5 1.5-4.73-0.31-0.49C4.08 19.7 3.45 17.89 3.45 16c0-6.92 5.63-12.55 12.55-12.55s12.55 5.63 12.55 12.55-5.63 12.55-12.55 12.55zm6.89-9.39c-0.38-0.19-2.23-1.1-2.58-1.23-0.35-0.13-0.6-0.19-0.85 0.19-0.25 0.38-0.98 1.23-1.2 1.48-0.22 0.25-0.45 0.28-0.83 0.09-0.38-0.19-1.6-0.59-3.05-1.89-1.13-1.01-1.89-2.26-2.11-2.64-0.22-0.38-0.02-0.59 0.17-0.78 0.17-0.17 0.38-0.45 0.57-0.67 0.19-0.22 0.25-0.38 0.38-0.63 0.13-0.25 0.06-0.48-0.03-0.67-0.09-0.19-0.85-2.06-1.17-2.82-0.31-0.74-0.63-0.64-0.85-0.65-0.22-0.01-0.47-0.01-0.73-0.01-0.25 0-0.67 0.09-1.02 0.48-0.35 0.38-1.34 1.31-1.34 3.2 0 1.89 1.37 3.72 1.57 3.97 0.19 0.25 2.7 4.13 6.55 5.79 0.92 0.39 1.63 0.63 2.19 0.81 0.92 0.29 1.76 0.25 2.42 0.15 0.74-0.11 2.23-0.91 2.55-1.79 0.31-0.88 0.31-1.63 0.22-1.79-0.09-0.16-0.34-0.25-0.72-0.44z"/>
+        </svg>
+      </div>
+      <div class="wa-tooltip" id="wa-tooltip-text">
+        <span class="wa-status-dot"></span>
+        <span class="wa-title">Напишите в WhatsApp</span>
+        <span class="wa-sub">Ответим за 2 минуты</span>
+      </div>
+    </a>
+  </aside>
+
 </body>
 </html>
 
